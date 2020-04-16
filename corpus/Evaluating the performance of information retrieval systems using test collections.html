@@ -1,0 +1,454 @@
+<!doctype html>  
+ <html>  
+ <head>  
+ <title>Evaluating the performance of information retrieval systems using test collections</title>  
+<meta charset="utf-8" />
+ <link href="../IRstyle3.css" rel="stylesheet" media="screen" title="serif" />  
+<link rel="alternate stylesheet" type="text/css" media="screen" title="sans" href="../IRstylesans.css" />  
+ 
+ <!--Enter appropriate data in the content fields-->  
+ <meta name="dcterms.title" content="Evaluating the performance of information retrieval systems using test collections" />  
+ <meta name="author" content="P. Clough, M. Sanderson" />  
+ <meta name="dcterms.subject" content="Evaluating the performance of information retrieval systems using test collections" />  
+ <meta name="description" content="Evaluation is highly important for designing, developing and maintaining effective information retrieval or search systems as it allows the measurement of how successfully an information retrieval system meets its goal of helping users fulfil their information needs. But what does it mean to be successful? It might refer to whether an information retrieval system retrieves relevant (compared with non-relevant) documents; how quickly results are returned; how well the system supports users' interactions; whether users are satisfied with the results; how easily users can use the system; whether the system helps users carry out their tasks and fulfil their information needs; whether the system impacts on the wider environment; how reliable the system is etc. Evaluation of information retrieval systems has been actively researched for over 50 years and continues to be an area of discussion and controversy.  In this paper we discuss system-oriented evaluation that focuses on measuring system effectiveness: how well an information retrieval system can separate relevant from non-relevant documents for a given user query. We discuss the construction and use of standardised benchmarks - test collections - for evaluating information retrieval systems. <br><strong>Research directions.</strong> The paper also describes current and future research directions for test collection-based evaluation, including efficient gathering of relevance assessments, the relationship between system effectiveness and user utility, and evaluation across user sessions. This paper describes test collections which have been widely used in information retrieval evaluation and provide an approach for measuring system effectiveness." />  
+ <meta name="keywords" content="information retrieval, test collections, evaluation" />
+ 
+ 
+
+ <meta name="robots" content="all" />  
+ <meta name="dcterms.publisher" content="Professor T.D. Wilson" />
+ <meta name="dcterms.type" content="text" />  
+ <meta name="dcterms.identifier" content="ISSN-1368-1613" />  
+ <meta name="dcterms.identifier" content="http://InformationR.net/ir/18-2/paper582.html" />  
+ <meta name="dcterms.IsPartOf" content="http://InformationR.net/ir/18-2/infres182.html" />  
+ <meta name="dcterms.format" content="text/html" />  <meta name="dc.language" content="en" />  
+ <meta name="dcterms.rights" content="http://creativecommons.org/licenses/by-nd-nc/1.0/" />  
+ <meta  name="dcterms.issued" content="2013-06-15" /> 
+  <meta name="geo.placename" content="global" />  
+
+ 
+ <script type="text/javascript"> 
+		var flag;
+		flag = true;
+		function doChangeFont()
+		{
+			if (flag)
+			{
+			var htmlDoc = document.getElementsByTagName('head').item(0);
+			var css = document.createElement('link');
+			css.setAttribute('rel', 'stylesheet');
+			css.setAttribute('type', 'text/css');
+			css.setAttribute('href', '../sans.css');
+			htmlDoc.appendChild(css);
+			flag = false;
+			} 
+			else
+			{
+			var htmlDoc = document.getElementsByTagName('head').item(0);
+			var css = document.createElement('link');
+			css.setAttribute('rel', 'stylesheet');
+			css.setAttribute('type', 'text/css');
+			css.setAttribute('href', '../IRstyle2.css');
+			htmlDoc.appendChild(css);
+			flag = true;
+			}	
+		}
+
+	</script> 
+
+</head> 
+  
+ <body> 
+
+<header>
+ <img height="45" alt="header" src="../mini_logo2.gif"  width="336" /><br>
+<span style="font-size: medium; font-variant: small-caps; font-weight: bold;">vol. 18  no. 2, June, 2013</span>
+<br><br> 
+<div class="button">
+ <ul> 
+ <li><a href="infres182.html">Contents</a> |  </li> 
+ <li><a href="../iraindex.html">Author index</a> |  </li> 
+ <li><a href="../irsindex.html">Subject index</a> |  </li> 
+ <li><a href="../search.html">Search</a> |  </li> 
+ <li><a href="../index.html">Home</a> </li> 
+ </ul>
+ </div>
+ <hr />
+ </header>
+ <article>
+ <h1>Evaluating the performance of information retrieval systems using test collections</h1>  <br>  
+ 
+ <div style="margin-left: 20%; margin-right: 10%;">  
+ <h4><a href="#author">Paul Clough</a><br>
+Information School, Univeristy of Sheffield, Regent Court, 211 Portobello Street, Sheffield, S10 2TN<br>
+<a href="#author">Mark Sanderson</a><br>
+School of Computer Science and Information Technology, RMIT University, GPO Box 2476, Melbourne 3001, Victoria, Australia</h4>  
+ </div>  
+ <br> 
+ 
+ <form>  <fieldset>  <legend>Abstract </legend>
+ <blockquote><strong>Introduction.</strong> Evaluation is highly important for designing, developing and maintaining effective information retrieval or search systems as it allows the measurement of how successfully an information retrieval system meets its goal of helping users fulfil their information needs. But what does it mean to be successful? It might refer to whether an information retrieval system retrieves relevant (compared with non-relevant) documents; how quickly results are returned; how well the system supports users' interactions; whether users are satisfied with the results; how easily users can use the system; whether the system helps users carry out their tasks and fulfil their information needs; whether the system impacts on the wider environment; how reliable the system is etc. Evaluation of information retrieval systems has been actively researched for over 50 years and continues to be an area of discussion and controversy. <br><strong>Test collections.</strong> In this paper we discuss system-oriented evaluation that focuses on measuring system effectiveness: how well an information retrieval system can separate relevant from non-relevant documents for a given user query. We discuss the construction and use of standardised benchmarks - test collections - for evaluating information retrieval systems. <br><strong>Research directions.</strong> The paper also describes current and future research directions for test collection-based evaluation, including efficient gathering of relevance assessments, the relationship between system effectiveness and user utility, and evaluation across user sessions. <br><strong>Conclusions.</strong> This paper describes test collections which have been widely used in information retrieval evaluation and provide an approach for measuring system effectiveness.
+ </blockquote>  </fieldset>  </form> 
+ 
+ <br>  <div style="text-align:center">  <input type="button" value="change font"
+ class="btn" style="font-variant: small-caps; font-weight: bold; font-family:
+ Verdana; color: white; background-color: #5E96FD;" onClick="doChangeFont()"
+ /></div>  <br> 
+
+<section>
+ 
+<h2>Introduction to information retrieval evaluation</h2> 
+ 
+<p>To evaluate means to "ascertain the value or amount of something or to appraise it" (<a href="#kie79">Kiewitt 1979</a>: 3) and involves identifying suitable success criteria that can be measured in some way. Evaluation is important for designing, developing and maintaining effective Information Retrieval (or search) systems as it enables the success of an information retrieval system to be quantified and measured. This can involve evaluating characteristics of the information retrieval system itself, such as its retrieval effectiveness, or assessing consumers' acceptance or satisfaction with the system (<a href="#tau53">Taube 1953</a>). How to conduct information retrieval system evaluation has been an active area of research for the past 50 years and the subject of much discussion and debate (<a href="#sar95">Saracevic 1995</a>, <a href="#rob08">Robertson 2008</a>, <a href="#har11">Harman 2011</a>). This is due, in part, of the need to incorporate users and user interaction into evaluation studies and the relationship between results of laboratory-based vs. operational tests (<a href="#rob92">Robertson and Hancock-Beaulieu 1992</a>). </p>
+ 
+<p>Traditionally in information retrieval there has been a strong focus on measuring system effectiveness: the ability of an information retrieval system to discriminate between documents that are relevant or not relevant for a given user query. This focus on the system has, in part, been influenced by the focus of the information retrieval community on the development of retrieval algorithms, together with the organization of large information retrieval evaluation events, such as the Text REtrieval Conference (or TREC) in the USA. Such events have also focused on measuring system effectiveness in a controlled experimental setting (<a href="#rob08">Robertson 2008</a>, <a href="#vor05">Voorhees and Harman 2005</a>). Efficiency of an information retrieval system has also been assessed, e.g. measuring how long the system takes to return results or memory/disk space required to store the index. Measuring the effectiveness and efficiency of an information retrieval system has commonly been conducted in a laboratory setting, with little involvement of end users and focused on assessing the performance of the underlying search algorithms; therefore, this is commonly referred to as system-oriented evaluation. </p>
+ 
+<p>Robertson and Hancock-Beaulieu (<a href="#rob92">1992</a>) suggest that the scope of 'system' in information retrieval has slowly broadened to include more elements of the retrieval context, such as the user or the user's environment, which must be included in the evaluation of information retrieval systems. Similar remarks have been made by Saracevic (<a href="#sar95">1995</a>) and Ingwersen and J&auml;rvelin (<a href="#ing05">2005</a>). Therefore, instead of focusing on just the system (i.e., its inputs and outputs), a more user-oriented approach can be taken. This may take into account the user, the user's context and situation, and their interactions with an information retrieval system, perhaps in a real-life operational environment (<a href="#bor09">Borlund 2009</a>). This includes, for example, assessing the usability of the search interface or measuring aspects of the user's information searching behaviour (e.g., a user's satisfaction with the search results or the number of items viewed/saved). Taking into account the wider context of search is part of interactive information retrieval evaluation (<a href="#kel09">Kelly 2009</a>). </p>
+
+<p>In practice it is common to utilize various evaluation approaches that will be used throughout the development of an information retrieval system, from using test collections to develop, contrast and optimize search algorithms; to conducting laboratory-based user experiments for improving design of the user interface; to evaluation carried out in situ as the information retrieval system is used in a practical setting. J&auml;rvelin (<a href="#jar11">2011</a>) contrasts system- and user-oriented approaches to information retrieval evaluation in more controlled and artificial settings with the evaluation of information retrieval systems in operational real-life settings, where it is possible to employ both user- and system-oriented approaches. The rest of this chapter focuses on system-oriented approaches to information retrieval evaluation using test collections, also referred to as the Cranfield approach.</p>
+ 
+
+<h2>Evaluation of information retrieval systems using test collections</h2> 
+ 
+<p>For decades the primary approach to evaluation has been system-oriented, focusing on assessing how well a system can find documents of interest given a specification of the user's information need. One of the most used methodologies for conducting experiments that can be repeated and conducted in a controlled laboratory-based setting is test collection-based evaluation (<a href="#rob08">Robertson 2008</a>, <a href="#san10a">Sanderson 2010</a>, <a href="#jar11">J&auml;rvelin 2011</a>, <a href="#har11">Harman 2011</a>). This approach to evaluation has its origins in experiments conducted at Cranfield library in the UK, which ran between 1958 and 1966, and is often referred to as the Cranfield approach or methodology (<a href="#cle91">Cleverdon 1991</a>). The aim of the Cranfield experiments was to create "a laboratory type situation where, freed as far as possible from the combination of operational variables, the performance of index languages could be considered in isolation" (<a href="#cle67">Cleverdon 1967</a>). This approach defined the need for a common document collection, query tasks and ground truths to evaluate different indexing strategies under controlled conditions abstracted away from the operational environment.</p>
+ 
+<p>The Cranfield approach to information retrieval evaluation uses test collections: re-useable and standardised resources that can be used to evaluate information retrieval systems with respect to system. The main components of an information retrieval test collection are the document collection, topics, and relevance assessments. These, together with evaluation measures, simulate the users of a search system in an operational setting and enable the effectiveness of an information retrieval system to be quantified. Evaluating information retrieval systems in this manner enables the comparison of different search algorithms and the effects on altering algorithm parameters to be systematically observed and quantified. Although proposed in the 1960s, this approach was popularised through the NIST-funded TREC series of large-scale evaluation campaigns that began in 1992, and subsequently other large-scale evaluation campaigns (e.g., CLEF, NTCIR and FIRE), that have stimulated significant developments in information retrieval over the past 20 years (<a href="#vor05">Voorhees and Harman 2005</a>).</p>
+
+<p>The most common way of using the Cranfield approach is to compare various retrieval strategies or systems, which is referred to as comparative evaluation. In this case the focus is on the relative performance between systems, rather than absolute scores of system effectiveness. To evaluate using the Cranfield approach typically requires these stages: (1) select different retrieval strategies or systems to compare; (2) use these to produce ranked lists of documents (often called <em>runs</em>) for each query (often called topics); (3) compute the effectiveness of each strategy for every query in the test collection as a function of relevant documents retrieved; (4) average the scores over all queries to compute overall effectiveness of the strategy or system; (5) use the scores to rank the strategies/systems relative to each other. In addition, statistical tests may be used to determine whether the differences between effectiveness scores for strategies/systems and their rankings are significant. This is necessary if one wants to determine the 'best' approach. In the TREC-style version of the Cranfield approach, there is a further stage required prior to (2) above, whereby the runs for each query are used to create a pool of documents that are judged for relevance, often by domain experts. This produces a list of relevant documents (often called <em>qrels</em>) for each query that is required in computing system effectiveness with relevance-based measures (e.g., precision and recall). </p><p>
+
+</p><p>Test collection-based evaluation is highly popular as a method for developing retrieval strategies. Benchmarks can be used by multiple researchers to evaluate in a standardised manner and with the same experimental set up, thereby enabling the comparison of results. In addition, user-oriented evaluation, although highly beneficial, is costly and complex and often difficult to replicate. It is this stability and standardization that makes the test collection so attractive. However, there are a number of limitations to test collection-based evaluation due to its abstraction from reality (<a href="#ing05">Ingwersen and J&auml;rvelin 2005</a>, pp. 6-9). Test collections experiments make a number of assumptions: that the relevance of documents is independent of each other; that all documents are equally important; that the user's information need remains static; that a single set of judgments for a query is representative of the user population; that the lists of relevant documents for each query are exhaustive (<a href="#vor02">Voorhees 2002</a>).</p>
+
+
+<h3>Building test collections</h3>
+
+<p>A test collection usually consists of a document collection, a set of topics that describe a user's information need and a set of relevance judgments indicating which documents in the collection are relevant to each topic. When constructing a test collection there are typically a number of practical issues that must be addressed (<a href="#san09">Sanderson and Braschler 2009</a>). By modifying the components of a test collection and evaluation measures used, different retrieval problems and domains can be simulated. The original and most common problem modelled is ad hoc retrieval: the situation in which an information retrieval system is presented with a previously unseen query. However, test collection-based evaluations have also been carried out on tasks including question answering, information filtering, text summarization, topic detection and tracking, image and video retrieval, and text summarization.</p> 
+
+<h4>Document collection</h4>
+
+<p>IR systems index documents that are retrieved in response to users' queries. A test collection must contain a static set of documents that should reflect the kinds of documents likely to be found in the operational setting or domain. This might involve digital library collections or sets of Web pages; texts or multimedia items (e.g., images and videos). The notion of a static document collection is important as it ensures that results can be reproduced upon re-use of the test collection. Specific questions that might be considered when gathering documents include:</p> 
+
+<ul>
+<li><b>How many items should be gathered?</b> In the case of smaller digital library collections, all items could be included in the test collection. However, in situations involving larger collections or constantly changing collections, e.g. the Web, then a sample of documents must be collected.</li>
+<li><b>What items should be sampled to create the document collection?</b> Items in the test collection should represent as faithfully as possible those found in an operational setting. If items must be selected for a document collection then it may be appropriate to select a random sample or a specific subset of documents.</li>
+<li><b>What about copyright constraints?</b> If the document collection is to be shared with others then an important aspect of which documents to include may involve considering copyright issues.</li> 
+</ul>
+
+<h4>Topics</h4>
+
+<p>Information retrieval systems are evaluated for how well they answer users' search requests. In the case of ad hoc retrieval, the test collection must contain a set of statements that describe typical users' information needs. These might be expressed as queries that are submitted to an information retrieval system, questions or longer written descriptions. For example, TREC uses the notion of a <em>topic</em>, which typically consists of three fields: query, title and description. The query field represents a typical set of keywords a user might issue for a given topic. The title field provides a longer description, normally a sentence, of an information need. The description field describes in more detail a user's information and what they are attempting to find. This often includes a description of what constitutes relevant (and non-relevant) documents and may be used by people judging relevance (if not the person who generated the topic). Practical issues that often arise during creation of topics include:</p>
+
+<ul>
+<li><b>How should a suitable set of topics be generated?</b> Ideally realistic queries should be developed for the test collection. These could be derived, for example, from analysing the query logs of operational systems, from the results of conducting user studies with end users of existing systems, or based on the input of domain experts.</li>
+<li><b>How many topics are required for obtaining reliable evaluation results?</b> In practice, a minimum of 50 topics should be included in the test collection to ensure reliable. However, results have also shown that making fewer relevance judgments over greater numbers of queries leads to more reliable evaluation (<a href="#car08">Carterette <em>et al.</em> 2008<a/>).</a></li>
+<li><b>Do the topics represent a diverse enough set of information needs?</b> Often queries on a range of topics/themes should be selected with varying characteristics to test information retrieval systems under a range of settings. For example, one might include shorter and longer queries, queries for specific entities (e.g., people or places) versus more subject-based queries. Research has shown that some queries are more useful in evaluation than others (</a><a href="#miz07">Mizzaro and Robertson 2007</a>).</li>
+<li><b>How should the topics be expressed?</b> The topics might be expressed as a set of keywords and/or verbal descriptions. For other forms of media this may include non-textual descriptions. For example, for image retrieval the topics might include example images that can be used to initiate retrieval. It should be noted, however, that realistic queries in practice tend to be short and ambiguous.</li> 
+</ul>
+
+
+<h4>Relevance assessments</h4>
+
+<p>For each topic in the test collection, a set of relevance judgments must be created indicating which documents in the collection are relevant to each topic. The notion of relevance used in the Cranfield approach is commonly interpreted as topical relevance: whether a document contains information on the same topic as the query. In addition, relevance is assumed to be consistent across assessors and static across judgments. However, this is a narrow view of relevance, which has been shown to be subjective, situational and multi-dimensional (<a href="#sch94">Schamber 1994</a>). Some have speculated that this variability would assess the accuracy of the measurement of retrieval effectiveness. A series of experiments were conducted to test this hypothesis (<a href="#cle70">Cleverdon 1970</a>, <a href="#vor98">Voorhees 1998</a>) with results showing that despite there being marked differences in the documents that different assessors judged as relevant or non-relevant, the differences did not substantially affect the relative ordering of information retrieval systems being measured using the different assessments.</p>
+
+<p>Relevance judgments can be binary (relevant or not relevant) or use graded relevance judgments, e.g. highly relevant, partially relevant or non-relevant. The use of binary versus graded relevance judgments is important as it has implications for which evaluation measures can be used to evaluate the information retrieval systems. Commonly the assessors will be the people who originally created the topics, but this is not always the case. For example, relevance assessments might be gathered in a distributed way using multiple assessors and crowdsourcing. It must, however, be recognised that domain expertise can affect the quality of relevance assessments obtained (<a href="#bai08">Bailey <em>et al.</em> 2008</a>, <a href="#kin08">Kinney <em>et al.</em> 2008</a>).</p>
+
+<p>There are various ways of gathering the relevance assessments. For example, in TREC the common approach is to gather the top <em>n</em> results from the different information retrieval systems under test for each topic and aggregate results into a single list of results for judging (called <em>pooling</em>). This assumes that the result lists of different information retrieval systems are diverse and therefore will bring relevant documents into the pool. The relevance assessors then go through the pool and make relevance judgments on each document which can then be used to compute system effectiveness. Documents which are not judged are often categorised as not relevant. An issue with pooling is the completeness of relevance assessments. Ideally for each topic one should find all relevant documents in the document collection; however, pooling may only find a subset. Approaches to help overcome this include using results lists from searches conducted manually in the pool of documents for assessment, or supplementing the sets of relevance judgments with additional relevant documents discovered during further manual. Generating complete sets of relevance judgments helps to ensure that when evaluating future systems, improvements in results can be detected. Generating relevance assessment is often highly time-consuming and labor intensive. This often leads to a bottleneck in the creation of test collections. Various techniques have been proposed to make the process of relevance assessment more efficient. Practical issues that often arise during relevance assessments include: </p>
+
+<ul>
+<li><b>Who should do the assessments?</b> Ideally the topic generator will also perform relevance judgments. Bailey <em>et al.</em> (<a href="#bai08">2008</a>) compared the relevance assessments of judges who were subject experts and those who were not. They found that different assessments resulted, which had an effect on the measurement of system effectiveness (although the ranking remained the same).</li>
+<li><b>How many assessments should be made?</b> There is evidence to suggest that assessing fewer documents for more topics (shallow and wide) is better than making exhaustive judgments for fewer topics (narrow and deep) (<a href="#car08">Carterette <em>et al.</em> 2008</a>).</li>
+<li><b>What are the assessors expected to do?</b> The relevance schemes must be decided and assessors provided with clear instructions on how to make relevance assessments. Kinney <em>et al.</em> (2008) showed that relevance assessments were more reliably obtained if detailed descriptions of what the user, issuing a query, was seeking.</li>
+<li><b>What about finding missing relevant documents?</b> If a new system or configuration finds relevant documents that have not been identified previously its performance will not be maximal (especially for ad hoc retrieval and using pooling techniques). Either the original set of judgments should be as complete as possible using techniques to supplement the pools, testers should use measures of system effectiveness that can deal with incomplete judgments (<a href="#asl06">Aslam <em>et al.</em> 2006</a>), or testers should generate new judgments for results obtained from new systems.</li>
+</ul>
+
+<h3>Assessing system effectiveness: evaluation measures</h3>
+
+<p>Evaluation measures provide a way of quantifying retrieval effectiveness (<a href="#man08">Manning <em>et al.</em> 2008, </a><a href="#cro09">Croft <em>et al.</em> 2009</a>). Together, the test collection and evaluation measure provide a simulation of the user of an information retrieval system. For example, in the case of ad hoc retrieval the user is modelled as submitting a single query and being presented with a ranked list of results. One assumes that the user then starts at the top of the ranked list and works their way down examining each document in turn for relevance. This, of course, is an estimation of how users behave; in practice they are often far less predictable. There are also further complications that must be considered. For example, research has shown that users are more likely to select documents higher up in the ranking (<em>rank bias</em>); measures typically assume that no connection exists between retrieved documents (<em>independence assumption</em>); and particularly in the case of Web search, one must decide how to deal with duplicate documents: should they be counted as relevant or ignored as they have been previously seen?</p>
+
+<h4>Set-based measures</h4>
+
+<p>Two simple measures developed early on were <em>precision</em> and <em>recall</em>. These are <em>set-based measures</em>: documents in the ranking are treated as unique and the ordering of results is ignored. Precision measures the fraction of retrieved documents that are relevant; recall measures the fraction of relevant documents that are retrieved. Precision and recall hold an approximate inverse relationship: higher precision is often coupled with lower recall. However, this is not always the case as it has been shown that precision is affected by the retrieval of non-relevant documents; recall is not. Compared to other evaluation measures, precision is simple to compute because one only considers the set of retrieved documents (as long as relevance can be judged). However, to compute recall requires comparing the set of retrieved documents with the entire collection, which is impossible in many cases (e.g., for Web search). In this situation techniques, such as pooling, are used.</p>
+
+<p>Often preference is given to either precision or recall. For example, in Web search the focus is typically on obtaining high precision by finding as many relevant documents in the top n results. However, there are certain domains, such as patent search, where the focus is on finding all relevant documents through an exhaustive search. Alternative recall-oriented measures can then be employed (<a href="#mag10">Magdy and Jones 2010</a>). Scores for precision and recall are often combined into a single measure to allow the comparison of information retrieval systems. Example measures include the <em>e</em> and <em>f</em> measures (<a href="#van79">van Rijsbergen 1979</a>).</p> 
+
+
+<h4>Rank-based measures</h4>
+
+<p>More commonly used measures are based on evaluating <em>ranked retrieval</em> results, where importance is placed, not only on obtaining the maximum number of relevant documents, but also for returning relevant documents higher in the ranked list. A common way to evaluate ranked outputs is to compute precision at various levels of recall (e.g., 0.0, 0.1, 0.2, ... 1.0), or at the rank positions of all the relevant documents and the scores averaged (referred to as <em>average precision</em>). This can be computed across multiple queries by taking the arithmetic mean of average precision values for individual topics. This single-figure measure of precision across relevant documents and multiple queries is referred to as <em>mean average precision</em> (or MAP). A further common measure is precision at a fixed rank position, for example <em>Precision at rank 10</em> (P10 or P@10). Because the number of relevant documents can influence the P@10 score, an alternative measure called <em>R-precision</em> can be used: precision is measured at the rank position <em>Rq</em>, the total number of relevant documents for query <em>q</em>.</p> 
+
+<p>More recently, measures based on non-binary (or <em>graded</em>) relevance judgments have been utilised, such as <em>discounted cumulative gain</em> (<a href="#jar02">J&auml;rvelin and Kek&auml;l&auml;inen 2002</a>). In such measures, each document is given a score indicating relevance (e.g., relevant=2; partially-relevant=1; non-relevant=0). Discounted cumulative gain computes a value for the number of relevant documents retrieved that includes a discount function to progressively reduce the importance of relevant documents found further down the ranked results list. This simulates the assumption that users prefer relevant documents higher in the ranked list. The measure also makes the assumption that highly relevant documents are more useful than partially relevant documents, which in turn are more useful than non-relevant documents. The score can be normalised to provide a value in the range 0 to 1, known as <em>normalised DCG</em> (nDCG). The measure can be averaged across multiple topics similar to computing mean average precision, and it has also been extended to compute the value of retrieved results across multiple queries in a session, referred to as <em>normalised session discounted cumulative gain</em> or nsDCG (<a href="#jar08">J&auml;rvelin <em>et al.</em> 2008</a>).</p> 
+
+<h4>Other measures</h4>
+
+<p>Additional measures have been developed to evaluate different information retrieval problems. For example, to measure the success of search tasks where just one relevant document is required (known-item search), measures, such as <em>mean reciprocal rank</em> (MRR), can be used. Another problem requiring bespoke evaluation measures is the assessment of the variability or diversity of results. In these cases one might want to evaluate the different aspects (or sub-topics) of query and therefore measures such as <em>S-recall</em> (<a href="#zha03">Zhai <em>et al.</em> 2003</a>) were created. This measure promotes systems that return different relevant documents rather than all from the same (or similar) topic or aspect.</p>
+
+<p>In practice it is important to select an evaluation measure that is suitable for the given task; for example, if the problem is known-item search then the mean reciprocal rank would be appropriate; for an <em>ad hoc</em> search task then mean average precision or averaged normalised discounted cumulative gain would be applicable.</p>
+
+<h3>Comparing results</h3>
+
+<p>It is common to find in practice that retrieved results are compared against each other (comparative evaluation) with the runs with the highest scores deemed as the 'best'. In this case an absolute score of retrieval performance is of less importance than scores relative to each other. One might compare sets of results produced by running the same system multiple times with varying parameter settings, or taking single runs from multiple systems and comparing them to determine the <em>best</em> search system. Typically evaluation measures are computed across multiple queries (or topics) and averaged to produce a final score. When comparing systems, significance testing should be used to determine whether one ranking is actually better than another rather than due to chance. Commonly used tests are Kendall's Tau and the Wilcoxon signed-rank test (<a href="#san10a">Sanderson 2010</a>: 63-73).</p>
+
+<h2>Current and future research directions</h2> 
+
+<p>Laboratory-based information retrieval evaluation using test collections is a popular, and useful, approach to evaluation. However, information retrieval researchers have recognised the need to update the original Cranfield approach to allow the evaluation of new information retrieval systems that deal with varying search problems and domains (<a href="#kam09">Kamps <em>et al.</em> 2009</a>). Research is ongoing to tackle a range of issues in information retrieval evaluation using test collections and we discuss three examples in which we have been personally involved: gathering relevance assessments efficiently, comparing system effectiveness and user utility; and evaluating information retrieval systems over sessions. Further avenues of research include the use of simulations (<a href="#azz10">Azzopardi <em>et al.</em> 2010</a>), and the development of new information retrieval evaluation measures (<a href="#yil10">Yilmaz <em>et al.</em> 2010</a>, <a href="#smu12">Smucker and Clarke 2012</a>).</p>
+
+
+<h3>Gathering relevance assessments efficiently</h3>
+
+<p>One area receiving recent attention by the information retrieval research community is how to create test collections efficiently. Given the bottleneck in gathering relevance judgments, 'low-cost evaluation' techniques have been proposed. These include approaches based on focusing assessor effort on runs from particular systems or topics that are likely to contain more relevant documents (<a href="#zob98">Zobel 1998</a>), sampling documents from the pool (<a href="#asl06">Aslam <em>et al.</em> 2006</a>), supplementing pools with relevant documents found by manually searching the document collection with an information retrieval system, known as <em>interactive search and judge</em> or ISJ (<a href="#cor98">Cormack <em>et al.</em> 1998</a>) and simulating queries and relevance assessments based on user's queries and clicks in search logs (<a href="#zha10">Zhang and Kamps 2010</a>). </p>
+
+<p>One particular approach that has received interest recently has been the use of crowdsourcing: the act of taking a job traditionally performed by a designated person and outsourcing to an undefined, generally large, group of people in the form of an open call. Amazon Mechanical Turk (AMT) is one such example of a crowdsourcing platform. This system has around 200,000 workers from many countries that perform human intelligence tasks. Recent research has demonstrated that crowdsourcing is feasible for gathering relevance assessments (<a href="#alo09">Alonso and Mizzaro 2009</a>, <a href="#kaz11">Kazai 2011</a>, <a href="#car11">Carvalho <em>et al.</em> 2011</a>). However, previous studies have also demonstrated that domain expertise can have an impact on the quality and reliability of relevance judgments (<a href="#bai08">Bailey <em>et al.</em> 2008</a>, <a href="#kin08">Kinney <em>et al.</em> 2008</a>) and is particularly problematic when using crowdsourcing in specialised domains (<a href="#clo12">Clough <em>et al.</em> 2012</a>).</p>
+
+<h3>System effectiveness versus user utility</h3>
+
+<p>The effectiveness of information retrieval systems is typically measured based on the number of relevant items found. The test collection and measure aim to simulate users in an operational setting with the assumption that if System A were to score higher than System B on a test collection then users would prefer or be more satisfied with System A over System B. This is important because if this were not the case then test collection-based evaluation would be limited: improvements in system effectiveness in the laboratory would not necessarily translate to improvements in an operational setting and thereby benefit the user.</p>
+
+<p>Several studies have been undertaken to investigate the link between system effectiveness and user preference or satisfaction. Results from these studies have differed widely: some have shown that an increase in system effectiveness did not have detectable gains for the end user in practice (<a href="#her00">Hersh <em>et al.</em> 2000</a>); others have demonstrated that when comparing two systems with large relative differences in system effectiveness and user preferences for which system output they prefer, results were strongly correlated (<a href="#alm08">Al-Maskari <em>et al.</em> 2008</a>, <a href="#san10b">Sanderson <em>et al.</em> 2010</a>). Ingwersen and J&auml;rvelin (<a href="#ing05">2005</a>) assert that the real issue in information retrieval system design is not whether precision and recall goes up, but rather whether the system helps users perform search tasks more effectively. There are still many unanswered questions about the link between system- and user-oriented measures of search effectiveness and satisfaction.</p>
+
+<h3>Evaluation across user sessions</h3>
+
+<p>Test collection-based evaluation to date has focused on evaluating information retrieval systems in a single query-response manner. However, in practice users typically reformulate their queries in response to results from the information retrieval system or as their information need alters during a search episode (<a href="#bat89">Bates 1989</a>; <a href="#jan09">Jansen <em>et al.</em> 2009</a>). This requires re-thinking information retrieval evaluation to compute system success over multiple query-response interactions (<a href="#jar09">J&auml;rvelin 2009</a>, <a href="#kes09">Keskustalo <em>et al.</em> 2009</a>, <a href="#kan11">Kanoulas <em>et al.</em> 2011</a>). For example, traditional evaluation measures, such as precision and recall, are not valid for multiple queries; therefore proposals have been made to extend existing measures. For example, J&auml;rvelin <em>et al.</em> (<a href="#jar08">2008</a>) extend the <em>normalised discounted cumulative gain</em> (nDCG) measure to a measure that considered multi-query sessions called <em>normalised session discounted cumulative gain </em>(nsDCG); Kanoulas <em>et al.</em> (<a href="#kan11">2011</a>) generalize traditional evaluation measures such as average precision to multi-query session evaluation. Further aspects that must be considered are whether or not to include duplicate documents when evaluating multiple query-responses.</p>
+
+<p>An example of a large-scale evaluation effort to evaluate information retrieval systems over multi-query sessions is the <a href="http://ir.cis.udel.edu/sessions/">TREC Session Track</a>,  which has run since 2010. The TREC organisers have provided the resources and evaluation measures to assess whether systems with prior knowledge of a user's search behaviour can provide more effective search results for subsequent queries (<a href="#kan12">Kanoulas <em>et al.</em> 2012</a>). The test collection for session evaluation consists of a document collection, topics, and relevance assessments. However, the test collection for sessions also contains information from real user sessions, such as retrieved results, the items clicked on by users and the length of time spent viewing results and selected items. Results have broadly shown that information retrieval results can be improved for a given query with users' interaction data and that the more data used the higher the performance obtained.</p>
+
+<h2>Summary</h2>
+
+<p>Like conducting any information retrieval experiment, the use of a test collection-based approach must be planned and decisions made with respect to the experimental design (<a href="#tag96">Tague-Sutcliffe 1996</a>). The goals of the evaluation must be defined; a suitable test collection must be selected from those already in existence, or must be created specifically for the retrieval problem being addressed; different information retrieval systems or techniques must be developed or chosen for testing and comparing; evaluation measures and statistical tests must be selected for evaluating the performance of the information retrieval system of for comparing whether one version of the system is better than another.  These decisions are important, as they will affect the quality of the benchmark and impact on the accuracy and usefulness of results.</p>
+
+<p>Over the years, test collection-based evaluation has been highly influential in shaping the core components of modern information retrieval systems, including Web search. This has been particularly visible in the context of TREC and related studies, which have not only provided the necessary benchmarks to compare different approaches to retrieval, but also provided a community and forum in which it can be discussed and promoted. The Cranfield approach to information retrieval evaluation has remained popular for more than fifty years although it is important to remember the original purpose of test collection experimentation for information retrieval: to develop and optimize algorithms for locating and ranking a set of documents about the same topic to a given query. Indexing, matching and ranking documents with respect to queries are the basic requirements of an information retrieval algorithm, which can be tested in a laboratory using test collections. There are widely recognised weaknesses to the Cranfield approach that will provide the research community with many avenues for further research in coming years.</p>
+
+
+<h2>About the authors</h2> 
+ 
+<p>Paul Clough is a Senior Lecturer in the Information School at the University of Sheffield. He received a B.Eng. (hons) degree in Computer Science from the University of York in 1998 and a Ph.D. from the University of Sheffield in 2002. His research interests mainly revolve around developing technologies to assist people with accessing and managing information. Paul can be contacted at p.d.clough@sheffield.ac.uk</p>
+
+<p>Mark Sanderson is a Professor in the School of Computer Science and Information Technology at RMIT University in Melbourne, Australia. He received his Bachelor's and Doctorate degrees in Computer Science at the University of Glasgow, Scotland. He can be contacted at mark.sanderson@rmit.edu.au </p>
+ 
+</section>
+<section class="refs">
+ 
+ 
+ <form>  
+ <fieldset>  
+ <legend style="color: white; background-color: #5E96FD; font-size: medium; padding: .1ex .5ex; border-right: 1px solid navy;
+ border-bottom: 1px solid navy; font-weight: bold;">References</legend>  
+ 
+ <ul class="refs"> 
+ 
+<li id="alm08">Al-Maskari, A., Sanderson, M., Clough, P.  &amp; Airio, E. (2008). <a href="http://www.webcitation.org/6H0NCnbHd">The good and the bad system: does the test collection predict users' effectiveness?</a> In <em>Proceedings of the 31st Annual International ACM SIGIR Conference on Research and Development in Information Retrieval</em>. (pp. 59-66). New York, NY: ACM Press. Retrieved 5 May, 2013 from http://ir.shef.ac.uk/cloughie/papers/fp440-almaskari.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H0NCnbHd)</li>
+ 
+<li id="alo09">Alonso, O. &amp; Mizzaro, S. (2009). <a href="http://www.webcitation.org/6H1mV6taR">Can we get rid of TREC assessors? Using Mechanical Turk for relevance assessment.</a> In Shlomo Geva, Jaap Kamps, Carol Peters, Tetsuya Sakai, Andrew Trotman &amp; Ellen Voorhees, (Eds.). <em>Proceedings of the SIGIR 2009 Workshop on the Future of information retrieval Evaluation</em>. (pp. 15-16). Amsterdam: IR Publications. Retrieved 5 May, 2013 from http://staff.science.uva.nl/%7Ekamps/ireval/papers/paper_22.pdf (Archived by WebCite&reg; at http://www.webcitation.org/6H1mV6taR)</li>
+
+<li id="asl06">Aslam, J.A., Pavlu, V. &amp; Yilmaz, E. (2006). A statistical method for system evaluation using incomplete judgments. In <em>Proceedings of the 29th Annual International ACM SIGIR Conference on Research and Development in Information Retrieval</em>, (pp. 541-548). New York, NY: ACM Press</li>
+
+<li id="azz10">Azzopardi, L., J&auml;rvelin, K., Kamps, J., &amp; Smucker, M.D. (2010). <a href="http://www.webcitation.org/6H1miejTW" Report on the SIGIR 2010 workshop simulation of interaction></a>. <em>SIGIR Forum</em>, <strong>44</strong>(2), 35-47. Retrieved 5 May, 2013 from http://www.sigir.org/forum/2010D/sigirwksp/2010d_sigirforum_azzopardi.pdf (Archived by WebCite&reg; at http://www.webcitation.org/6H1miejTW)</li>
+
+<li id="bai08">Bailey, P., Craswell, N., Soboroff, I., Thomas, P., de Vries, A.P. &amp; Yilmaz, E. (2008). <a href="http://www.webcitation.org/6GOBCHiqK">Relevance assessment: are judges exchangeable and does it matter?</a> In Sung-Hyon Myaeng, Douglas W. Oard, Fabrizio Sebastiani, Tat-Seng Chua, Mun-Kew Leong (Eds.). <em>Proceedings of the 31st Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, Singapore, July 20-24, 2008.</em>. (pp. 667-674). New York, NY: ACM Press. Retrieved 5 May, 2013 from http://es.csiro.au/pubs/bailey_sigir08.pdf (Archived by WebCite&reg; at http://www.webcitation.org/6GOBCHiqK)</li>
+
+<li id="bat89">Bates, M.J. (1989). <a href="http://www.webcitation.org/6H1mrhwxF">The design of browsing and berrypicking techniques for the online search interface</a>. <em>Online Review</em>, <strong>13</strong>(5), 407-424. Retrieved 5 May, 2013 from http://pages.gseis.ucla.edu/faculty/bates/berrypicking.html Archived by WebCite&reg; at http://www.webcitation.org/6H1mrhwxF)</li>
+
+<li id="bor09">Borlund:  (2009). User-centred evaluation of information retrieval systems. In A. G&ouml;ker  and J. Davies  (eds), <em>Information retrieval: searching in the 21st Century</em>, Chicester, UK: John Wiley &amp; Sons</li>
+
+<li id="car08">Carterette, B., Pavlu, V., Kanoulas, E., Aslam, J.A. &amp; Allan, J. (2008). <a href="http://www.webcitation.org/6H1n04iqc">Evaluation over thousands of queries</a>. In Sung-Hyon Myaeng, Douglas W. Oard, Fabrizio Sebastiani, Tat-Seng Chua, Mun-Kew Leong (Eds.). <em>Proceedings of the 31st Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, Singapore, July 20-24, 2008.</em>. (pp. 651-658). New York, NY: ACM Press. Retrieved 5 May, 2013 from http://ir.cis.udel.edu/~carteret/papers/sigir08.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1n04iqc)</li>
+
+<li id="car11">Carvalho, V. R., Lease, M. &amp; Yilmaz, E. (2011). <a href="http://www.webcitation.org/6H1n8yVN1">Crowdsourcing for search evaluation</a>. <em>SIGIR Forum</em>, <strong>44</strong>(2), 17-22. Retrieved 5 May, 2013 from http://www.sigir.org/forum/2010D/sigirwksp/2010d_sigirforum_carvalho.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1n8yVN1)</li>
+
+<li id="cle67">Cleverdon, C.W. (1967). The Cranfield tests on index language devices. <em>Aslib Proceedings</em>, <strong>19</strong>(6), 173-192</li>
+
+<li id="cle70">Cleverdon, C. W. (1970). <em>The effect of variations in relevance assessments in comparative experimental tests of index languages.</em> Cranfield, UK: Cranfield Institute of Technology. (Cranfield Library Report, No. 3) </li>
+
+<li id="cle91">Cleverdon, C.W. (1991). The significance of the Cranfield tests on index languages. In Abraham Bookstein, Yves Chiaramella, Gerard Salton, Vijay V. Raghavan (Eds.). <em>Proceedings of 14th Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, Chicago, IL, USA October 13 - 16, 1991</em>. (pp. 3-12). New York, NY: ACM Press</li>
+
+<li id="clo12">Clough, P., Sanderson, M., Tang, J., Gollins, T. &amp; Warner, A. (2012). <a href="http://www.webcitation.org/6H1nE0LNX">Examining the limits of crowdsourcing for relevance assessment</a>. <em>IEEE Internet Computing</em>, In Print. Retrieved 5 May, 2013 from http://www.seg.rmit.edu.au/mark/publications/my_papers/IEEE-IC-2012.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1nE0LNX)</li>
+
+<li id="cor98">Cormack, G.V., Palmer, C.R. &amp; Clarke, C.L.A. (1998). Efficient construction of large test collections. In <em>Proceedings of the 21st Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, August 24-28 1998, Melbourne, Australia.</em>. (pp. 282-289). New York, NY: ACM Press.</li>
+
+<li id="cro09">Croft, B., Metzler, D. &amp; Strohman, T. (2009). <em>Search engines: information retrieval in practice</em>. Boston, MA, Pearson Education</li>
+
+<li id="har11">Harman, D. (2011). <em>Information retrieval evaluation</em>. San Raphael, CA: Morgan &amp; Claypool Publishers. (Synthesis Lectures on Information Concepts, Retrieval, and  Services, Volume 3, No. 2).</li>
+
+<li id="her00">Hersh, W., Turpin, A., Price, S., Chan, B., Kramer, D., Sacherek, L. &amp; Olson, D. (2000). <a href="http://www.webcitation.org/6H1nNaYid">Do batch and user evaluations give the same results?</a> In Nicholas J. Belkin, Peter Ingwersen, Mun-Kew Leong (Eds.). <em>Proceedings of the 23rd Annual International ACM SIGIR Conference on Research and Development in Information Retrieval,  July 24-28, 2000, Athens, Greece.</em>. (pp. 17-24). New York, NY: ACM Press. Retrieved 5 May, 2013 from http://skynet.ohsu.edu/~hersh/sigir-00-batcheval.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1nNaYid)</li>
+
+<li id="ing05">Ingwersen:  &amp; J&auml;rvelin, K. (2005). <em>The turn: integration of information seeking and retrieval in context</em>, New York, NY: Springer-Verlag</li>
+
+<li id="jan09">Jansen, B.J., Booth, D.L., &amp; Spink, A. (2009). <a href="http://www.webcitation.org/6H1nU1bRD">Patterns of query reformulation during web searching</a>. <em>Journal of the American Society for Information Science and Technology</em>, <strong>60</strong>(7), 1358-1371. Retrieved 5 May, 2013 from http://faculty.ist.psu.edu/jjansen/academic/pubs/jansen_patterns_query_reformulation.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1nU1bRD)</li>
+
+<li id="jar02">J&auml;rvelin, K. &amp; Kek&auml;l&auml;inen, J. (2002). Cumulated gain-based evaluation of information retrieval techniques. <em>ACM Transactions on Information Systems</em>, <strong>20</strong>(4), 422-446</li>
+
+<li id="jar08">J&auml;rvelin, K., Price, S.L., Delcambre, L.M.L. &amp; Nielsen, M.L. (2008). Discounted cumulated gain based evaluation of multiple-query IR sessions. In <em>Proceedings of the 30th European Conference on Advances in Information Retrieval</em>. (pp. 4-15). Berlin: Springer. (Lecture Notes in Computer Science, 4956).</li>
+
+<li id="jar09">J&auml;rvelin, K. (2009). Explaining user performance in information retrieval: challenges to IR evaluation. In <em>Proceedings of the 2nd International Conference on Theory of Information Retrieval: Advances in Information Retrieval Theory</em>. (pp. 289-296). Berlin: Springer.</li>
+
+<li id="jar11">J&auml;rvelin, K. (2011). Evaluation. In  Ruthven, I. and Kelly, D. (eds.), <em>Interactive information seeking, behaviour and retrieval</em>. (pp. 113-138). London, UK: Facet Publishing.</li>
+
+<li id="kam09">Kamps, J., Geva, S., Peters, C., Sakai, T., Trotman, A. &amp; Voorhees, E. (2009). <a href="http://www.webcitation.org/6H1nmVq7g">Report on the SIGIR 2009 workshop on the future of information retrieval evaluation</a>. <em>SIGIR Forum</em>, <strong>43</strong>(2), 13-23. Retrieved 5 May, 2013 from http://www.sigir.org/forum/2009D/sigirwksp/2009d_sigirforum_kamps.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1nmVq7g)</li>
+
+<li id="kan11">Kanoulas, E., Carterette, B., Clough, P.  &amp; Sanderson, M. (2011). <a href="http://www.webcitation.org/6H1nvBDqm">Evaluating multi-query sessions</a>. In Wei-Ying Ma, Jian-Yun Nie, Ricardo A. Baeza-Yates, Tat-Seng Chua, W. Bruce Croft (Eds.). <em>Proceedings of the 34th International ACM SIGIR Conference on Research and Development in Information Retrieval</em>, Beijing, China July 24 - 28, 2011. (pp. 1053-1062). New York, NY: ACM Press. Retrieved 5 May, 2013 from http://ir.cis.udel.edu/~carteret/papers/sigir11b.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1nvBDqm)</li>
+
+<li id="kan12">Kanoulas, E., Carterette, B., Hall, M., Clough:  &amp; Sanderson, M. (2012). Session Track 2012 Overview. In <em>Proceedings of the 21st Text REtrieval Conference</em>. Washington, DC: National Institute of Standards and Technology</li>
+
+<li id="kaz11">Kazai, G. (2011). In search of quality in crowdsourcing for search engine evaluation. In <em>Proceedings of the 33rd European Conference on Advances in Information Retrieval</em>. (pp. 165-176). Berlin: Springer,</li>
+
+<li id="kel09">Kelly D. (2009). <a href="http://www.webcitation.org/6H1o2TKSU">Methods for evaluating interactive information retrieval systems with users</a>. <em>Foundations and Trends in Information Retrieval</em>, <strong>3</strong>(1-2), 1-224. Retrieved 5 May, 2013 from http://www.ils.unc.edu/~dianek/FnTIR-Press-Kelly.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1o2TKSU)</li>
+
+<li id="kes09">Keskustalo, H., J&auml;rvelin, K., Pirkola, A., Sharma, T., and Lykke, M. (2009). <a href="http://www.webcitation.org/6H1o7fRB8">Test Collection-Based information retrieval Evaluation Needs Extension toward Sessions - A Case of Extremely Short Queries</a>. In <em>Proceedings of the 5th Asia Information Retrieval Symposium on Information Retrieval Technology</em>,  (pp. 63-74).  Berlin:Springer. Retrieved 5 May, 2013 from http://www.sis.uta.fi/infim/julkaisut/fire/2009/HK-SessEval-AIRS09-prep.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1o7fRB8)</li>
+
+<li id="kie79">Kiewitt, E.L. (1979). <em>Evaluating information retrieval systems: the PROBE program</em>. Westport, CT: Greenwood Press</li>
+
+<li id="kin08">Kinney, K. A., Huffman, S.B. &amp; Zhai, J. (2008). How evaluator domain expertise affects search result relevance judgments. In <em>Proceedings of the 17th ACM Conference on Information and Knowledge Management</em>. (pp. 591-598). New York, NY: ACM Press.</li>
+
+<li id="mag10">Magdy, W., &amp; Jones, G. (2010). PRES: a score metric for evaluating recall-oriented information retrieval applications. In <em>Proceedings of the 33rd International ACM SIGIR Conference on Research and Ddevelopment in Information Retrieval, Geneva, Switzerland July 19 - 23, 2010</em>. (pp. 611-618).  New York, NY: ACM Press.</li>
+
+<li id="man08">Manning, C.D., Raghavan:  &amp; Sch&uuml;tze, H. (2008). <a href="http://www.webcitation.org/6H1okAxEy">Introduction to information retrieval</a>. Cambridge: Cambridge University Press. Retrieved 5 May, 2013 from http://nlp.stanford.edu/IR-book/ Archived by WebCite&reg; at http://www.webcitation.org/6H1okAxEy)</li>
+
+<li id="miz07">Mizzaro, S. &amp; Robertson, S. (2007). <a hef="http://www.webcitation.org/6H1oEKke1">HITS hits TREC: exploring IR evaluation results with network analysis</a>. In Wessel Kraaij, Arjen P. de Vries, Charles L. A. Clarke, Norbert Fuhr, Noriko Kando (Eds.). <em>Proceedings of the 30th Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, Amsterdam, The Netherlands, July 23-27, 2007</em>. (pp. 479-486). New York, NY: ACM Press. Retrieved 5 May, 2013 from http://www.soi.city.ac.uk/~ser/papers/MizzaroRobertsonSIGIR07.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1oEKke1)</li>
+
+<li id="rob08">Robertson, S. (2008). On the history of evaluation in IR. <em>Journal of Information Science</em>, <strong>34</strong>(4), 439-456</li>
+
+<li id="rob92">Robertson, S.E. &amp; Hancock-Beaulieu, M. (1992). On the evaluation of information retrieval systems. <em>Information Processing and Management</em>, <strong>28</strong>(4), 457-466</li>
+
+<li id="san10a">Sanderson, M. (2010). <a href="http://www.webcitation.org/6H1oISFSP">Test collection based evaluation of information retrieval systems</a>. <em>Foundations and Trends in Information Retrieval</em>, <strong>4</strong>(4), 247-375. Retrieved 5 May, 2013 from http://www.seg.rmit.edu.au/mark/publications/my_papers/FnTIR.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1oISFSP)</li>
+
+<li id="san09">Sanderson, M. &amp; Braschler, M. (2009). <a href="http://www.webcitation.org/6H1oLiTdt">Best practices for test collection creation and information retrieval system evaluation</a>. Pisa, Italy: TrebleCLEF.  (TrebleCLEF technical report). Retrieved 5 May, 2013 from http://www.seg.rmit.edu.au/mark/publications/my_papers/T-CLEF-test-collection-report.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1oLiTdt)</li>
+
+<li id="san10b">Sanderson, M., Paramita, M., Clough, P.  &amp; Kanoulas, E. (2010). <a href="http://www.webcitation.org/6H1oSVAAf">Do user preferences and evaluation measures line up?</a> In Fabio Crestani, St&eacute;phane Marchand-Maillet, Hsin-Hsi Chen, Efthimis N. Efthimiadis, Jacques Savoy (Eds.). <em>Proceedings of the 33rd Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, Geneva, Switzerland, July 19-23, 2010.</em>. (pp. 555-562). New York, NY: ACM Press. Retrieved 5 May, 2013 from http://ir.shef.ac.uk/cloughie/papers/p555-sanderson.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1oSVAAf)</li>
+
+<li id="sar95">Saracevic, T. (1995). <a href="http://www.webcitation.org/6H1oVU1EI">Evaluation of evaluation in information retrieval</a>. In Edward A. Fox, Peter Ingwersen, Raya Fidel (Eds.). <em>Proceedings of 18th Annual International ACM  SIGIR Conference on Research and Development in Information Retrieval,  Seattle, Washington, USA, July 9-13, 1995</em>. (pp. 138-146). New York, NY: ACM Press. Retrieved 5 May, 2013 from http://comminfo.rutgers.edu/~muresan/IR/Docs/Articles/sigirSaracevic1995.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1oVU1EI)</li>
+
+<li id="sch94">Schamber, L. (1994). Relevance and information behavior. <em>Annual Review of Information Science and Technology</em>, <strong>29</strong>, 3-48</li>
+
+<li id="smu12">Smucker, M.D. &amp; Clarke, C.L.A. (2012). <a href="http://www.webcitation.org/6H1oa1knA">Time-based calibration of effectiveness measures</a>. In William R. Hersh, Jamie Callan, Yoelle Maarek, Mark Sanderson (Eds.). <em>Proceedings of the 35th International ACM SIGIR Conference on Research and Development in Information Retrieval, Portland, OR, USA.</em>. (pp. 95-104). New York, NY: ACM Press. Retrieved 5 May, 2013 from http://www.mansci.uwaterloo.ca/~msmucker/publications/smucker-clarke-sigir2012.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1oa1knA)</li>
+
+<li id="tag96">Tague-Sutcliffe, J.M. (1996). <a href="http://www.webcitation.org/6H1oe6O3B">Some perspectives on the evaluation of information retrieval systems</a>. <em>Journal of the American Society for Information Science</em>, <strong>47</strong>(1), 1-3. Retrieved 5 May, 2013 from http://comminfo.rutgers.edu/~muresan/IR/Docs/Articles/jasisTagueSutcliffe1996.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1oe6O3B)</li>
+
+<li id="tau56">Taube, M. (1956). Cost as the measure of efficiency of storage and retrieval systems. In Mortimer Taube, <em>Studies in Coordinate Indexing</em> Volume 3. (pp. 18-33). Washington, DC: Documentation Inc.</li>
+
+<li id="tur01">Turpin, A. &amp; Hersh, W. (2001). Why batch and user evaluations do not give the same results. In W. Bruce Croft, David J. Harper, Donald H. Kraft, Justin Zobel (Eds.). <em>Proceedings of the 24th Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, September 9-13, 2001, New Orleans, Louisiana, USA</em>. (pp. 225-231).  New York, NY: ACM Press.</li>
+
+<li id="van79">van Rijsbergen, C.J. (1979). <a href="http://www.webcitation.org/6H1ool2uv">Information retrieval</a>. (2nd ed.) London: Butterworths. Retrieved 5 May, 2013 from http://www.dcs.gla.ac.uk/Keith/Preface.html Archived by WebCite&reg; at http://www.webcitation.org/6H1ool2uv)</li>
+
+<li id="vor98">Voorhees, E. M. (1998). <a href="http://www.webcitation.org/6H1otD9Jl">Variations in relevance judgments and the measurement of retrieval effectiveness</a>. In Hans-Peter Frei, Donna Harman, Peter Schäuble, Ross Wilkinson (Eds.). <em>Proceedings of the 21st Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, August 18-22, 1996, Zurich, Switzerland.</em> (pp. 315-323). New York, NY: ACM Press. Retrieved 5 May, 2013 from http://nlp.cs.swarthmore.edu/~richardw/papers/vorhees1999-variations.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1otD9Jl)</li>
+
+<li id="vor00">Voorhees, E.M. (2000). Variations in relevance judgments and the measurement of retrieval effectiveness. <em>Information Processing &amp; Management</em>, <strong>36</strong>(5), 697-716</li>
+
+<li id="vor02">Voorhees, E.M. (2002). The philosophy of information retrieval evaluation. In <em>Evaluation of cross-language information retrieval systems: 2nd workshop of the Cross-Language Evaluation Forum (CLEF 2001)</em>. (pp. 355-370). Berlin: Springer. (Lecture Notes in Computer Science 2406).</li>
+
+<li id="vor05">Voorhees, E.M. &amp; Harman, D.K. (2005). <em>TREC: experiments and evaluation in information retrieval</em>. Cambridge, MA: MIT Press.</li>
+
+<li id="yil10">Yilmaz, E., Shokouhi, M., Craswell, N. &amp; Robertson, S. (2010). Expected browsing utility for web search evaluation. In <em>Proceedings of the 19th ACM International Conference on Information and Knowledge Management</em>. (pp. 1561-1564). New York, NY: ACM Press.</li>
+
+<li id="zha03">Zhai, C., Cohen, W.W. &amp; Lafferty, J. (2003). Beyond independent relevance: methods and evaluation metrics for subtopic retrieval. In <em>Proceedings of the 26th Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, July 28 - August 1, 2003, Toronto, Canada.</em>. (pp. 10-17). New York, NY: ACM Press.</li>
+
+<li id="zha10">Zhang, J. &amp; Kamps, J. (2010). A search log-based approach to evaluation. In <em>Proceedings of the 14th European Conference on Research and Advanced Technology for Digital Libraries</em>. (pp. 248-260). Berlin: Springer.  (Lecture Notes in Computer Science, 6273)</li> 
+
+<li id="zob98">Zobel, J. (1998). <a href="http://www.webcitation.org/6H1p6aqJh">How reliable are the results of large-scale information retrieval experiments?</a> In <em>Proceedings of the 21st Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, August 24-28 1998, Melbourne, Australia.</em> (pp. 307-314). New York, NY: ACM Press. Retrieved 5 May, 2013 from http://goanna.cs.rmit.edu.au/~jz/fulltext/sigir98.pdf Archived by WebCite&reg; at http://www.webcitation.org/6H1p6aqJh)</li>
+</ul>    </fieldset>  </form> 
+ 
+ <form>  
+ <fieldset>  
+ <legend style="color: white; background-color: #5E96FD; font-size: medium; padding: .1ex .5ex; border-right: 1px solid navy; border-bottom: 1px solid navy; font-weight: bold;">
+ How to cite this paper
+ </legend>  
+ <div><br>Clough, P. &amp; Sanderson, M.   (2013). Evaluating the performance of information retrieval systems using test collections <em>Information Research</em>, <strong>18</strong>(2) paper 582. [Available at  http://InformationR.net/ir/18-2/paper582.html]</div>  
+ </fieldset>  
+ </form> 
+</section>
+</article>
+<br>
+<section>
+
+ <table class="footer" style="border-spacing:10;">  
+ <tr>  
+ <td colspan="3" style="text-align:center; background-color: #5E96FD; color: white; font-family: verdana; font-size: small; font-weight: bold;">
+ Find other papers on this subject</td></tr>  
+ <tr><td style="text-align:center; vertical-align:top;"> 
+ <form method="get" action="http://scholar.google.com/scholar" target="_blank">  
+ <table class="footer">  
+  <tr>  
+  <td style="white-space: nowrap; vertical-align:top; text-align:center; height:32;">
+ <input type="hidden" name="q" value="&quot;information retrieval&quot;  &quot;test collections&quot; evaluation" /><br>  
+  <input type="submit" name="sa" value="Scholar Search"  style="font-size: small; font-family: Verdana; font-weight: bold;" />  
+ <input type="hidden" name="num" value="100" />  </td>  </tr>  
+ </table> 
+  </form>  
+ </td>  
+ <td style="vertical-align:top; text-align:center;">  <!-- Search Google --> 
+ 
+ <form method="get" action="http://www.google.com/custom" target="_blank">
+ <table class="footer">
+ <tr>  
+ <td style="white-space: nowrap; vertical-align:top; text-align:center; height:32;">
+ <input type="hidden" name="q" value="&quot;information retrieval&quot;  &quot;test collections&quot; evaluation" /><br>  
+ <input type="submit" name="sa" value="Google Search" style="font-family: Verdana; font-weight: bold; font-size: small;" />
+ <input type="hidden" name="client" value="pub-5081678983212084" />
+ <input type="hidden" name="forid" value="1" /> 
+  <input type="hidden" name="ie" value="ISO-8859-1" />  
+  <input type="hidden" name="oe" value="ISO-8859-1" />  
+  <input type="hidden" name="cof" value="GALT:#0066CC;GL:1;DIV:#999999;VLC:336633;AH:center;BGC:FFFFFF;LGC:FF9900;LC:0066CC;LC:0066CC;T:000000;GFNT:666666;GIMP:666666;FORID:1;" />  
+  <input type="hidden" name="hl" value="en" />
+  </td>  
+  </tr>  
+  </table>  
+  </form>
+ </td>  
+ <td style="vertical-align:top; text-align:center;">   
+ <form method="get" action="http://www.bing.com" target="_blank">  
+ <table class="footer">
+ <tr> 
+ <td style="white-space: nowrap; vertical-align:top; text-align:center; height:32;">
+ <input type="hidden" name="q" value="&quot;information retrieval&quot;  &quot;test collections&quot; evaluation" /> <br>  
+ <input type="submit" name="sa" value="Bing"  style="font-size: small; font-family: Verdana; font-weight: bold;" />  
+ <input type="hidden" name="num" value="100" />  
+ </td>  
+ </tr>  
+ </table>  
+ </form> 
+ </td> 
+ </tr>  
+ </table> 
+ 
+ <div style="text-align:center;">Check for citations, <a href="http://scholar.google.co.uk/cholar?hl=en&amp;q=http://informationr.net/ir/18-2/paper582.html&amp;btnG=Search&amp;as_sdt=2000">using Google Scholar</a></div> <br>  
+    <!-- AddThis Button BEGIN -->
+<div style="text-align:center;" class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_button_tweet"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-5046158704890f2e"></script>
+<!-- AddThis Button END -->
+ </div>  
+ <hr /> 
+ 
+ <table class="footer" style="padding:10;">  
+ <tr>
+ <td style="text-align:center; vertical-align:top;">
+ <div>  <a href="http://www.digits.net" target="_blank"><img src="http://counter.digits.net/?counter={34f8cae3-da35-1984-51b4-b0a3d4d4b15f}&amp;template=simple" alt="Hit Counter by Digits"  /></a></div>
+ </td> 
+<td class="footer" style="text-align:center; vertical-align:middle;">
+  <div>  &copy; the authors, 2013. <br>Last updated: 15 June, 2013</div></td> 
+ 
+ <td style="text-align:center; vertical-align:middle;">&nbsp; 
+ 
+  </td></tr>  </table>  
+ </section>
+ <footer>
+
+<hr /> 
+ <table class="footer"><tr><td>
+<div class="button"> 
+ <ul style="text-align: center;">
+	<li><a href="infres182.html">Contents</a> | </li>
+	<li><a href="../iraindex.html">Author index</a> | </li>
+	<li><a href="../irsindex.html">Subject index</a> | </li>
+	<li><a href="../search.html">Search</a> | </li>
+	<li><a href="../index.html">Home</a></li>
+</ul> 
+</div></td></tr></table>
+ <hr />
+</footer>
+ <script src="http://www.google-analytics.com/urchin.js"
+ type="text/javascript">  </script>  <script type="text/javascript">  _uacct =
+ "UA-672528-1"; urchinTracker(); 
+ </script>  
+ </body>  
+ </html> 

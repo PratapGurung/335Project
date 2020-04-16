@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<!-- 
+	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-2017 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at http://typo3.org/
+-->
+
+
+<link rel="shortcut icon" href="/fileadmin/templates/img/favicon.ico" type="image/x-icon; charset=binary">
+<link rel="icon" href="/fileadmin/templates/img/favicon.ico" type="image/x-icon; charset=binary">
+
+<meta name="generator" content="TYPO3 CMS">
+<meta name="language" content="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link rel="stylesheet" type="text/css" href="/typo3temp/compressor/merged-e1d64664d8f4c9348d31ad16e41ab6a0-1f10ba28d4a6b451c60f383f78db7907.css" media="all">
+<link rel="stylesheet" type="text/css" href="//fast.fonts.net/t/1.css?apiType=css&amp;projectid=a9cc1ee9-6f42-40ed-ae26-9116c05df660" media="all">
+<link rel="stylesheet" type="text/css" href="/typo3temp/compressor/print-79e94b540c328b8f5a867ef5af8c013f.css" media="print">
+
+
+
+
+<script src="/typo3temp/compressor/merged-c3b68323963389bec4ea3dbc2de8703f-c050655fe2efe6a808f35de373f67f07.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+/*<![CDATA[*/
+/*_scriptCode*/
+
+			// decrypt helper function
+		function decryptCharcode(n,start,end,offset) {
+			n = n + offset;
+			if (offset > 0 && n > end) {
+				n = start + (n - end - 1);
+			} else if (offset < 0 && n < start) {
+				n = end - (start - n - 1);
+			}
+			return String.fromCharCode(n);
+		}
+			// decrypt string
+		function decryptString(enc,offset) {
+			var dec = "";
+			var len = enc.length;
+			for(var i=0; i < len; i++) {
+				var n = enc.charCodeAt(i);
+				if (n >= 0x2B && n <= 0x3A) {
+					dec += decryptCharcode(n,0x2B,0x3A,offset);	// 0-9 . , - + / :
+				} else if (n >= 0x40 && n <= 0x5A) {
+					dec += decryptCharcode(n,0x40,0x5A,offset);	// A-Z @
+				} else if (n >= 0x61 && n <= 0x7A) {
+					dec += decryptCharcode(n,0x61,0x7A,offset);	// a-z
+				} else {
+					dec += enc.charAt(i);
+				}
+			}
+			return dec;
+		}
+			// decrypt spam-protected emails
+		function linkTo_UnCryptMailto(s) {
+			location.href = decryptString(s,3);
+		}
+		
+
+/*]]>*/
+</script>
+
+
+
+<title>HNF - The Invention of the Computer</title>
+
+
+
+</head>
+<body id="p155">
+
+<div id="pageWrap">
+<!-- header -->
+<header>
+	<div id="upperHeader">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-5 hidden-sm hidden-xs">
+					
+				</div>
+				<div class="col-md-2 col-xs-6">
+					<nav id="menuLang"><span><a href="/start.html" target="_self">de</a></span>&nbsp;&#124;&nbsp;<span class="active"><a href="/en/home.html" target="_self">en</a></span>&nbsp;&#124;&nbsp;<span><a href="/fr/home.html" target="_self">fr</a></span>&nbsp;&#124;&nbsp;<span><a href="/nl/home.html" target="_self">nl</a></span></nav>
+				</div>
+				<div class="col-lg-4 col-md-5 hidden-sm hidden-xs">
+					<nav id="menuSocial"><a href="/en/visiting/newsletter.html" target="_self">Newsletter</a>&nbsp;&#124;&nbsp;<a href="/en/social-navigation/facebook.html" target="_blank">Facebook</a>&nbsp;&#124;&nbsp;<a href="/en/social-navigation/twitter.html" target="_blank">Twitter</a>&nbsp;&#124;&nbsp;<a href="/en/social-navigation/instagram.html" target="_blank">Instagram</a>&nbsp;&#124;&nbsp;<a href="/en/social-navigation/youtube.html" target="_blank">YouTube</a>&nbsp;&#124;&nbsp;<a href="/en/social-navigation/blog.html" target="_self">Blog</a></nav>
+				</div>
+				<div class="moblieSearchform col-xs-6 visible-sm visible-xs">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="lowerHeader">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9 col-sm-7 col-xs-4">
+					<ul id="menuMain" class="hidden-sm hidden-xs"><li class="dropdown specialMenu-visit"><a href="/en/visiting.html" target="_self">Visiting</a><div class="submenu container"><div class="row"><div class="col-md-3"><div class="categoryHeader">General information</div><ul class="categoryItems"><li><a href="/en/visiting.html" target="_self">Opening hours, prices, directions</a></li><li><a href="/en/visiting/general-information/guided-tours.html" target="_self">Guided tours</a></li><li><a href="/en/visiting/general-information/hnf-app-the-mobile-museum-experience.html" target="_self">Multimedia guide</a></li><li><a href="/en/visiting/general-information/accessibility-in-the-museum.html" target="_self">Accessibility in the museum</a></li></ul></div><div class="col-md-3"><div class="categoryHeader">Shop + Imbiss</div><ul class="categoryItems"><li><a href="/en/visiting/shop-imbiss/catering-facilities.html" target="_self">Catering facilities</a></li><li><a href="/en/visiting/shop-imbiss/museum-shop.html" target="_self">Museum Shop</a></li></ul></div><div class="col-md-3"><div class="contact-header">Contact</div><p>Please address any general queries about guided tours, events and workshops to:<br><br>Fon +49 (0) 5251 306-600</p><a href="javascript:linkTo_UnCryptMailto('jxfiql7pbosfzbXekc+ab');" class="button">E-Mail</a></div></div></div></li><li class="dropdown active specialMenu-permanentExhibitions"><a href="/en/permanent-exhibition.html" target="_self">Permanent exhibition</a><div class="submenu container"><div class="row"><div class="col-md-5"><div class="categoryHeader">Exhibition areas</div><ul class="categoryItems"><li><a href="/en/permanent-exhibition/exhibition-areas/numbers-symbols-and-signals.html" target="_self">Numbers, symbols and signals</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/the-mechanization-of-information-technology.html" target="_self">The mechanization of information technology</a></li><li class="active"><a href="/en/permanent-exhibition/exhibition-areas/the-invention-of-the-computer.html" target="_self">The Invention of the Computer</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/hall-of-fame.html" target="_self">Hall of Fame</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/office-work-through-the-ages.html" target="_self">Office work through the ages</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/wall-of-fame-pioneers-of-the-digital-world.html" target="_self">Wall of Fame – pioneers of the digital world</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/computers-in-science-and-technology-1950-to-1970.html" target="_self">Computers in science and technology – 1950 to 1970</a></li></ul></div><div class="col-md-5"><div><div class="categoryHeader">&nbsp;</div><ul class="categoryItems"><li><a href="/en/permanent-exhibition/exhibition-areas/computers-in-business-and-professions-1970-to-1980.html" target="_self">Computers in business and professions – 1970 to 1980</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/computers-for-everyone-1980-to-2000.html" target="_self">Computers for everyone – 1980 to 2000</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/everything-goes-digital.html" target="_self">Everything goes digital</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/nixdorf-pioneer-of-decentralized-data-processing.html" target="_self">Nixdorf – Pioneer of decentralized data processing</a></li></ul></div></div><div class="col-md-2 btn-menu"><div class="btn-menu-item"><a href="/en/permanent-exhibition/video-about-the-museum.html" target="_self"><span class="icon-playbutton"></span>Video about the museum</a></div><div class="btn-menu-item"><a href="/en/permanent-exhibition/virtual-tour.html" target="_self"><span class="icon-360"></span>Virtual Tour</a></div><div class="btn-menu-item"><a href="/en/permanent-exhibition/highlights-of-the-museum.html" target="_self"><span class="icon-star"></span>Highlights</a></div><div class="btn-menu-item"><a href="/en/permanent-exhibition/game-islands.html" target="_self"><span class="icon-joystick"></span>Game islands</a></div></div></div></div></li><li class="dropdown"><a href="/en/exhibitions.html" target="_self">Exhibitions</a><div class="submenu-single"><ul><li><a href="/en/exhibitions/hello-universe-the-experience-of-space-travel.html" target="_self">Hello universe! The experience of space travel</a></li><li><a href="/en/exhibitions/one-small-step-the-moon-landing-in-50-photographs.html" target="_self">One small step – The moon landing in 50 photographs</a></li><li><a href="/en/exhibitions/inside-beethoven-the-walk-in-ensemble.html" target="_self">Inside Beethoven! The walk-in ensemble</a></li><li><a href="/en/exhibitions/review.html" target="_self">Review</a></li></ul></div></li><li class="dropdown"><a href="/en/the-hnf.html" target="_self">The HNF</a><div class="submenu-single"><ul><li><a href="/en/the-hnf/contact.html" target="_self">Contact</a></li><li><a href="/en/the-hnf/our-mission.html" target="_self">Our mission</a></li><li><a href="/en/the-hnf/historical-background.html" target="_self">Historical background</a></li><li><a href="/en/the-hnf/heinz-nixdorf.html" target="_self">Heinz Nixdorf</a></li><li><a href="/en/the-hnf/facts-figures.html" target="_self">Facts &amp; Figures</a></li></ul></div></li></ul><form action="/en/service/search.html?no_cache=1" method="post" id="searchform" class="searchform hidden-sm hidden-xs">
+	<input type="hidden" name="tx_indexedsearch[_sections]" value="0" />
+	<input type="hidden" name="tx_indexedsearch[pointer]" value="0" /><input type="text" name="tx_indexedsearch[sword]" placeholder="Search" /><button type="submit" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-1 -1 20 20">
+			<title>Search</title>
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 7.61c0-3.521 2.9-6.38 6.47-6.38s6.469 2.859 6.469 6.38c0 3.52-2.899 6.37-6.469 6.37-3.57 0-6.47-2.85-6.47-6.37zm16.42 7.51l-3.4-3.351-.049-.049a7.522 7.522 0 0 0 1.219-4.11C15.439 3.41 11.99 0 7.72 0 3.46 0 0 3.41 0 7.61s3.46 7.61 7.72 7.61c1.4 0 2.719-.371 3.85-1.021l.109.12 3.4 3.35c.439.439 1.17.439 1.609 0l.98-.96a1.121 1.121 0 0 0 .002-1.589z" />
+		</svg>
+	</button>
+</form>
+					<div class="visible-sm visible-xs" id="menuBtn"><button type="button">Menu</button></div>
+				</div>
+				<div class="col-md-3 col-sm-5 col-xs-8">
+					<div id="logo"><a href="/en/home.html" title="HNF" target="_self"><img src="/fileadmin/templates/system_images/Heinz-Nixdorf-MuseumsForum_logo.svg" alt="HNF"></a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- header -->
+<div class="container">
+	<div id="contentArea" class="row">
+		<div class="col-sm-12 col-xs-12">
+			<div id="breadcrumb" class="hidden-xs hidden-sm"><a href="/en/permanent-exhibition.html" target="_self">Permanent exhibition</a>&nbsp;>&nbsp;<a href="/en/permanent-exhibition/exhibition-areas/numbers-symbols-and-signals.html" target="_self">Exhibition areas</a>&nbsp;>&nbsp;The Invention of the Computer</div>
+		</div>
+		<div id="headimage" class="col-lg-9 col-md-10 col-xs-12">
+			<!--TYPO3SEARCH_begin--><div id="c1314" class="csc-default layout-0">
+<div class="fce" data-colcount="1"><a id="c1795"></a><div id="c1315" class="csc-default layout-0"><div class="csc-header csc-header-n1"><h1 class="csc-firstHeader">The Invention of the Computer</h1></div><div class="csc-textpic csc-textpic-left csc-textpic-above"><div class="csc-textpic-imagewrap" data-csc-images="1" data-csc-cols="2"><figure class="csc-textpic-image csc-textpic-last"><a href="/fileadmin/_processed_/csm_HNF-Jan-Braun-Ausstellung-940-05_d89c244dc9.jpg" target="_blank" title="ENIAC - A life-size model of the first vacuum-tube computer" class="lightbox" rel="lightbox[1315]"><img src="/fileadmin/_migrated/pics/HNF-Jan-Braun-Ausstellung-940-05.jpg" width="940" height="445" class="img-responsive" alt="ENIAC - A life-size model of the first vacuum-tube computer"></a><figcaption class="csc-textpic-caption">ENIAC - A life-size model of the first vacuum-tube computer</figcaption></figure></div></div></div></div>
+</div><!--TYPO3SEARCH_end-->
+		</div>
+		<div class="col-md-6 col-sm-12 col-xs-12">
+			<div id="c1316" class="csc-default layout-0">
+<div class="fce" data-colcount="1"><a id="c1796"></a><div id="c1317" class="csc-default layout-0"><p>There is not just one inventor of the computer, as the ideas of many scientists and engineers led to its invention. These ideas were developed in the 1930s and 1940s, mostly independently of each other, in Germany, Great Britain and the USA, and were turned into working machines.</p>
+<h4>Konrad Zuse and the Z1</h4><div class="fliesstext"></div><div class="fliesstext"><p>In Germany, Konrad Zuse hit upon the idea of building a program-controlled calculating machine when he had to deal with extensive calculations in statics. In 1935, he began to design a program-controlled calculating machine in his parents' home in Berlin. It was based on the binary system and used punched tape for the program input. The Z1, which was built between 1936 and 1938, was a purely mechanical machine which was not fully operational. In 1940, Zuse began to build a successor to the Z1 based on relay technology. In May 1941, he finished the Z3 - worldwide the first freely programmable program-controlled automatic calculator that was operational.</p></div><div class="fliesstext"><h4>Mark I - an early British digital computer</h4>
+<p>Several similar developments were in progress in the USA at the same time. In 1939, IBM started to build a program-controlled relay calculator on the basis of a concept that Howard H. Aiken had put forward in 1937. This machine - the IBM Automatic Sequence Controlled Calculator (Mark I) - was used on production work from 1944.</p>
+<h4> The ENIAC - large scale but little memory</h4></div><div class="fliesstext"></div><div class="fliesstext"><p>However, it was not Aiken's and Stibitz's relay calculators that were decisive for the development of the universal computer but the ENIAC, which was developed at the Moore School of Electrical Engineering at the University of Pennsylvania. Extensive ballistic computations were carried out there for the U.S. Army during World War II with the aid of a copy of the analog Differential Analyzer, which had been designed by Vannevar Bush, and more than a hundred women working on mechanical desk calculators. Nevertheless, capacity was barely sufficient to compute the artillery firing tables that were needed. In August 1942, John W. Mauchly, a physicist, presented a memo at the Moore School for a vacuumtube computer that was conceived as a digital version of the Differential Analyzer.</p></div><div class="fliesstext"></div><div class="fliesstext"><p>Mauchly had adopted John Vincent Atanasoff's idea for an electronic computer. Atanasoff had developed the ABC special-purpose computer at the Iowa State College (now Iowa State University) to solve systems of linear equations. Mauchly had viewed the ABC in June 1940. John Presper Eckert, a young electronic engineer at the Moore School, was responsible for the brilliant engineering of the new ENIAC. The work began on 31 May 1943 with funding from the U.S. Army. In February 1946, successful program runs were demonstrated.</p></div><div class="fliesstext"></div><div class="fliesstext"><p>At almost the same time, the Model I to Model VI relay calculators were built at Bell Laboratories in New York following a suggestion by George R. Stibitz.</p>
+<h4>Von Neumann planned a successor to the ENIAC</h4></div><div class="fliesstext"><p>John von Neumann, an influential mathematician, turned his attention to the ENIAC in the summer of 1944. While this computer was being built, von Neumann and the ENIAC team drew up a plan for a successor to the ENIAC. The biggest problem with the ENIAC was that its memory was too small. Eckert suggested a mercury delay-line memory which would increase memory capacity by a factor of 100 compared with the electronic memory used in the ENIAC.</p></div><div class="fliesstext"></div><div class="fliesstext"><p>An equally big problem was programming the ENIAC, which could take hours or even days.</p></div><div class="fliesstext"><p>In meetings with von Neumann, the idea of a stored-program, universal machine evolved. Memory was to be used to store the program in addition to data. This would enable the machine to execute conditional branches and change the flow of the program. The concept of a computer in the modern sense of the word was born.</p>
+<h4>EDVAC - the &quot;bible&quot; for computer pioneers in the 1940s and 1950s</h4></div><div class="fliesstext"></div><div class="fliesstext"><p>In spring 1944, von Neumann wrote his &quot;First Draft of a Report on the EDVAC&quot; (Electronic Discrete Variable Computer) which described the stored-program, universal computer. The logical structure that was presented in this draft report is now referred to as the von Neumann architecture. This EDVAC report was originally intended for internal use only but it became the &quot;bible&quot; for computer pioneers throughout the world in the 1940s and 1950s.</p>
+<h4>EDSAC - the first functional von Neumann computer</h4></div><div class="fliesstext"></div><div class="fliesstext"><p>The first two computers featuring the von Neumann architecture were not built in America but in Great Britain. On 21 June 1948, Frederic C. Williams of the University of Manchester managed to run the prototype of the Manchester Mark I, and thus proved it was possible to build a stored-program, universal computer. The first really functional von Neumann computer was built by Maurice Wilkes at Cambridge University. This machine called EDSAC first ran a program on 6 May 1949 computing a table of square numbers.</p></div></div></div>
+</div>
+		</div>
+		<div class="col-md-5 col-md-offset-1 col-xs-12">
+			<nav id="subNav"><div class="subNavHeader"><a href="/en/permanent-exhibition/exhibition-areas/the-invention-of-the-computer.html" target="_self">The Invention of the Computer</a></div><ul class="subNavItems"><li><a href="/en/permanent-exhibition/exhibition-areas/the-invention-of-the-computer/the-first-computers-ideas-concepts-and-machines.html" target="_self">The first computers – Ideas, concepts and machines</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/the-invention-of-the-computer/eniac-life-size-model-of-the-first-vacuum-tube-computer.html" target="_self">ENIAC – Life-size model of the first vacuum-tube computer</a></li></ul></nav>
+			<!--TYPO3SEARCH_begin--><!--TYPO3SEARCH_end-->
+		</div>
+	</div>
+	<!-- footer -->
+	<footer class="row"><div class="col-md-3 col-sm-6"><h3>Visiting</h3><ul><li><a href="/en/visiting.html" target="_self">Opening times and admission charges</a></li><li><a href="/en/visiting/general-information/guided-tours.html" target="_self">Guided tours</a></li><li>Multimedia-Guide</li><li><a href="/en/visiting/shop-imbiss/museum-shop.html" target="_self">Museum Shop</a></li><li><a href="/en/visiting/shop-imbiss/catering-facilities.html" target="_self">Bistro HOTSPOT</a></li></ul></div><div class="col-xs-12 spacer visible-xs"></div><div class="col-md-3 col-sm-6"><h3>Contact</h3>				<p>Heinz Nixdorf MuseumsForum<br>
+				Fürstenallee 7<br>
+				D-33102 Paderborn</p>
+				<table>
+					<tr>
+						<td>Fon</td>
+						<td>+49 (0) 5251 306-600</td>
+					</tr>
+					<tr>
+						<td>E-Mail</td>
+						<td><a href="javascript:linkTo_UnCryptMailto('jxfiql7pbosfzbXekc+ab');">service(at)hnf.de</a>						</td>
+					</tr>
+				</table></div><div class="col-sm-12 spacer visible-sm visible-xs"></div><div class="col-md-3 col-sm-6"><h3>Opening times</h3><div class="upperBlock"><p>				<table>
+					<tr>
+						<td>Tu – Fr</td>
+						<td>09:00 a.m. – 6:00 p.m.</td>
+					</tr>
+					<tr>
+						<td>Sa – Su</td>
+						<td>10:00 a.m. – 6:00 p.m.</td>
+					</tr>
+					<tr>
+						<td>Mo</td>
+						<td>closed</td>
+					</tr>
+				</table></p></div><a href="/en/visiting.html" target="_self" class="button">Travel information</a><a href="/en/visiting.html#c1270" target="_self" class="button">Admission charges</a></div><div class="col-xs-12 spacer visible-xs"></div><div class="col-md-3 col-sm-6"><h3>Social Media</h3><div class="upperBlock socialIcons">				<a href="https://www.facebook.com/heinznixdorfmuseumsforum" target="_blank">
+					<img alt="facebook" src="/fileadmin/templates/system_images/logo_rund_facebook.svg">
+				</a>
+				<a href="https://twitter.com/hnfpb" target="_blank">
+					<img alt="Twitter" src="/fileadmin/templates/system_images/logo_rund_twitter.svg" style="margin-left: 5px;">
+				</a>
+				<a href="https://www.instagram.com/hnfpb/" target="_blank">
+					<img alt="Twitter" src="/fileadmin/templates/system_images/logo_rund_instagram.svg" style="margin-left: 5px;">
+				</a>
+				<a href="https://www.youtube.com/user/HeinzNixdorfMuseum" target="_blank">
+					<img alt="YouTube" src="/fileadmin/templates/system_images/logo_rund_youtube.svg" style="margin-left: 5px;">
+				</a></div><a href="/en/visiting/newsletter.html" target="_self" class="button">Newsletter</a><a href="http://blog.hnf.de" target="_blank" class="button">HNF-Blog</a></div><div class="col-sm-12 spacer"></div><div class="col-md-3 col-sm-6"><div class="imprintlink"><a href="/en/service/imprint.html" target="_self">Imprint</a></div><div class="privacylink"><a href="/en/service/privacy.html" target="_self">Privacy</a></div></div><div class="col-md-9 col-sm-6">© Heinz Nixdorf MuseumsForum 2020</div></footer>
+	<!-- footer -->
+</div>
+<!-- mobileNav --><div id="mobileMenu" class="visible-sm visible-xs"><ul><li class="dropdown specialMenu-visit"><a href="/en/visiting.html" target="_self">Visiting</a><div class="submenu"><div class="categoryHeader">General information</div><ul class="categoryItems"><li><a href="/en/visiting.html" target="_self">Opening hours, prices, directions</a></li><li><a href="/en/visiting/general-information/guided-tours.html" target="_self">Guided tours</a></li><li><a href="/en/visiting/general-information/hnf-app-the-mobile-museum-experience.html" target="_self">Multimedia guide</a></li><li><a href="/en/visiting/general-information/accessibility-in-the-museum.html" target="_self">Accessibility in the museum</a></li></ul><div class="categoryHeader">Shop + Imbiss</div><ul class="categoryItems"><li><a href="/en/visiting/shop-imbiss/catering-facilities.html" target="_self">Catering facilities</a></li><li><a href="/en/visiting/shop-imbiss/museum-shop.html" target="_self">Museum Shop</a></li></ul></div></li><li class="dropdown active opened specialMenu-permanentExhibitions"><a href="/en/permanent-exhibition.html" target="_self">Permanent exhibition</a><div class="submenu"><div class="categoryHeader">Exhibition areas</div><ul class="categoryItems"><li><a href="/en/permanent-exhibition/exhibition-areas/numbers-symbols-and-signals.html" target="_self">Numbers, symbols and signals</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/the-mechanization-of-information-technology.html" target="_self">The mechanization of information technology</a></li><li class="active"><a href="/en/permanent-exhibition/exhibition-areas/the-invention-of-the-computer.html" target="_self">The Invention of the Computer</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/hall-of-fame.html" target="_self">Hall of Fame</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/office-work-through-the-ages.html" target="_self">Office work through the ages</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/wall-of-fame-pioneers-of-the-digital-world.html" target="_self">Wall of Fame – pioneers of the digital world</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/computers-in-science-and-technology-1950-to-1970.html" target="_self">Computers in science and technology – 1950 to 1970</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/computers-in-business-and-professions-1970-to-1980.html" target="_self">Computers in business and professions – 1970 to 1980</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/computers-for-everyone-1980-to-2000.html" target="_self">Computers for everyone – 1980 to 2000</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/everything-goes-digital.html" target="_self">Everything goes digital</a></li><li><a href="/en/permanent-exhibition/exhibition-areas/nixdorf-pioneer-of-decentralized-data-processing.html" target="_self">Nixdorf – Pioneer of decentralized data processing</a></li></ul><div class="categoryHeader">Specials</div><ul class="categoryItems"><li class="btn-menu-item"><a href="/en/permanent-exhibition/video-about-the-museum.html" target="_self">Video about the museum</a></li><li class="btn-menu-item"><a href="/en/permanent-exhibition/virtual-tour.html" target="_self">Virtual Tour</a></li><li class="btn-menu-item"><a href="/en/permanent-exhibition/highlights-of-the-museum.html" target="_self">Highlights</a></li><li class="btn-menu-item"><a href="/en/permanent-exhibition/game-islands.html" target="_self">Game islands</a></li></ul></div></li><li class="dropdown"><a href="/en/exhibitions.html" target="_self">Exhibitions</a><div class="submenu single"><ul><li><a href="/en/exhibitions/hello-universe-the-experience-of-space-travel.html" target="_self">Hello universe! The experience of space travel</a></li><li><a href="/en/exhibitions/one-small-step-the-moon-landing-in-50-photographs.html" target="_self">One small step – The moon landing in 50 photographs</a></li><li><a href="/en/exhibitions/inside-beethoven-the-walk-in-ensemble.html" target="_self">Inside Beethoven! The walk-in ensemble</a></li><li><a href="/en/exhibitions/review.html" target="_self">Review</a></li></ul></div></li><li class="dropdown"><a href="/en/the-hnf.html" target="_self">The HNF</a><div class="submenu single"><ul><li><a href="/en/the-hnf/contact.html" target="_self">Contact</a></li><li><a href="/en/the-hnf/our-mission.html" target="_self">Our mission</a></li><li><a href="/en/the-hnf/historical-background.html" target="_self">Historical background</a></li><li><a href="/en/the-hnf/heinz-nixdorf.html" target="_self">Heinz Nixdorf</a></li><li><a href="/en/the-hnf/facts-figures.html" target="_self">Facts &amp; Figures</a></li></ul></div></li></ul></div><!-- mobileNav --><script type="text/javascript">
+	var childOfPermanentExhibition = true;
+</script>
+
+    <div id="tx_cookies">
+        
+        <div id="tx_cookies_inner" data-hide="">
+            <button id="tx_cookies_close" class="btn" title="X">X</button>
+            <div id="tx_cookies_hint">By using this Website, you agree that this site uses Cookies. Possibilities for the deactivation of Matomo can be found in our <a href="https://www.hnf.de/en/service/privacy.html" target="_blank">Privacy policy</a>.</div>
+            
+            
+                <form data-expire="14" method="post" id="tx_cookies_hide" action="/en/permanent-exhibition/exhibition-areas/the-invention-of-the-computer.html?tx_cookies_main%5Baction%5D=submit&amp;cHash=cb85dd8006a4d56ef0a05c5ee905c467">
+<div>
+<input type="hidden" name="tx_cookies_main[__referrer][@extension]" value="Cookies" />
+<input type="hidden" name="tx_cookies_main[__referrer][@vendor]" value="SBTheke" />
+<input type="hidden" name="tx_cookies_main[__referrer][@controller]" value="Main" />
+<input type="hidden" name="tx_cookies_main[__referrer][@action]" value="cookie" />
+<input type="hidden" name="tx_cookies_main[__referrer][arguments]" value="YTowOnt9a1eb87417cf64dc65a8efac40e48983ddaf5700f" />
+<input type="hidden" name="tx_cookies_main[__referrer][@request]" value="a:4:{s:10:&quot;@extension&quot;;s:7:&quot;Cookies&quot;;s:11:&quot;@controller&quot;;s:4:&quot;Main&quot;;s:7:&quot;@action&quot;;s:6:&quot;cookie&quot;;s:7:&quot;@vendor&quot;;s:7:&quot;SBTheke&quot;;}a46ebf6a44e884d1f3479f68c44cb29f640b11e2" />
+<input type="hidden" name="tx_cookies_main[__trustedProperties]" value="a:2:{s:4:&quot;hide&quot;;i:1;s:6:&quot;submit&quot;;i:1;}3ca068d6876fc2e9e0b72ff9091fe21dfbd98898" />
+</div>
+
+                    <input type="hidden" name="tx_cookies_main[hide]" value="1" />
+                    
+                    <input class="button" type="submit" name="tx_cookies_main[submit]" value="Ok" />
+                </form>
+            
+            <div class="clearfix"></div>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#tx_cookies_hide [type=submit]').click(function() {
+                        $.post($('#tx_cookies_hide').attr('action'), $('#tx_cookies_hide').serialize()).done(function() {
+                            $('#tx_cookies_inner').hide();
+                        });
+                        return false;
+                    });
+                });
+            </script>
+        </div>
+    </div>
+
+	<!-- Piwik --> <script type="text/javascript"> var _paq = _paq || []; /* tracker methods like "setCustomDimension" should be called before "trackPageView" */ _paq.push(['trackPageView']); _paq.push(['enableLinkTracking']); (function() { var u="//piwik.dm-extra.de/"; _paq.push(['setTrackerUrl', u+'piwik.php']); _paq.push(['setSiteId', '60']); var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s); })(); </script> <!-- End Piwik Code --></div>
+<script src="/typo3temp/compressor/merged-5b8f0a28bf18c6f05a54f46ff9b7d70c-137ce330cc8f249495372e7703e4f76b.js" type="text/javascript"></script>
+
+<script src="/typo3temp/compressor/merged-ea556b4bad131c90ef45e0a67c0d5655-783d9eb01589c39fae4beafd8077a6d7.js" type="text/javascript"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <meta content="Jeffrey Morgan" property="og:site_name">
+
+<meta content="Improving Information Retrieval System Performance with Concepts" property="og:title">
+
+
+<meta content="article" property="og:type">
+
+
+<meta content="https://usabilityetc.com/articles/information-retrieval-concept-matching/" property="og:url">
+<meta content="https://usabilityetc.com/about/" property="article:author">
+
+  <title>
+    
+      Improving Information Retrieval System Performance with Concepts &middot; Jeffrey Morgan
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/jpg" href="/public/profile.jpg" />
+
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png"> -->
+  <!-- <link rel="shortcut icon" href="/public/favicon.ico?v=1"> -->
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60369658-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+
+  <!-- <body class="layout-reverse sidebar-overlay"> -->
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <img src="https://www.gravatar.com/avatar/b40d5787b0b455eb2670bec7e446c1ef.jpg?s=200" width="200" height="200" alt="Profile image.">
+    <p>I'm a user interface and data visualization designer and developer. I make software easier to use with human-centered design. I'm interested in data science and GIS.</p>
+    <ul class="social">
+	<li><a id="social-github" href="https://github.com/usabilityetc" title="GitHub"><i class="fa fa-github-alt fa-2x github"></i></a></li>
+	<li><a id="social-youtube" href="http://usabilityetc.tv/" title="YouTube"><i class="fa fa-youtube fa-2x youtube"></i></a></li>
+	<li><a id="social-twitter" href="https://twitter.com/usabilityetc" title="Twitter"><i class="fa fa-twitter fa-2x twitter"></i></a></li>
+	<li><a id="social-rss" href="http://feeds.feedburner.com/UsabilityEtc" title="RSS Feed"><i class="fa fa-rss fa-2x rss"></i></a></li>
+	<li><a id="social-email" href="mailto:&#x75;&#x73;&#x61;&#x62;&#x69;&#x6c;&#x69;&#x74;&#x79;&#x65;&#x74;&#x63;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;" title="Email"><i class="fa fa-envelope fa-2x email"></i></a></li>
+</ul>
+
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/gallery/">Gallery</a>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/software/">Software</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/projects/">Projects</a>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/articles/">Articles</a>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/privacy/">Privacy</a>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2018. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <div class="masthead-layout">
+            <div>
+              <h3 class="masthead-title">
+                <a href="/" title="Home">Jeffrey Morgan</a>
+              </h3>
+            </div>
+            <div id="incremental-search-icon" class="hidden"><a href=""><i class="fa fa-search"></i></a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div id="incremental-search" class="hidden">
+
+  <form id="incremental-search-form" action="" role="search">
+    <input type="text" id="incremental-search-query" class="form-control" name="q" placeholder="Start typing to search" autocomplete="off">
+  </form><!-- #search-form -->
+
+  <div id="incremental-search-results" class="hidden">
+    <h2></h2>
+    <div></div>
+    <!-- <hr /> -->
+  </div><!-- #search-results -->
+
+</div><!-- #search -->
+
+        <div class="page">
+  <h1 class="page-title">Improving Information Retrieval System Performance with Concepts</h1>
+  
+
+<p>The goal of an information retrieval system is to maximize the number of relevant documents returned for each query. Keyword information retrieval systems often return a proportion of irrelevant documents because matching keywords is imprecise: words can have different meanings when used in different contexts, and a single idea can often be expressed by several different words or synonyms. Information retrieval systems can be made more precise by matching concepts, keywords for which the intended meaning has been identified, either with information from a lexicographic database in the case of documents, or by asking the user to choose one meaning from several possible meanings in the case of queries. This article describes the algorithms and data structures needed to implement a concept IR system, how concepts can be used to enhance keyword queries, and describes a prototype user interface for a concept information retrieval system.</p>
+
+<h2 id="introduction">1. Introduction</h2>
+
+<p>The goal of an information retrieval (IR) system is to maximize the number of relevant documents returned for each query. The results returned by keyword IR systems often contain a proportion of irrelevant documents because matching keywords is imprecise. The imprecision is caused by two characteristics of natural language: words can have different meanings when used in different contexts, and a single idea can often be expressed by several different words or synonyms.</p>
+
+<p>The proportion of relevant documents retrieved by an IR system can be increased by decreasing the amount of ambiguity. One way to reduce the ambiguity is to match the intended meanings of the keywords. The intended meaning of keywords are represented by concepts, keywords for which the intended meaning has been identified, either with information from a lexicographic database in the case of a document, or by asking the user to choose one mean from among several possible meanings in the case of queries.</p>
+
+<p>This article describes the algorithms and data structures needed to implement a concept IR system, and describes a prototype user interface for such a system. Section 2 explains in more detail why keyword matching algorithms are imprecise, and section 3 describes why matching concepts rather than keywords will produce more accurate IR systems. Section 4 describes how concepts can be used to enhance keyword queries, and section 5 describes the concept IR model. Finally, section 6 describes a user interface prototype for a concept IR system.</p>
+
+<h2 id="the-imprecision-of-keyword-matching-algorithms">2. The Imprecision of Keyword Matching Algorithms</h2>
+
+<p>The matching algorithms used by keyword IR systems are imprecise and retrieve irrelevant as well as relevant results. Two causes of this imprecision are terminology and semantics, both aspects of natural language. Terminology affects retrieval because different people use different words for the same concept (Furnas et al. 1987). Terminology is often cultural; a pavement in the UK is a sidewalk in the US, for example.</p>
+
+<p>Semantics affects retrieval because the text of a document may not contain the exact keywords in the query but may nevertheless be about the topic of interest. This problem is exacerbated by polysemy. Polysemous words have different meanings in different contexts. For example, <span class="italic">Java</span> can refer to the Island in Indonesia, a type of coffee, coffee itself, or the object-oriented programming language. Matching a word does not identify the context in which it is used.</p>
+
+<p>The polysemous meanings, or senses, of words can lead to keyword queries that are ambiguous. IR systems are unable to differentiate between the different senses of a keyword and retrieve documents that contain all the senses. Although the results are what the user asked for in the query, the results are often not what the user intended. A proportion of the results will be irrelevant to the intended sense and users must expend effort evaluating the results for relevance.</p>
+
+<p>The next section describes how identifying the intended meaning of keywords can improve the precision of IR systems.</p>
+
+<h2 id="concepts">3. Concepts</h2>
+
+<p>The ambiguity inherent in matching keywords can be eliminated by identifying the meaning that a document or query author intended when they used a keyword. In this article, a concept is a disambiguated keyword, i.e. a keyword for which the intended meaning has been identified.</p>
+
+<p>Queries contain a small number of keywords, some of which might have more than one meaning. It is relatively straightforward to present the user with a list of possible meanings for an ambiguous keyword and ask him or her to select which meaning was intended. This choice should be optional to reduce the burden on the user, but the effort will be rewarded by more accurate results. Identifying the concepts present in the documents in a collection must obviously be automated.</p>
+
+<p>To be able to identify the concepts in a document collection, and to be able to present users with a choice of possible meanings for a keyword, a concept IR system must have knowledge of those possible meanings. One such repository of word meanings is a lexicographic database. The examples in this article use WordNet, an on-line lexical reference system developed by lexicographers (Miller et al. 1993, Fellbaum 1998). WordNet organises English nouns, verbs, and adjectives into synonym sets that represent one underlying lexical concept. This article only considers nouns for simplicity.</p>
+
+<p>WordNet enables the senses of a keyword to be disambiguated. For example, WordNet defines three senses of the (noun) keyword Java:</p>
+
+<ol>
+  <li>an island in Indonesia south of Borneo;</li>
+  <li>a beverage consisting of an infusion of ground coffee beans;</li>
+  <li>a platform-independent object-oriented programming language used for writing applets that are downloaded from the World Wide Web and run on the client’s machine.</li>
+</ol>
+
+<p>The definition of a concept used in this article is a keyword and the number of the WordNet sense that identifies its meaning. For example, java/1 represents the first sense, an island is Indonesia.</p>
+
+<p>WordNet also provides access to the concept trees that describe the relationships between concepts in the database. In this article, two concepts, A and B, are connected by five relations:</p>
+
+<ol>
+  <li><span class="italic">synonymy</span> represents the same-as relationship (A <span class="italic">EQUALS</span> B);</li>
+  <li><span class="italic">hyponymy</span> represents the generalization relationship (A <span class="italic">IS-A</span> B);</li>
+  <li><span class="italic">hypernymy</span> represents the specialization relationship (B <span class="italic">IS-A</span> A).</li>
+  <li><span class="italic">meronymy</span> represents the part-whole relationship (A <span class="italic">IS-PART-OF</span> B).</li>
+  <li><span class="italic">holonymy</span> represents the is whole-part relationship (B <span class="italic">IS-PART-OF</span> A).</li>
+</ol>
+
+<p>Concept trees show how the concepts in WordNet are connected with these relations. The following diagram illustrates the structure of a concept tree. The generalizations show the concepts that can be reached with the hyponym relation. The specializations show the concepts that can be reached with the hypernym relation.</p>
+
+<p><img src="/assets/articles/concept-matching/image1.png" alt="Concept tree structure" /></p>
+
+<p>Some concepts are composed of parts or are made from substances. The parts or substances of a concept are reached with the meronym relation. Some concepts are part of a whole and the concept that represents the whole is reached with the holonym relation.</p>
+
+<p>The alternatives of a concept are those concepts that have the same generalization as the concept, i.e. the siblings of the concept in the tree. Alternatives are reached with the hyponym relation.</p>
+
+<p>The following diagram shows the partial concept tree of the first sense of Java, the island in Indonesia. This is a partial concept tree because it only shows a small number of the potentially huge number of concepts that can be reached with the five relations. Two levels of generalization are shown: <span class="italic">Java</span> is an <span class="italic">island</span> and an <span class="italic">island</span> is a type of <span class="italic">land</span>. There are no specializations of this sense of Java. Three example alternatives are the concepts <span class="italic">Bermuda</span>, <span class="italic">Ceylon</span>, and <span class="italic">Singapore</span> that have the same generalization as <span class="italic">Java</span>, <span class="italic">Island</span>.</p>
+
+<p><img src="/assets/articles/concept-matching/image2.png" alt="Partial concept tree for the first sense of Java" /></p>
+
+<p>WordNet stores a single part of this sense of <span class="italic">Java</span>, the concept that represents its capital city, <span class="italic">Jakarta</span>. The diagram above also shows the concept tree of the related concept <span class="italic">Indonesia</span>. <span class="italic">Indonesia</span> is a <span class="italic">country</span> that is part of <span class="italic">South East Asia</span> and is made up of several parts that include <span class="italic">Bali</span>, <span class="italic">Sumatra</span>, and <span class="italic">Krakatoa</span>, as well as <span class="italic">Java</span>.</p>
+
+<p>The following diagram shows the partial concept tree of the second sense of Java, the beverage. Two generalizations are shown: <span class="italic">coffee</span> is a type of <span class="italic">beverage</span> and <span class="italic">beverage</span> is a type of <span class="italic">food</span>. Three specializations of <span class="italic">coffee</span> are shown: <span class="italic">espresso</span>, <span class="italic">cappuccino</span>, and <span class="italic">decaf</span> are types of <span class="italic">coffee</span>. Three example alternatives are shown: <span class="italic">hot chocolate</span>, <span class="italic">soft drink</span>, and <span class="italic">tea</span> share the same generalization as <span class="italic">Java</span>, <span class="italic">beverage</span>. <span class="italic">Coffee</span> is made of two substances, <span class="italic">coffee beans</span> and <span class="italic">caffeine</span>.</p>
+
+<p><img src="/assets/articles/concept-matching/image3.png" alt="Partial concept tree for the second sense of Java" /></p>
+
+<p>The following diagram shows the partial concept tree of the third sense of java, the object-oriented programming language. Two generalizations are shown: <span class="italic">Java</span> is an <span class="italic">object-oriented programming language</span> which is a type of <span class="italic">programming language</span>. There are no specializations or alternatives to this sense of Java (WordNet stores information on only one object-oriented programming language). The alternatives for the generalization of <span class="italic">object-oriented programming language</span>, <span class="italic">programming language</span>, are shown: <span class="italic">C</span>, <span class="italic">BASIC</span>, and <span class="italic">Pascal</span> are all types of <span class="italic">programming language</span>.</p>
+
+<p><img src="/assets/articles/concept-matching/image4.png" alt="Partial concept tree for the third sense of Java" /></p>
+
+<p>The next section describes how the information stored in concept trees can improve the performance of keyword IR systems by making keyword queries more specific.</p>
+
+<h2 id="enhancing-keyword-queries-with-concepts">4. Enhancing Keyword Queries with Concepts</h2>
+
+<p>Keyword IR systems retrieve documents by matching the keywords in the query with the keywords in the documents. A simple data structure that maps keywords to documents is an inverted index (van Rijsbergen 1977). Each keyword (K<sub>i</sub>) is listed in an index and points to a list of the documents (D<sub>i</sub>) that contain the keyword:</p>
+
+<ul class="no-bullets">
+  <li>K<sub>1</sub> &rArr; D<sub>1</sub>, D<sub>2</sub>, D<sub>3</sub>, D<sub>4</sub></li>
+  <li>K<sub>2</sub> &rArr; D<sub>1</sub>, D<sub>2</sub></li>
+  <li>K<sub>3</sub> &rArr; D<sub>1</sub>, D<sub>2</sub>, D<sub>3</sub></li>
+  <li>K<sub>4</sub> &rArr; D<sub>1</sub></li>
+</ul>
+
+<p>The Boolean query model is one of the oldest IR models and will be used to illustrate how keyword queries can be enhanced with concepts. The Boolean query model joins the keywords in a query with the logical connectives AND (∧), OR (∨), and NOT (¬) (Lefkowitz 1964). The Boolean model uses an index to retrieve documents that answer queries such as:</p>
+
+<p class="indent">
+  Q = (K<sub>1</sub> &and; K<sub>2</sub>) &or; (K<sub>3</sub> &and; &not; K<sub>4</sub>)
+</p>
+
+<p>To satisfy the (K<sub>1</sub> ∧ K<sub>2</sub>) part we intersect the K<sub>1</sub> and K<sub>2</sub> lists, to satisfy the (K<sub>3</sub> ∧ ¬ K<sub>4</sub>) part we subtract the K<sub>4</sub> list from the K<sub>3</sub> list. The ∨ is satisfied by taking the union of the two sets of documents. The result is the set {D1, D2, D3} which satisfies the query.</p>
+
+<p>Although Boolean queries are powerful, they are difficult to write when more than a few logical connectives are involved (Green 1990). Boolean queries can be used more effectively if they are generated automatically by an IR system to represent concepts chosen by the user. The concept browsing user interface described in section 6 in one method of selecting concepts.</p>
+
+<p>Query expansion is one automated technique that has been used to address the imprecision of text retrieval techniques (Spink 1994). Query expansion adds keywords to a query that are related to the keywords supplied by the user, such as the synonyms of the keyword. For example, if the original query contains a single keyword, K, the synonyms of the keyword are added as disjunctions. The query,</p>
+
+<p class="indent">
+  Q = K
+</p>
+
+<p>is expanded to incorporate the synonyms S<sub>i</sub> of K:</p>
+
+<p class="indent">
+  Q<sub>E</sub> = K &or; S<sub>1</sub> &or; S<sub>2</sub>
+</p>
+
+<p>Adding the synonyms helps to overcome the problem of different words being used for the same concept. Automatic methods of choosing synonyms are required because users find it difficult to come up with alternative search terms (Ruge 1995).</p>
+
+<p>Query expansion techniques can be enhanced with concepts to make the expanded queries more specific. Once the keywords in a query have been disambiguated into concepts, the keywords relating to the generalizations, specializations, and the parts of the concepts can be added to the query.</p>
+
+<p>For example, the simple query</p>
+
+<p class="indent">
+  Q = java
+</p>
+
+<p>must be disambiguated by asking the user which of the three senses of Java is intended. The keywords in a query can be disambiguated by presenting a list of the senses of each keyword and enabling the user to select the intended senses.</p>
+
+<p>Disambiguating a keyword by selecting one sense over the other senses indicates that documents containing the other senses should not be retrieved. If query Q is disambiguated into sense 3, the object-oriented programming language, then documents about the island or the beverage should not be retrieved. This requirement can be met by ensuring that documents containing the synonyms, specializations, generalizations, etc. of the other senses are not retrieved. This translates into a query such as:</p>
+
+<p class="indent">
+  Q<sub>E</sub> = java &and; &not;(jakarta &or; indonesia &or; bali) &and; &not;(espresso &or; caffeine &or; tea)
+</p>
+
+<p>This query requests documents that contain the keyword Java but not the keywords that relate to the two senses of Java that are not required: the island and the beverage. The keywords that represent the island are one of its parts, <span class="italic">Jakarta</span>, the whole of which <span class="italic">Java</span> is a part, <span class="italic">Indonesia</span>, and another part of <span class="italic">Indonesia</span>, <span class="italic">Bali</span>. These are a selection of the keywords that might be present in a document about Java the island. The keywords that represent the beverage are a type of <span class="italic">coffee</span>, <span class="italic">espresso</span>, a substance that is part of <span class="italic">coffee</span>, <span class="italic">caffeine</span>, and an alternative to <span class="italic">coffee</span>, <span class="italic">tea</span>. These are a selection of the keywords that might be present in a document about Java the beverage.</p>
+
+<p>This section described how keyword matching algorithms can be made more accurate with concepts. The next section describes how matching the concepts in queries with the concepts in documents can produce an even more effective IR system.</p>
+
+<h2 id="the-concept-ir-model">5. The Concept IR Model</h2>
+
+<p>The concept IR model proceeds in three stages: the concepts in each document in the collection are identified, the concepts in a query are identified, and the query concepts are matched with the document concepts. These three stages are now described in more detail.</p>
+
+<h2 id="identifying-document-concepts">5.1 Identifying Document Concepts</h2>
+
+<p>The first stage in the concept IR model is to identify the concepts in the documents in the collection. An index must be built that maps concepts to documents to enable fast retrieval. This process need only be done once for each document added to the collection. The index can be updated incrementally as each new document is added to the collection.</p>
+
+<p>The concepts in a document are identified by first extracting the keywords and removing the duplicates and stop words. Each keyword is then added to a list of concepts. A keyword with more than one sense must be disambiguated before being added to the list of concepts. Five tests are performed to identify which sense of a keyword is present in a document. A point is awarded if any of the following conditions are met:</p>
+
+<ol>
+  <li>one or more of the synonyms of the sense occur in the document;</li>
+  <li>the sense is a part of a concept that occurs in the document;</li>
+  <li>a concept that occurs in the document is part of the sense;</li>
+  <li>the sense is a generalization of a concept that occurs in the document;</li>
+  <li>the sense is a specialization of a concept that occurs in the document.</li>
+</ol>
+
+<p>The application of each test produces a matching score that indicates the algorithm’s level of confidence that the concept is present in the document. Tied scores can be presented to a domain expert for final classification. Each concept (C<sub>i</sub>) is stored in an index and points to a list of the documents that contain the concept. For example:</p>
+
+<ul class="no-bullets">
+  <li>C<sub>1</sub> &rArr; D<sub>1</sub>, D<sub>2</sub>, D<sub>3</sub>, D<sub>4</sub></li>
+  <li>C<sub>2</sub> &rArr; D<sub>1</sub>, D<sub>2</sub></li>
+  <li>C<sub>3</sub> &rArr; D<sub>1</sub>, D<sub>2</sub>, D<sub>3</sub></li>
+  <li>C<sub>4</sub> &rArr; D<sub>1</sub></li>
+</ul>
+
+<p>The list of documents for each concept in the index is augmented with the score M<sub>i</sub> of matching concept C with document D<sub>i</sub>:</p>
+
+<p class="indent">
+  C &rArr; {D<sub>1</sub>, M<sub>1</sub>}, {D<sub>2</sub>, M<sub>2</sub>}, {D<sub>3</sub>, M<sub>3</sub>}
+</p>
+
+<p>The same Boolean operations can be applied to an index of concepts as for an index of keywords.</p>
+
+<h2 id="identifying-query-concepts">5.2 Identifying Query Concepts</h2>
+
+<p>The second stage of the concept IR model is to identify the concepts in a query. This must be performed each time a query is issued.</p>
+
+<p>Typical keyword queries do not contain enough keywords to enable the algorithm described in the previous section to identify the concepts in a query. The most accurate method of identifying the concepts in a query is to harness the users’ language skills by asking them which senses of the query keywords were intended. The user interface of the search engine described in section 6 shows how the senses of a keyword can be disambiguated.</p>
+
+<h2 id="matching-query-and-document-concepts">5.3 Matching Query and Document Concepts</h2>
+
+<p>The final stage of the concept IR model is to match the concepts in a query with the concepts in the documents. Documents are matched with queries using the concept ⇒ document index. The degree to which the concepts in a query match the concepts in the documents is represented by a numerical matching score that is used to rank the results.</p>
+
+<p>The concept IR model is more flexible than the strict matching performed by the Boolean keyword model. The Boolean model partitions documents into two sets: those documents that contain the query keywords and those that do not. This strict partitioning does not fit well with natural language. The vector space model (Salton 1971) and rough sets (Srinivasan 1991) were developed to retrieve documents that partially match a query. The concept IR model enables documents to be retrieved that match queries in varying degrees.</p>
+
+<p>Five matching rules—based on the relations described in section 3—are used to generate a matching score. The base rule is that the same sense of a keyword always matches itself.</p>
+
+<p><img src="/assets/articles/concept-matching/image5.png" alt="The same sense of a keyword matches itself" /></p>
+
+<p>Synonyms of the same sense of a keyword always match.</p>
+
+<p><img src="/assets/articles/concept-matching/image6.png" alt="The synonyms of the same sense of a keyword match" /></p>
+
+<p>Concepts can be matched by the hyponym (generalization) relation. For example, <span class="italic">espresso</span> and <span class="italic">cappuccino</span> are both types of <span class="italic">coffee</span>, i.e. <span class="italic">coffee</span> is a generalization of both <span class="italic">espresso</span> and <span class="italic">cappuccino</span>. Concepts can be matched by applying a relation more than once.</p>
+
+<p><img src="/assets/articles/concept-matching/image7.png" alt="Matching concepts with the hyponym relation" /></p>
+
+<p>Similarly, <span class="italic">beer</span> is a type of <span class="italic">alcoholic beverage</span> and that <span class="italic">cappuccino</span> is a type of <span class="italic">coffee</span>. <span class="italic">Alcoholic beverage</span> and <span class="italic">coffee</span> are both types of <span class="italic">beverage</span>: <span class="italic">beverage</span> is a generalization of a generalization of <span class="italic">beer</span> and <span class="italic">coffee</span>.</p>
+
+<p><img src="/assets/articles/concept-matching/image8.png" alt="Matching concepts by applying a sequence of relations" /></p>
+
+<p>Concepts can be matched by the meronym (part-of) relation. For example, <span class="italic">Java</span> and <span class="italic">Bali</span> are parts of <span class="italic">Indonesia</span>. Concepts can also be matched by more than one relation at once.</p>
+
+<p><img src="/assets/articles/concept-matching/image9.png" alt="Matching concepts with the meronym relation" /></p>
+
+<p><span class="italic">Java</span> and <span class="italic">Bali</span> match <span class="italic">Island</span> with the hyponym relation, and match <span class="italic">Indonesia</span> with the meronym relation.</p>
+
+<p><img src="/assets/articles/concept-matching/image10.png" alt="Matching concepts with more than one relation" /></p>
+
+<p>Two concepts, A and B, are matched in the following order:</p>
+
+<ol>
+  <li>check if A = B;</li>
+  <li>check if A is a synonym of B;</li>
+  <li>check if A and B are part of the same concept;</li>
+  <li>check if A and B have a common generalization;</li>
+  <li>check if A is a generalization of B.</li>
+</ol>
+
+<p>The relation that matches two concepts determines the matching score. For example, the meronym relation is stronger than the hyponym relation. Concepts that are part of a whole are more closely related that generalizations of those parts. <span class="italic">Java</span> is more closely related to <span class="italic">Bali</span> than to <span class="italic">Australia</span>, for example, because <span class="italic">Java</span> and <span class="italic">Bali</span> are part of <span class="italic">Indonesia</span>, even though they are all islands.</p>
+
+<p><img src="/assets/articles/concept-matching/image11.png" alt="Parts of a whole are more closely related than generalizations" /></p>
+
+<p>Matching scores are weighted by the relation used to match the concepts. The relations have different weights and are weighted in the following order, from highest to lowest:</p>
+
+<ol>
+  <li>exact match;</li>
+  <li>synonyms;</li>
+  <li>parts;</li>
+  <li>specializations;</li>
+  <li>generalizations.</li>
+</ol>
+
+<p>Matching scores are also weighted by the number of relations used to match the concepts; the larger the number of relations used, the lower the score. For example, <span class="italic">espresso</span> and <span class="italic">cappuccino</span> would have a higher matching score than <span class="italic">beer</span> and <span class="italic">cappuccino</span> even though the three concepts have a common generalization, <span class="italic">beverage</span>. <span class="italic">Espresso</span> and <span class="italic">cappuccino</span> are matched with one application of the hyponym relation, <span class="italic">beer</span> and <span class="italic">cappuccino</span> are matched with two applications.</p>
+
+<p>This section has described how the concept IR model matches the concepts in a document collection with the concepts in a user query. The next section describes a prototype user interface for a concept IR system.</p>
+
+<h2 id="a-user-interface-for-a-concept-ir-system">6. A User Interface for a Concept IR System</h2>
+
+<p>This section describes a prototype user interface for a web search engine based on a concept IR system. The user inputs a query and the search engine presents all the senses of the keywords in the query and enables the user to select the intended sense.</p>
+
+<p>The following screenshot shows that the results of the single keyword query, Java, contain documents about all three senses of Java. The three senses are listed above the results. A link to the sense is presented next to an explanation of the sense. Clicking on a sense issues a new query that will retrieve the documents only for that sense.</p>
+
+<p><img src="/assets/articles/concept-matching/image12.png" alt="Prototype interface for a concept IR search engine" /></p>
+
+<p>The next screenshot shows the results of clicking on the first sense of Java, the island in Indonesia.</p>
+
+<p><img src="/assets/articles/concept-matching/image13.png" alt="Results for the first sense of Java" /></p>
+
+<p>The following screenshot presents the results of clicking on the second sense of Java, the beverage.</p>
+
+<p><img src="/assets/articles/concept-matching/image14.png" alt="Results for the second sense of Java" /></p>
+
+<p>The following screenshot the results of clicking on the third sense of Java, the object-oriented programming language.</p>
+
+<p><img src="/assets/articles/concept-matching/image15.png" alt="Results for third sense of Java" /></p>
+
+<p>Users are able to navigate and search with the concept hierarchy with a point and click interface. The concept hierarchy is shown on the left hand side of of the above screenshots. Users can choose the other senses of the keyword java, the generalizations, the parts, and the whole of which it is a part.</p>
+
+<p>Users can broaden or narrow a search by clicking on a generalization or a specialization, respectively. If there are too many results, users can click on a specialization. If there are too few results, users can click on a generalization.</p>
+
+<p>The alternatives are the siblings of the current concept, i.e. the concepts that have the same generalization as the current concept.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>Fellbaum C., <span class="italic">WordNet: An Electronic Lexical Database</span>, MIT Press, 1998.</li>
+  <li>Furnas, G. W., T. K. Landauer, L. M. Gomez, and S. T. Dumais, The vocabulary problem in human-system communications, <span class="italic">Communications of the ACM</span> 30(11), 1987: 964-971.</li>
+  <li>Deerwester, S., S. T. Dumais, G. W. Furnas, T. K. Landaur and R. Harshman, Indexing by latent semantic analysis, <span class="italic">Journal of the American Society for Information Science</span> 41(6), 1990: 391-407.</li>
+  <li>Greene, S. L., No IFs, ANDs, or ORs: A study of database querying, <span class="italic">International Journal of Man-Machine Studies</span> 32, 1990: 303-326.</li>
+  <li>Lefkowitz, D., <span class="italic">File Structures for On-Line Systems</span>, Spartan Books, 1964.</li>
+  <li>Miller, G. A., R. Beckwith, C. Fellbaum, D. Gross, and K. Miller, <span class="italic">Introduction to WordNet: An On-Line Lexical Database</span>, <a href="http://wordnetcode.princeton.edu/5papers.pdf">http://wordnetcode.princeton.edu/5papers.ps</a>, 1993.</li>
+  <li>Ruge, G., Human memory models and term association, in E. A. Fox, P. Ingwersen and R. Fidel (eds), Proceedings of SIGIR ‘95;, 1995: 219-227.</li>
+  <li>Salton, G., <span class="italic">The SMART Information Retrieval System</span>, Prentice-Hall, 1971.</li>
+  <li>Spink, A., Term relevance feedback and query expansion: Relation to design, in W. B. Croft and C. J. van Rijsbergen (eds), Proceedings of SIGIR ‘94, 1994: 80-81.</li>
+  <li>Srinivasan, P., The importance of rough approximations for information retrieval, <span class="italic">International Journal of Man-Machine Studies</span> 34, 1991: 657-671.</li>
+  <li>van Rijsbergen, C. J., <span class="italic">Information Retrieval</span>, Butterworths, 1979.</li>
+</ul>
+
+
+
+<div id="quick-view-calendar" class="banner-ad bottom">
+  <h2>You Might Like</h2>
+  <a href="http://appstore.com/mac/quickviewcalendar/" title="Download Quick View Calendar from the Mac App Store"><img src="/assets/software/mac-os-x/quick-view-calendar/quick-view-calendar-banner.png" alt="Download Quick View Calendar from the Mac App Store" width="100%"></a>
+</div>
+
+<script>
+if (window.navigator.userAgent.indexOf("Mac") === -1) {
+  document.getElementById("quick-view-calendar").className += " hide";
+}
+</script>
+
+
+</div><!-- .page -->
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="/public/js/join-last-two-words.js"></script>
+<script>var incrementalSearchIndexURL = "/search-index.json";</script>
+<script src="/public/js/search-index.js"></script>
+<script src="/public/js/search-ui.js"></script>
+<script src="/public/js/script.js"></script>
+
+
+  </body>
+</html>

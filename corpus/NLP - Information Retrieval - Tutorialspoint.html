@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>NLP - Information Retrieval - Tutorialspoint</title>
+<meta charset="utf-8">
+<meta name="description" content="NLP - Information Retrieval - Information retrieval (IR) may be defined as a software program that deals with the organization, storage, retrieval and evaluation of information from document"/>
+<meta name="keywords" content="C, C++, Python, Java, HTML, CSS, JavaScript, SQL, PHP, jQuery, XML, DOM, Bootstrap, Tutorials, Articles, Programming, training, learning, quiz, preferences, examples, code"/>
+<link rel="canonical" href="https://www.tutorialspoint.com/natural_language_processing/natural_language_processing_information_retrieval.htm" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="stylesheet" href="/themes/css/style-min-v1.css">
+<script src="/themes/js/script-min-v1.js?v=1.0.2"></script>
+<script>function printPage() { window.print(); }</script>
+<script data-cfasync="false" type="text/javascript">(function(w, d) { var s = d.createElement('script'); s.src = '//cdn.adpushup.com/40046/adpushup.js'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script>
+<script data-cfasync="false" type="text/javascript">(function(w, d) { var s = d.createElement('script'); s.src = '//delivery.adrecover.com/18107/adRecover.js'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script>
+
+<style>
+.right-menu .mui-btn {
+    background-color:#e37906;
+}
+a.demo {
+    background:#e37906;
+}
+li.heading {
+    background:#e37906;
+}
+.course-box{background:#e37906}
+.home-intro-sub p{color:#e37906}
+</style>
+</head>
+<body>
+<header id="header">
+<!-- Top sub-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid top-menu">
+<div class="mui-container">
+<div class="top-menu-item home">
+<a href="https://www.tutorialspoint.com/index.htm" target="_blank" title="TutorialsPoint - Home"><i class="fal fa-home"></i> <span>Home</span></a>
+</div>
+<div class="top-menu-item qa">
+<a href="https://www.tutorialspoint.com/about/about_careers.htm" target="_blank" title="Job @ Tutorials Point"><i class="fa fa-suitcase"></i> <span>Jobs</span></a>
+</div>
+<div class="top-menu-item tools">
+<a href="https://www.tutorialspoint.com/online_dev_tools.htm" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fal fa-cogs"></i> <span>Tools</span></a>
+</div>
+<div class="top-menu-item coding-ground">
+<a href="https://www.tutorialspoint.com/codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fal fa-code"></i> <span>Coding Ground </span></a> 
+</div>
+<div class="top-menu-item current-affairs">
+<a href="https://www.tutorialspoint.com/current_affairs.htm" target="_blank" title="Daily Current Affairs"><i class="fal fa-layer-plus"></i> <span>Current Affairs</span></a>
+</div>
+<div class="top-menu-item upsc-notes">
+<a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fal fa-user-tie"></i> <span>UPSC Notes</span></a>
+</div>      
+<div class="top-menu-item online-tutoris">
+<a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fal fa-user"></i> <span>Online Tutors</span></a>
+</div>
+<div class="top-menu-item whiteboard">
+<a href="https://www.tutorialspoint.com/whiteboard.htm" target="_blank" title="Free Online Whiteboard"><i class="fal fa-chalkboard"></i> <span>Whiteboard</span></a>
+</div>
+<div class="top-menu-item net-meeting">
+<a href="https://www.tutorialspoint.com/netmeeting.php" target="_blank" title="A free tool for online video conferencing"><i class="fal fa-chalkboard-teacher"></i> <span>Net Meeting</span></a> 
+</div>
+<div class="top-menu-item articles">
+<a href="https://www.tutorix.com" target="_blank" title="Tutorx - The Best Learning App" rel="nofollow"><i class="fal fa-video"></i> <span>Tutorix</span></a> 
+</div>        
+<div class="social-menu-item">
+<a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook"><i class="fab fa-facebook-f"></i></a> 
+<a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter"><i class="fab fa-twitter"></i></a>
+<a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube"><i class="fab fa-youtube"></i></a>
+</div>        
+</div>
+</div>
+<!-- Top sub-menu Ends Here -->
+<!-- Top main-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid mui--appbar-line-height mui--z1" id="logo-menu">
+<div class="mui-container">
+<div class="left-menu">
+<a href="https://www.tutorialspoint.com/index.htm" title="Tutorialspoint">
+<img class="tp-logo" alt="tutorialspoint" src="/natural_language_processing/images/logo.png">
+</a>
+<div class="mui-dropdown">
+<a class="mui-btn mui-btn--primary categories" data-mui-toggle="dropdown"><i class="fa fa-th-large"></i> 
+<span>Categories <span class="mui-caret"></span></span></a>            
+<ul class="mui-dropdown__menu cat-menu">
+<li>
+<ul>
+<li><a href="/academic_tutorials.htm"><i class="fa fa-caret-right"></i> Academic Tutorials</a></li>
+<li><a href="/big_data_tutorials.htm"><i class="fa fa-caret-right"></i> Big Data &amp; Analytics </a></li>
+<li><a href="/computer_programming_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Programming </a></li>
+<li><a href="/computer_science_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Science </a></li>
+<li><a href="/database_tutorials.htm"><i class="fa fa-caret-right"></i> Databases </a></li>
+<li><a href="/devops_tutorials.htm"><i class="fa fa-caret-right"></i> DevOps </a></li>
+<li><a href="/digital_marketing_tutorials.htm"><i class="fa fa-caret-right"></i> Digital Marketing </a></li>
+<li><a href="/engineering_tutorials.htm"><i class="fa fa-caret-right"></i> Engineering Tutorials </a></li>
+<li><a href="/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> Exams Syllabus </a></li>
+<li><a href="/famous_monuments.htm"><i class="fa fa-caret-right"></i> Famous Monuments </a></li>
+<li><a href="/gate_exams_tutorials.htm"><i class="fa fa-caret-right"></i> GATE Exams Tutorials</a></li>
+<li><a href="/latest_technologies.htm"><i class="fa fa-caret-right"></i> Latest Technologies </a></li>
+<li><a href="/machine_learning_tutorials.htm"><i class="fa fa-caret-right"></i> Machine Learning </a></li>
+<li><a href="/mainframe_tutorials.htm"><i class="fa fa-caret-right"></i> Mainframe Development </a></li>
+<li><a href="/management_tutorials.htm"><i class="fa fa-caret-right"></i> Management Tutorials </a></li>
+<li><a href="/maths_tutorials.htm"><i class="fa fa-caret-right"></i> Mathematics Tutorials</a></li>
+<li><a href="/microsoft_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Microsoft Technologies </a></li>
+<li><a href="/misc_tutorials.htm"><i class="fa fa-caret-right"></i> Misc tutorials </a></li>
+<li><a href="/mobile_development_tutorials.htm"><i class="fa fa-caret-right"></i> Mobile Development </a></li>
+<li><a href="/java_technology_tutorials.htm"><i class="fa fa-caret-right"></i> Java Technologies </a></li>
+<li><a href="/python_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Python Technologies </a></li>
+<li><a href="/sap_tutorials.htm"><i class="fa fa-caret-right"></i> SAP Tutorials </a></li>
+<li><a href="/scripting_lnaguage_tutorials.htm"><i class="fa fa-caret-right"></i>Programming Scripts </a></li>
+<li><a href="/selected_reading.htm"><i class="fa fa-caret-right"></i> Selected Reading </a></li>
+<li><a href="/software_quality_tutorials.htm"><i class="fa fa-caret-right"></i> Software Quality </a></li>
+<li><a href="/soft_skill_tutorials.htm"><i class="fa fa-caret-right"></i> Soft Skills </a></li>
+<li><a href="/telecom_tutorials.htm"><i class="fa fa-caret-right"></i> Telecom Tutorials </a></li>
+<li><a href="/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> UPSC IAS Exams </a></li>
+<li><a href="/web_development_tutorials.htm"><i class="fa fa-caret-right"></i> Web Development </a></li>
+<li><a href="/sports_tutorials.htm"><i class="fa fa-caret-right"></i> Sports Tutorials </a></li>
+<li><a href="/xml_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> XML Technologies </a></li>
+<li><a href="/multi_language_tutorials.htm"><i class="fa fa-caret-right"></i> Multi-Language</a></li>
+<li><a href="/questions_and_answers.htm"><i class="fa fa-caret-right"></i> Interview Questions</a></li>
+</ul>
+</li>
+</ul>
+<div class="clear"></div>
+</div> 
+</div>
+<div class="right-menu">
+<div class="toc-toggle">
+<a href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+</div>
+<div class="mobile-search-btn">
+<a href="https://www.tutorialspoint.com/search.htm"><i class="fal fa-search"></i></a>
+</div>
+<div class="search-box">
+<form method="get" class="search-form" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid">
+<input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+<button><i class="fal fa-search"></i></button>
+</form>
+</div>
+<div class="menu-btn library-btn">
+<a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fal fa-cubes"></i> <span>Library</span></a>
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/videotutorials/index.php"><i class="fal fa-video"></i> <span>Videos</span></a> 
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/questions/index.php"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a>
+</div>
+<div class="menu-btn ebooks-btn">
+<a href="https://store.tutorialspoint.com"><i class="fal fa-book"></i> <span>eBooks</span></a>
+</div>
+<div class="mui-dropdown">
+<button class="mui-btn mui-btn--primary mobile-menu" data-mui-toggle="dropdown">
+<span class="mui-caret"></span>
+</button>
+<ul class="mui-dropdown__menu">
+<li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fal fa-cubes"></i> <span>Library</span></a></li>
+<li><a href="https://www.tutorialspoint.com/videotutorials/index.php"><i class="fal fa-video"></i> <span>Videos</span></a></li>
+<li><a href="https://store.tutorialspoint.com"><i class="fal fa-book"></i> <span>eBooks</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Top main-menu Ends Here -->
+</header>
+<div class="mui-container-fluid content">
+<div class="mui-container">
+<!-- Tutorial ToC Starts Here -->
+<div class="mui-col-md-3 tutorial-toc">
+<style>
+.ts {
+  vertical-align:middle !important;
+  text-align:center !important;
+}
+</style>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] },
+"HTML-CSS": {
+ linebreaks: { automatic: true, width: "container" }          
+}              
+});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+<div class="mini-logo">
+<img src="/natural_language_processing/images/natural-language-processing-mini-logo.jpg" alt="Natural Language Processing Tutorial" />
+</div>
+<ul class="toc chapters" >
+<li class="heading">Natural Language Processing Tutorial</li>
+<li><a href="/natural_language_processing/index.htm">NLP - Home</a></li>
+<li><a href="/natural_language_processing/natural_language_processing_introduction.htm">NLP - Introduction</a></li>
+<li><a href="/natural_language_processing/natural_language_processing_linguistic_resources.htm">NLP - Linguistic Resources</a></li>
+<li><a href="/natural_language_processing/natural_language_processing_word_level_analysis.htm">NLP - Word Level Analysis</a></li>
+<li><a href="/natural_language_processing/natural_language_processing_syntactic_analysis.htm">NLP - Syntactic Analysis</a></li>
+<li><a href="/natural_language_processing/natural_language_processing_semantic_analysis.htm">NLP - Semantic Analysis</a></li>
+<li><a href="/natural_language_processing/natural_language_processing_word_sense_disambiguation.htm">NLP - Word Sense Disambiguation</a></li>
+<li><a href="/natural_language_processing/natural_language_discourse_processing.htm">NLP - Discourse Processing</a></li>
+<li><a href="/natural_language_processing/natural_language_processing_part_of_speech_tagging.htm">NLP - Part of Speech (PoS) Tagging</a></li>
+<li><a href="/natural_language_processing/natural_language_processing_inception.htm">NLP - Inception</a></li>
+<li><a href="/natural_language_processing/natural_language_processing_information_retrieval.htm">NLP - Information Retrieval</a></li>
+<li><a href="/natural_language_processing/natural_language_processing_applications_of_nlp.htm">NLP - Applications of NLP</a></li>
+<li><a href="/natural_language_processing/natural_language_processing_python.htm">NLP - Python</a></li>
+<li class="heading">Natural Language Processing Resources</li>
+<li><a href="/natural_language_processing/natural_language_processing_quick_guide.htm">NLP - Quick Guide</a></li>
+<li><a href="/natural_language_processing/natural_language_processing_useful_resources.htm">NLP - Useful Resources</a></li>
+<li><a href="/natural_language_processing/natural_language_processing_discussion.htm">NLP - Discussion</a></li>
+</ul>
+<ul class="toc reading">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+<div style="height:250px;">
+<div id="430c9911-782f-495d-88f9-69f58ca8c9a4" class="_ap_apex_ad">
+<script>
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+adpushup.triggerAd("430c9911-782f-495d-88f9-69f58ca8c9a4");
+});
+</script>
+</div>
+</div>
+</div>
+<!-- Tutorial ToC Ends Here -->
+<!-- Tutorial Content Starts Here -->
+<div class="mui-col-md-6 tutorial-content">
+<h1>NLP - Information Retrieval</h1>
+<hr/>
+<div class="top-ad-heading">Advertisements</div>
+<div style="text-align:center" class="google-top-ads">
+<div id="adp_top_ads" style="text-align:center !important;"></div>
+<script>
+     var adPos = document.getElementById('adp_top_ads');
+     var ad_id_720 = "8014640d-fd34-4b2e-9b1b-cc67234a2325";
+     var ad_id_650 = "2d1bb2c4-eb72-471d-9c80-1bf5514728c1";
+     var ad_id_300 = "df94a1a9-ae2f-432d-9a92-d93823ff4503";
+     var width = window.innerWidth;
+     var ad_id = ad_id_720;
+     if( width <= 768 ){
+        ad_id =  ad_id_300;
+     }else if( width <= 1435 ){
+        ad_id =  ad_id_650;
+     }
+     adPos.innerHTML = '<div id="' + ad_id + '" class="_ap_apex_ad"></div>';
+     var adpushup = adpushup || {};
+     adpushup.que = adpushup.que || [];
+     adpushup.que.push(function() {
+     adpushup.triggerAd(ad_id);
+     });
+</script>
+</div>
+<br>
+<div class="mui-container-fluid button-borders">
+<div class="pre-btn">
+<a href="/natural_language_processing/natural_language_processing_inception.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/natural_language_processing/natural_language_processing_applications_of_nlp.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="clearer"></div>
+<p>Information retrieval (IR) may be defined as a software program that deals with the organization, storage, retrieval and evaluation of information from document repositories particularly textual information. The system assists users in finding the information they require but it does not explicitly return the answers of the questions. It informs the existence and location of documents that might consist of the required information. The documents that satisfy user’s requirement are called relevant documents. A perfect IR system will retrieve only relevant documents.</p>
+<p>With the help of the following diagram, we can understand the process of information retrieval (IR) &minus;</p>
+<img class="center" src="/natural_language_processing/images/relevant_output_about_information.jpg" alt="Relevant Output About Information" />
+<p>It is clear from the above diagram that a user who needs information will have to formulate a request in the form of query in natural language. Then the IR system will respond by retrieving the relevant output, in the form of documents, about the required information.</p>
+<h2>Classical Problem in Information Retrieval (IR) System</h2>
+<p>The main goal of IR research is to develop a model for retrieving information from the repositories of documents. Here, we are going to discuss a classical problem, named <b>ad-hoc retrieval problem</b>, related to the IR system.</p>
+<p>In ad-hoc retrieval, the user must enter a query in natural language that describes the required information. Then the IR system will return the required documents related to the desired information. For example, suppose we are searching something on the Internet and it gives some exact pages that are relevant as per our requirement but there can be some non-relevant pages too. This is due to the ad-hoc retrieval problem.</p>
+<h2>Aspects of Ad-hoc Retrieval</h2>
+<p>Followings are some aspects of ad-hoc retrieval that are addressed in IR research &minus;</p>
+<ul class="list">
+<li><p>How users with the help of relevance feedback can improve original formulation of a query?</p></li>
+<li><p>How to implement database merging, i.e., how results from different text databases can be merged into one result set?</p></li>
+<li><p>How to handle partly corrupted data? Which models are appropriate for the same?</p></li>
+</ul>
+<h2>Information Retrieval (IR) Model</h2>
+<p>Mathematically, models are used in many scientific areas having objective to understand some phenomenon in the real world. A model of information retrieval predicts and explains what a user will find in relevance to the given query. IR model is basically a pattern that defines the above-mentioned aspects of retrieval procedure and consists of the following &minus;</p>
+<ul class="list">
+<li><p>A model for documents.</p></li>
+<li><p>A model for queries.</p></li>
+<li><p>A matching function that compares queries to documents.</p></li>
+</ul>
+<p>Mathematically, a retrieval model consists of &minus;</p>
+<p><b>D</b> &minus; Representation for documents.</p>
+<p><b>R</b> &minus; Representation for queries.</p>
+<p><b>F</b> &minus; The modeling framework for D, Q along with relationship between them.</p>
+<p><b>R (q,di)</b> &minus; A similarity function which orders the documents with respect to the query. It is also called ranking.</p>
+<h2>Types of Information Retrieval (IR) Model</h2>
+<p>An information model (IR) model can be classified into the following three models &minus;</p>
+<h3>Classical IR Model</h3>
+<p>It is the simplest and easy to implement IR model. This model is based on mathematical knowledge that was easily recognized and understood as well. Boolean, Vector and Probabilistic are the three classical IR models.</p>
+<h3>Non-Classical IR Model</h3>
+<p>It is completely opposite to classical IR model. Such kind of IR models are based on principles other than similarity, probability, Boolean operations. Information logic model, situation theory model and interaction models are the examples of non-classical IR model.</p>
+<h3>Alternative IR Model</h3>
+<p>It is the enhancement of classical IR model making use of some specific techniques from some other fields. Cluster model, fuzzy model and latent semantic indexing (LSI) models are the example of alternative IR model.</p>
+<h2>Design features of Information retrieval (IR) systems</h2>
+<p>Let us now learn about the design features of IR systems &minus;</p>
+<h3>Inverted Index</h3>
+<p>The primary data structure of most of the IR systems is in the form of inverted index. We can define an inverted index as a data structure that list, for every word, all documents that contain it and frequency of the occurrences in document. It makes it easy to search for ‘hits’ of a query word.</p>
+<h3>Stop Word Elimination</h3>
+<p>Stop words are those high frequency words that are deemed unlikely to be useful for searching. They have less semantic weights. All such kind of words are in a list called stop list. For example, articles “a”, “an”, “the” and prepositions like “in”, “of”, “for”, “at” etc. are the examples of stop words. The size of the inverted index can be significantly reduced by stop list. As per Zipf’s law, a stop list covering a few dozen words reduces the size of inverted index by almost half. On the other hand, sometimes the elimination of stop word may cause elimination of the term that is useful for searching. For example, if we eliminate the alphabet “A” from “Vitamin A” then it would have no significance.</p>
+<h3>Stemming</h3>
+<p>Stemming, the simplified form of morphological analysis, is the heuristic process of extracting the base form of words by chopping off the ends of words. For example, the words laughing, laughs, laughed would be stemmed to the root word laugh.</p>
+<p>In our subsequent sections, we will discuss about some important and useful IR models.</p>
+<h2>The Boolean Model</h2>
+<p>It is the oldest information retrieval (IR) model. The model is based on set theory and the Boolean algebra, where documents are sets of terms and queries are Boolean expressions on terms. The Boolean model can be defined as &minus;</p>
+<ul class="list">
+<li><p><b>D</b> &minus; A set of words, i.e., the indexing terms present in a document. Here, each term is either present (1) or absent (0).</p></li>
+<li><p><b>Q</b> &minus; A Boolean expression, where terms are the index terms and operators are logical products &minus; AND, logical sum &minus; OR and logical difference &minus; NOT</p></li>
+<li><p><b>F</b> &minus; Boolean algebra over sets of terms as well as over sets of documents</p>
+<p>If we talk about the relevance feedback, then in Boolean IR model the Relevance prediction can be defined as follows &minus;</p></li>
+<li><p><b>R</b> &minus; A document is predicted as relevant to the query expression if and only if it satisfies the query expression as &minus;</p></li>
+</ul>
+<p class="center">((𝑡𝑒𝑥𝑡 ˅ 𝑖𝑛𝑓𝑜𝑟𝑚𝑎𝑡𝑖𝑜𝑛) ˄ 𝑟𝑒𝑟𝑖𝑒𝑣𝑎𝑙 ˄ ˜ 𝑡ℎ𝑒𝑜𝑟𝑦)</p>
+<p>We can explain this model by a query term as an unambiguous definition of a set of documents.</p>
+<p>For example, the query term <b><i>“economic”</i></b> defines the set of documents that are indexed with the term <b><i>“economic”</i></b>.</p>
+<p>Now, what would be the result after combining terms with Boolean AND Operator? It will define a document set that is smaller than or equal to the document sets of any of the single terms. For example, the query with terms <b><i>“social”</i></b> and <b><i>“economic”</i></b> will produce the documents set of documents that are indexed with both the terms. In other words, document set with the intersection of both the sets.</p>
+<p>Now, what would be the result after combining terms with Boolean OR operator? It will define a document set that is bigger than or equal to the document sets of any of the single terms. For example, the query with terms <b><i>“social”</i></b> or <b><i>“economic”</i></b> will produce the documents set of documents that are indexed with either the term <b><i>“social”</i></b> or <b><i>“economic”</i></b>. In other words, document set with the union of both the sets.</p>
+<h2>Advantages of the Boolean Mode</h2>
+<p>The advantages of the Boolean model are as follows &minus;</p>
+<ul class="list">
+<li><p>The simplest model, which is based on sets.</p></li>
+<li><p>Easy to understand and implement.</p></li>
+<li><p>It only retrieves exact matches</p></li>
+<li><p>It gives the user, a sense of control over the system.</p></li>
+</ul>
+<h2>Disadvantages of the Boolean Model</h2>
+<p>The disadvantages of the Boolean model are as follows &minus;</p>
+<ul class="list">
+<li><p>The model’s similarity function is Boolean. Hence, there would be no partial matches. This can be annoying for the users.</p></li>
+<li><p>In this model, the Boolean operator usage has much more influence than a critical word.</p></li>
+<li><p>The query language is expressive, but it is complicated too.</p></li>
+<li><p>No ranking for retrieved documents.</p></li>
+</ul>
+<h2>Vector Space Model</h2>
+<p>Due to the above disadvantages of the Boolean model, Gerard Salton and his colleagues suggested a model, which is based on Luhn’s similarity criterion. The similarity criterion formulated by Luhn states, “the more two representations agreed in given elements and their distribution, the higher would be the probability of their representing similar information.”</p>
+<p>Consider the following important points to understand more about the Vector Space Model &minus;</p>
+<ul class="list">
+<li><p>The index representations (documents) and the queries are considered as vectors embedded in a high dimensional Euclidean space.</p></li>
+<li><p>The similarity measure of a document vector to a query vector is usually the cosine of the angle between them.</p></li>
+</ul>
+<h2>Cosine Similarity Measure Formula</h2>
+<p>Cosine is a normalized dot product, which can be calculated with the help of the following formula &minus;</p>
+<p>$$Score \lgroup \vec{d} \vec{q} \rgroup= \frac{\sum_{k=1}^m d_{k}\:.q_{k}}{\sqrt{\sum_{k=1}^m\lgroup d_{k}\rgroup^2}\:.\sqrt{\sum_{k=1}^m}m\lgroup q_{k}\rgroup^2 }$$</p>
+<p>$$Score \lgroup \vec{d} \vec{q}\rgroup =1\:when\:d =q $$</p>
+<p>$$Score \lgroup \vec{d} \vec{q}\rgroup =0\:when\:d\:and\:q\:share\:no\:items$$</p>
+<h2>Vector Space Representation with Query and Document</h2>
+<p>The query and documents are represented by a two-dimensional vector space. The terms are <b><i>car</i></b> and <b><i>insurance</i></b>. There is one query and three documents in the vector space.</p>
+<img class="center" src="/natural_language_processing/images/two_dimensional_vector_space.jpg" alt="Two-dimensional Vector Space" />
+<p>The top ranked document in response to the terms car and insurance will be the document <b>d<sub>2</sub></b> because the angle between <b>q</b> and <b>d<sub>2</sub></b> is the smallest. The reason behind this is that both the concepts car and insurance are salient in d<sub>2</sub> and hence have the high weights. On the other side, <b>d<sub>1</sub></b> and <b>d<sub>3</sub></b> also mention both the terms but in each case, one of them is not a centrally important term in the document.</p>
+<h3>Term Weighting</h3>
+<p>Term weighting means the weights on the terms in vector space. Higher the weight of the term, greater would be the impact of the term on cosine. More weights should be assigned to the more important terms in the model. Now the question that arises here is how can we model this.</p>
+<p>One way to do this is to count the words in a document as its term weight. However, do you think it would be effective method?</p>
+<p>Another method, which is more effective, is to use <b>term frequency (tf<sub>ij</sub>), document frequency (df<sub>i</sub>)</b> and <b>collection frequency (cf<sub>i</sub>)</b>.</p>
+<h3>Term Frequency (tf<sub>ij</sub>)</h3>
+<p>It may be defined as the number of occurrences of <b>w<sub>i</sub></b> in <b>d<sub>j</sub></b>. The information that is captured by term frequency is how salient a word is within the given document or in other words we can say that the higher the term frequency the more that word is a good description of the content of that document.</p>
+<h3>Document Frequency (df<sub>i</sub>)</h3>
+<p>It may be defined as the total number of documents in the collection in which w<sub>i</sub> occurs. It is an indicator of informativeness. Semantically focused words will occur several times in the document unlike the semantically unfocused words.</p>
+<h3>Collection Frequency (cf<sub>i</sub>)</h3>
+<p>It may be defined as the total number of occurrences of <b>w<sub>i</sub></b> in the collection.</p>
+<p>Mathematically, $df_{i}\leq cf_{i}\:and\:\sum_{j}tf_{ij} = cf_{i}$</p>
+<h2>Forms of Document Frequency Weighting</h2>
+<p>Let us now learn about the different forms of document frequency weighting. The forms are described below &minus;</p>
+<h3>Term Frequency Factor</h3>
+<p>This is also classified as the term frequency factor, which means that if a term <b><i>t</i></b> appears often in a document then a query containing <b><i>t</i></b> should retrieve that document. We can combine word’s <b>term frequency (tf<sub>ij</sub>)</b> and <b>document frequency (df<sub>i</sub>)</b> into a single weight as follows &minus;</p>
+<p>$$weight \left ( i,j \right ) =\begin{cases}(1+log(tf_{ij}))log\frac{N}{df_{i}}\:if\:tf_{i,j}\:\geq1\\0 \:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\: if\:tf_{i,j}\:=0\end{cases}$$</p>
+<p>Here N is the total number of documents.</p>
+<h3>Inverse Document Frequency (idf)</h3>
+<p>This is another form of document frequency weighting and often called idf weighting or inverse document frequency weighting. The important point of idf weighting is that the term’s scarcity across the collection is a measure of its importance and importance is inversely proportional to frequency of occurrence.</p>
+<p>Mathematically,</p>
+<p>$$idf_{t} = log\left(1+\frac{N}{n_{t}}\right)$$</p>
+<p>$$idf_{t} = log\left(\frac{N-n_{t}}{n_{t}}\right)$$</p>
+<p>Here,</p>
+<p>N = documents in the collection</p>
+<p>n<sub>t</sub> = documents containing term <i>t</i></p>
+<h2>User Query Improvement</h2>
+<p>The primary goal of any information retrieval system must be accuracy &minus; to produce relevant documents as per the user’s requirement. However, the question that arises here is how can we improve the output by improving user’s query formation style. Certainly, the output of any IR system is dependent on the user’s query and a well-formatted query will produce more accurate results. The user can improve his/her query with the help of <i><b>relevance feedback</b></i>, an important aspect of any IR model.</p>
+<h2>Relevance Feedback</h2>
+<p>Relevance feedback takes the output that is initially returned from the given query. This initial output can be used to gather user information and to know whether that output is relevant to perform a new query or not. The feedbacks can be classified as follows &minus;</p>
+<h3>Explicit Feedback</h3>
+<p>It may be defined as the feedback that is obtained from the assessors of relevance. These assessors will also indicate the relevance of a document retrieved from the query. In order to improve query retrieval performance, the relevance feedback information needs to be interpolated with the original query.</p>
+<p>Assessors or other users of the system may indicate the relevance explicitly by using the following relevance systems &minus;</p>
+<ul class="list">
+<li><p><b>Binary relevance system</b> &minus; This relevance feedback system indicates that a document is either relevant (1) or irrelevant (0) for a given query.</p></li>
+<li><p><b>Graded relevance system</b> &minus; The graded relevance feedback system indicates the relevance of a document, for a given query, on the basis of grading by using numbers, letters or descriptions. The description can be like “not relevant”, “somewhat relevant”, “very relevant” or “relevant”. </p></li>
+</ul>
+<h3>Implicit Feedback</h3>
+<p>It is the feedback that is inferred from user behavior. The behavior includes the duration of time user spent viewing a document, which document is selected for viewing and which is not, page browsing and scrolling actions, etc. One of the best examples of implicit feedback is <b><i>dwell time</i></b>, which is a measure of how much time a user spends viewing the page linked to in a search result.</p>
+<h3>Pseudo Feedback</h3>
+<p>It is also called Blind feedback. It provides a method for automatic local analysis. The manual part of relevance feedback is automated with the help of Pseudo relevance feedback so that the user gets improved retrieval performance without an extended interaction. The main advantage of this feedback system is that it does not require assessors like in explicit relevance feedback system.</p>
+<p>Consider the following steps to implement this feedback &minus;</p>
+<ul class="list">
+<li><p><b>Step 1</b> &minus; First, the result returned by initial query must be taken as relevant result. The range of relevant result must be in top 10-50 results.</p></li>
+<li><p><b>Step 2</b> &minus; Now, select the top 20-30 terms from the documents using for instance term frequency(tf)-inverse document frequency(idf) weight.</p></li>
+<li><p><b>Step 3</b> &minus; Add these terms to the query and match the returned documents. Then return the most relevant documents.</p></li>
+</ul>
+<div class="mui-container-fluid button-borders show" id="bottom_navigation">
+<div class="pre-btn">
+<a href="/natural_language_processing/natural_language_processing_inception.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+<a class="hide-on-mobile" href="javascript:printPage();"><i class="fa fa-print"></i> Print Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/natural_language_processing/natural_language_processing_applications_of_nlp.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="google-bottom-ads">
+<div>Advertisements</div>
+<div id="adp_bottom_ads"></div>
+<script>
+var adPos = document.getElementById('adp_bottom_ads');
+var mobile_ad_id = "a8a632a6-046e-4f5c-b25f-8bc82ac89fb2";
+var desktop_ad_id = "e7ddd6f7-1ab0-494a-bade-887daa4373a0";
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+var ad_id = window.innerWidth <= 768 ? mobile_ad_id : desktop_ad_id;
+adPos.innerHTML = '<div id="' + ad_id + '" class="_ap_apex_ad"></div>';
+adpushup.triggerAd(ad_id);
+});
+</script>
+<div class="space-bottom"></div>
+</div>
+</div>
+<!-- Tutorial Content Ends Here -->
+<!-- Right Column Starts Here -->
+<div class="mui-col-md-2 google-right-ads">
+<div class="space-top"></div>
+<div class="google-right-ad" id="ad300" style="margin: 0px auto !important;margin-top:5px;">
+<div id="f0f6cff6-393d-4170-b63a-d9ff06ca9f25" class="_ap_apex_ad">
+<script>
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+adpushup.triggerAd("f0f6cff6-393d-4170-b63a-d9ff06ca9f25");
+});
+</script>
+</div>
+</div>
+<div class="google-right-ad" style="margin-top:16px;">
+<div id="5c0affd5-724a-475c-bfcd-cecbc7660c36" class="_ap_apex_ad">
+<script>
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+adpushup.triggerAd("5c0affd5-724a-475c-bfcd-cecbc7660c36");
+});
+</script>
+</div>
+</div>
+<div class="space-bottom"></div>
+
+<div class="google-right-ad" style="margin-top:16px;margin-bottom:15px;">
+<div id="8f8814c2-d64c-4d26-9cb9-543653c0b48f" class="_ap_apex_ad">
+<script>
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+adpushup.triggerAd("8f8814c2-d64c-4d26-9cb9-543653c0b48f");
+});
+</script>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column Ends Here -->
+</div>
+</div>
+<div class="clear"></div>
+<footer id="footer">
+<div class="mui--text-center">
+<div class="mui--text-caption mui--text-light">
+<a href="/index.htm" class="logo"><img class="img-responsive" src="/images/logo-black.png" alt="Tutorials Point" title="Tutorials Point"></a>
+</div>
+<ul class="mui-list--inline mui--text-body2 mui--text-light">
+<li><a href="/about/index.htm"><i class="fal fa-globe"></i> About us</a></li>
+<li><a href="/about/about_terms_of_use.htm"><i class="fal fa-asterisk"></i> Terms of use</a></li>
+<li><a href="/about/about_privacy.htm"> <i class="fal fa-shield-check"></i> Privacy Policy</a></li>
+<li><a href="/about/faq.htm"><i class="fal fa-question-circle"></i> FAQ's</a></li>
+<li><a href="/about/about_helping.htm"><i class="fal fa-hands-helping"></i> Helping</a></li>
+<li><a href="/about/contact_us.htm"><i class="fal fa-map-marker-alt"></i> Contact</a></li>
+</ul>
+<div class="mui--text-caption mui--text-light bottom-copyright-text">&copy; Copyright 2020. All Rights Reserved.</div>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-232293-17"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-6');
+</script>
+</footer>
+</body>
+</html>
+

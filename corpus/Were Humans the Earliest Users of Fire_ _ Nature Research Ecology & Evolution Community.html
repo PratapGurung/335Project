@@ -1,0 +1,618 @@
+
+<!doctype html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# video: http://ogp.me/ns/video#">
+<title>Were Humans the Earliest Users of Fire? | Nature Research Ecology & Evolution Community </title>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"cb477c6ab6","applicationID":"13677946","transactionName":"cFYIEBRaWA9XExdfRlZKEksWWkcXQU5LUFxE","queueTime":4,"applicationTime":237,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"cb477c6ab6",applicationID:"13677946"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Assuming that human ancestors did learn their “use of fire” by observing the behavior of the birds and developed their knowledge to learn the “control and preservation of fire”, then the earliest users of fire might be a species of birds, which would then position humans are those who were more skilled in its control and diverse uses.">
+<meta name="author" content="Nature Research Ecology &amp; Evolution Community ">
+<meta property="og:site_name" content="Nature Research Ecology &amp; Evolution Community ">
+<meta property="og:locale" content="en_GB">
+<link rel="canonical" href="https://natureecoevocommunity.nature.com/users/54409-gao-jianguo/posts/47573-were-humans-the-earliest-users-of-fire">
+<link rel="amphtml" href="https://natureecoevocommunity.nature.com/amp/posts/47573-were-humans-the-earliest-users-of-fire">
+<meta property="og:title" content="Were Humans the Earliest Users of Fire?">
+<meta property="og:description" content="Assuming that human ancestors did learn their “use of fire” by observing the behavior of the birds and developed their knowledge to learn the “control and preservation of fire”, then the earliest users of fire might be a species of birds, which would then position humans are those who were more skilled in its control and diverse uses.">
+<meta property="og:url" content="https://natureecoevocommunity.nature.com/users/54409-gao-jianguo/posts/47573-were-humans-the-earliest-users-of-fire">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://images.zapnito.com/users/54409/posters/06288545ffba6f6a3de65f3193e2332b/beef7c7e-0c7c-4a67-948b-4277f1140632_large.jpg">
+<meta property="article:published_time" content="2019-04-05T05:44:00+01:00">
+<meta property="article:modified_time" content="2020-02-29T03:32:39+00:00">
+<meta property="article:section" content="Journal club">
+<meta name="twitter:title" content="Were Humans the Earliest Users of Fire?">
+<meta name="twitter:description" content="Assuming that human ancestors did learn their “use of fire” by observing the behavior of the birds and developed their knowledge to learn the “control and preservation of fire”, then the earliest users of fire might be a species of birds, which would then position humans are those who were more skilled in its control and diverse uses.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://images.zapnito.com/users/54409/posters/06288545ffba6f6a3de65f3193e2332b/beef7c7e-0c7c-4a67-948b-4277f1140632_large.jpg">
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="Brz1Xvo5VqCxFo60Tq55CQEo5XQSYPicXagwuOTsYC1+FcMPqj72jAjzIdmDZnkCLtQ+gnx0QtvLslF//90DyA==" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://natureecoevocommunity.nature.com/rss.xml" />
+<meta name="zapnito-feeds" content="disabled">
+<link rel="apple-touch-icon" href="https://natureecoevocommunity.nature.com/theme/assets/touch-icon.png?cache_key=aeef230801b125d52fb526b67020f0c965a6322f">
+<link rel="shortcut icon" href="https://natureecoevocommunity.nature.com/theme/assets/favicon.png?cache_key=aeef230801b125d52fb526b67020f0c965a6322f">
+
+
+<meta name="zapnito:release" content="v1862">
+<meta name="zapnito:commit" content="bd912ab27e46467c9786fe31ac73b876b7633a11">
+
+
+<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=default%2Ces5%2Ces6%2Ces7"></script> 
+
+
+
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "NewsArticle",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://natureecoevocommunity.nature.com/users/54409-gao-jianguo/posts/47573-were-humans-the-earliest-users-of-fire"
+      },
+      "headline": "Were Humans the Earliest Users of Fire?",
+      "description": "Assuming that human ancestors did learn their “use of fire” by observing the behavior of the birds and developed their knowledge to learn the “control and preservation of fire”, then the earliest users of fire might be a species of birds, which would then position humans are those who were more skilled in its control and diverse uses.",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://images.zapnito.com/users/54409/posters/06288545ffba6f6a3de65f3193e2332b/beef7c7e-0c7c-4a67-948b-4277f1140632_large.jpg",
+          "width": 1280,
+          "height": 443
+        },
+      "datePublished": "2019-04-05T04:44:00+00:00",
+      "dateModified": "2020-02-29T03:32:39Z",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Macmillan Publishers Limited, part of Springer Nature.",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://natureecoevocommunity.nature.com/theme/assets/amp-logo.png?cache_key=aeef230801b125d52fb526b67020f0c965a6322f",
+          "width": 600,
+          "height": 60
+        }
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Gao Jianguo"
+      }
+    }
+  </script>
+
+
+
+
+<link rel="stylesheet" media="all" href="https://proxy.zapnito.com/assets/vendor-1fff1296cf63bbb1f89c9db09f9e8b1cd6629994592ac3d58f915f91decc442d.css" />
+<link rel="stylesheet" media="all" href="https://proxy.zapnito.com/assets/application-62958848d42759fb3e42f2680518967bc21bf10e49685b0acaa5d1f328c11711.css" />
+<link rel="stylesheet" href="https://proxy.zapnito.com/assets/zapnito-ui-8205d7b95b2659f38634e547f093ef10.css">
+
+
+<link rel="stylesheet" media="all" href="https://natureecoevocommunity.nature.com/fonts.css?cache_key=2589bcf6e8be322ce39152619deb3bd9f330e425" />
+<link rel="stylesheet" media="all" href="https://natureecoevocommunity.nature.com/theme.css?cache_key=ef212ce657f34f5abd9f4e88d777a8cbb9be1daa" />
+
+
+<script src="https://proxy.zapnito.com/packs/js/application-f4afd46a9333e8340ff7.js"></script>
+
+
+<script>
+//<![CDATA[
+window.gon={};gon.analyticsContext={"blocked_headers":[],"path":"\/users\/54409-gao-jianguo\/posts\/47573-were-humans-the-earliest-users-of-fire","tenant_id":43,"tenant_name":"Nature Research Ecology \u0026 Evolution Community ","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/80.0.3987.122 Safari\/537.36","site_licence_id":"none","ip_address":"2604:2000:1500::","session_id":"1e0d62e46a094135ce2e17c0cdc99db0"};
+//]]>
+</script>
+
+
+<script type="text/javascript">
+      (function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+      for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+      mixpanel.init("29871fe63c15eee0a958a7dbba493412", { track_pageview: false });
+      if (gon.analyticsContext) {
+      	mixpanel.register(gon.analyticsContext);
+      };
+	</script>
+
+
+<script type="text/javascript">
+    !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+    arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+    d.src="//d1l6p2sc9645hc.cloudfront.net/tracker.js";q.parentNode.
+    insertBefore(d,q)}(window,document,"script","_gs");
+
+    _gs("GSN-470882-X", "master");
+
+      _gs("GSN-388723-K", "tenant");
+
+      _gs("unidentify");
+
+      _gs('set', 'chat', { button: true });
+  </script>
+
+
+
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        "content_id": "47573",
+        "content_type": "Post",
+        "content_premium": "false",
+        "content_author": "Gao Jianguo",
+        "content_channels": "Journal club",
+        "content_room": ""
+      });
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="//www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f); })(window,document,"script","dataLayer", "GTM-NWDMT9Q");
+  </script>
+
+</head>
+<body class="nature-ecology-evolution-community has-branding-bar user-signed-out rails guest-posts guest-posts-show ">
+
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-NWDMT9Q" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+<a href="#" class="navbar__hamburger">
+<span class="navbar__hamburger-top-bun"></span>
+<span class="navbar__hamburger-meat"></span>
+<span class="navbar__hamburger-bottom-bun"></span>
+<span class="navbar__hamburger-label">Menu</span>
+</a>
+<div class="top">
+<div class="branding-bar">
+<div class="branding-bar__wrap">
+<div class="branding-bar__parent">
+A <a href="https://communities.nature.com" target="_blank">community</a> from
+<a href="http://www.nature.com/natecolevol/" target="_blank" class="branding-bar__link"><em>Nature Ecology and Evolution</em></a>
+</div>
+<div class="branding-bar__kitemark">
+</div>
+</div>
+</div>
+</div>
+<div class="viewport">
+<header class="navbar navbar--signed-out" role="banner">
+<div class="navbar__inner">
+<h1 class="navbar__logo" role="presentation">
+<a href="/">Nature Research Ecology & Evolution Community </a>
+</h1>
+<form class="navbar__search" role="search" id="search-form" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+<label for="search" class="sr-only">Search</label>
+<input type="search" name="query" id="search" class="navbar__search-field" placeholder="Search Nature Research Ecology &amp; Evolution Community ...">
+<button type="submit" class="navbar__search-button"><span class="icon icon--search"></span><span class="sr-only">Search</span></button>
+</form>
+<ul class="navbar__account navbar__account--signed-out">
+<li class="navbar__link">
+<a href="/users/sign_up">Register</a>
+</li>
+<li class="navbar__link">
+<a class="link-sign-in" href="/users/sign_in">Sign In</a>
+</li>
+</ul>
+</div>
+</header>
+<section class="main" role="main">
+<div class="container">
+<div id="notices">
+</div>
+<article class="article article--post article--poster ">
+<div class="article__container article__container--full_width">
+<div class="article__inner">
+<div class="article__head">
+<div class="article__head-detail">
+<div class="badges">
+<a class="badges__badge badges__badge--478" style="background-color: #666666; color: #ffffff" href="/badges/478-contributor">Contributor</a>
+</div>
+<div class="kicker">
+<a class="kicker__channel" href="/channels/522-journal-club">Journal club</a>
+</div>
+<h1 class="article__headline" role="heading">Were Humans the Earliest Users of Fire?</h1>
+<div class="article__lead">
+<p>Assuming that human ancestors did learn their “use of fire” by observing the behavior of the birds and developed their knowledge to learn the “control and preservation of fire”, then the earliest users of fire might be a species of birds, which would then position humans are those who were more skilled in its control and diverse uses.</p>
+</div>
+<div class="meta">
+<div class="meta__author">
+<a href="/users/54409-gao-jianguo"><img class="avatar avatar--person avatar--xs" loading="lazy" alt="Go to the profile of Gao Jianguo" onerror="this.onerror=null;this.src=&#39;https://medialibrary.zapnito.com/img/large-default-avatar.png&#39;;" src="https://images.zapnito.com/users/54409/avatar/thumb_______.jpg" /></a>
+<div class="meta__detail ">
+<div class="meta__author-name"><a class="meta__author-link" href="/users/54409-gao-jianguo">Gao Jianguo</a></div>
+<div class="meta__date">Apr 05, 2019</div>
+</div>
+</div>
+<div class="meta__stats">
+<div class="meta__count">
+<span class="icon icon--vote-thumbs-up"></span> 4
+</div>
+<div class="meta__count">
+<span class="icon icon--chat-bubble-square-1"></span> 0
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="article__poster" style="background-image: url('https://images.zapnito.com/users/54409/posters/06288545ffba6f6a3de65f3193e2332b/beef7c7e-0c7c-4a67-948b-4277f1140632_large.jpg');"></div>
+<div class="article__body">
+<div class="article__wrap">
+<div class="article__actions">
+<div class="row">
+<div class="article__actions__left">
+</div>
+<div class="article__actions__right">
+</div>
+</div>
+</div>
+<div class="article__actions">
+<div class="row">
+<div class="article__actions__left">
+<a href="#sign-in-modal" data-toggle="modal" role="button" class="btn btn--default vote">
+<span class="icon icon--vote-thumbs-up"></span> <span class="btn__label">Like</span> <span class="vote__count">4</span>
+</a>
+<a href="#sign-in-modal" data-toggle="modal" role="button" class="btn btn--default comments-btn"><span class="icon icon--chat-bubble-square-1"></span> <span class="btn__label">Comment</span></a>
+</div>
+<div class="article__actions__right">
+<a href="#share" class="btn btn--default share" data-toggle="modal"><span class="icon icon--share"></span> <span class="btn__label">Share</span></a>
+<div class="modal modal--transparent fade in sharing__modal" id="share">
+<div class="modal__dialog">
+<div class="modal__content">
+<div class="modal__header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h4 class="modal__title">Share</h4>
+</div>
+<div class="modal__body">
+<ul class="sharing">
+<li class="sharing__link share__link--facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https://natureecoevocommunity.nature.com/users/54409-gao-jianguo/posts/47573-were-humans-the-earliest-users-of-fire" target="_blank" class="gtm-share-facebook"><span class="icon icon--facebook"></span> Facebook</a></li>
+<li class="sharing__link share__link--twitter"><a id="twitter-share" href="http://twitter.com/share?text=Were%20Humans%20the%20Earliest%20Users%20of%20Fire?&amp;url=https://natureecoevocommunity.nature.com/users/54409-gao-jianguo/posts/47573-were-humans-the-earliest-users-of-fire&amp;hashtags=behindthepaper" target="_blank" class="gtm-share-twitter"><span class="icon icon--twitter"></span> Twitter</a></li>
+<li class="sharing__link share__link--linkedin"><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://natureecoevocommunity.nature.com/users/54409-gao-jianguo/posts/47573-were-humans-the-earliest-users-of-fire&amp;title=Were%20Humans%20the%20Earliest%20Users%20of%20Fire?&amp;source=Nature Research Ecology &amp; Evolution Community " target="_blank" class="gtm-share-linkedin"><span class="icon icon--linkedin"></span> LinkedIn</a></li>
+</ul>
+</div>
+<div class="modal__footer">
+<h4 class="modal__title">Copy the link</h4>
+<input type="text" value="https://go.nature.com/2G2Rcpw" class="form__control sharing__url" aria-label="Shortened Link">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="article__content">
+<p>
+“<em>The formulation of a problem is often more essential than its solution, which may be merely a matter of mathematical or experimental skill.</em>”
+</p>
+<p>                        —Albert Einstein, In Einstein and Infeld, <em>Evolution of Physics</em> (1938)
+<br><span></span><br></p>
+<p>From the exhibition panels of many natural history museums, we have learned that <em>Homo erectus,</em> or modern-day human beings, were the earliest users of fire (Fig. 1). However, is that the truth? Fire has played an irreplaceable role in the evolution of humans. It was used to scare away large predators during prehistoric times and to roast food to enhance human digestion and nutrient absorption, which are important for human brain and intellectual development.
+ <span></span> </p>
+<figure><img src="/cdn-cgi/image/quality=45/https://images.zapnito.com/uploads/f8d3e9881eae16381b2165e9e67e2147/cace8fa0-fd06-443f-987c-02e47a157bed.jpeg" loading="lazy"></figure>
+<p><em><br></em><em>Fig. 1 A theme</em><em> show</em><em>ing “Homo erectus: the earliest user of fire,” on an exhibition panel in </em><em>the Shanghai Natural History Museum. </em><em>Credit: Jianguo Gao</em><span></span>
+  <br></p>
+<p>Some Chinese idioms are used to describe the destructive effects of fire on animals, such as "Moths flying into fires" and "Phoenix nirvana", which deepen our impression that fire is harmful to most animals. Similarly, a French idiom “Getting chestnuts from the fire” tells us that some animals acquire their food using fire at great risk (Fig. 2). These idioms, derived from observations, show that animals are inextricably linked to fire. In addition, some animals are able to use fire intelligently and proactively. In the savanna of Northern Australia, the ecological knowledge passed down by aborigines reveals that some raptors, such as the Black Kite (<em>Milvus migrans</em>), Whistling Kite (<em>Haliastur sphenurus</em>), and Brown Falcon (<em>Falco berigora</em>), spread burning sticks from one place to another, with the aim of forcing their prey to have nowhere to escape, which would eventually become food in their mouth (Bonta et al., 2017).
+<span></span>  <br></p>
+<figure><img src="/cdn-cgi/image/quality=45/https://images.zapnito.com/uploads/050122d898ff9291faad925b1d1dfabb/02346003-eb5d-4223-90a0-926a0ad0c7b4.png" loading="lazy"></figure>
+<p> <em>Fig. 2 Feather in the Flames. </em><em>Credit: Kallol Mukherjee</em><span></span>
+  <br></p>
+<p>The veracity and intentionality of the spread of fire was vividly described by an Aboriginal man named Waipuldanya (Bonta et al., 2017), “<em>I have seen a hawk pick up a smouldering stick in its claws and drop it in a fresh patch of dry grass half a mile away, then wait with its mates for the mad exodus of scorched and frightened rodents and reptiles</em>.” Furthermore, another Aboriginal man described raptors that appeared to work together to purposely steal embers from an existing blaze to start a new fire some distance away.
+</p>
+<p><em>Homo erectus</em> may have lived as early as 2 Mya (but the evidence of fire use can currently only be traced back to 1.5 Mya) (Hlubik et al., 2017), while raptors have probably existed for 70 million years, and lived as long ago as the dinosaurs (Xu et al., 2014). Considering that birds are species that evolved much earlier than humans (Fig. 3), it is not yet certain whether our human ancestors observed and learned the techniques of using fire from birds. However, if the birds could spread fire intentionally for predation purposes, we should rethink our notions regarding the identity of the earliest users of fire. Even if we eventually prove that humans were later users of fire, this truth does not prevent human beings from being the most successful species on the planet.     
+<em><br></em><em><br></em></p>
+<figure><img src="/cdn-cgi/image/quality=45/https://images.zapnito.com/uploads/5998b8a7e783c8b8d1b8ff14819b026f/cb86f575-0173-4509-ab85-8e79a24298c8.png" loading="lazy"></figure>
+<p><em>Fig. 3 Relative evolutionary timeline of humans vs. birds; the other major vertebrates are also included for comparison. Some birds may have used fire for hunting ca. 70 Mya</em><em>, while Human began using fire ca. 1.5 Mya. </em><em>Credit: Jianguo Gao<span></span></em>
+  <br></p>
+<p> It is important to highlight that our powerful learning ability is one of the most significant differences between us and other animals. If we define fire-use by birds for hunting as “use of fire”, then the “control of fire”, “preservation of fire”, i.e., the ability to create fire at will, and the subsequent knowledge and technology that are of great significance to human civilization and are the keys to urging humans to climb Earth's life pyramid of life. Assuming that human ancestors did learn their “use of fire” by observing the behavior of the birds and developed their knowledge to learn the “control and preservation of fire”, then the earliest users of fire might be a species of birds, which would then position humans are those who were more skilled in its control and diverse uses.
+<strong><br> <br> </strong><strong><br></strong></p>
+<p><strong>References:</strong><span></span>
+</p>
+<p>Bonta Mark, Gosford Robert, Eussen Dick, Ferguson Nathan, Loveless Erana &amp; Witwer Maxwell. 2017. Intentional Fire-Spreading by “Firehawk” Raptors in Northern Australia. <em>Journal of Ethnobiology</em>, <strong>37</strong>(4): 700-718.
+</p>
+<p>Hlubik Sarah, Berna Francesco, Feibel Craig, Braun David &amp; Harris John WK. 2017. Researching the Nature of Fire at 1.5 Mya on the Site of FxJj20 AB, Koobi Fora, Kenya, Using High-Resolution Spatial Analysis and FTIR Spectrometry. <em>Current Anthropology</em>, <strong>58</strong>(S16): S243-S257.
+</p>
+<p>Xu X, Zhou Z, Dudley R, Mackem S, Chuong CM, Erickson GM, Varricchio DJ. 2014. An integrative approach to understanding bird origins. <em>Science</em>, <strong>346</strong>(6215): 1253293.
+</p>
+</div>
+</div>
+<div class="author__bio">
+<div class="author__avatar">
+<a href="/users/54409-gao-jianguo"><img class="avatar avatar--person avatar--md" loading="lazy" alt="Go to the profile of Gao Jianguo" onerror="this.onerror=null;this.src=&#39;https://medialibrary.zapnito.com/img/large-default-avatar.png&#39;;" src="https://images.zapnito.com/users/54409/avatar/medium_______.jpg" /></a>
+</div>
+<div class="author__info">
+<h3 class="author__name"><a href="/users/54409-gao-jianguo">Gao Jianguo</a></h3>
+<p class="author__title">Dr., Peking University</p>
+<div class="author__profile">
+Dr. Gao Jianguo (高建国, 博士) mainly focuses on (but not limited to): plant-water relations, plant physiological ecology, tree physiology &amp; ecosystem ecology. He graduated from Chinese Academy of Sciences (CAS) in 2015 and turned to a well-trained scientist. His interests actually are very wide and wild, most of them constrained in plant and ecology. He was well-trained in science and as the first author published several peer-reviewed papers.
+</div>
+<div class="author__follow">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="comments" class="comments">
+<h2 class="comments__heading">No comments yet.</h2>
+<div class="comments__list">
+</div>
+</div>
+<div class="related">
+<h2 class="related__heading">You may also be interested in...</h2>
+<div class="row">
+<div class="content-wrap">
+<article class="content-card content-card--post " data-post-id="post-54766">
+<div class="content-card__inner">
+<a class="content-card__poster" style="background-image: url('https://images.zapnito.com/users/54409/posters/5a09b92603469308631e6f62fc91538d/0ee76fbc-8b66-4a32-84d8-1618b6f2c5cf_medium.jpg');" href="/users/54409-gao-jianguo/posts/54766-macroevolution-of-offspring-size-in-vertebrates-mediated-by-life-history"> Macroevolution of offspring size in vertebrates mediated by life history </a> <div class="content-card__article">
+<div class="badges">
+<a class="badges__badge badges__badge--478" style="background-color: #666666; color: #ffffff" href="https://natureecoevocommunity.nature.com/badges/478-contributor">Contributor</a></div>
+<div class="kicker">
+<a class="kicker__channel" href="https://natureecoevocommunity.nature.com/channels/522-journal-club">Journal club</a></div>
+<h1 class="content-card__headline">
+<a href="/users/54409-gao-jianguo/posts/54766-macroevolution-of-offspring-size-in-vertebrates-mediated-by-life-history">Macroevolution of offspring size in vertebrates mediated by life history</a> </h1>
+<div class="meta">
+<div class="meta__author">
+<a href="/users/54409-gao-jianguo"><img class="avatar avatar--person avatar--xs" loading="lazy" alt="Go to the profile of Gao Jianguo" onerror="this.onerror=null;this.src=&#39;https://medialibrary.zapnito.com/img/large-default-avatar.png&#39;;" src="https://images.zapnito.com/users/54409/avatar/thumb_______.jpg" /></a> <div class="meta__detail ">
+<div class="meta__author-name"><a class="meta__author-link" href="/users/54409-gao-jianguo">Gao Jianguo</a></div>
+<div class="meta__date">Oct 14, 2019</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="content-card content-card--post " data-post-id="post-53367">
+<div class="content-card__inner">
+<a class="content-card__poster" style="background-image: url('https://images.zapnito.com/users/54409/posters/3060d5cace08d55fc4ad2318da175862/6e2a3c1f-27e0-4f0f-a62d-702d6c8e44ef_medium.jpg');" href="/users/54409-gao-jianguo/posts/53367-grass-leaf-shapes-are-influenced-by-light"> Grass leaf shapes are influenced by light </a> <div class="content-card__article">
+<div class="badges">
+<a class="badges__badge badges__badge--478" style="background-color: #666666; color: #ffffff" href="https://natureecoevocommunity.nature.com/badges/478-contributor">Contributor</a></div>
+<div class="kicker">
+<a class="kicker__channel" href="https://natureecoevocommunity.nature.com/channels/522-journal-club">Journal club</a></div>
+<h1 class="content-card__headline">
+<a href="/users/54409-gao-jianguo/posts/53367-grass-leaf-shapes-are-influenced-by-light">Grass leaf shapes are influenced by light</a> </h1>
+<div class="meta">
+<div class="meta__author">
+<a href="/users/54409-gao-jianguo"><img class="avatar avatar--person avatar--xs" loading="lazy" alt="Go to the profile of Gao Jianguo" onerror="this.onerror=null;this.src=&#39;https://medialibrary.zapnito.com/img/large-default-avatar.png&#39;;" src="https://images.zapnito.com/users/54409/avatar/thumb_______.jpg" /></a> <div class="meta__detail ">
+<div class="meta__author-name"><a class="meta__author-link" href="/users/54409-gao-jianguo">Gao Jianguo</a></div>
+<div class="meta__date">Sep 11, 2019</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="content-card content-card--post " data-post-id="post-51646">
+<div class="content-card__inner">
+<a class="content-card__poster" style="background-image: url('https://images.zapnito.com/users/180635/posters/488a28fd439509a4c5d926f4bc77fbef/1cac1ca0-5520-46ff-928f-1481efad5dcd_medium.JPG');" href="/users/180635-lain-e-pardo/posts/51646-can-camera-trap-studies-help-protect-african-biodiversity"> Can camera trap studies help protect African biodiversity? </a> <div class="content-card__article">
+<div class="badges">
+<a class="badges__badge badges__badge--478" style="background-color: #666666; color: #ffffff" href="https://natureecoevocommunity.nature.com/badges/478-contributor">Contributor</a></div>
+<div class="kicker">
+<a class="kicker__channel" href="https://natureecoevocommunity.nature.com/channels/534-gallery">Gallery</a>, <a class="kicker__channel" href="https://natureecoevocommunity.nature.com/channels/522-journal-club">Journal club</a></div>
+<h1 class="content-card__headline">
+<a href="/users/180635-lain-e-pardo/posts/51646-can-camera-trap-studies-help-protect-african-biodiversity">Can camera trap studies help protect African biodiversity?</a> </h1>
+<div class="meta">
+<div class="meta__author">
+<a href="/users/180635-lain-e-pardo"><img class="avatar avatar--person avatar--xs" loading="lazy" alt="Go to the profile of Lain E. Pardo" onerror="this.onerror=null;this.src=&#39;https://medialibrary.zapnito.com/img/large-default-avatar.png&#39;;" src="https://images.zapnito.com/users/180635/avatar/thumb_DSC_0294_fix_twitter_size.jpg" /></a> <div class="meta__detail ">
+<div class="meta__author-name"><a class="meta__author-link" href="/users/180635-lain-e-pardo">Lain E. Pardo</a></div>
+<div class="meta__date">Jul 29, 2019</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="content-card content-card--post " data-post-id="post-50164">
+<div class="content-card__inner">
+<a class="content-card__poster" style="background-image: url('https://images.zapnito.com/users/176589/posters/77c0dcdbd165c8613c40363c507cf802/1e874035-0dba-45df-8bd1-d52f99e6999b_medium.png');" href="/users/176589-harry-siviter/posts/50164-a-year-with-lizards-egg-incubation-temperature-has-long-term-impacts-on-bearded-dragons"> A year with lizards: Egg incubation temperature has long term impacts on bearded dragons </a> <div class="content-card__article">
+<div class="badges">
+<a class="badges__badge badges__badge--478" style="background-color: #666666; color: #ffffff" href="https://natureecoevocommunity.nature.com/badges/478-contributor">Contributor</a></div>
+<div class="kicker">
+<a class="kicker__channel" href="https://natureecoevocommunity.nature.com/channels/535-news">News</a>, <a class="kicker__channel" href="https://natureecoevocommunity.nature.com/channels/522-journal-club">Journal club</a></div>
+<h1 class="content-card__headline">
+<a href="/users/176589-harry-siviter/posts/50164-a-year-with-lizards-egg-incubation-temperature-has-long-term-impacts-on-bearded-dragons">A year with lizards: Egg incubation temperature has long term impacts on bearded dragons </a> </h1>
+<div class="meta">
+<div class="meta__author">
+<a href="/users/176589-harry-siviter"><img class="avatar avatar--person avatar--xs" loading="lazy" alt="Go to the profile of Harry Siviter" onerror="this.onerror=null;this.src=&#39;https://medialibrary.zapnito.com/img/large-default-avatar.png&#39;;" src="https://images.zapnito.com/users/176589/avatar/thumb_Profile_.jpg" /></a> <div class="meta__detail ">
+<div class="meta__author-name"><a class="meta__author-link" href="/users/176589-harry-siviter">Harry Siviter</a></div>
+<div class="meta__date">Jun 19, 2019</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="footer" role="contentinfo">
+<div class="container">
+<div class="footer__ad">
+<p style="font-size:12px">This community is not edited and does not necessarily reflect the views of Nature Research. Nature Research makes no representations, warranties or guarantees, whether express or implied, that the content on this community is accurate, complete or up to date, and to the fullest extent permitted by law all liability is excluded.</p>
+</div>
+<ul class="footer__nav">
+<li><a class="footer__nav-link" href="/pages/community-policy">Community policy</a></li>
+<li><a class="footer__nav-link" href="/pages/npg-terms-of-use-ecoevol">Website terms of use</a></li>
+<li><a class="footer__nav-link" href="/pages/Online-Privacy-Notice">Online Privacy Notice</a></li>
+<li><a class="footer__nav-link" href="/pages/cookie-policy-ecoevo">Cookie policy</a></li>
+<li><a class="footer__nav-link" href="/pages/report-content-ecoevo">Report content</a></li>
+</ul>
+<div class="footer__copyright">
+Copyright &copy; 2020 Macmillan Publishers Limited, part of Springer Nature. All rights reserved.
+Powered by <a href='https://zapnito.com' target='_blank'>Zapnito</a>.
+</div>
+<div class="footer__tenant">
+<a class="footer__logo" href="/">Nature Research Ecology & Evolution Community </a>
+</div>
+</div>
+</footer>
+</div>
+<div class="drawer">
+<div class="drawer__header">
+<a class="drawer__header-logo" href="/">Nature Research Ecology & Evolution Community </a> </div>
+<nav class="drawer__navigation">
+<ul class="drawer__level drawer__level--open" data-level="1">
+<li class="drawer__nav-item--dashboard">
+<a class="drawer__nav-item" href="/"> <span class="drawer__nav-icon drawer__nav-icon--dashboard"></span>
+Home </a> </li>
+<li class="drawer__nav-item--channels">
+<a href="#" class="drawer__nav-item drawer__nav-parent" data-level="2">
+<span class="drawer__nav-icon drawer__nav-icon--channels"></span>
+Channels <span class="drawer__nav-arrow"></span>
+</a>
+<ul class="drawer__level" data-level="2">
+<li>
+<a href="#" class="drawer__nav-back">
+<span class="drawer__nav-back-icon"></span>
+Back </a>
+</li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/channels/536-on-the-road">On the road</a></li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/channels/534-gallery">Gallery</a></li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/channels/535-news">News</a></li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/channels/639-about-the-community">About the community</a></li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/channels/522-journal-club">Journal club</a></li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/channels/1436-blue-planet-ii">Blue Planet II</a></li>
+<a href="#" class="drawer__nav-item drawer__nav-item--no-icon drawer__nav-parent" data-level="3" data-name=World days>
+<span></span>
+World days <span class="drawer__nav-arrow"></span>
+</a>
+<ul class="drawer__level" data-level="3" data-name=World days>
+<li>
+<a href="#" class="drawer__nav-back">
+<span class="drawer__nav-back-icon"></span>
+Back </a>
+</li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/channels/2025-earth-day-2019">Earth Day 2019</a></li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/channels/2284-world-soil-day-2019">World Soil Day 2019</a></li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/channels/1401-ada-lovelace-day-2017">Ada Lovelace Day 2017</a></li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/channels/819-world-oceans-day-2017">World Oceans Day 2017</a></li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/channels/645-earth-day-2017">Earth Day 2017</a></li>
+</ul>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/channels/2166-humboldt-anniversary">Humboldt Anniversary</a></li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/channels/2462-extreme-wildfires">Extreme Wildfires </a></li>
+</ul>
+</li>
+<li class="drawer__nav-item--directories">
+<li class="drawer__nav-item--people">
+<a href="#" class="drawer__nav-item drawer__nav-parent" data-level="2">
+<span class="drawer__nav-icon drawer__nav-icon--people"></span>
+People <span class="drawer__nav-arrow"></span>
+</a>
+<ul class="drawer__level" data-level="2">
+<li>
+<a href="#" class="drawer__nav-back">
+<span class="drawer__nav-back-icon"></span>
+Back </a>
+</li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/directory/nature-research-editors">Nature Research Editors</a></li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/directory/members">Members</a></li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/directory/contributors">Contributors</a></li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/directory/springer-nature-staff-members">Springer Nature Staff Members</a></li>
+</ul>
+</li>
+</li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/pages/about-eco-evo">About the community</a></li>
+<li><a class="drawer__nav-item drawer__nav-item--no-icon" href="/pages/how-to-ecoevol">How to...</a></li>
+<li class="drawer__nav-section drawer__nav--mobile">Account</li>
+<li class="drawer__nav--mobile">
+<a class="drawer__nav-item drawer__nav-item--no-icon" href="/users/sign_up">Register</a> </li>
+<li class="drawer__nav--mobile">
+<a class="drawer__nav-item drawer__nav-item--no-icon" href="/users/sign_in">Sign In</a> </li>
+<li class="drawer__nav-section drawer__nav-item--social">Social</li>
+<li>
+<a class="drawer__nav-item" target="_blank" href="https://twitter.com/@NatureEcoEvo"> <span class="drawer__nav-icon drawer__nav-icon--twitter"></span>
+Twitter </a> </li>
+</ul>
+</nav>
+</div>
+<div class="cookie">
+<div class="cookie__icon"></div>
+<div class="cookie__msg">
+We use cookies to help improve your experience. By continuing to browse our website you are consenting to our use of cookies.
+</div>
+<div class="cookie__actions">
+<button class="btn btn--primary">Got it</button>
+<a class="btn btn--transparent" href="/cookie_policy">Learn more</a>
+</div>
+</div>
+<div class="modal fade" id="sign-in-modal" tabindex="-1" aria-hidden="true" aria-role="dialog" aria-hidden="true">
+<div class="modal__dialog modal--lg">
+<div class="modal__content">
+<div class="modal__header">
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+</div>
+<div class="modal__body">
+<div class="paywall">
+<div class="paywall__inner">
+<h2 class="paywall__title">
+Please sign in or register for FREE
+</h2>
+<div class="paywall__login">
+<div class="login-form">
+<h2 class="login-form__title">Sign in to Nature Research Ecology &amp; Evolution Community </h2>
+<div class="login-form__fields">
+<form class="simple_form new_user" id="sign-in-form" novalidate="novalidate" data-client-side-validations="{&quot;html_settings&quot;:{&quot;type&quot;:&quot;SimpleForm::FormBuilder&quot;,&quot;error_class&quot;:&quot;form__help-text&quot;,&quot;error_tag&quot;:&quot;span&quot;,&quot;wrapper_error_class&quot;:&quot;form__group--error&quot;,&quot;wrapper_tag&quot;:&quot;div&quot;,&quot;wrapper_class&quot;:&quot;form__group&quot;,&quot;wrapper&quot;:&quot;default&quot;},&quot;number_format&quot;:{&quot;separator&quot;:&quot;.&quot;,&quot;delimiter&quot;:&quot;,&quot;},&quot;validators&quot;:{&quot;user[email]&quot;:{&quot;presence&quot;:[{&quot;message&quot;:&quot;can&#39;t be blank&quot;}],&quot;uniqueness&quot;:[{&quot;message&quot;:&quot;has already been taken&quot;,&quot;case_sensitive&quot;:true,&quot;allow_blank&quot;:true}],&quot;format&quot;:[{&quot;message&quot;:&quot;is invalid&quot;,&quot;with&quot;:{&quot;source&quot;:&quot;^[^@\\s]+@([^@\\s]+\\.)+[^@\\W]+$&quot;,&quot;options&quot;:&quot;&quot;},&quot;allow_blank&quot;:true}]}}}" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="ZbuPrtpURI4Akcl72JyKTrDvMtYZfiVGO0ByYl22eKkdErn/ilPkorl0ZhYVVIpFnxPpIHdqnwGtWhOlRocbTA==" />
+<div class="login-form__user">
+<div class="form__group email required user_email"><label class="email required form__label" for="user_email"><span class="form__required">*</span> Email Address</label><div class="controls"><input class="string email required form__control" required="required" aria-required="true" placeholder="Email Address" type="email" value="" name="user[email]" id="user_email" /></div></div>
+<div class="form__group password required user_password"><label class="password required form__label" for="user_password"><span class="form__required">*</span> Password</label><div class="controls"><input autocomplete="off" class="password required form__control" required="required" aria-required="true" placeholder="Password" type="password" name="user[password]" id="user_password" /></div></div>
+</div>
+<div class="form__group form__checkbox">
+<input name="user[remember_me]" type="hidden" value="0" /><input as="boolean" type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" />
+<label class="form__label" for="user_remember_me">Keep me signed in</label>
+</div>
+<div class="form__group form__group--submit">
+<input type="submit" name="sign-in" value="Sign In" class="btn btn--primary btn--block" data-disable-with="Sign In" />
+</div>
+<div class="login-form__links">
+<a class="login-form__link" href="/users/password/new">Lost your password?</a>
+<a class="login-form__link" href="/users/confirmation/new">Resend confirmation</a>
+</div>
+</form> </div>
+<div class="login-form__separator">
+<span class="login-form__separator-label">Or sign in via</span>
+</div>
+<div class="login-form__social">
+<div class="login-form__social-buttons">
+<a class="btn btn--sso btn--facebook btn--block" href="/users/auth/facebook">
+<svg viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+<path d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z">
+</path>
+</svg>
+Facebook
+</a>
+<a class="btn btn--sso btn--linkedin btn--block" href="/users/auth/linkedin">
+<svg viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+<path d="M186.4 142.4c0 19-15.3 34.5-34.2 34.5 -18.9 0-34.2-15.4-34.2-34.5 0-19 15.3-34.5 34.2-34.5C171.1 107.9 186.4 123.4 186.4 142.4zM181.4 201.3h-57.8V388.1h57.8V201.3zM273.8 201.3h-55.4V388.1h55.4c0 0 0-69.3 0-98 0-26.3 12.1-41.9 35.2-41.9 21.3 0 31.5 15 31.5 41.9 0 26.9 0 98 0 98h57.5c0 0 0-68.2 0-118.3 0-50-28.3-74.2-68-74.2 -39.6 0-56.3 30.9-56.3 30.9v-25.2H273.8z">
+</path>
+</svg>
+LinkedIn
+</a>
+<a class="btn btn--sso btn--twitter btn--block" href="/users/auth/twitter">
+<svg viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+<path d="M419.6 168.6c-11.7 5.2-24.2 8.7-37.4 10.2 13.4-8.1 23.8-20.8 28.6-36 -12.6 7.5-26.5 12.9-41.3 15.8 -11.9-12.6-28.8-20.6-47.5-20.6 -42 0-72.9 39.2-63.4 79.9 -54.1-2.7-102.1-28.6-134.2-68 -17 29.2-8.8 67.5 20.1 86.9 -10.7-0.3-20.7-3.3-29.5-8.1 -0.7 30.2 20.9 58.4 52.2 64.6 -9.2 2.5-19.2 3.1-29.4 1.1 8.3 25.9 32.3 44.7 60.8 45.2 -27.4 21.4-61.8 31-96.4 27 28.8 18.5 63 29.2 99.8 29.2 120.8 0 189.1-102.1 185-193.6C399.9 193.1 410.9 181.7 419.6 168.6z">
+</path>
+</svg>
+Twitter
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="paywall__register">
+<div class="paywall__registration-text">
+<h3 class="paywall__registration-header">Register to Nature Research Ecology & Evolution Community </h3>
+<p>The Nature Research Ecology & Evolution Community provides a forum for the sharing and discussion of news and opinion in ecology and evolutionary biology. Through posts, discussion, image and video content, the community space can be used by members to communicate with each other, and with editors, about topics ranging from the fundamental science itself through to policy, society and the day to day life of the research community. It is also a place to learn more about the activities of Nature Research ecology and evolutionary biology editors and the policies and practices of our journals.</p>
+</div>
+<a class="btn btn--primary btn--block paywall__registration-btn" id="sign-up-btn" href="/users/sign_up">Register</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<script src="https://proxy.zapnito.com/assets/vendor-c63ef5cb13ef06fa64acbd8c6f561dc724f6b7b023fe7267ea9a35d96ae4a334.js"></script>
+<script src="https://proxy.zapnito.com/assets/base-eb133c4a7bc2062c411c6d86a69c74f9cfd2594a2ecd40015de3d89414ecd5ad.js"></script>
+<script src="https://proxy.zapnito.com/assets/application-87cad977bc44e173a5a20e82fc60ca326f3d18e519732b7a2f26d16c3ca2a746.js"></script>
+<script src="https://proxy.zapnito.com/packs/js/components/post-fluidbox-dae621e354dc49865525.js"></script>
+<script src="https://proxy.zapnito.com/assets/zapnito-ui-18fdb5bcc186a7e8054da493e8e1b27b.js"></script>
+</body>
+</html>

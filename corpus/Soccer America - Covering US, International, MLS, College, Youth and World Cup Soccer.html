@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-332663-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-332663-3', {'custom_map': {'dimension1': 'visitor_type', 'dimension2': 'paywall'}});
+  setTimeout("gtag('event', '15 seconds', {'event_category' : 'read'})",15000);
+  
+  
+      var visitor_type_value = 'driveby';
+  
+  gtag('event', 'assignment', {
+    'event_category': 'visitor_type',
+    'event_label': visitor_type_value,
+    'visitor_type': visitor_type_value,
+    'non_interaction': true
+  });
+</script>
+    <title>Soccer America - Covering US, International, MLS, College, Youth and World Cup Soccer</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+        <meta name="google-site-verification" content="No0OTJaDDC6uPn9OPgHAM3epFWJw9JBZlc_QBodl_lw"/>
+        <meta name="google-site-verification" content="GxHRKzZSJMY_r1jxuIbKaFOt6jQOm3a0gsFs42c6yJI"/>
+        <meta name="msvalidate.01" content="79D07E51C440BFE1E32248924A5F9994"/>
+        <meta name="bitly-verification" content="7d04116aeff0"/>
+        <meta name="y_key" content="b012cad4b6beaff2">
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"1337ba3bce",applicationID:"1190068"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"1337ba3bce","applicationID":"1190068","transactionName":"MQFXMBAACxdSUUxdDQhLcxEMAhENXFwXRBcECFwHAxUMC11BFkILAxNGXgsPAQFL","queueTime":1,"applicationTime":386,"agent":""}</script>
+        <meta name="keywords" content="soccer, football, futbol, MLS, World Cup, Beckham, youth soccer, college soccer, manchester united">
+        <meta name="description"
+          content="Soccer America is the number one source for soccer fans with interviews, opinions, news, analysis, previews and information you can use. Soccer America's quality coverage is brought to you by the largest soccer-dedicated editorial staff in the U.S.">
+    
+
+    
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+    if (typeof jQuery == 'undefined') {
+        document.write(unescape("%3Cscript src='/static/js/jquery.min-1.9.1.js' type='text/javascript'%3E%3C/script%3E")); }
+</script>
+    
+
+<script src='https://www5.smartadserver.com/config.js?nwid=1909' type="text/javascript"></script>
+<script type="text/javascript">
+    sas.setup({ domain: 'https://www5.smartadserver.com', async: true, renderMode: 0, inSequence: true});
+    //  renderMode define when ads must be rendered :
+    //      - DEFAULT       (0) : as soon as ad is ready
+    //      - READY         (1) : render ads when document is ready
+    //  - ON_DEMAND     (2) : user must call sas.callAds()
+</script>
+
+    <link href="https://s3.amazonaws.com/static.socceramerica.com/css/bootstrap.min-3.3.6-custom.css" rel="stylesheet">
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+<script src="https://s3.amazonaws.com/static.socceramerica.com/js/bootstrap.min-3.3.6-custom.js"></script>
+<script>
+/* allows mobile safari to show hover and active */
+document.addEventListener("touchstart", function() {},false);
+</script>
+
+<link href="https://s3.amazonaws.com/static.socceramerica.com/publications/css/navbar.css?v=4" rel="stylesheet">
+
+<script type="text/javascript">
+    // Navbar Scroll Event
+    var lastScrollTop = 0;
+    $(window).scroll(function(event){
+       var st = $(this).scrollTop();
+       if (st > lastScrollTop && st > 40){
+           $('.navbar').addClass('navbar-scroll-custom');
+       } else {
+           $('.navbar').removeClass('navbar-scroll-custom');
+       }
+       lastScrollTop = st;
+    });
+</script>
+
+
+
+    <script type="text/javascript" src="https://s3.amazonaws.com/static.socceramerica.com/js/jquery.colorbox-min-1.4.27.js"></script> <!-- for iframes -->
+    
+    
+
+    <script>
+        $(document).ready(function() {
+            
+            $('.modal-auto-clear').on('shown.bs.modal', function () {
+                $(this).delay(1500).fadeOut(200, function () {
+                    $(this).modal('hide');
+                });
+            })
+        })
+    </script>
+
+
+    <link href="https://s3.amazonaws.com/static.socceramerica.com/css/base2.css?v=2" rel="stylesheet">
+    <link href="https://s3.amazonaws.com/static.socceramerica.com/css/footer.css" rel="stylesheet">
+    <link href="https://s3.amazonaws.com/static.socceramerica.com/css/colorbox/colorbox.css" rel="stylesheet">
+    
+    <link href="https://s3.amazonaws.com/static.socceramerica.com/publications/css/homepage.css?v=2" rel="stylesheet" type="text/css">
+    <link href="https://s3.amazonaws.com/static.socceramerica.com/publications/css/carousel.css" rel="stylesheet" type="text/css">
+    <style>
+        .container-fluid {
+            padding-top: 0;
+        }
+        .navbar {
+            margin-bottom: 0;
+        }
+        #verified-modal h3 {
+            font-family: Open Sans;
+        }
+    </style>
+
+
+    <link href="https://s3.amazonaws.com/static.socceramerica.com/favicon.ico" rel="shortcut icon">
+</head>
+
+<body>
+    
+        <nav class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a onclick="ga('send', 'event', 'topmenu', 'click', 'salogo', 1);" class="navbar-brand" href="/"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sections<span class="caret"></span></a>
+                    <ul class="dropdown-menu" id="nav_sections">
+                        <li>
+                            <div class="menu">
+                                <div class="column">
+                                    <div class="section">
+                                        <dl>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/mens-national-team/">Men's National Team</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/womens-national-team/">Women's National Team</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/mls/">MLS</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/nwsl/">NWSL</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/usl/">USL</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/nisa/">NISA</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/world-cup/">Men's World Cup</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/womens-world-cup/">Women's World Cup</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/olympics/">Olympics</a></dd>
+                                        </dl>
+                                    </div><!--/end section-->
+                                </div><!--/end column-->
+                                <div class="column">
+                                    <div class="section">
+                                        <dl>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/americans-abroad/">Americans Abroad</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/youth/">Youth</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/college-men/">College Men</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/college-women/">College Women</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/international/">International</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/expansion/">Expansion</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/television/">Television</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/business/">Business</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/tag/referees/">Referees</a></dd>
+                                        </dl>
+                                    </div><!--/end section-->
+                                </div><!--/end column-->
+                            </div><!--/end menu-->
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">News<span class="caret"></span></a>
+                    <ul class="dropdown-menu" id="nav_news">
+                        <li>
+                            <div class="menu">
+                                <div class="column">
+                                    <div class="section">
+                                        <dl>
+                                            <dt>Pro Member Access Only</dt>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/soccer-america-daily/">Soccer America Daily</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/game-report/">Game Report</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletters_news', 1);" href="/publications/soccer-on-tv/current/">Soccer On TV</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletter_opinion', 1);" href="/publications/soccertalk-with-paul-gardner/">Paul Gardner: SoccerTalk</a></dd>
+                                            <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'newsletter_opinion', 1);" href="/publications/soccer-america-confidential/">Soccer America Confidential</a></dd>
+                                        </dl>
+                                    </div><!--/end section-->
+                                </div><!--/end column-->
+                            </div><!--/end menu-->
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Youth<span class="caret"></span></a>
+                    <ul class="dropdown-menu" id="nav_community">
+                        <li>
+                            <div class="menu">
+                                <div class="column">
+                                    <dl>
+                                        <dt>All Access</dt>
+                                        <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'community_youth', 1);" href="/publications/youth-soccer-insider/">Youth Soccer Insider</a></dd>
+                                        <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'community_tournament', 1);" href="/tournament/">Tournament Calendar</a></dd>
+                                        <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'community_camp', 1);" href="/camp/">Camps and Academies</a></dd>
+                                        <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'community_glossary', 1);" href="/glossary/">Soccer Glossary</a></dd>
+                                        <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'community_classifieds', 1);" href="/publications/soccer-america-classifieds/current/">Classifieds</a></dd>
+                                    </dl>
+                                </div>
+                                <!--/end column-->
+                            </div><!--/end menu-->
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">About<span class="caret"></span></a>
+                    <ul class="dropdown-menu" id="nav_more">
+                        <li>
+                            <div class="menu">
+                                <div class="column">
+                                    <dl>
+                                        <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'more_about', 1);" href="/about/">About Us</a></dd>
+                                        <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'more_contact', 1);" href="/contact/">Contact Us</a></dd>
+                                        <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'more_privacy', 1);" href="/privacy/">Privacy & Security</a></dd>
+                                        <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'more_advertise', 1);" href="/advertise/">Advertise</a></dd>
+                                    </dl>
+                                </div><!--/end column-->
+                            </div><!--/end menu-->
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" id="search" data-toggle="dropdown" href="#">Search<span class="caret"></span></a>
+                    <ul class="dropdown-menu" id="nav_search">
+                        <li>
+                            <div class="menu">
+                                <div id="search-box">
+                                    <form id="pubshomekeywordsearch" name="pubshomekeywordsearch" action="/publications/search/" method="get" onsubmit="ga('send', 'event', 'topmenu', 'click', 'search', 1);">
+                                        <input id="id_q" class="manageMenu" type="text" name="q" style="width:200px;">
+                                        <input id="search-submit" type="submit" style="background: url('https://s3.amazonaws.com/static.socceramerica.com/images/sa_sprites.png') 0 -32px transparent; border:0; width:20px; height:20px; cursor:pointer;" alt="" value="">
+                                    </form>
+                                    <a onclick="ga('send', 'event', 'topmenu', 'click', 'searchadvanced', 1);" href="/publications/advanced-search/">Advanced Search</a>
+                                </div>
+                            </div><!--/end menu-->
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Sign in</span><span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="menu">
+                                    <div id="signin_menu" class="common-form standard-form">
+                                        <form onsubmit="ga('send', 'event', 'topmenu', 'submit', 'signin', 1);" method="post" name='popSigninForm' id="popSigninForm" action="/login/?next=/">
+                                            <input type='hidden' name='csrfmiddlewaretoken' value='nUzkH3u5JfNKiyBAG4MlupjCmJw448Y7jRafiw4ZbOIYtWggUo6CXJAPt7rHoKkY' />
+                                            <p>
+                                                <strong>Username</strong>
+                                                <input id="username" name="username" title="username" tabindex="4" type="text">
+                                            </p>
+                                            <p>
+                                                <strong>Password</strong>
+                                                <input id="password" name="password" value="" title="password" tabindex="5" type="password">
+                                            </p>
+                                            <p class="remember">
+                                                <input value="Sign in" tabindex="7" type="submit">
+                                                <input id="remember" name="remember_me" value="1" tabindex="6" type="checkbox" checked="checked">
+                                                <label for="remember">Remember me</label>
+                                            </p>
+                                            <p class="forgot"><a onclick="ga('send', 'event', 'topmenu', 'click', 'password_reset', 1);" class="modal_45_45 cboxElement" href="/password-reset/?modal=1" id="resend_password_link">Forgot or need to establish your password?</a></p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" id="promembership" name="promembership" data-toggle="dropdown" href="#">Pro Membership</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="menu" id="join_menu">
+                                    <div class="column">
+                                        <dl>
+                                        <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'join_menu', 1);" href="/join/">Become a Pro Member</a></dd>
+                                        <dd><a onclick="ga('send', 'event', 'topmenu', 'click', 'join_menu', 1);" href="/gift/">Give a Gift Membership</a></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                
+                <li><a onclick="ga('send', 'event', 'topmenu', 'click', 'advertise', 1);" href="/advertise/">Advertise</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Follow<span class="caret"></span> </a>
+                    <ul class="dropdown-menu social">
+                        <li id="twitter_nav_icon"><a onclick="ga('send', 'event', 'topmenu', 'click', 'twitter', 1);" href="https://twitter.com/socceramerica"></a></li>
+                        <li id="facebook_nav_icon"><a onclick="ga('send', 'event', 'topmenu', 'click', 'facebook', 1);" href="https://www.facebook.com/Soccer-America-46755440132/"></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    
+
+    <div class="container-fluid" id="wrapper-fluid">
+        
+    <div id="ads_leaderboard" class="container-fluid img-responsive">
+        <div id="row">
+            <div class="ads_leaderboard">
+                <div id="dynamicad_2" >
+    <script>
+        var targets = document.querySelectorAll('#dynamicad_2');
+
+        var lazyLoad = target => {
+            const io = new IntersectionObserver((entries, observer) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        dynamicAd('leaderboard');
+
+                        function dynamicAd(position) {
+                            /* this rndId has to be used just like this in the Smart+ call or that ad call blows up :shrug: */
+                            var rndId = parseInt(Math.random() * 1000000).toString();
+                            var smartDiv = document.createElement("div");
+                            smartDiv.id = rndId;
+                             smartDiv.className = 'ads_leaderboard';
+                            var smartTag = document.createElement("script");
+                            $(smartTag).text("sas.call('std', {siteId:175088,pageId:864654,formatId:41713,tagId:" + rndId + "});");
+
+                            smartDiv.appendChild(smartTag);
+
+                            $('#dynamicad_2').append(smartDiv);
+                        }
+
+                        observer.disconnect();
+                    }
+                });
+            });
+
+            io.observe(target)
+        };
+
+        targets.forEach(lazyLoad);
+    </script>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+        
+    <div class="container" id="content">
+        <div class="modal fade modal-auto-clear" id="verified-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div>
+                    <div style="padding-bottom: 20px;">
+                        <h3 style="color:#c6161d">Your email address has been verified. Enjoy your free articles.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="row" id="section-top">
+            <div class="col-md-8">
+                <div id="news" class="col-md-11">
+                    <h2>Today's Top News</h2>
+                    
+                        <div id="top-featured-article">
+                            <span class="superhead">
+                                <a onclick="ga('send', 'event', 'homepage', 'click', 'topnews_type', 1);" href="/publications/soccer-america-daily/">Soccer America Daily</a>
+                            </span>
+                            <a onclick="ga('send', 'event', 'homepage', 'click', 'topnews', 1);" class="headline" href="/publications/article/85086/gregg-berhalter-on-what-makes-gio-reyna-special-an.html">
+                                Gregg Berhalter on what makes Gio Reyna special and the spate of injuries to his young stars<br>
+                                
+                                    <img class="primary-image" src="https://s3.amazonaws.com:443/media.socceramerica.com/dam/cropped/2020/01/08/berhalter3_8hZ3D0o.jpg">
+                                
+                            </a>
+                            <p class="short">The U.S. first call-up for 17-year-old Reyna will come in March for a pair of European friendlies. ...</p>
+                            <div class="byline">
+                                By Paul Kennedy
+                            </div>
+                        </div>
+                    
+                    <div id="featured-articles">
+                        
+                            <div class="article">
+                                
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85089/ccl-recap-lafc-makes-history-with-comeback-win-ov.html"><img src="https://s3.amazonaws.com:443/media.socceramerica.com/dam/cropped/2020/02/28/vela-vs-leon_lYXXrDL.jpg" class="primary-image"></a>
+                                
+                                <div class="superhead">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news_type', 1);" href="/publications/soccer-america-daily/">Soccer America Daily</a>
+                                </div>
+                                <div class="headline">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85089/ccl-recap-lafc-makes-history-with-comeback-win-ov.html">CCL Recap: LAFC makes history with comeback win over Mexico&#39;s Leon</a>
+                                </div>
+                                <p class="short">There will be four MLS teams in the CCL quarterfinals. They just won't be the four teams most ...</p>
+                                <span class="byline">
+                                    By Paul Kennedy
+                                </span>
+                            </div>
+                        
+                            <div class="article">
+                                
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85090/ccl-recap-sounders-ousted-after-failing-to-hold-o.html"><img src="https://s3.amazonaws.com:443/media.socceramerica.com/dam/cropped/2020/02/28/croldan_Uacc5cy.jpg" class="primary-image"></a>
+                                
+                                <div class="superhead">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news_type', 1);" href="/publications/soccer-america-daily/">Soccer America Daily</a>
+                                </div>
+                                <div class="headline">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85090/ccl-recap-sounders-ousted-after-failing-to-hold-o.html">CCL Recap: Sounders ousted after failing to hold on to late lead</a>
+                                </div>
+                                <p class="short">Seattle was ousted by Olimpia, the first Honduran club to ever knock off an MLS team in the ...</p>
+                                <span class="byline">
+                                    By Paul Kennedy
+                                </span>
+                            </div>
+                        
+                            <div class="article">
+                                
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/84422/soccer-on-tv.html"><img src="https://s3.amazonaws.com:443/media.socceramerica.com/dam/cropped/2019/03/03/television_V2bxQLi.jpg" class="primary-image"></a>
+                                
+                                <div class="superhead">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news_type', 1);" href="/publications/soccer-on-tv/">Soccer on TV.</a>
+                                </div>
+                                <div class="headline">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/84422/soccer-on-tv.html">Soccer on TV</a>
+                                </div>
+                                <p class="short">On Friday, there's action in the Bundesliga, Premier League and LaLiga. ...</p>
+                                <span class="byline">
+                                    By Soccer America
+                                </span>
+                            </div>
+                        
+                            <div class="article">
+                                
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85057/sa-trivia-mls-teams-that-changed-their-nicknames.html"><img src="https://s3.amazonaws.com:443/media.socceramerica.com/dam/cropped/2020/02/24/sanjoseclashlogo.jpg" class="primary-image"></a>
+                                
+                                <div class="superhead">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news_type', 1);" href="/publications/soccer-america-daily/">Soccer America Daily</a>
+                                </div>
+                                <div class="headline">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85057/sa-trivia-mls-teams-that-changed-their-nicknames.html">SA Trivia: MLS teams that changed their nicknames</a>
+                                </div>
+                                <p class="short">Four MLS teams -- all founding members of 1996 -- changed their monikers. Can you recall the original ...</p>
+                                <span class="byline">
+                                    By Mike Woitalla
+                                </span>
+                            </div>
+                        
+                            <div class="article">
+                                
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85088/nwsl-fills-vacant-commissioners-position-with-sp.html"><img src="https://s3.amazonaws.com:443/media.socceramerica.com/dam/cropped/2020/02/28/baird.jpeg" class="primary-image"></a>
+                                
+                                <div class="superhead">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news_type', 1);" href="/publications/soccer-america-daily/">Soccer America Daily</a>
+                                </div>
+                                <div class="headline">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85088/nwsl-fills-vacant-commissioners-position-with-sp.html">NWSL fills vacant commissioner&#39;s position with  sports marketing veteran</a>
+                                </div>
+                                <p class="short">Lisa Baird's sports experience includes executive stints at the NFL and USOPC. ...</p>
+                                <span class="byline">
+                                    By Paul Kennedy
+                                </span>
+                            </div>
+                        
+                            <div class="article">
+                                
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/84974/sa-trivia-name-the-six-mls-coaches-who-played-in.html"><img src="https://s3.amazonaws.com:443/media.socceramerica.com/dam/cropped/2020/02/14/screen-shot-2020-02-14-at-122256-am.jpeg" class="primary-image"></a>
+                                
+                                <div class="superhead">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news_type', 1);" href="/publications/soccer-america-daily/">Soccer America Daily</a>
+                                </div>
+                                <div class="headline">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/84974/sa-trivia-name-the-six-mls-coaches-who-played-in.html">SA Trivia: Name the six MLS coaches who played in the inaugural 1996 season</a>
+                                </div>
+                                <p class="short">Six of the MLS head coaches in the league's 25th season of 2020 played in the inaugural 1996 ...</p>
+                                <span class="byline">
+                                    By Mike Woitalla
+                                </span>
+                            </div>
+                        
+                            <div class="article">
+                                
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85087/dan-courtemanche-on-mls-year-25-and-fans-players.html"><img src="https://s3.amazonaws.com:443/media.socceramerica.com/dam/cropped/2020/02/27/dan-courtemanche-2018-georgia-magazine-wide-shot_X1sRigp.jpg" class="primary-image"></a>
+                                
+                                <div class="superhead">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news_type', 1);" href="/publications/soccer-america-confidential/">Soccer America Confidential</a>
+                                </div>
+                                <div class="headline">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85087/dan-courtemanche-on-mls-year-25-and-fans-players.html">Dan Courtemanche on MLS Year 25 and fans, players, clubs and media inspiring soccer culture in the USA</a>
+                                </div>
+                                <p class="short">MLSs Executive Vice President/Communications was part of the league's original staff ahead of its launch in 1996. ...</p>
+                                <span class="byline">
+                                    By Mike Woitalla
+                                </span>
+                            </div>
+                        
+                            <div class="article">
+                                
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85083/andonovski-cuts-us-womens-roster-for-shebelieve.html"><img src="https://s3.amazonaws.com:443/media.socceramerica.com/dam/cropped/2020/02/08/uswnt-crest_lrE7kIX.jpg" class="primary-image"></a>
+                                
+                                <div class="superhead">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news_type', 1);" href="/publications/soccer-america-daily/">Soccer America Daily</a>
+                                </div>
+                                <div class="headline">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85083/andonovski-cuts-us-womens-roster-for-shebelieve.html">Andonovski cuts U.S. women&#39;s roster for SheBelieves Cup down to 23 players</a>
+                                </div>
+                                <p class="short">Mallory Pugh, Tierna Davidson and Casey Short return after missing out on Concacaf Olympic qualifying, ...</p>
+                                <span class="byline">
+                                    By Paul Kennedy
+                                </span>
+                            </div>
+                        
+                            <div class="article">
+                                
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85077/us-u-20-women-score-24-goals-in-three-games-at-c.html"><img src="https://s3.amazonaws.com:443/media.socceramerica.com/dam/cropped/2020/02/26/rodman-yates_ZMLVwSD.jpg" class="primary-image"></a>
+                                
+                                <div class="superhead">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news_type', 1);" href="/publications/soccer-america-daily/">Soccer America Daily</a>
+                                </div>
+                                <div class="headline">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85077/us-u-20-women-score-24-goals-in-three-games-at-c.html">U.S. U-20 women score 24 goals in three games at Concacaf U-20 Championship</a>
+                                </div>
+                                <p class="short">The USA, after wrapping up group play with a 11-0 win over Honduras, needs three more wins to ...</p>
+                                <span class="byline">
+                                    By Mike Woitalla
+                                </span>
+                            </div>
+                        
+                            <div class="article">
+                                
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85080/ccl-recap-montreal-impact-passes-first-test-under.html"><img src="https://s3.amazonaws.com:443/media.socceramerica.com/dam/cropped/2020/02/27/diop-clement_2019_Ho8mMYV.jpg" class="primary-image"></a>
+                                
+                                <div class="superhead">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news_type', 1);" href="/publications/soccer-america-daily/">Soccer America Daily</a>
+                                </div>
+                                <div class="headline">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85080/ccl-recap-montreal-impact-passes-first-test-under.html">CCL Recap: Montreal Impact passes first test under Thierry Henry</a>
+                                </div>
+                                <p class="short">A 0-0 tie with Saprissa was enough to knock off the Costa Rican club thanks to the 2-2 ...</p>
+                                <span class="byline">
+                                    By Paul Kennedy
+                                </span>
+                            </div>
+                        
+                            <div class="article">
+                                
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85081/ccl-recap-new-york-city-fc-disposes-of-san-carlos.html"><img src="https://s3.amazonaws.com:443/media.socceramerica.com/dam/cropped/2019/02/19/ccl_GYKMxfh.png" class="primary-image"></a>
+                                
+                                <div class="superhead">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news_type', 1);" href="/publications/soccer-america-daily/">Soccer America Daily</a>
+                                </div>
+                                <div class="headline">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85081/ccl-recap-new-york-city-fc-disposes-of-san-carlos.html">CCL Recap: New York City FC disposes of San Carlos in battle of newcomers</a>
+                                </div>
+                                <p class="short">NYCFC completed a series sweep with a 1-0 win at Red Bull Arena in New Jersey. ...</p>
+                                <span class="byline">
+                                    By Paul Kennedy
+                                </span>
+                            </div>
+                        
+                            <div class="article">
+                                
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85071/going-to-barcelona-just-to-ignore-lionel-messi.html"><img src="https://s3.amazonaws.com:443/media.socceramerica.com/dam/cropped/2018/03/02/plenderleithjacket1_xRc1xcd.jpg" class="primary-image"></a>
+                                
+                                <div class="superhead">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news_type', 1);" href="/publications/soccer-america-confidential/">Soccer America Confidential</a>
+                                </div>
+                                <div class="headline">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85071/going-to-barcelona-just-to-ignore-lionel-messi.html">Going to Barcelona just to ignore Lionel Messi</a>
+                                </div>
+                                <p class="short">Last week I was sitting at home watching Rangers FC of Glasgow play Sporting Braga of Portugal in ...</p>
+                                <span class="byline">
+                                    By Ian Plenderleith
+                                </span>
+                            </div>
+                        
+                            <div class="article">
+                                
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85059/start-practice-with-real-soccer-us-soccer-rolls.html"><img src="https://s3.amazonaws.com:443/media.socceramerica.com/dam/cropped/2020/02/25/us-soccer-coaching-schools-education-coach_C5z8KCu.jpg" class="primary-image"></a>
+                                
+                                <div class="superhead">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news_type', 1);" href="/publications/youth-soccer-insider/">Youth Soccer Insider</a>
+                                </div>
+                                <div class="headline">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85059/start-practice-with-real-soccer-us-soccer-rolls.html">Start practice with real soccer: U.S. Soccer rolls out its Grassroots &#39;learning through play&#39; courses in Spanish</a>
+                                </div>
+                                <p class="short">It's never been a secret that great players spent lots of time playing soccer when they were very ...</p>
+                                <span class="byline">
+                                    By Mike Woitalla
+                                </span>
+                            </div>
+                        
+                            <div class="article">
+                                
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85072/ccl-recap-atlanta-united-cruises-thanks-to-pity-a.html"><img src="https://s3.amazonaws.com:443/media.socceramerica.com/dam/cropped/2020/02/26/atlanta_97MCZb8.jpg" class="primary-image"></a>
+                                
+                                <div class="superhead">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news_type', 1);" href="/publications/soccer-america-daily/">Soccer America Daily</a>
+                                </div>
+                                <div class="headline">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85072/ccl-recap-atlanta-united-cruises-thanks-to-pity-a.html">CCL Recap: Atlanta United cruises thanks to Pity and Josef Martinez</a>
+                                </div>
+                                <p class="short">The victory moved the Five Stripes in the quarterfinals for the second year in a row, setting up ...</p>
+                                <span class="byline">
+                                    By Paul Kennedy
+                                </span>
+                            </div>
+                        
+                            <div class="article">
+                                
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85070/roster-us-u-19-women-head-to-spain-tourney-led.html"><img src="https://s3.amazonaws.com:443/media.socceramerica.com/dam/cropped/2020/02/26/twilakauf_5dIMtRn.png" class="primary-image"></a>
+                                
+                                <div class="superhead">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news_type', 1);" href="/publications/soccer-america-daily/">Soccer America Daily</a>
+                                </div>
+                                <div class="headline">
+                                    <a onclick="ga('send', 'event', 'homepage', 'click', 'news', 1);" href="/publications/article/85070/roster-us-u-19-women-head-to-spain-tourney-led.html">Roster: U.S. U-19 women head to Spain tourney led by Houston Dash assistant coach Twila Kaufman</a>
+                                </div>
+                                <p class="short">U.S. U-19 women's squad for Spain tournament includes Boston College twins Michela and Samantha Agresti ...</p>
+                                <span class="byline">
+                                    By Mike Woitalla
+                                </span>
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" id="column-2">
+                <div class="sidebar_group">
+                    <div id="mostcommented" style="margin-top:0;">
+                        <div class="sidebar_title">Most Commented</div>
+                        
+                            <a onclick="ga('send', 'event', 'homepage', 'click', 'mostcommented', 1);" href="/publications/article/85059/start-practice-with-real-soccer-us-soccer-rolls.html" class="headline">
+                                <div class="story">Start practice with real soccer: U.S. Soccer rolls out its Grassroots &#39;learning through play&#39; courses in Spanish
+                                    <div class="byline">Youth Soccer Insider &ndash; Feb 25, 2020<br></div>
+                                </div>
+                            </a>
+                        
+                            <a onclick="ga('send', 'event', 'homepage', 'click', 'mostcommented', 1);" href="/publications/article/85071/going-to-barcelona-just-to-ignore-lionel-messi.html" class="headline">
+                                <div class="story">Going to Barcelona just to ignore Lionel Messi
+                                    <div class="byline">Soccer America Confidential &ndash; Feb 26, 2020<br></div>
+                                </div>
+                            </a>
+                        
+                            <a onclick="ga('send', 'event', 'homepage', 'click', 'mostcommented', 1);" href="/publications/article/85087/dan-courtemanche-on-mls-year-25-and-fans-players.html" class="headline">
+                                <div class="story">Dan Courtemanche on MLS Year 25 and fans, players, clubs and media inspiring soccer culture in the USA
+                                    <div class="byline">Soccer America Confidential &ndash; Feb 27, 2020<br></div>
+                                </div>
+                            </a>
+                        
+                            <a onclick="ga('send', 'event', 'homepage', 'click', 'mostcommented', 1);" href="/publications/article/85089/ccl-recap-lafc-makes-history-with-comeback-win-ov.html" class="headline">
+                                <div class="story">CCL Recap: LAFC makes history with comeback win over Mexico&#39;s Leon
+                                    <div class="byline">Soccer America Daily &ndash; 19 hours ago<br></div>
+                                </div>
+                            </a>
+                        
+                            <a onclick="ga('send', 'event', 'homepage', 'click', 'mostcommented', 1);" href="/publications/article/85084/what-theyre-saying-larry-berg.html" class="headline">
+                                <div class="story">What They&#39;re Saying: Larry Berg
+                                    <div class="byline">Soccer America Daily &ndash; Feb 27, 2020<br></div>
+                                </div>
+                            </a>
+                        
+                    </div>
+                    <div id="soccervideos" style="margin-top:0;">
+                        <div class="sidebar_title">Soccer Videos</div>
+                        
+                            <a onclick="ga('send', 'event', 'homepage', 'click', 'soccervideos', 1);" href="/publications/article/85079/watch-keeper-rescue-tigres-in-ccl-with-stoppage-t.html" class="headline">
+                                <div class="story">Watch: Keeper rescue Tigres in CCL with stoppage-time goal</div>
+                            </a>
+                        
+                            <a onclick="ga('send', 'event', 'homepage', 'click', 'soccervideos', 1);" href="/publications/article/85076/watch-star-composer-hans-zimmer-introduce-the-new.html" class="headline">
+                                <div class="story">Watch: Star composer Hans Zimmer introduce the new MLS anthem</div>
+                            </a>
+                        
+                            <a onclick="ga('send', 'event', 'homepage', 'click', 'soccervideos', 1);" href="/publications/article/85068/watch-former-mls-teen-star-rock-the-uefa-champion.html" class="headline">
+                                <div class="story">Watch: Former MLS teen star rock the UEFA Champions League with Bayern</div>
+                            </a>
+                        
+                            <a onclick="ga('send', 'event', 'homepage', 'click', 'soccervideos', 1);" href="/publications/article/85058/watch-a-defender-using-a-spare-ball-to-stop-attac.html" class="headline">
+                                <div class="story">Watch: A defender using a spare ball to stop attacker</div>
+                            </a>
+                        
+                            <a onclick="ga('send', 'event', 'homepage', 'click', 'soccervideos', 1);" href="/publications/article/85050/watch-the-acrobatic-golazo-from-evertons-dominic.html" class="headline">
+                                <div class="story">Watch: The acrobatic golazo from Everton&#39;s Dominic Calvert-Lewin</div>
+                            </a>
+                        
+                    </div>
+                    <div id="soccertalk">
+                        <div class="sidebar_title">GARDNER: SOCCERTALK</div>
+                        <div class="article">
+                            <div class="headline">
+                                <a onclick="ga('send', 'event', 'homepage', 'click', 'soccertalk', 1);" href="/publications/article/84989/wow-uefa-nails-man-city-and-how.html">Wow! UEFA nails Man City -- and how</a>
+                            </div>
+                            <div class="short">
+                                Something to classify alongside flying pigs: one of soccer's richest clubs being severely punished by the sport itself. ...
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ~ad~ 'home' 'tower_top' 'website' -->
+                    <div id="dynamicad_1" >
+    <script>
+        var targets = document.querySelectorAll('#dynamicad_1');
+
+        var lazyLoad = target => {
+            const io = new IntersectionObserver((entries, observer) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        dynamicAd('tower_top');
+
+                        function dynamicAd(position) {
+                            /* this rndId has to be used just like this in the Smart+ call or that ad call blows up :shrug: */
+                            var rndId = parseInt(Math.random() * 1000000).toString();
+                            var smartDiv = document.createElement("div");
+                            smartDiv.id = rndId;
+                            
+                            var smartTag = document.createElement("script");
+                            $(smartTag).text("sas.call('std', {siteId:175088,pageId:864654,formatId:41714,tagId:" + rndId + "});");
+
+                            smartDiv.appendChild(smartTag);
+
+                            $('#dynamicad_1').append(smartDiv);
+                        }
+
+                        observer.disconnect();
+                    }
+                });
+            });
+
+            io.observe(target)
+        };
+
+        targets.forEach(lazyLoad);
+    </script>
+</div>
+
+
+
+                    <div id="whattheyresaying" style="background-color:#eee;padding:10px 10px 0 10px;">
+                        <div class="sidebar_title">WHAT THEY'RE SAYING</div>
+                        <div class="article" style="border-bottom: 0;">
+                            <div class="short">
+                                <b>1. San Antonio FC signed Jose  Gallegos to a multi-year professional contract</b>. Gallegos, who  played in the 2019 ULS Championship on a USL Academy player
+agreement, is considered the best teenaged prospect to ever come out  of an independent USL team. The 18-year-old Gallegos played in 14  league matches in 2019. He has appeared in three preseason
+matches  so far with SAFC in 2020, scoring three goals. He split time with  his high school, Central Catholic High School, which he led to  its&nbsp; fourth straight TAPPS atate championships.
+  <b>2. FC Dallas has signed academy  midfield star Tanner Tessmann to a first-team contract. </b>The  move follows a strong MLS preseason with FC Dallas. Tessman, who
+played for the U.S. U-20s in January, had earlier committed to  playing soccer and football on a football scholarship at Clemson  University after being recruited by Clemson football coach William
+Christopher "Dabo" Swinney, a close family friend.    <b>3. Orlando City has hired assistant  coach Jose Maria "Josema" Bazan</b>, goalkeeper coach Cesar Baena
+and strength and conditioning coach Fabian Bazan to join the  technical staff of new head coach Oscar Pareja for the 2020 season.  The Bazan brothers worked for Pareja at Tijuana of Liga MX and
+served on his staff at FC Dallas. Baena has worked in Mexico and  Venezuela, including five years with the national team, La  Vinotinto.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ~ad~ 'home' 'tower_mid' 'website' -->
+
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+<div class="container wide" id="publications" style="padding-left: 40px; padding-right: 15px;">
+    <div id="title"><h3>Discover Our Publications</h3></div>
+    <div id="myCarousel" class="carousel slide" data-interval="false">
+        <div class="carousel-inner">
+            <div class="active item">
+                <ul>
+                    <li>
+                        <a onclick="ga('send', 'event', 'homepage', 'click', 'carousel', 1);" href="/publications/soccer-america-daily/">
+                            <div class="our_publications">
+                                <div class="publication_title"><img src="https://s3.amazonaws.com/static.socceramerica.com/publications/images/homepage_principals/soccer-america-daily.png" alt="Soccer America Daily"></div>
+                                <div class="publication_description"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="ga('send', 'event', 'homepage', 'click', 'carousel', 1);" href="/publications/soccer-on-tv/current/">
+                            <div class="our_publications">
+                                <div class="publication_title"><img src="https://s3.amazonaws.com/static.socceramerica.com/publications/images/homepage_principals/soccer-on-tv.png" alt="Soccer On TV"></div>
+                                <div class="publication_description"></div>
+                            </div>
+                        </a>
+                    </li>                    
+                    <li>
+                        <a onclick="ga('send', 'event', 'homepage', 'click', 'carousel', 1);" href="/publications/game-report/">
+                            <div class="our_publications">
+                                <div class="publication_title"><img src="https://s3.amazonaws.com/static.socceramerica.com/publications/images/homepage_principals/game-report.png" alt="Game Report"></div>
+                                <div class="publication_description"></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="item">
+                <ul>
+                    <li>
+                        <a onclick="ga('send', 'event', 'homepage', 'click', 'carousel', 1);" href="/publications/youth-soccer-insider/">
+                            <div class="our_publications">
+                                <div class="publication_title"><img src="https://s3.amazonaws.com/static.socceramerica.com/publications/images/homepage_principals/youth-soccer-insider.png" alt="Youth Soccer Insider"></div>
+                                <div class="publication_description"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="ga('send', 'event', 'homepage', 'click', 'carousel', 1);" href="/tournament/">
+                            <div class="our_publications">
+                                <div class="publication_title"><img src="https://s3.amazonaws.com/static.socceramerica.com/publications/images/homepage_principals/tournament-calendar.png" alt="Tournament Calendar"></div>
+                                <div class="publication_description"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="ga('send', 'event', 'homepage', 'click', 'carousel', 1);" href="/camp/">
+                            <div class="our_publications">
+                                <div class="publication_title"><img src="https://s3.amazonaws.com/static.socceramerica.com/publications/images/homepage_principals/camp.png" alt="Camps and Academies"></div>
+                                <div class="publication_description"></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a class="carousel-btn left" href="#myCarousel" data-slide="prev">‹</a> <a class="carousel-btn right" href="#myCarousel" data-slide="next">›</a>
+    </div>
+</div>
+
+
+
+
+        
+            <div id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="footer-logo"><img src="https://s3.amazonaws.com/static.socceramerica.com/publications/images/sa_logo_footer.png" alt="Soccer America"></div>
+                <div id="footer-r">
+                    <ul>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/contact/">Contact Us</a></li>
+                        <li><a href="/advertise/">Advertise</a></li>
+                        <li><a href="/privacy/">Privacy/Terms &amp; Conditions</a></li>
+                        <li><a href="/shipping/">Shopping</a></li>
+                    </ul>
+                    <div id="copy">
+                        &copy;2020 Soccer America. All rights reserved.<br>
+                        145 Pipers Hill Road Wilton, CT 06897 USA<br>
+                        tel. 347-762-2640, fax 917-591-3261<br>
+                        <a href="mailto:feedback@socceramerica.com">feedback@socceramerica.com</a><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+    </div><!--/end container-->
+
+</body>
+</html>

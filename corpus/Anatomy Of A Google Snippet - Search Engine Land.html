@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7 is_msie"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8 is_msie"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9 is_msie"><![endif]-->
+<!--[if IE 9]><html class="no-js lt-ie10 is_msie"><![endif]-->
+<!--[if IE 10]><html class="no-js lt-ie11 is_msie"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>Anatomy Of A Google Snippet - Search Engine Land</title>
+	<meta property="fb:app_id" content="108479729193136" />
+	<meta property="fb:admins" content="684476602, 1269303818, 679476803, 549118759"/>
+	<meta property="twitter:account_id" content="1059801" />
+	<meta name="twitter:card" content="app">
+	<meta name="twitter:site" content="@sengineland">
+	<meta name="twitter:description" content="Search Engine Land is the leading industry source for daily, must-read news and in-depth analysis about search engine technology.">
+	<meta name="twitter:app:country" content="US">
+	<meta name="twitter:app:name:iphone" content="Search Engine Land">
+	<meta name="twitter:app:id:iphone" content="1015557452">
+	<meta name="twitter:app:name:ipad" content="Search Engine Land">
+	<meta name="twitter:app:id:ipad" content="1015557452">
+	<meta name="twitter:app:name:googleplay" content="Search Engine Land">
+	<meta name="twitter:app:id:googleplay" content="com.thirddoormedia.searchengineland">
+	<meta name="google-site-verification" content="c9app5XVp8lVmCyt-cHaPGOrTdwfrBbZW6HoZeH7Rnc" />
+			<meta property="fb:page_id" content="7138936668" />
+	
+	<meta name="news_keywords" content="">
+<meta itemprop="description" content="Let&#8217;s deconstruct the Google snippet in all its glory &#8212; from the Posts/Authors/Last Post line, to the document date, to the Keywords in Context (&#8220;KWIC&#8221;), to the ellipses, to the inside-the-snippet anchor links. But before we do, it would probably be a good idea to define the term snippet. Google defines a snippet as &#8220;a [&hellip;]">
+	<meta itemprop="datePublished" content="2010-03-18" />
+	<meta itemprop="dateModified" content="2016-07-18" />
+	<meta itemprop="image" content="" />
+
+	
+	
+	<script type="application/ld+json">
+	{
+	  "@context" : "http://schema.org",
+	  "@type" : "Organization",
+	  "name" : "Search Engine Land",
+	  "url" : "https://searchengineland.com",
+	  "sameAs" : [
+	    "http://www.facebook.com/searchengineland",
+	    "http://www.twitter.com/sengineland",
+	    "https://plus.google.com/+SearchEngineLand",
+		"https://www.linkedin.com/company/search-engine-land",
+		"http://www.instagram.com/searchengineland",
+		"http://www.pinterest.com/sengineland",
+		"http://www.searchengineland.tumblr.com"
+	  ]
+	}
+	</script>
+	<link rel="apple-touch-icon" href="https://searchengineland.com/apple-touch-icon.png">
+	<link rel="shortcut icon" href="https://searchengineland.com/favicon.ico" />
+	<link rel="alternate" type="application/rss+xml" title="Search Engine Land Feed: Get Every Post" href="http://feeds.searchengineland.com/searchengineland" />
+	<link rel="alternate" type="application/rss+xml" title="SearchCap: Daily Recap Of Search News" href="http://feeds.searchengineland.com/searchcap" />
+	<link href="https://searchengineland.com/figz/wp-content/themes/searchengineland/css/searchengineland-bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
+	<link href="https://searchengineland.com/figz/wp-content/themes/searchengineland/style.css" rel="stylesheet" type="text/css">
+
+	
+<!-- This site is optimized with the Yoast SEO plugin v12.6.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<link rel="canonical" href="https://searchengineland.com/anatomy-of-a-google-snippet-38357" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Anatomy Of A Google Snippet - Search Engine Land" />
+<meta property="og:description" content="Let&#8217;s deconstruct the Google snippet in all its glory &#8212; from the Posts/Authors/Last Post line, to the document date, to the Keywords in Context (&#8220;KWIC&#8221;), to the ellipses, to the inside-the-snippet anchor links. But before we do, it would probably be a good idea to define the term snippet. Google defines a snippet as &#8220;a &hellip;" />
+<meta property="og:url" content="https://searchengineland.com/anatomy-of-a-google-snippet-38357" />
+<meta property="og:site_name" content="Search Engine Land" />
+<meta property="article:publisher" content="https://www.facebook.com/searchengineland" />
+<meta property="article:section" content="All Things SEO Column" />
+<meta property="article:published_time" content="2010-03-18T18:05:10+00:00" />
+<meta property="article:modified_time" content="2016-07-18T14:38:54+00:00" />
+<meta property="og:updated_time" content="2016-07-18T14:38:54+00:00" />
+<meta property="og:image" content="https://searchengineland.com/figz/wp-content/seloads/2010/03/anatomyofagooglesnippet1.png" />
+<meta property="og:image:secure_url" content="https://searchengineland.com/figz/wp-content/seloads/2010/03/anatomyofagooglesnippet1.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Let&#8217;s deconstruct the Google snippet in all its glory &#8212; from the Posts/Authors/Last Post line, to the document date, to the Keywords in Context (&#8220;KWIC&#8221;), to the ellipses, to the inside-the-snippet anchor links. But before we do, it would probably be a good idea to define the term snippet. Google defines a snippet as &#8220;a [&hellip;]" />
+<meta name="twitter:title" content="Anatomy Of A Google Snippet - Search Engine Land" />
+<meta name="twitter:site" content="@sengineland" />
+<meta name="twitter:image" content="https://searchengineland.com/figz/wp-content/seloads/2010/03/anatomyofagooglesnippet1.png" />
+<meta name="twitter:creator" content="@sspencer" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://searchengineland.com/#organization","name":"Search Engine Land","url":"https://searchengineland.com/","sameAs":["https://www.facebook.com/searchengineland","https://twitter.com/sengineland"],"logo":{"@type":"ImageObject","@id":"https://searchengineland.com/#logo","url":"https://searchengineland.com/figz/wp-content/seloads/2019/05/SearchEngineLand_logo_1920x1080.png","width":1920,"height":1080,"caption":"Search Engine Land"},"image":{"@id":"https://searchengineland.com/#logo"}},{"@type":"WebSite","@id":"https://searchengineland.com/#website","url":"https://searchengineland.com/","name":"Search Engine Land","description":"News On Search Engines, Search Engine Optimization (SEO) &amp; Search Engine Marketing (SEM)","publisher":{"@id":"https://searchengineland.com/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://searchengineland.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://searchengineland.com/anatomy-of-a-google-snippet-38357#primaryimage","url":"https://searchengineland.com/figz/wp-content/seloads/2010/03/anatomyofagooglesnippet1.png","width":572,"height":100},{"@type":"WebPage","@id":"https://searchengineland.com/anatomy-of-a-google-snippet-38357#webpage","url":"https://searchengineland.com/anatomy-of-a-google-snippet-38357","inLanguage":"en-US","name":"Anatomy Of A Google Snippet - Search Engine Land","isPartOf":{"@id":"https://searchengineland.com/#website"},"primaryImageOfPage":{"@id":"https://searchengineland.com/anatomy-of-a-google-snippet-38357#primaryimage"},"datePublished":"2010-03-18T18:05:10+00:00","dateModified":"2016-07-18T14:38:54+00:00"},{"@type":"NewsArticle","@id":"https://searchengineland.com/anatomy-of-a-google-snippet-38357#article","isPartOf":{"@id":"https://searchengineland.com/anatomy-of-a-google-snippet-38357#webpage"},"author":{"@id":"https://searchengineland.com/#/schema/person/d24bad2816b669aad797659927f69565"},"headline":"Anatomy Of A Google Snippet","datePublished":"2010-03-18T18:05:10+00:00","dateModified":"2016-07-18T14:38:54+00:00","commentCount":"1","mainEntityOfPage":{"@id":"https://searchengineland.com/anatomy-of-a-google-snippet-38357#webpage"},"publisher":{"@id":"https://searchengineland.com/#organization"},"image":{"@id":"https://searchengineland.com/anatomy-of-a-google-snippet-38357#primaryimage"},"articleSection":"All Things SEO Column,Channel: SEO,How To: SEO","copyrightYear":"2010","copyrightHolder":{"@id":"https://searchengineland.com/#organization"}},{"@type":["Person"],"@id":"https://searchengineland.com/#/schema/person/d24bad2816b669aad797659927f69565","name":"Stephan Spencer","image":{"@type":"ImageObject","@id":"https://searchengineland.com/#authorlogo","url":"https://secure.gravatar.com/avatar/2965b8f040600566676952fe32f975db?s=96&d=mm&r=g","caption":"Stephan Spencer"},"description":"Stephan Spencer is the creator of the 3-day immersive SEO seminar Traffic Control; an author of the O\u2019Reilly books <em>The Art of SEO</em>, <em>Google Power Search</em>, and <em>Social eCommerce</em>; founder of the SEO agency Netconcepts (acquired in 2010); inventor of the SEO proxy technology GravityStream; and the host of two podcast shows <a href=\"https://www.getyourselfoptimized.com/\">Get Yourself Optimized</a> and <a href=\"http://www.marketingspeak.com/\">Marketing Speak</a>.","sameAs":["http://www.linkedin.com/in/stephanspencer","https://twitter.com/sspencer"]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://searchengineland.com/figz/wp-includes/css/dist/block-library/style.min.css?ver=5.3.2' type='text/css' media='all' />
+<script type='text/javascript' defer="defer" src='https://searchengineland.com/figz/wp-content/themes/searchengineland/js/lib/modernizr.custom.js?ver=1.0'></script>
+<script type='text/javascript' defer="defer" src='https://searchengineland.com/figz/wp-content/themes/searchengineland/js/lib/jquery-1.11.0.min.js?ver=1.11.0'></script>
+<script type='text/javascript' defer="defer" src='https://searchengineland.com/figz/wp-content/themes/searchengineland/js/lib/jquery-ui-1.10.3.custom.min.js?ver=1.10.3'></script>
+<script type='text/javascript' defer="defer" src='https://searchengineland.com/figz/wp-content/themes/searchengineland/js/lib/jquery.ba-throttle-debounce.min.js?ver=1.1'></script>
+<script type='text/javascript' defer="defer" src='https://searchengineland.com/figz/wp-content/themes/searchengineland/js/lib/jquery.countdown.min.js?ver=2.0.4'></script>
+<link rel='https://api.w.org/' href='https://searchengineland.com/wp-json/' />
+<link rel='shortlink' href='https://searchengineland.com/?p=38357' />
+<link rel="amphtml" href="https://searchengineland.com/anatomy-of-a-google-snippet-38357/amp">
+	<!-- //DFP Async -->
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+
+
+<script type='text/javascript'>
+	googletag.cmd.push(function() {
+	googletag.defineSlot('/1038259/sel-ciu-1', [730, 77], 'div-gpt-ad-1383602995881-0').addService(googletag.pubads());
+	googletag.defineSlot('/1038259/sel-ciu-2', [730, 77], 'div-gpt-ad-1383602995881-1').addService(googletag.pubads());
+	googletag.defineSlot('/1038259/sel-ciu-3', [730, 77], 'div-gpt-ad-1383602995881-2').addService(googletag.pubads());
+	googletag.defineSlot('/1038259/sel-ciu-4', [730, 77], 'div-gpt-ad-1496720069653-2').addService(googletag.pubads());
+    googletag.defineSlot('/1038259/sel-ciu-5', [730, 77], 'div-gpt-ad-1496720069653-3').addService(googletag.pubads());
+
+        googletag.defineSlot('/1038259/SEL-Parallax', [1, 1], 'div-gpt-ad-1550690821057-0').addService(googletag.pubads());
+        
+googletag.defineSlot('/1038259/ch-seo-leaderboard', [[728, 90], [970, 90], [970, 250]], 'div-gpt-ad-ch-seo-leaderboard').addService(googletag.pubads());
+googletag.defineSlot('/1038259/ch-seo-sidebar', [[160, 600], [300, 250], [300, 600]], 'div-gpt-ad-ch-seo-sidebar').addService(googletag.pubads());
+googletag.defineSlot('/1038259/ch-seo-lower-sidebar', [[160, 600], [300, 250], [300, 600]], 'div-gpt-ad-ch-seo-lower-sidebar').addService(googletag.pubads());
+googletag.defineSlot('/1038259/ch-seo-overlay', [1, 1], 'div-gpt-ad-ch-seo-overlay').addService(googletag.pubads());
+googletag.defineSlot('/1038259/ch-seo-articlemodule', [800, 440], 'div-gpt-ad-ch-seo-articlemodule').addService(googletag.pubads());
+googletag.defineSlot('/1038259/ch-seo-mobilecube1', [[300, 250], [300, 600]], 'div-gpt-ad-ch-seo-mobilecube1').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	// Can't use with enableLazyLoad
+	// googletag.pubads().collapseEmptyDivs(); 
+	
+	googletag.pubads().enableLazyLoad({
+	    fetchMarginPercent: 200,  // Fetch slots within 2 viewports.
+	    renderMarginPercent: 100,  // Render slots within 2 viewports.
+	    mobileScaling: 1.0  // Double the above values on mobile.
+	  });
+	googletag.enableServices();
+	});
+</script>
+
+
+		
+	<!-- //Chartbeat -->
+	<script type="text/javascript">
+    var _sf_async_config = _sf_async_config || {};
+    _sf_async_config.uid = 14529;
+    _sf_async_config.domain = 'searchengineland.com';
+    _sf_async_config.flickerControl = false;
+    _sf_async_config.useCanonical = true;
+    var _sf_startpt = (new Date()).getTime();
+</script>
+<script async src="//static.chartbeat.com/js/chartbeat_mab.js"></script>
+	
+	<!-- //GA UA -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	// Creates an adblock detection plugin.
+	ga('provide', 'adblockTracker', function(tracker, opts) {
+	  var ad = document.createElement('ins');
+	  ad.className = 'AdSense';
+	  ad.style.display = 'block';
+	  ad.style.position = 'absolute';
+	  ad.style.top = '-1px';
+	  ad.style.height = '1px';
+	  document.body.appendChild(ad);
+	  tracker.set('dimension' + opts.dimensionIndex, !ad.clientHeight);
+	  document.body.removeChild(ad);
+	});
+
+	ga('create', 'UA-86460999-1', 'auto', {'allowLinker': true, 'useAmpClientId': true});
+	ga('set', 'dimension7', 'stopSpam');
+	ga('set', 'anonymizeIp', true);
+	ga('require', 'adblockTracker', {dimensionIndex: 6});
+	ga('require', 'linker');
+	ga('linker:autoLink', ['thirddoormedia.secure-platform.com'] );
+	var dimensionValue = 'AMPDOC_HOST';
+	ga('set', 'dimension7', dimensionValue);
+
+		</script>
+
+			<style>
+		.grecaptcha-container div.grecaptcha-badge {display: none !important;}
+		</style>
+		<script src="https://www.google.com/recaptcha/api.js?onload=onLoad&render=explicit" defer async></script>
+	
+		
+	<!-- //Quantcast Async Tag Part 1 -->
+	<script type="text/javascript">
+	  var _qevents = _qevents || [];
+	  (function() {
+	   var elem = document.createElement('script');
+	   elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+	   elem.async = true;
+	   elem.type = "text/javascript";
+	   var scpt = document.getElementsByTagName('script')[0];
+	   scpt.parentNode.insertBefore(elem, scpt);
+	  })();
+	</script>
+
+	
+		<!-- Facebook Pixel Code -->
+		<script>
+		!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+		n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+		t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+		document,'script','https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '423979991297359'); // Insert your pixel ID here.
+		fbq('track', 'PageView');
+		</script>
+		<noscript><img height="1" width="1" style="display:none"
+		src="https://www.facebook.com/tr?id=423979991297359&ev=PageView&noscript=1"
+		/></noscript>
+		<!-- DO NOT MODIFY -->
+		<!-- End Facebook Pixel Code -->
+
+	
+		 </head>
+
+<body class="template-article" itemscope itemtype="http://schema.org/NewsArticle">
+
+<div id="div-gpt-ad-ch-seo-overlay" class="hidden-sm hidden-xs" style="height: 1px; width: 1px;"><script type="text/javascript">googletag.cmd.push(function() {googletag.display("div-gpt-ad-ch-seo-overlay"); });</script></div>
+<div class="page-container main-outer-container">
+
+	<script type="text/javascript">
+		var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+		var eventer = window[eventMethod];
+		var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+
+		eventer(messageEvent,function(e) {
+
+		var key = e.message ? "message" : "data";
+		 var data = e[key];
+
+		var eventName = data.message || 'ignore';
+
+		if (eventName == 'adContentAvailable') {
+		 console.log( 'ad data available: ', data );
+
+		 $('div,li').filter('[data-container-ad-unit-id="' + data.adUnit + '"]').html( data.content );
+		 $('#img1').css('background-image', 'url(' + data.parallaxImg + ')');
+		 $('body').addClass('parallax-active');
+		 $('#floatingnav').addClass('stickyheader-mobile');
+
+		 parallax.init();
+
+		 }
+		},false);
+	</script>
+
+	<!-- marquee -->
+	<div id='div-gpt-ad-1550690821057-0' style='height:1px; width:1px;'>
+		<script>
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-1550690821057-0'); });
+		</script>
+	</div>
+
+	<script src="/figz/wp-content/themes/searchengineland/js/parallax.js" defer></script>
+
+	<div class="parallax_img" id="img1" data-container-ad-unit-id="/1038259/SEL-Parallax" style="position:relative;"></div>
+
+	<header class="navbar navbar-default outer-header-container">
+
+		<div class="container">
+
+			<!-- <div class="navbar-header stickyheader"> -->
+			<div id="floatingnav" class="navbar-header stickyheader stickyheader-mobile" style="background-color:#ffffff !important">
+				<button type="button" class="navbar-toggle">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<div itemscope itemtype="http://schema.org/Organization" class="header-reduced hidden-lg hidden-xs">
+					<ul class="header-reduced-inner">
+						<li class="brand">
+							<a itemprop="url" href="https://searchengineland.com" onClick="ga('send','event','internal','click','header logo');">
+								<img itemprop="logo" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://searchengineland.com/figz/wp-content/themes/searchengineland/img/logo/SEL-block-white.svg" alt="Search Engine Land"><noscript><img src="https://searchengineland.com/figz/wp-content/themes/searchengineland/img/logo/SEL-block-white.svg" alt="Search Engine Land" /></noscript>
+							</a>
+						</li>
+
+						<li class="sections"><a href="#">Sections</a>
+							<div class="submenu-wrap">
+								<ul>
+									<li><a href="https://searchengineland.com/library/channel/seo" onClick="ga('send','event','navigation','read','channel seo');">SEO</a></li>
+									<li><a href="https://searchengineland.com/library/channel/sem" onClick="ga('send','event','navigation','read','channel sem');">SEM</a></li>
+									<li><a href="https://searchengineland.com/library/channel/mobile" onClick="ga('send','event','navigation','read','channel mobile');">Mobile</a></li>
+									<li><a href="https://searchengineland.com/library/channel/local" onClick="ga('send','event','navigation','read','channel local');">Local</a></li>
+									<li><a href="https://searchengineland.com/library/channel/retail" onClick="ga('send','event','navigation','read','channel retail');">Retail</a></li>
+									<li><a href="https://searchengineland.com/library/google" onClick="ga('send','event','navigation','read','category google');">Google</a></li>
+									<li><a href="https://searchengineland.com/library/bing" onClick="ga('send','event','navigation','read','category bing');">Bing</a></li>
+									<li><a href="https://searchengineland.com/guide/what-is-social-media-marketing" onClick="ga('send','event','navigation','read','channel social');">Social</a></li>
+									<li><a href="https://searchengineland.com" onClick="ga('send','event','navigation','read','home');">Home</a></li>
+								</ul>
+							</div>
+						</li>
+
+						<li>
+							<a href="#"><span class="icomoon icon-search-01"></span></a>
+							<div class="drop">
+								<div class="contain">
+									<ul class="search">
+										<li>
+											<script type="text/javascript">
+  function ajaxsearchsubmit(form){
+    var search = encodeURIComponent(form.w.value);
+    document.activeElement.blur();
+    window.location="https://search.searchengineland.com/search?w=" +search;
+    return false;
+  }
+</script>
+<form class="navbar-form navbar-left" role="search" action="//search.searchengineland.com/search" method="GET" onsubmit="return ajaxsearchsubmit(this)">
+<div class="form-group">
+<input type="hidden" name="asug">
+<input type="text" class="form-control" placeholder="Search" name="w" value="" onfocus="this.value=''" id="sli_search_1" autocomplete="off">
+</div>
+<button type="submit" class="btn btn-default">Submit</button>
+</form>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+
+						<li><a href="#">Follow Us</a><span class="arrow"></span>
+							<div class="drop">
+								<div class="contain">
+									<ul class="social">
+										<li class="icons">
+											<a class="rss" href="http://feeds.searchengineland.com/searchengineland" onClick="ga('send','event','social icon','connect','header rss');"><div class='sprite feeds_24x24'></div></a>
+											<a class="email" href="/newsletters" onClick="ga('send','event','signup','subscribe','header newsletter follow us');"><div class='sprite email-24x24'></div></a>
+
+											<a class="linkedin" href="https://www.linkedin.com/company/search-engine-land" onClick="ga('send','event','social icon','connect','header linkedin');"><div class='sprite linkedin_24x24'></div></a>
+										</li>
+																														<li class="twitter">
+											<a href="https://twitter.com/sengineland" class="twitter-follow-button" data-show-count="true" data-lang="en" data-show-screen-name="false" onClick="ga('send', 'social', 'twitter', 'follow', 'https://searchengineland.com');">Follow</a>
+										</li>
+
+										<li class="facebook">
+											<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fsearchengineland&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21"></iframe>
+										</li>
+																			</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="header-full hidden-md hidden-sm">
+					<div class="drop_shadow"></div>
+					<ul class="header-full-inner">
+						<li class="mini-logo">
+							<a href="https://searchengineland.com" onClick="ga('send','event','internal','click','header logo');">
+								<img data-width="165" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://searchengineland.com/figz/wp-content/themes/searchengineland/img/logo/SEL-block-white.svg" alt="Search Engine Land"><noscript><img data-width="165" src="https://searchengineland.com/figz/wp-content/themes/searchengineland/img/logo/SEL-block-white.svg" alt="Search Engine Land" /></noscript>
+							</a>
+						</li>
+
+					
+<li data-channel-json="{&quot;id&quot;:&quot;seo&quot;,&quot;title&quot;:&quot;SEO&quot;,&quot;urlch&quot;:&quot;\/library\/channel\/seo&quot;,&quot;tracking&quot;:&quot;onClick=\&quot;ga('send','event','navigation','read','channel seo');\&quot;&quot;,&quot;sections&quot;:[&quot;&lt;a href=\&quot;\/library\/channel\/seo\&quot; onClick=\&quot;ga('send','event','navigation','read','channel seo');\&quot;&gt;All SEO&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/guide\/what-is-seo\&quot; onClick=\&quot;ga('send','event','navigation','read','what is seo');\&quot;&gt;What is SEO?&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/guide\/seo\&quot; onClick=\&quot;ga('send','event','navigation','read','how to seo');\&quot;&gt;How To Guides: SEO&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/google\/google-seo\&quot; onClick=\&quot;ga('send','event','navigation','read','google seo');\&quot;&gt;Google SEO&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/guide\/google-penalties\&quot; onClick=\&quot;ga('send','event','navigation','read','google penalties guide');\&quot;&gt;Google Penalties Guide&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/google\/google-algorithm-updates\&quot; onClick=\&quot;ga('send','event','navigation','read','google algorithm updates');\&quot;&gt;Google Algorithm Updates&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/google\/google-search-console\&quot; onClick=\&quot;ga('send','event','navigation','read','google search console');\&quot;&gt;Google Search Console&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/microsoft\/microsoft-bing-seo\&quot; onClick=\&quot;ga('send','event','navigation','read','bing seo');\&quot;&gt;Bing SEO&lt;\/a&gt;&quot;],&quot;features&quot;:[{&quot;title&quot;:&quot;Google adds new image license metadata for licensable image label&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2016\/03\/google-photos-images-camera-ss-1920-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/google-adds-new-image-license-metadata-for-licensable-image-label-329522\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail1 seo&#039;);\&quot;&quot;}, {&quot;title&quot;:&quot;A quick guide to understanding Google\u2019s quality rater guidelines&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2020\/02\/Jennifer_Slegg_SMX-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/a-quick-guide-to-understanding-googles-quality-rater-guidelines-329501\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail2 seo&#039;);\&quot;&quot;}, {&quot;title&quot;:&quot;Download The Periodic Table of SEO Factors&quot;,&quot;img&quot;:&quot;\/figz\/wp-content\/themes\/searchengineland\/img\/header\/seo-table-nav-tmb-bg-250x250.png&quot;,&quot;url&quot;:&quot;\/seotable\&quot; onClick=\&quot;ga('send','event','navigation','read','thumbnail3 seo table');\&quot;&quot;}]}"><a href="/library/channel/seo" onClick="ga('send','event','navigation','read','channel seo');">SEO</a><span class="arrow"></span><div class="drop"><div class="contain"></div></div></li>
+
+<li data-channel-json="{&quot;id&quot;:&quot;sem&quot;,&quot;title&quot;:&quot;SEM&quot;,&quot;urlch&quot;:&quot;\/library\/channel\/sem&quot;,&quot;tracking&quot;:&quot;onClick=\&quot;ga('send','event','navigation','read','channel sem');\&quot;&quot;,&quot;sections&quot;:[&quot;&lt;a href=\&quot;\/library\/channel\/sem\&quot; onClick=\&quot;ga('send','event','navigation','read','channel sem');\&quot;&gt;All SEM&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/guide\/what-is-paid-search\&quot; onClick=\&quot;ga('send','event','navigation','read','what is sem');\&quot;&gt;What is SEM?&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/guide\/ppc\&quot; onClick=\&quot;ga('send','event','navigation','read','ppc guide');\&quot;&gt;The Complete Guide To PPC&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/how-to\/how-to-sem\&quot; onClick=\&quot;ga('send','event','navigation','read','how to sem');\&quot;&gt;How To Guides: SEM&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/google\/google-adwords\&quot; onClick=\&quot;ga('send','event','navigation','read','google adwords');\&quot;&gt;Google Adwords&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/microsoft\/microsoft-bing-ads\&quot; onClick=\&quot;ga('send','event','navigation','read','bing ads');\&quot;&gt;Bing Ads&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/search-ads\&quot; onClick=\&quot;ga('send','event','navigation','read','search advertising');\&quot;&gt;More: Search Advertising&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/buyers-guides\/ppc-campaign-management-tools-a-buyers-guide\&quot; onClick=\&quot;ga('send','event','navigation','read','buyers guides ppc management tools dmd');\&quot;&gt;Buyers Guide: PPC Platforms&lt;\/a&gt;&quot;],&quot;features&quot;:[{&quot;title&quot;:&quot;Stop phrase and broad match modifier keywords from unnecessarily spending on close variants with this script&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2020\/02\/Google-ad-words-handout-graphic-gilbert-1920-250x250.png&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/stop-phrase-and-broad-match-modifier-keywords-from-unnecessarily-spending-on-close-variants-with-this-script-329525\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail1 sem&#039;);\&quot;&quot;}, {&quot;title&quot;:&quot;Look beyond Google for the search intelligence you need&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2020\/02\/live-webinar-headset-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/look-beyond-google-for-the-search-intelligence-you-need-329461\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail2 sem&#039;);\&quot;&quot;},  {&quot;title&quot;:&quot;Download the Periodic Tables of PPC&quot;,&quot;img&quot;:&quot;\/figz\/wp-content\/themes\/searchengineland\/img\/header\/ppcsem-table-nav-tmb-bg-250x250-v2.png&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/ppc-table\/\&quot; onClick=\&quot;ga('send','event','navigation','click','thumbnail3 ppc table');\&quot;&quot;}]}"><a href="/library/channel/sem" onClick="ga('send','event','navigation','read','channel sem');">SEM</a><span class="arrow"></span><div class="drop"><div class="contain"></div></div></li>
+
+<li data-channel-json="{&quot;id&quot;:&quot;mobile&quot;,&quot;title&quot;:&quot;Mobile&quot;,&quot;urlch&quot;:&quot;\/library\/channel\/mobile&quot;,&quot;tracking&quot;:&quot;onClick=\&quot;ga('send','event','navigation','read','channel mobile');\&quot;&quot;,&quot;sections&quot;:[&quot;&lt;a href=\&quot;\/library\/channel\/mobile\&quot; onClick=\&quot;ga('send','event','navigation','read','channel mobile');\&quot;&gt;All Mobile&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/google\/google-mobile\&quot; onClick=\&quot;ga('send','event','navigation','read','google mobile');\&quot;&gt;Google: Mobile Search&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/bing\/bing-mobile\&quot; onClick=\&quot;ga('send','event','navigation','read','bing mobile');\&quot;&gt;Bing: Mobile Search&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/mobile-marketing\&quot; onClick=\&quot;ga('send','event','navigation','read','mobile marketing');\&quot;&gt;Mobile Marketing&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/mobile-marketing\/app-indexing-deep-links\&quot; onClick=\&quot;ga('send','event','navigation','read','app indexing');\&quot;&gt;Mobile App Indexing&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/search-engine-optimization\/seo-mobile-search\&quot; onClick=\&quot;ga('send','event','navigation','read','mobile seo');\&quot;&gt;Mobile SEO&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/search-ads\/search-ads-mobile-search\&quot; onClick=\&quot;ga('send','event','navigation','read','mobile sem');\&quot;&gt;Mobile SEM&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;http:\/\/marketingland.com\/library\/channel\/mobile-marketing\&quot; onClick=\&quot;ga('send','event','navigation','read','marketingland');\&quot;&gt;Mobile at Marketing Land&lt;\/a&gt;&quot;],&quot;features&quot;:[{&quot;title&quot;:&quot;Google adds Siri Shortcuts to its iOS apps&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2019\/03\/siri-interface-ss-1920-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/google-adds-siri-shortcuts-to-its-ios-apps-328857\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail1 mobile&#039;);\&quot;&quot;}, {&quot;title&quot;:&quot;Make 2020 the year for e-commerce to get better with the mobile experience&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2020\/01\/Duane-Brown-video-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/make-2020-the-year-for-e-commerce-to-get-better-with-the-mobile-experience-327147\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail2 mobile&#039;);\&quot;&quot;}, {&quot;title&quot;:&quot;Google brings &amp;#8216;Interpreter Mode&amp;#8217; language translation to the Assistant on smartphones&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2018\/08\/google-assistant4-1920-250x250.png&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/google-brings-interpreter-mode-language-translation-to-the-assistant-on-smartphones-326380\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail4 mobile&#039;);\&quot;&quot;}]}"><a href="/library/channel/mobile" onClick="ga('send','event','navigation','read','channel mobile');">Mobile</a><span class="arrow"></span><div class="drop"><div class="contain"></div></div></li>
+
+<li data-channel-json="{&quot;id&quot;:&quot;local&quot;,&quot;title&quot;:&quot;Local&quot;,&quot;urlch&quot;:&quot;\/library\/channel\/local&quot;,&quot;tracking&quot;:&quot;onClick=\&quot;ga('send','event','navigation','read','channel local');\&quot;&quot;,&quot;sections&quot;:[&quot;&lt;a href=\&quot;\/library\/channel\/local\&quot; onClick=\&quot;ga('send','event','navigation','read','channel local');\&quot;&gt;All Local&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/google\/google-maps-local\&quot; onClick=\&quot;ga('send','event','navigation','read','google maps');\&quot;&gt;Google Maps &amp; Local Search&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/microsoft\/microsoft-bing-maps-local\&quot; onClick=\&quot;ga('send','event','navigation','read','bing maps');\&quot;&gt;Bing Maps &amp; Local Search&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/search-engines\/search-engines-maps-local-search-engines\&quot; onClick=\&quot;ga('send','event','navigation','read','local search engines');\&quot;&gt;Local Search Engines&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/how-to\/how-to-local-search-marketing\&quot; onClick=\&quot;ga('send','event','navigation','read','how to local search marketing');\&quot;&gt;How To Guides: Local Search&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/buyers-guides\/enterprise-local-marketing-automation-tools\&quot; onClick=\&quot;ga('send','event','navigation','read','buyers guide local automation 2014 dmd');\&quot;&gt;Buyers Guide: Local Automation&lt;\/a&gt;&quot;],&quot;features&quot;:[{&quot;title&quot;:&quot;New local SERP live in Europe&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2017\/06\/eu-european-union-ss-1920-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/new-local-serp-live-in-europe-329553\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail1 local&#039;);\&quot;&quot;}, {&quot;title&quot;:&quot;Google: Spam less than 1% of Maps content&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2019\/10\/google-maps-android-icon-stock-1920-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/google-spam-less-than-1-of-maps-content-329476\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail2 local&#039;);\&quot;&quot;}, {&quot;title&quot;:&quot;Video: Rhea Drysdale on hyperlocal SEO &amp;#038; saving clients money&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2020\/02\/rhea-drysdale-large-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/video-rhea-drysdale-on-hyperlocal-seo-saving-clients-money-329431\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail3 local&#039;);\&quot;&quot;}]}"><a href="/library/channel/local" onClick="ga('send','event','navigation','read','channel local');">Local</a><span class="arrow"></span><div class="drop"><div class="contain"></div></div></li>
+
+<li data-channel-json="{&quot;id&quot;:&quot;retail&quot;,&quot;title&quot;:&quot;Retail&quot;,&quot;urlch&quot;:&quot;\/library\/channel\/retail&quot;,&quot;tracking&quot;:&quot;onClick=\&quot;ga('send','event','navigation','read','channel retail');\&quot;&quot;,&quot;sections&quot;:[&quot;&lt;a href=\&quot;\/library\/channel\/retail\&quot; onClick=\&quot;ga('send','event','navigation','read','channel retail');\&quot;&gt;All Retail&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/google\/google-adwords\/google-adwords-product-listing-ads\&quot; onClick=\&quot;ga('send','event','navigation','read','google plas');\&quot;&gt;Google PLAs&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/search-ads\/search-ads-product-ads\&quot; onClick=\&quot;ga('send','event','navigation','read','product ads');\&quot;&gt;Product Ads&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/search-engines\/search-engines-shopping-search-engines\&quot; onClick=\&quot;ga('send','event','navigation','read','shopping search engines');\&quot;&gt;Shopping Search Engines&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;http:\/\/marketingland.com\/library\/channel\/retail-channel\&quot; onClick=\&quot;ga('send','event','navigation','read','marketingland channel retail');\&quot;&gt;Retail at Marketing Land&lt;\/a&gt;&quot;],&quot;features&quot;:[{&quot;title&quot;:&quot;How digital commerce marketing is reshaping search, marketplaces and social&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2020\/02\/SMXWEST_Keynote2020_1920-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/how-digital-commerce-marketing-is-reshaping-search-marketplaces-and-social-329448\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail1 retail&#039;);\&quot;&quot;}, {&quot;title&quot;:&quot;Introducing the Periodic Table of Digital Commerce Marketing&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2020\/02\/dcm-table-1920x1080-1-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/introducing-the-periodic-table-of-digital-commerce-marketing-329436\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail2 retail&#039;);\&quot;&quot;}, {&quot;title&quot;:&quot;Vast majority of Amazon advertisers plan to spend more on ads again this year&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2015\/12\/amazon-mobile-app-ss-1920-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/amazon-advertising-survey-2020-329346\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail3 retail&#039;);\&quot;&quot;} ]}"><a href="/library/channel/retail" onClick="ga('send','event','navigation','read','channel retail');">Retail</a><span class="arrow"></span><div class="drop"><div class="contain"></div></div></li>
+
+<li data-channel-json="{&quot;id&quot;:&quot;google&quot;,&quot;title&quot;:&quot;Google&quot;,&quot;urlch&quot;:&quot;\/library\/google&quot;,&quot;tracking&quot;:&quot;onClick=\&quot;ga('send','event','navigation','read','category google');\&quot;&quot;,&quot;sections&quot;:[&quot;&lt;a href=\&quot;\/library\/google\&quot; onClick=\&quot;ga('send','event','navigation','read','category google');\&quot;&gt;All Google&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/google\/google-seo\&quot; onClick=\&quot;ga('send','event','navigation','read','google seo');\&quot;&gt;Google SEO&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/google\/google-algorithm-updates\&quot; onClick=\&quot;ga('send','event','navigation','read','google algorithm updates');\&quot;&gt;Google Algorithm Updates&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/google\/google-search-console\&quot; onClick=\&quot;ga('send','event','navigation','read','google search console');\&quot;&gt;Google Search Console&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/google\/google-adwords\&quot; onClick=\&quot;ga('send','event','navigation','read','google adwords');\&quot;&gt;Google Adwords&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/google\/google-adwords\/google-adwords-product-listing-ads\&quot; onClick=\&quot;ga('send','event','navigation','read','google plas');\&quot;&gt;Google Adwords: PLAS&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/google\/google-maps-local\&quot; onClick=\&quot;ga('send','event','navigation','read','google maps');\&quot;&gt;Google Maps &amp; Local Search&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/google\/google-mobile\&quot; onClick=\&quot;ga('send','event','navigation','read','google mobile');\&quot;&gt;Google Mobile Search&lt;\/a&gt;&quot;],&quot;features&quot;:[{&quot;title&quot;:&quot;New local SERP live in Europe&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2017\/06\/eu-european-union-ss-1920-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/new-local-serp-live-in-europe-329553\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail1 google&#039;);\&quot;&quot;}, {&quot;title&quot;:&quot;Stop phrase and broad match modifier keywords from unnecessarily spending on close variants with this script&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2020\/02\/Google-ad-words-handout-graphic-gilbert-1920-250x250.png&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/stop-phrase-and-broad-match-modifier-keywords-from-unnecessarily-spending-on-close-variants-with-this-script-329525\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail2 google&#039;);\&quot;&quot;}, {&quot;title&quot;:&quot;Google adds new image license metadata for licensable image label&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2016\/03\/google-photos-images-camera-ss-1920-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/google-adds-new-image-license-metadata-for-licensable-image-label-329522\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail3 google&#039;);\&quot;&quot;}]}"><a href="/library/google" onClick="ga('send','event','navigation','read','category google');">Google</a><span class="arrow"></span><div class="drop"><div class="contain"></div></div></li>
+
+<li data-channel-json="{&quot;id&quot;:&quot;bing&quot;,&quot;title&quot;:&quot;Bing&quot;,&quot;urlch&quot;:&quot;\/library\/bing&quot;,&quot;tracking&quot;:&quot;onClick=\&quot;ga('send','event','navigation','read','category bing');\&quot;&quot;,&quot;sections&quot;:[&quot;&lt;a href=\&quot;\/library\/bing\&quot; onClick=\&quot;ga('send','event','navigation','read','category bing');\&quot;&gt;All Bing&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/bing\/bing-seo\&quot; onClick=\&quot;ga('send','event','navigation','read','bing seo');\&quot;&gt;Bing SEO&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/bing\/bing-webmaster-tools\&quot; onClick=\&quot;ga('send','event','navigation','read','bing webmaster tools');\&quot;&gt;Bing Webmaster Tools&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/bing\/bing-ads\&quot; onClick=\&quot;ga('send','event','navigation','read','bing ads');\&quot;&gt;Bing Ads&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/bing\/bing-maps-local\&quot; onClick=\&quot;ga('send','event','navigation','read','bing maps');\&quot;&gt;Bing Maps &amp; Local Search&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/bing\/bing-mobile\&quot; onClick=\&quot;ga('send','event','navigation','read','bing mobile');\&quot;&gt;Bing Mobile&lt;\/a&gt;&quot;],&quot;features&quot;:[{&quot;title&quot;:&quot;Bing announces refreshed Bing Webmaster Tools&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2016\/12\/bing-data-metrics-analytics-ss-1920-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/bing-announces-refreshed-bing-webmaster-tools-329341\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail1 bing&#039;);\&quot;&quot;}, {&quot;title&quot;:&quot;Introducing the Periodic Table of Digital Commerce Marketing&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2020\/02\/dcm-table-1920x1080-1-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/introducing-the-periodic-table-of-digital-commerce-marketing-329436\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail2 bing&#039;);\&quot;&quot;}, {&quot;title&quot;:&quot;Microsoft Office hits pause on forcing Bing search in Chrome, Firefox&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2016\/06\/bing-logo-woodsign3-1920-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/microsoft-office-extension-pauses-on-forcing-chrome-firefox-search-defaults-to-bing-329016\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail3 bing&#039;);\&quot;&quot;}]}"><a href="/library/bing" onClick="ga('send','event','navigation','read','category bing');">Bing</a><span class="arrow"></span><div class="drop"><div class="contain"></div></div></li>
+
+<li data-channel-json="{&quot;id&quot;:&quot;social&quot;,&quot;title&quot;:&quot;Social&quot;,&quot;urlch&quot;:&quot;\/guide\/what-is-social-media-marketing&quot;,&quot;tracking&quot;:&quot;onClick=\&quot;ga('send','event','navigation','read','what is social media marketing');\&quot;&quot;,&quot;sections&quot;:[],&quot;features&quot;:[{&quot;title&quot;:&quot;Social Media News @ Marketing Land&quot;,&quot;img&quot;:&quot;\/figz\/wp-content\/themes\/searchengineland\/img\/header\/Social-Media-Icons-keyboard-ss-250.jpg&quot;,&quot;url&quot;:&quot;http:\/\/marketingland.com\/library\/channel\/social-media-marketing\&quot; onClick=\&quot;ga('send','event','navigation','read','marketingland channel social');\&quot;&quot;},{&quot;title&quot;:&quot; Buyer&#039;s Guide: Content Marketing Tools&quot;,&quot;img&quot;:&quot;\/figz\/wp-content\/themes\/searchengineland\/img\/header\/buyers-guide-content-marketing-250x250.jpg&quot;,&quot;url&quot;:&quot;\/buyers-guides\/content-marketing-tools\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;buyers guides content marketing tools dmd&#039;);\&quot;&quot;},{&quot;title&quot;:&quot;Buyers Guide: Social Media Management&quot;,&quot;img&quot;:&quot;\/figz\/wp-content\/themes\/searchengineland\/img\/header\/Marketers-Guide-to-Social-Media-Management-Platforms-250px.jpg&quot;,&quot;url&quot;:&quot;http:\/\/marketingland.com\/buyers-guides\/enterprise-social-media-management-software-a-buyers-guide\&quot; onClick=\&quot;ga('send','event','navigation','read','buyers guides enterprise social media software  dmd');\&quot;&quot;},{&quot;title&quot;:&quot;What Is Social Media Marketing?&quot;,&quot;img&quot;:&quot;\/figz\/wp-content\/themes\/searchengineland\/img\/header\/what-is-social-media-marketing-ss-250.jpg&quot;,&quot;url&quot;:&quot;\/guide\/what-is-social-media-marketing\&quot; onClick=\&quot;ga('send','event','navigation','read','what is social media marketing');\&quot;&quot;}]}"><a href="/guide/what-is-social-media-marketing" onClick="ga('send','event','navigation','read','channel social');">Social</a><span class="arrow"></span><div class="drop"><div class="contain"></div></div></li>
+
+<li data-channel-json="{&quot;id&quot;:&quot;more&quot;,&quot;title&quot;:&quot;More&quot;,&quot;urlch&quot;:&quot;\/library&quot;,&quot;tracking&quot;:&quot;onClick=\&quot;ga('send','event','navigation','read','more');\&quot;&quot;,&quot;sections&quot;:[&quot;&lt;a href=\&quot;\/library\&quot; onClick=\&quot;ga('send','event','navigation','read','all topics');\&quot;&gt;All Topics&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/awards\&quot; onClick=\&quot;ga('send','event','navigation','read','awards');\&quot;&gt;Search Engine Land Awards&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/library\/channel\/industry\&quot; onClick=\&quot;ga('send','event','navigation','read','search industry');\&quot;&gt;Search Industry&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/newsletters\&quot; onClick=\&quot;ga('send','event','navigation','read','newsletters');\&quot;&gt;Newsletters&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/buyers-guides\&quot; onClick=\&quot;ga('send','event','navigation','read','buyers guides');\&quot;&gt;Buyers Guides&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;\/events\&quot; onClick=\&quot;ga('send','event','navigation','read','events');\&quot;&gt;Events&lt;\/a&gt;&quot;,&quot;&lt;a href=\&quot;http:\/\/marketingland.com\&quot; onClick=\&quot;ga('send','event','navigation','read','marketingland');\&quot;&gt;More at Marketing Land&lt;\/a&gt;&quot;],&quot;features&quot;:[{&quot;title&quot;:&quot;Goodbye Search Engine Land, SMX and Third Door Media&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2017\/01\/goodbye-heart-66022606-ss-1920-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/goodbye-search-engine-land-smx-and-third-door-media-329276\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail1 more&#039;);\&quot;&quot;}, {&quot;title&quot;:&quot;Bridge the Gap between Marketing and CX (without buying more technology)&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2018\/09\/webinar_470562134-250x250.jpg&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/bridge-the-gap-between-marketing-and-cx-without-buying-more-technology-329335\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail2 more&#039;);\&quot;&quot;}, {&quot;title&quot;:&quot;Attend Search Marketing Expo next week for FREE&quot;,&quot;img&quot;:&quot;https:\/\/searchengineland.com\/figz\/wp-content\/seloads\/2020\/02\/smx-attendees-250x250.png&quot;,&quot;url&quot;:&quot;https:\/\/searchengineland.com\/attend-search-marketing-expo-next-week-for-free-329110\&quot; onclick=\&quot;ga(&#039;send&#039;,&#039;event&#039;,&#039;navigation&#039;,&#039;read&#039;,&#039;thumbnail3 more&#039;);\&quot;&quot;}]}"><a onClick="ga('send','event','navigation','read','more');" href="/library/">More</a><span class="arrow"></span><div class="drop"><div class="contain"></div></div></li>
+
+<li><a href="http://marketinglandevents.com/smx/?utm_source=sel&utm_medium=textlink&utm_campaign=smx&utm_content=navigation" onClick="ga('send','event','navigation','click','events');">Events</a></li>
+<li></li>
+<li></li>
+
+<li>
+	<a href="#">
+		<span class="icomoon icon-search-01"></span>
+	</a>
+	<div class="drop">
+		<div class="contain-small">
+			<ul class="search">
+				<li>
+					<script type="text/javascript">
+					// function ajaxsearchsubmit(form){
+					//   var search = encodeURIComponent(form.w.value);
+					//   document.activeElement.blur();
+					//   window.location="https://search.searchengineland.com/search?w=" +search;
+					//   return false;
+					// }
+
+					function noEmptySubmissions(form){
+
+						var searchinput = encodeURIComponent(form.w.value);
+
+						if (searchinput=="") {
+
+							alert("The search query field cannot be empty. Please submit a query.");
+							return false;
+
+						} else {
+
+							document.activeElement.blur(); 
+							window.location = "http://search.searchengineland.com/search?w=" + search; 
+							return false;
+
+						}
+					}
+
+
+					</script>
+					<!-- <form name="searchform" class="navbar-form navbar-left" role="search" action="//search.martechtoday.com/search" method="get" onsubmit="return ajaxsearchsubmit(this) & return noEmptySubmissions()"> -->
+					<form name="searchform" class="navbar-form navbar-left" role="search" action="//search.searchengineland.com/search" method="get" onsubmit="return noEmptySubmissions(this)"> 
+						<div class="form-group"> 
+							<input type="hidden" name="asug"> 
+							<input type="text" class="form-control" placeholder="Search" name="w" value="" onfocus="this.value=''" id="sli_search_1" autocomplete="off"> 
+						</div> 
+						<button type="submit" class="btn btn-default">Submit</button> 
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+</li>
+
+					<li class="pull-right">
+						<a href="#">
+							<div class='sprite share-header'></div>
+						</a>
+						<div class="drop">
+							<div class="contain-small">
+									<ul class="social">
+										<li class="icons">
+											<a class="rss" href="http://feeds.searchengineland.com/searchengineland" onClick="ga('send','event','social icon','connect','header rss');"><div class='sprite feeds_24x24'></div></a>
+											<a class="email" href="/newsletters" onClick="ga('send','event','signup','subscribe','header newsletter follow us');"><div class='sprite email-24x24'></div></a>
+
+											<a class="linkedin" href="https://www.linkedin.com/company/search-engine-land" onClick="ga('send','event','social icon','connect','header linkedin');"><div class='sprite linkedin_24x24'></div></a>
+										</li>
+																														<li class="twitter">
+											<a href="https://twitter.com/sengineland" class="twitter-follow-button" data-show-count="true" data-lang="en" data-show-screen-name="false" onClick="ga('send', 'social', 'twitter', 'follow', 'https://searchengineland.com');">Follow</a>
+										</li>
+										<li class="facebook">
+											<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fsearchengineland&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21"></iframe>
+										</li>
+																			</ul>
+							</div>
+						</div>
+						</a>
+					</li>
+
+					<li class="pull-right">
+						<a href="https://www.twitter.com/sengineland">
+							<span class="icomoon icon-twitter-01"></span>
+						</a>
+					</li>
+
+					<li class="pull-right">
+						<a href="http://www.facebook.com/searchengineland">
+							<span class="icomoon icon-facebook-01"></span>
+						</a>
+					</li>
+
+					<li class="pull-right">
+						<a href="#">
+							SUBSCRIBE
+						</a>
+						<div class="drop">
+							<div class="contain-small">
+								<ul class="search">
+									<li>
+									<form id="nlh1" class="horizontal-form" action="/lib/process/process-newsletterv2.php" method="POST">
+	<div class="form-group">
+		<div class="col-md-9 mb2" style="padding-right:0px!important;margin-right:0px!important;margin-bottom:0px!important">
+			<fieldset>
+				<input type="hidden" name="formid" value="9865" />
+				<input type="hidden" name="formLocation" value="Header Hover Newsletter Form">
+				<input class="headerEmail form-control required" type="email" name="email" placeholder="Get the best search news each day. Enter your business email here.">
+			</fieldset>
+		</div>
+		<div class="grecaptcha-container" id="topnav_nl_captcha"></div>
+		<button type="submit" name="submit_button" class="btn btn-primary headerButton" onClick="ga('send','event','signup','subscribe','header sel hover');">SUBSCRIBE</button>
+	</div>
+</form>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+
+			<div class="header-top hidden-md hidden-sm hidden-lg">
+				<div class="header-top-inner">
+					<div class="branding hidden-xs">
+						<h2><a href="https://searchengineland.com">Search Engine Land</a></h2>
+					</div>
+					<div class="branding hidden-lg hidden-mg hidden-sm">
+						<a href="https://searchengineland.com" onClick="ga('send','event','internal','click','header logo');">
+							<img class="phone-logo" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://searchengineland.com/figz/wp-content/themes/searchengineland/img/logo/SEL-block.svg" alt="Search Engine Land"><noscript><img src="https://searchengineland.com/figz/wp-content/themes/searchengineland/img/logo/SEL-block.svg" alt="Search Engine Land" /></noscript>
+						</a>
+					</div>
+<!--
+					<div class="story hidden-xs">
+								<a href="https://searchengineland.com/analyst-8-billion-voice-assistants-by-2023-312035" onClick="ga('send','event','internal','read','header promo1');">
+			<span class="image" style="background-image:url('https://searchengineland.com/figz/wp-content/seloads/2019/02/connected-assistants-70x70.png');"></span>
+		</a>
+		<div class="headline">
+			<h3 class="facebook">8 billion voice assistants by 2023. </h3>
+			<h2><a href="https://searchengineland.com/analyst-8-billion-voice-assistants-by-2023-312035" rel="bookmark" onClick="ga('send','event','internal','read','header promo1');">What does that mean?</a></h2>
+		</div>
+		
+					</div>
+					<div class="story hidden-xs">
+								<a href="https://searchengineland.com/heres-a-new-script-to-find-the-best-text-for-new-ads-using-an-n-gram-analysis-312279" onClick="ga('send','event','internal','read','header promo2');">
+			<span class="image" style="background-image:url('https://searchengineland.com/figz/wp-content/seloads/2019/02/fred-vallaeys-ad-n-gram-handout-70x70.png');"></span>
+		</a>
+		<div class="headline">
+			<h3 class="comments">Find the best new text ads</h3>
+			<h2><a href="https://searchengineland.com/heres-a-new-script-to-find-the-best-text-for-new-ads-using-an-n-gram-analysis-312279" rel="bookmark" onClick="ga('send','event','internal','read','header promo2');">Here's a script to employ.</a></h2>
+		</div>
+		
+					</div>
+					<div class="story hidden-xs">
+						<a href="https://marketinglandevents.com/smx/advanced?utm_source=sel&utm_medium=textlink&utm_content=events+tile" onClick="ga('send','event','internal','read','header promo3');">
+							<span class="image" style="background-image:url('https://searchengineland.com/images/smx-advanced-2019.jpg');"></span>
+						</a>
+						<div class="headline">
+							<h3 class="comments">Events</h3>
+								<h2><a href="https://marketinglandevents.com/smx/advanced?utm_source=sel&utm_medium=textlink&utm_content=events+tile" rel="bookmark" onClick="ga('send','event','internal','read','header promo3');">Join us at SMX Advanced!</a></h2>
+						</div>
+					</div>
+-->
+									</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="phone-nav-wrap container-fluid">
+		<div class="row">
+			<div class="hidden-lg hidden-md hidden-sm sidebar-offcanvas sidebar">
+				<ul class="nav">
+					<li><a href="https://searchengineland.com/library/channel/seo" onClick="ga('send','event','navigation','read','channel seo');">SEO</a></li>
+					<li><a href="https://searchengineland.com/library/channel/sem" onClick="ga('send','event','navigation','read','channel sem');">SEM</a></li>
+					<li><a href="https://searchengineland.com/library/channel/mobile" onClick="ga('send','event','navigation','read','channel mobile');">Mobile</a></li>
+					<li><a href="https://searchengineland.com/library/channel/local" onClick="ga('send','event','navigation','read','channel local');">Local</a></li>
+					<li><a href="https://searchengineland.com/library/channel/retail" onClick="ga('send','event','navigation','read','channel retail');">Retail</a></li>
+					<li><a href="https://searchengineland.com/library/google" onClick="ga('send','event','navigation','read','category google');">Google</a></li>
+					<li><a href="https://searchengineland.com/library/bing" onClick="ga('send','event','navigation','read','category bing');">Bing</a></li>
+					<li><a href="https://searchengineland.com/guide/what-is-social-media-marketing" onClick="ga('send','event','navigation','read','channel social');">Social</a></li>
+					<li><a href="https://searchengineland.com/newsletters" onClick="ga('send','event','navigation','read','newsletters');">Newsletters</a></li>
+					<li><a href="https://searchengineland.com" onClick="ga('send','event','navigation','read','home');">Home</a></li>
+					<li>
+						<div class="drop">
+							<div class="contain">
+								<ul class="search">
+									<li>
+										<form class="navbar-form navbar-left" role="search" action="//search.searchengineland.com/search" method="GET" onsubmit="return ajaxsearchsubmit(this)">
+											<div class="form-group">
+												<input type="hidden" name="asug">
+												<input type="text" class="form-control" placeholder="Search" name="w" value="" onfocus="this.value=''" id="sli_search_1" autocomplete="off">
+											</div>
+										<button type="submit" class="btn btn-default">Submit</button>
+										</form>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="main-container-wrap">		
+			<div class="container-fluid">
+			
+
+<div id="leaderboard">
+	<div class="advertise-leaderboard advertise-728x90">
+
+	<div id="div-gpt-ad-ch-seo-leaderboard" class="leaderboard-wide"><script type="text/javascript">googletag.cmd.push(function(){googletag.display("div-gpt-ad-ch-seo-leaderboard");});</script></div>
+
+	</div>
+</div>
+<div id="adSpacer"></div>
+
+
+			<div class="content full-width-header col-lg-12 col-md-12 col-sm-12">
+
+				
+				<article class="article-content">
+
+					<div class="story-box sharing_controls_startpoint_fixed">
+
+						<div class="channel">
+							<a href="/library/channel/seo">SEO</a>
+						</div>
+						
+						<div class="hidden-xs hidden-sm">
+							
+	<div class="panel">
+	  <div class="panel-body" style="padding: 10px !important;">
+	      <p style="margin-bottom: 8px !important;">Sign up for our daily recaps of the ever-changing search marketing landscape. <a style="color: #425E9B !important;" target="_blank" href="https://thirddoormedia.com/terms/">See terms.</a></p>
+			<form class="horizontal-form" id="nla" action="/lib/process/process-newsletterv2.php" method="POST">
+				<div class="row">
+					<div class="col-md-8" style="padding-right:0px!important;margin-right:0px!important;margin-bottom:0px!important">
+						<fieldset>
+							<input type="hidden" name="formid" value="5685" />
+							<input type="hidden" name="formLocation" value="Article Page Newsletter Form">
+							<div class="control-group">
+								<div class="controls">
+									<input class="articleEmail form-control required" type="email" name="email" placeholder="Enter your business email here.">
+								</div>
+							</div>
+						</fieldset>
+					</div>
+					<div class="grecaptcha-container" id="top_nl_captcha"></div>
+					<div class="col-md-4" style="padding-right:0px!important;padding-left:0px!important;margin-right:0px!important;margin-bottom:0px!important">
+						<button class="btn btn-primary articleButton" type="submit" name="submit_button" onClick="ga('send','event','signup','subscribe','article sel');"><span style="text-transform:none!important;">SUBSCRIBE</span></button>
+					</div>
+				</div>
+			</form>
+	  </div>
+	</div>
+						</div>
+						<br/>
+
+						<h1 itemprop="headline">Anatomy Of A Google Snippet</h1>
+
+						<h2 class="subhead" itemprop="alternativeHeadline">Let&#8217;s deconstruct the Google snippet in all its glory &#8212; from the Posts/Authors/Last Post line, to the document date, to the Keywords in Context (&#8220;KWIC&#8221;), to the ellipses, to the inside-the-snippet anchor links. But before we do, it would probably be a good idea to define the term snippet. Google defines a snippet as &#8220;a [&hellip;]</h2>
+						<div class="dateline">
+							<a href="https://searchengineland.com/author/stephan-spencer" title="Posts by Stephan Spencer" rel="author">Stephan Spencer</a> on March 18, 2010 at 2:05 pm 						</div>
+
+						<div class="ad hidden-lg hidden-md hidden-sm" style="text-align: center; margin-bottom: 10px;">
+<div id="div-gpt-ad-ch-seo-mobilecube1"><script type="text/javascript">googletag.cmd.push(function() {googletag.display("div-gpt-ad-ch-seo-mobilecube1"); });</script></div>
+</div>
+
+						<section
+	class="sharing_controls" 
+	data-twitter-handle="@sengineland" 
+	data-linkedin-source="Search Engine Land" 
+	data-email-subject="A link from Search Engine Land" 
+	data-email-body="Hi,[newline][newline]I've shared a link from Search Engine Land.[newline][newline][title]:[newline][shortlink][newline]" 
+	data-permalink="https://searchengineland.com/anatomy-of-a-google-snippet-38357" 
+	data-shortlink="" 
+	data-featured-image="#insert-image-url"
+	data-full-title="Anatomy Of A Google Snippet"
+	data-abbreviated-title="Anatomy Of A Google Snippet"
+	data-sticky-startpoint-selector=".sharing_controls_startpoint_fixed"
+	data-sticky-endpoint-selector="footer"
+	data-content-startpoint-selector=".sharing_controls_startpoint_content"
+	data-content-endpoint-selector=".sharing_controls_endpoint_content">
+	<ul>
+				<li data-id="linkedin" class="linkedin"><i class="icon-linkedin-01" onclick="ga('send', 'social', 'linkedin', 'share', 'https://searchengineland.com/anatomy-of-a-google-snippet-38357');"></i></li>
+		<li data-id="twitter" class="twitter"><i class="icon-twitter-01" onclick="ga('send', 'social', 'twitter', 'share', 'https://searchengineland.com/anatomy-of-a-google-snippet-38357');"></i></li>
+		<li data-id="facebook" class="facebook"><i class="icon-facebook-01" onclick="ga('send', 'social', 'facebook', 'share', 'https://searchengineland.com/anatomy-of-a-google-snippet-38357');"></i></li>
+		<li data-id="more" class="more"><span>More</span></li>
+				<li data-id="email" class="email after_more_button"><i class="icon-email-01" onclick="ga('send', 'social', 'email', 'share', 'https://searchengineland.com/anatomy-of-a-google-snippet-38357');"></i></li>
+		<li data-id="tumblr" class="tumblr after_more_button"><i class="icon-tumblr-01" onclick="ga('send', 'social', 'tumblr', 'share', 'https://searchengineland.com/anatomy-of-a-google-snippet-38357');"></i></li>
+		<li data-id="reddit" class="reddit after_more_button"><i class="icon-reddit-01" onclick="ga('send', 'social', 'reddit', 'share', 'https://searchengineland.com/anatomy-of-a-google-snippet-38357');"></i></li>
+		<li data-id="buffer" class="buffer after_more_button"><i class="icon-buffer-01" onclick="ga('send', 'social', 'buffer', 'share', 'https://searchengineland.com/anatomy-of-a-google-snippet-38357');"></i></li>
+	</ul>	
+</section>
+
+						<div itemprop="articleBody" class="body-content">
+
+							<div class="sharing_content_channel">
+								<div class="sharing_controls_startpoint_content"></div>
+							</div>
+
+							<p>Let&#8217;s deconstruct the Google snippet in all its glory &#8212; from the Posts/Authors/Last Post line, to the document date, to the Keywords in Context (&#8220;KWIC&#8221;), to the ellipses, to the inside-the-snippet anchor links.</p>
+<p>But before we do, it would probably be a good idea to define the term <em>snippet</em>. Google <a href="https://www.google.com/support/websearch/bin/answer.py?hl=en&amp;answer=134479">defines</a> a <em>snippet</em> as &#8220;a description of or an excerpt from the webpage&#8221; that follows the title and precedes the URL and Cached link. Simply put, the snippet refers to the description portion of a Google search listing. It doesn&#8217;t include the title, nor does it include the URL. Google engineer Matt Cutts provides a good introduction to snippets and the surrounding neighborhood in <a href="http://www.youtube.com/watch?v=vS1Mw1Adrk0">this video</a>.</p>
+<p>This is a crucially important detail: snippets are determined query-time; in other words, they vary depending on the keyword being searched on, as demonstrated by Wordstream&#8217;s blog post about snippet control <a href="http://www.wordstream.com/blog/ws/2009/11/19/meta-description-mutiny">here</a>.</p>
+<p><strong>What are the components of a Google snippet?</strong></p>
+<p>First, there is sometimes a gray line of text that precedes everything else. If Google <a href="http://www.seobythesea.com/?p=3419">determines</a> that the site is a discussion forum, you&#8217;ll see in gray text: &#8220;[number] posts &#8211; [number] authors &#8211; Last post: [some date]&#8221;, as you can see in the example below:</p>
+<img class="aligncenter has-border size-full wp-image-254055" src="https://searchengineland.com/figz/wp-content/seloads/2010/03/anatomyofagooglesnippet1.png" alt="anatomyofagooglesnippet1" width="572" height="100" />
+<p>If it&#8217;s a scholarly article, then the gray text says something like &#8220;by J Smith &#8211; 2010&#8221; or &#8220;by J Smith &#8211; Cited by 1 &#8211; Related articles.&#8221; If a book result, then it&#8217;ll show something like &#8220;by J Smith &#8211; 2010 &#8211; Fiction &#8211; 333 pages.&#8221; If the page is marked up with microformats, the gray text may display structured data on people, locations, events, product ratings/reviews, etc. &#8212; this is <a href="http://googlewebmastercentral.blogspot.com/2010/03/microdata-support-for-rich-snippets.html">referred to by Google</a> as a <em>rich snippet</em>.</p>
+<p>Rich snippets are relatively rare, so don&#8217;t expect that employing microformats will automatically trigger rich snippets. I expect this will change as Google continues to roll out their implementation of rich snippets. Rather than discuss rich snippets in detail here, I&#8217;ll point you to <a href="http://www.practicalecommerce.com/articles/1466-SEO-Capture-More-Search-Traffic-with-Rich-Snippets">an article</a> on the topic written by one of my colleagues here at Covario, Jill Kocher.</p>
+<p>Then it switches to black text. Sometimes the snippet includes a date at the beginning followed by ellipses (&#8220;…&#8221;). That occurs if Google determines there is a primary date associated with the page in question, such as is often the case with a blog post. This does not hold true for blog category pages, because there are multiple posts listed, with a date associated with each.</p>
+<p>Google is quite adept at teasing out the date from the page. It doesn&#8217;t have to be marked up with some special microformat. I&#8217;ve seen dates enclosed in div or span tags with a class name that is anything but standard (e.g. class=&#8221;date&#8221;, class=&#8221;submitted&#8221;, class=&#8221;posthead&#8221;, etc.). I&#8217;ve seen dates in dd tags with a label like &#8220;Post date&#8221; in a dt tag, or simply the words &#8220;Last modified:&#8221; preceding the date. I&#8217;ve even seen dates simply bare in the copy. Google correctly handled them all.</p>
+<p>If there is no date but the snippet begins with ellipses, that indicates the snippet was excerpted from a larger body of text (whether part of a meta description or page copy &#8212; more on this in a minute) and text preceding the ellipses was omitted. Similarly, when ellipses follow at the end of the snippet, the snippet was truncated for length. The maximum length of a snippet (at least a standard snippet), not including ellipses at the beginning or end, is 156 characters. If the snippet source (e.g. the meta description) is any longer than 156 characters, the snippet will be truncated and ellipses will be displayed to mark where the text continues but was omitted in the snippet view.</p>
+<p>Ellipses can occur at the beginning, and/or end, and/or somewhere in between once or multiple times. There is an exception to this 156 character rule: sometimes an extended snippet is displayed for certain listings, like when it&#8217;s a more esoteric query. Or, when the listing is buried deep in the search results, where the snippet spans 3 or even 4 lines in the search results instead of the standard 2 lines and thus there can be nearly double the number of characters present (as in the screenshot above.)</p>
+<p><strong>How to influence snippet text to use a Meta description</strong></p>
+<p>The copy in black text could be pulled from one or multiple of these sources: from the meta description, from the description from the site&#8217;s <a href="http://dmoz.org/">Open Directory</a> listing, from the content of the page body, or even a combination of these. I&#8217;ve seen cases where the meta description <em>and</em> body copy were both incorporated into the snippet.</p>
+<p>Surprisingly, even hidden (&#8220;display:none&#8221;) text can end up in the snippet. Rather than leaving your snippet to chance, try to &#8220;convince&#8221; the Google algorithm to use your meta description instead (assuming it&#8217;s good, i.e. is well-written and compels the click through, of course!) by incorporating the popular search terms in the meta description.</p>
+<p>It&#8217;s most likely that the meta description will be used by default when the page doesn&#8217;t contain the user&#8217;s search term and is ranking primarily because of inbound links and their anchor text. Here&#8217;s a (perhaps obvious) tip: look at your web analytics for the top search terms driving traffic to the page and make sure these terms are present in that page&#8217;s meta description.</p>
+<p>Meta descriptions are best hand-crafted, but for a large website, that&#8217;s probably impractical. Thankfully, meta descriptions generated automatically based on a recipe can work out well too. For example, an etailer could auto-generate meta descriptions for their product pages whereby all the key bits of information which are scattered throughout the page (e.g. price, size, style, manufacturer) would be gathered together &#8212; since it would otherwise be unlikely that a Google-generated snippet would capture all of this information.</p>
+<p>According to <a href="http://googlewebmastercentral.blogspot.com/2007/09/improve-snippets-with-meta-description.html">this Google Webmaster Central Blog post</a>, the meta description is <em>less</em> likely to be used if Google&#8217;s automated algorithm deems it low quality. What would cause Google to deem a meta description low quality? If it&#8217;s comprised of long strings of keywords, duplication of information that is already in the title tag, content duplication within the meta description itself, or poor formatting that makes the description hard to read.</p>
+<p>An Open Directory listing, if you have one, will probably trump your meta description and page copy for your home page. For example, search for &#8220;starbucks&#8221; and you&#8217;ll find the Starbucks.com home page listing has this 1-line snippet: &#8220;International chain. Offers store locator, menu, and product information.&#8221;</p>
+<img class="aligncenter has-border size-full wp-image-254056" src="https://searchengineland.com/figz/wp-content/seloads/2010/03/anatomyofagooglesnippet2.png" alt="anatomyofagooglesnippet2" width="442" height="168" />
+<p>This is the description from the listing for Starbucks in the Open Directory. Despite the fact that the meta description (&#8220;Starbucks.com home page&#8221;) includes the search term (in this case &#8220;starbucks&#8221;) and the ODP description doesn&#8217;t, the latter is what is chosen for the snippet. If you don&#8217;t want your ODP listing to be the basis for your title or snippet, use the meta robots NOODP tag, as explained <a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=35264">here</a>.</p>
+<p><strong>Search snippets and &#8220;Key Words  in Context&#8221;</strong></p>
+<p>Within the black text, you will often see bolded keywords. The bolded words correspond to the search keywords entered by the user. The bolding is referred to by Google engineers in information retrieval (IR) parlance as <a href="http://en.wikipedia.org/wiki/Key_Word_in_Context">Keywords in Context</a>, more often by its acronym KWIC. Matt Cutts talks about KWIC (pronounced &#8220;quick&#8221;) in <a href="http://www.youtube.com/watch?v=NlJiLDn9-38">this video</a>.</p>
+<p>Google uses stemming, morphology, and synonyms to relate the searcher&#8217;s keywords to the keywords in the document. A different gerund (-ing instead of -ed) could be considered a match by Google&#8217;s relevancy algorithm, but it may or may not be bolded as a keyword in context. Doing my own tests, I found cases where queries in a singular form returned plural forms of keywords in bold, and vice versa.</p>
+<p><strong>Additional snippet features</strong></p>
+<p>After the line(s) of black text, there may be a &#8220;plus box.&#8221; The plus box could, for instance, be with a stock chart for a publicly traded company&#8217;s home page listing. Or a map of a pertinent location if Google was able to extract a primary address from the page.</p>
+<p>Sitelinks also may be present after the black text. Sitelinks are not traditionally considered to be part of the snippet. Sitelinks in their standard form point to other locations within the site using text obtained from anchor text or title tags. But there are now anchor-based sitelinks too that point to locations within the same page (when links containing # are present on the page.)</p>
+<p>Sitelinks will sometimes be present <em>within</em> the snippet itself (read about this &#8220;Jump to&#8221; feature <a href="https://searchengineland.com/google-sitelinks-now-in-snippets-25625">here</a>). Strangest of all, the anchor sitelinks is the one that is sometimes attached to forums, detailed at the end of <a href="http://www.seomoz.org/blog/google-quietly-pushing-more-links-data-in-snippets">this post</a>. Sitelinks are beyond the scope of this article; I&#8217;ll save that for another time. In the meantime, check out <a href="http://www.onlinemarketer.co.nz/what-are-google-sitelinks/">this article</a> from one of my New Zealand-based colleagues to learn more about Google&#8217;s criteria for displaying sitelinks and how to influence when and how they are displayed.</p>
+<p>Occasionally, you may come across a search listing with no snippet. That can happen if the site goes offline or is otherwise not available, such as during a DDoS attack. A more likely scenario is if the page was disallowed by robots.txt. A Disallow directive tells Googlebot not to access the page, but it can still list it in the search results &#8212; even though it doesn&#8217;t know what is contained on that page. A No-follow directive on the other hand, which is also unofficially supported by Google, will keep the page out of the search results altogether.</p>
+<p><strong>5 myths about Google snippets</strong></p>
+<p>I&#8217;d like to take a moment to dispel several myths about snippets:</p>
+<ol>
+<li><strong><em><span style="font-weight: normal;">The term snippet is synonymous with the search listing <span style="font-style: normal;">and therefore includes the title, URL, Cached link, etc</span></span><span style="font-style: normal;">.</span></em></strong> Not true. Google <a href="https://www.google.com/support/websearch/bin/answer.py?hl=en&amp;answer=134479">makes very clear</a> the fact that the term <em>snippet</em> applies solely to the description &#8212; and therefore follows the title and precedes the URL and the Cached link.</li>
+<li><em>Google always uses the meta description in the snippet if it&#8217;s defined</em>. That is far from the case. As already mentioned, snippets are query-specific and so they are always changing. Even when your meta description includes the search term, there are no guarantees.</li>
+<li><em>Meta descriptions help with rankings &#8212; not just the snippet.</em> This is patently untrue. According to Google, &#8220;while accurate meta descriptions can improve clickthrough, they won&#8217;t affect your ranking within search results&#8221; (from <a href="http://googlewebmastercentral.blogspot.com/2007/09/improve-snippets-with-meta-description.html">this</a> aforementioned post.)</li>
+<li><em>The bolded keywords in the search listing are bolded because they affected the ranking</em>. Nope. The bolding of keywords (KWIC) is solely for user experience purposes. The meta description, as already stated directly above, does not influence a page&#8217;s rankings.</li>
+<li><em>The maximum length of a standard snippet is 160 characters.</em> I&#8217;ve seen various SEO bloggers asserting max lengths of 150, 156, 160, 161, and 165. What&#8217;s the correct answer? As mentioned above, 156.</li>
+</ol>
+<p>I love to see creative snippets. Here&#8217;s one of my favorites, from Darren Slatten&#8217;s home page (SEOmofo.com):</p>
+<img class="aligncenter has-border size-full wp-image-254058" src="https://searchengineland.com/figz/wp-content/seloads/2010/03/anatomyofagooglesnippet3.png" alt="anatomyofagooglesnippet3" width="309" height="122" />
+<p>Speaking of Darren, I encourage you to check out these clever <a href="http://www.seomofo.com/snippet-experiment.html">snippet experiments</a> he conducted and his <a href="http://www.seomofo.com/snippet-optimizer.html">Snippet Optimizer</a> tool. Another useful tool &#8212; this one from Google &#8212; is the <a href="http://www.google.com/webmasters/tools/richsnippets">Rich Snippets Testing Tool</a>; just don&#8217;t get your hopes up that this means your listings will display with rich snippets anytime soon &#8211; unless of course, you&#8217;re the size of LinkedIn or Hulu.</p>
+
+							<hr>
+														<p><em>Opinions expressed in this article are those of the guest author and not necessarily Search Engine Land. Staff authors are listed <a href="/staff">here</a>.</em></p>
+							<hr>
+							
+							<div id="div-gpt-ad-ch-seo-articlemodule" class="hidden-sm hidden-xs hidden-md" style="margin-top: -10px !important;"><script type="text/javascript">googletag.cmd.push(function() {googletag.display("div-gpt-ad-ch-seo-articlemodule"); });</script></div>
+<br/>
+							<div class="about-author row">
+	<h3>About The Author</h3>
+	<div class="information col-lg-12 col-md-12 col-sm-12">
+		<div class="author-module">
+			<div class="avatar">
+			<img class="img-responsive" width="140px" height="140px" src="/images/authors/StephanSpencer-lg.jpg">			</div>
+			<div class="about">
+				<div class="name">
+					<strong><a href="https://searchengineland.com/author/stephan-spencer" title="Posts by Stephan Spencer" rel="author">Stephan Spencer</a></strong>
+				</div>
+				<div class="twitter">
+									
+					<iframe id="twitter-widget-0" src="https://platform.twitter.com/widgets/follow_button.1392079123.html#_=1392650032615&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=sspencer&amp;show_count=true&amp;show_screen_name=true&amp;size=m" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="width: 251px; height: 20px;"></iframe>
+									</div>
+				Stephan Spencer is the creator of the 3-day immersive SEO seminar Traffic Control; an author of the O’Reilly books <em>The Art of SEO</em>, <em>Google Power Search</em>, and <em>Social eCommerce</em>; founder of the SEO agency Netconcepts (acquired in 2010); inventor of the SEO proxy technology GravityStream; and the host of two podcast shows <a target="_blank" rel="nofollow"  href="https://www.getyourselfoptimized.com/">Get Yourself Optimized</a> and <a target="_blank" rel="nofollow"  href="http://www.marketingspeak.com/">Marketing Speak</a>.			</div>
+		</div>
+	</div>
+</div>
+							<div class="related row hidden-xs">
+
+<!--
+	<div class="secondary entries col-lg-12">
+		<h3>Popular Stories</h3>
+
+		
+	</div>
+-->
+
+	<div class="secondary topics col-lg-12 hidden-xs">
+		<h3>Related Topics</h3>
+		<a href="https://searchengineland.com/library/columns/all-things-seo">All Things SEO Column</a><a href="https://searchengineland.com/library/channel/seo">Channel: SEO</a><a href="https://searchengineland.com/library/how-to/how-to-seo">How To: SEO</a>	</div>
+</div>
+
+
+						</div><!-- .body_copy -->
+  
+						<div class="hidden-md hidden-lg">
+							
+	<div class="panel">
+	  <div class="panel-body" style="padding: 10px !important;">
+	      <p style="margin-bottom: 8px !important;">Sign up for our daily recaps of the ever-changing search marketing landscape. <a style="color: #425E9B !important;" target="_blank" href="https://thirddoormedia.com/terms/">See terms.</a></p>
+			<form class="horizontal-form" id="nla" action="/lib/process/process-newsletterv2.php" method="POST">
+				<div class="row">
+					<div class="col-md-8" style="padding-right:0px!important;margin-right:0px!important;margin-bottom:0px!important">
+						<fieldset>
+							<input type="hidden" name="formid" value="5685" />
+							<input type="hidden" name="formLocation" value="Article Page Newsletter Form">
+							<div class="control-group">
+								<div class="controls">
+									<input class="articleEmail form-control required" type="email" name="email" placeholder="Enter your business email here.">
+								</div>
+							</div>
+						</fieldset>
+					</div>
+					<div class="grecaptcha-container" id="top_nl_captcha"></div>
+					<div class="col-md-4" style="padding-right:0px!important;padding-left:0px!important;margin-right:0px!important;margin-bottom:0px!important">
+						<button class="btn btn-primary articleButton" type="submit" name="submit_button" onClick="ga('send','event','signup','subscribe','article sel');"><span style="text-transform:none!important;">SUBSCRIBE</span></button>
+					</div>
+				</div>
+			</form>
+	  </div>
+	</div>
+						</div>
+						<br/>
+						
+						<div>
+						<h3>We're listening.</h3>
+						<p>Have something to say about this article? Share it with us on <a href="https://www.facebook.com/searchengineland">Facebook</a>, <a href="https://twitter.com/sengineland">Twitter</a> or our <a href="https://www.linkedin.com/groups/53266/">LinkedIn Group</a>.</p>
+						</div>
+
+					</div><!-- story-box -->
+
+												<script type="text/javascript">
+							ga('send', 'pageview', {
+								'dimension1': 'Channel: SEO',
+								'dimension2': '',
+								'dimension3': 'Stephan Spencer',
+								'dimension4': 'All Things SEO Column',
+								'dimension5': '2010-03-18 14:05:10'
+							});
+						</script>
+
+					
+					
+				</article>
+
+
+<aside class="right-rail">
+
+	<div class="right-rail-content">
+
+		
+
+<div class="ad">
+	
+	<div id="div-gpt-ad-ch-seo-sidebar"><script type="text/javascript">googletag.cmd.push(function() {googletag.display("div-gpt-ad-ch-seo-sidebar"); });</script></div>
+</div>
+
+		
+		
+		
+		
+<div class="events row mb2">
+
+	<!-- SMX Events -->
+
+	<div class="mb2">
+		<h3>ATTEND OUR CONFERENCES</h3>
+
+		<a target="_blank" onclick="ga('send','event','promo','click','sidebar smx');" href="https://marketinglandevents.com/smx/?utm_source=sel&utm_medium=textlink&utm_campaign=smx+home&utm_content=standunit+text">
+			<img class="img-responsive" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://searchengineland.com/figz/wp-content/seloads/2019/10/smxlogo_270x130.png" alt="" /><noscript><img src="https://searchengineland.com/figz/wp-content/seloads/2019/10/smxlogo_270x130.png" class="img-responsive" alt="" /></noscript>
+		</a>
+
+		
+
+							<p class=hide-section>Lorem ipsum doler this is promo text about SMX events.</p>
+
+							
+
+							<p class=hide-section>May 21-22, 2019: <a target="_blank" onclick="ga('send','event','promo','click','sidebar smx');" href="https://marketinglandevents.com/smx/london/?utm_source=sel&utm_medium=textlink&utm_campaign=smx+home&utm_content=standunit+text" style="text-decoration: underline;">SMX London</a></p>
+
+							
+
+							<p class=hide-section>Sept 30 - Oct 1, 2019: <a target="_blank" onclick="ga('send','event','promo','click','sidebar smx');" href="https://smxadvanced.eu?utm_source=sel&utm_medium=textlink&utm_campaign=smx+home&utm_content=standunit+text" style="text-decoration: underline;">SMX Advanced Europe</a></p>
+
+							
+
+							<p class=hide-section>November 18-19, 2019: <a target="_blank" onclick="ga('send','event','promo','click','sidebar smx');" href="https://smxfrance.com/?utm_source=sel&utm_medium=textlink&utm_campaign=smx+home&utm_content=standunit+text" style="text-decoration: underline;">SMX Paris</a></p>
+
+							
+
+							<p class=show-section>February 19-20, 2020: <a target="_blank" onclick="ga('send','event','promo','click','sidebar smx');" href="http://marketinglandevents.com/smx/west/?utm_source=sel&utm_medium=textlink&utm_campaign=smx+home&utm_content=standunit+text" style="text-decoration: underline;">SMX West</a></p>
+
+							
+
+							<p class=show-section>March 18-19, 2020: <a target="_blank" onclick="ga('send','event','promo','click','sidebar smx');" href="https://smxmuenchen.de/en/" style="text-decoration: underline;">SMX Munich</a></p>
+
+							
+
+							<p class=show-section>June 8-10, 2020: <a target="_blank" onclick="ga('send','event','promo','click','sidebar smx');" href="https://marketinglandevents.com/smx/advanced/?utm_source=sel&utm_medium=textlink&utm_campaign=smx+home&utm_content=standunit+text" style="text-decoration: underline;">SMX Advanced</a></p>
+
+							
+
+							<p class=show-section>November 11-12, 2020: <a target="_blank" onclick="ga('send','event','promo','click','sidebar smx');" href="https://marketinglandevents.com/smx/east/?utm_source=sel&utm_medium=textlink&utm_campaign=smx+home&utm_content=standunit+text" style="text-decoration: underline;">SMX East</a></p>
+
+							
+		<!-- SMX Video -->
+
+		<a id="smxModalOpen" onclick="ga('send','event','promo','click','sidebar smx conference video');">
+				<img class="img-responsive" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://searchengineland.com/figz/wp-content/seloads/2019/10/right-side-rail-650x255.png" alt="" /><noscript><img src="https://searchengineland.com/figz/wp-content/seloads/2019/10/right-side-rail-650x255.png" class="img-responsive" alt="" /></noscript>
+			</a>
+		
+			<!-- The Modal -->
+			<div id="smxModal" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content" style="background-color:#1C57A4;">
+					<div class="modal-header">
+						<span class="smx-close">&times;</span>
+					</div>
+					<div class="modal-body">
+
+						
+						<center>
+						<iframe id="smxYouTubePlayer" width="480" height="270" src="" data-src="https://www.youtube.com/embed/WpwIU1pBBVU" frameborder="0" allowfullscreen></iframe>
+
+						<h3 style="padding-top: 8px !important;">
+							<a href="http://marketinglandevents.com/smx/?utm_source=sel&utm_medium=standunit&utm_campaign=smx-video" style="color: #fff;" onclick="ga('send','event','video landing page','click','smx');"></a>
+						</h3>
+						</center>
+					</div>
+					<div class="modal-footer">
+						<br>
+					</div>
+				</div>
+			</div>
+
+		<a target="_blank" href="https://marketinglandevents.com/smx/?utm_source=sel&utm_medium=textlink&utm_campaign=smx+home&utm_content=standunit+button" class="btn btn-primary" role="button" onclick="ga('send','event','promo','click','sidebar smx');">Learn More About Our SMX Events</a>
+
+		<div class="hide-section">
+			<a href="https://searchengineland.com/awards?utm_source=sel&utm_medium=display&utm_campaign=learn+more&utm_content=sidebar+cube">
+				<img src="https://searchengineland.com/figz/wp-content/seloads/2019/10/sel_awards_300x250_learn.jpg">
+			</a>
+		</div>
+		
+	</div>
+
+	<!-- MarTech Events -->
+
+	<div>
+
+		<a target="_blank" onclick="ga('send','event','promo','click','sidebar martech');" href="https://www.martechconf.com/?utm_source=sel&utm_medium=textlink&utm_campaign=martech+home&utm_content=standunit+logo">
+			<img class="img-responsive" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://searchengineland.com/figz/wp-content/seloads/2019/10/mtc-logo-2019.png" alt="" /><noscript><img src="https://searchengineland.com/figz/wp-content/seloads/2019/10/mtc-logo-2019.png" class="img-responsive" alt="" /></noscript>
+		</a>
+
+		
+
+							<p class=show-section>Gain new strategies and insights at the intersection of marketing, technology, and management. Our next conference will be held:</p>
+
+							
+
+							<p class=show-section>April 15-17, 2020: <a target="_blank" onclick="ga('send','event','promo','click','sidebar smx');" href="https://martechconf.com/west/?utm_source=sel&utm_medium=textlink&utm_campaign=mt+west+2020&utm_content=standunit" style="text-decoration: underline;">San Jose</a></p>
+
+							
+
+							<p class=show-section>October 6-8, 2020: <a target="_blank" onclick="ga('send','event','promo','click','sidebar smx');" href="https://martechconf.com/east/?utm_source=sel&utm_medium=textlink&utm_campaign=mt+east+2020&utm_content=standunit" style="text-decoration: underline;">Boston</a></p>
+
+								    
+		<!-- MarTech Video -->
+
+		<a id="mtModalOpen" onclick="ga('send','event','promo','click','sidebar martech conference video');">
+				<img class="img-responsive" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://searchengineland.com/figz/wp-content/seloads/2019/10/video-mtc-right-side-300x148.png" alt="" /><noscript><img src="https://searchengineland.com/figz/wp-content/seloads/2019/10/video-mtc-right-side-300x148.png" class="img-responsive" alt="" /></noscript>
+			</a>
+		
+			<!-- The Modal -->
+			<div id="mtModal" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content" style="background-color:#f1824e;">
+					<div class="modal-header">
+						<span class="close">&times;</span>
+					</div>
+					<div class="modal-body">
+
+						
+						<center>
+						<iframe id="youTubePlayer" width="480" height="270" src="" data-src="https://www.youtube.com/embed/rsRHC7n_D4U" frameborder="0" allowfullscreen></iframe>
+
+						<h3 style="padding-top: 8px !important;">
+							<a href="https://martechconf.com/?utm_source=sel&utm_medium=standunit&utm_campaign=martech-video" style="color: #fff;" onclick="ga('send','event','video landing page','click','martech');">Attend MarTech - Click Here</a>
+						</h3>
+						</center>
+					</div>
+					<div class="modal-footer">
+						<br>
+					</div>
+				</div>
+			</div>
+		
+		<a target="_blank" href="https://martechconf.com/?utm_source=sel&utm_medium=textlink&utm_campaign=mt+home&utm_content=standunit+text" class="btn btn-primary" role="button" onclick="ga('send','event','promo','click','sidebar martech');">Learn More About Our MarTech Events</a>
+	</div>
+
+</div>
+		
+<!--
+		<div class="events row">
+			<div>
+				<a href="http://marketinglandevents.com/smx/advanced/agenda-at-a-glance/?utm_source=sel&utm_medium=standunit&utm_campaign=smx+adv+2017&utm_content=300x700+soldout">
+					<img src="https://searchengineland.com/figz/wp-content/themes/searchengineland/img/sponsors/adv17_300x600_agenda_almost_soldout.jpg">
+				</a>
+			</div>
+		</div>
+-->
+		
+		<div class="ad">
+	<div id="div-gpt-ad-ch-seo-lower-sidebar"><script type="text/javascript">googletag.cmd.push(function() {googletag.display("div-gpt-ad-ch-seo-lower-sidebar"); });</script></div></div>
+		
+		
+		
+<div class="dmd row">
+	<div>
+		<h3>White Papers</h3>
+		
+		<ul>				
+			<li><a rel="nofollow" href="https://downloads.digitalmarketingdepot.com/BMU_2002_3EsCoopFnd_landingpage.html?utm_source=sel&utm_medium=textlink&utm_campaign=whtiepapers" onclick="ga('send', 'event', 'promo', 'click', 'sidebar dmd whitepaper');">The Three E’s of Co-op Fund Management</a></li><li><a rel="nofollow" href="https://downloads.digitalmarketingdepot.com/BMU_2002_TelecmTech_landingpage.html?utm_source=sel&utm_medium=textlink&utm_campaign=whtiepapers" onclick="ga('send', 'event', 'promo', 'click', 'sidebar dmd whitepaper');">The State of Local Marketing in Telecommunications and Technology</a></li><li><a rel="nofollow" href="https://downloads.digitalmarketingdepot.com/BOO_2002_WhyOffrSEO_landingpage.html?utm_source=sel&utm_medium=textlink&utm_campaign=whtiepapers" onclick="ga('send', 'event', 'promo', 'click', 'sidebar dmd whitepaper');">Why Should Digital Marketing Agencies Offer SEO</a></li><li><a rel="nofollow" href="https://downloads.digitalmarketingdepot.com/ADT_2002_PPCAGameWP_landingpage.html?utm_source=sel&utm_medium=textlink&utm_campaign=whtiepapers" onclick="ga('send', 'event', 'promo', 'click', 'sidebar dmd whitepaper');">Your 5 biggest Google Ads challenges and how to solve them</a></li><li><a rel="nofollow" href="https://downloads.digitalmarketingdepot.com/FUE_2002_PurchToPro_landingpage.html?utm_source=dmd&utm_medium=email&utm_content=fuel%2Bcycle?utm_source=sel&utm_medium=textlink&utm_campaign=whtiepapers" onclick="ga('send', 'event', 'promo', 'click', 'sidebar dmd whitepaper');">Using Online Communities to Inspire Brand Loyalty</a></li>		</ul>
+	</div>
+	<a target="_blank" href="http://digitalmarketingdepot.com/library/white-papers" class="btn btn-primary dmd-assets-btn" role="button" onclick="ga('send','event','promo','click','sidebar dmd whitepaper');">See More Whitepapers</a>
+</div>
+		
+		
+<div class="dmd row">
+	<div>
+		<h3>Webinars</h3>
+		
+		<ul>				
+			<li><a rel="nofollow" href="https://event.on24.com/wcc/r/2197860/72404645B15C24CF7213CE4E9DF32178?partnerref=dmdhome" title="Date of Webninar: 2020-03-03" onclick="ga('send', 'event', 'promo', 'click', 'sidebar dmd webcast');">Orchestrating B2B Business Processes around Buying Groups to Deliver More Revenue</a></li><li><a rel="nofollow" href="https://event.on24.com/wcc/r/2191989/D2C3D6A7FB5A0C525B4626993F952D59?partnerref=dmdhome" title="Date of Webninar: 2020-02-27" onclick="ga('send', 'event', 'promo', 'click', 'sidebar dmd webcast');">How to Look Beyond Google for the Search Intelligence You Need</a></li><li><a rel="nofollow" href="https://event.on24.com/wcc/r/2184254/93B43060CE281853208BACEC977FF874?partnerref=dmdhome" title="Date of Webninar: 2020-02-25" onclick="ga('send', 'event', 'promo', 'click', 'sidebar dmd webcast');">60-Minute Masterclass: Google Ads & Phone Call Conversions</a></li>		</ul>
+	</div>
+	<a target="_blank" href="http://digitalmarketingdepot.com/library/webinars" class="btn btn-primary dmd-assets-btn" role="button" onclick="ga('send','event','promo','click','sidebar dmd webinars');">See More Webinars</a>
+</div>
+		
+		
+<div class="dmd row">
+	<div>
+		<h3>Research Reports</h3>
+		<ul>
+			<li><a rel="nofollow" href="https://downloads.digitalmarketingdepot.com/MIR_1910_DAMgmtGuid_landingpage_mtt.html?utm_source=sel&utm_medium=textlink&utm_campaign=sidebar" onclick="ga('send','event','promo','click','sidebar dmd research');">Enterprise Digital Asset Management Platforms</a></li>
+			<li><a rel="nofollow" href="https://downloads.digitalmarketingdepot.com/MIR_1902_IDResPlatf_landingpage_mtt.html?utm_source=sel&utm_medium=textlink&utm_campaign=sidebar" onclick="ga('send','event','promo','click','sidebar dmd research');">Identity Resolution Platforms</a></li>
+			<li><a rel="nofollow" href="https://downloads.digitalmarketingdepot.com/MIR_1808_CusDatPlat_landingpage_mtt.html?utm_source=sel&utm_medium=textlink&utm_campaign=sidebar" onClick="ga('send','event','promo','click','sidebar dmd research');">Customer Data Platforms</a></li>
+			<li><a rel="nofollow" href="https://downloads.digitalmarketingdepot.com/MIR_1602_B2BMrkgAuto_landingpage_mtt.html?utm_source=sel&utm_medium=textlink&utm_campaign=sidebar" onclick="ga('send','event','promo','click','sidebar dmd research');">B2B Marketing Automation Platforms</a></li>
+			<li><a rel="nofollow" href="https://downloads.digitalmarketingdepot.com/MIR_1512_SEOPlatfrm_landingpageMTT.html?utm_source=sel&utm_medium=textlink&utm_campaign=sidebar" onclick="ga('send','event','promo','click','sidebar dmd research');">Enterprise SEO Platforms</a></li>
+			<li><a rel="nofollow" href="https://downloads.digitalmarketingdepot.com/MIR_1510_CallAnlytc_landingpagebuyersguide.html?utm_source=sel&utm_medium=textlink&utm_campaign=sidebar" onclick="ga('send','event','promo','click','sidebar dmd research');">Call Analytics Platforms</a></li>	
+		</ul>
+	</div>
+	<a target="_blank" href="http://digitalmarketingdepot.com/library/research" class="btn btn-primary dmd-assets-btn" role="button" onclick="ga('send','event','promo','click','sidebar buyers guides');">See More Research</a>
+</div>
+
+		
+				
+		<div class="e-solutions row">
+	<div>
+
+		
+
+				<h3>Search Engine Land’s Guide To SEO</h3>
+				<a href="https://searchengineland.com/seotable?utm_source=sel&utm_medium=display&utm_campaign=seotable&utm_content=300x481-blue" onclick="ga('send','event','internal','read','sidebar seo periodic table');"><img src="/images/seo-table-300x481-v2-blue.png" alt="Master the Science of SEO" width="300" height="481" border="0"></a>
+
+				
+		
+	</div>
+</div>
+
+	</div>
+
+</aside>
+
+				</div>
+			</div>
+		</div>
+
+	
+		<footer class="site-footer">
+				<div class="subscribe row">
+					<div class="footer-inner">
+						<div class="col-lg-4 col-md-4 col-sm-4 get">
+							Receive daily search news and analysis.
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-8">
+							<form id="nlf" class="horizontal-form" action="/lib/process/process-newsletterv2.php" method="POST">
+  <div class="row">
+  	<div class="col-md-8 mb1" style="padding-right:0px!important;margin-right:0px!important;margin-bottom:0px!important">
+  		<fieldset>
+	  		<input type="hidden" name="formid" value="9804" />
+  			<input type="hidden" name="formLocation" value="Footer Newsletter Form">
+  			<div class="control-group mb2">
+  				<div class="controls">
+  					<input class="footerEmail form-control required" type="email" name="email" placeholder="Enter your business email here.">
+  				</div>
+  			</div>
+  		</fieldset>
+  	</div>
+    <div class="grecaptcha-container" id="footer_nl_captcha"></div>
+	  <button class="btn btn-primary footerButton" type="submit" name="submit_button" onClick="ga('send','event','signup','subscribe','footer sel');">SUBSCRIBE</button>
+  </div>
+</form>						</div>
+					</div>
+				</div>
+			<div class="gray row">
+				<div class="footer-inner">
+					<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+						<a class="logo" href="/" onclick="ga('send','event','internal','click','footer logo searchengineland');">
+							<img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://searchengineland.com/figz/wp-content/themes/searchengineland/img/logo/SEL-logo.png" alt="Search Engine Land"><noscript><img src="https://searchengineland.com/figz/wp-content/themes/searchengineland/img/logo/SEL-logo.png" alt="Search Engine Land" /></noscript>
+						</a>
+
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<a class="pull-left" href="https://itunes.apple.com/us/app/search-engine-land/id1015557452?ls=1&mt=8" onclick="ga('send','event','promo','click','footer sel app');">
+									<img style="margin: 0px 0px 10px 14px;" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://searchengineland.com/figz/wp-content/themes/searchengineland/img/icons/black-badge-appstore.png" alt="Download the Search Engine Land App on iTunes"><noscript><img src="https://searchengineland.com/figz/wp-content/themes/searchengineland/img/icons/black-badge-appstore.png" alt="Download the Search Engine Land App on iTunes" style="margin-left: 14px;"  /></noscript>
+								</a>
+								<a class="pull-left" href="https://play.google.com/store/apps/details?id=com.thirddoormedia.searchengineland" onclick="ga('send','event','promo','click','footer sel app');">
+									<img style="margin-left: 14px;" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://searchengineland.com/figz/wp-content/themes/searchengineland/img/icons/black-google-play-badge.png" alt="Download the Search Engine Land App on Google Play"><noscript><img src="https://searchengineland.com/figz/wp-content/themes/searchengineland/img/icons/black-google-play-badge.png" alt="Download the Search Engine Land App on Google Play" style="margin-left: 14px;"  /></noscript>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+						<h3>Channels</h3>
+						<ul>
+							<li><a href="https://searchengineland.com/library/channel/seo" onclick="ga('send','event','internal','click','footer channel seo');">SEO</a></li>
+							<li><a href="https://searchengineland.com/library/channel/sem" onclick="ga('send','event','internal','click','footer channel sem');">SEM</a></li>
+							<li><a href="https://searchengineland.com/library/channel/local" onclick="ga('send','event','internal','click','footer channel local');">Local</a></li>
+							<li><a href="https://searchengineland.com/library/channel/retail" onclick="ga('send','event','internal','click','footer channel retail');">Retail</a></li>
+							<li><a href="https://searchengineland.com/library/google" onclick="ga('send','event','internal','click','footer google');">Google</a></li>
+							<li><a href="https://searchengineland.com/library/bing" onclick="ga('send','event','internal','click','footer bing');">Bing</a></li>
+							<li><a href="https://searchengineland.com/guide/what-is-social-media-marketing" onClick="ga('send','event','internal','click','footer channel social');">Social</a></li>
+						</ul>
+					</div>
+
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+						<h3>Our Events</h3>
+						<ul>
+							<li><a href="https://marketinglandevents.com/smx/west/" onClick="ga('send','event','promo','click','footer smx west');">SMX West</a></li>
+							<li><a href="https://marketinglandevents.com/smx/london/" onClick="ga('send','event','promo','click','footer smx london');">SMX London</a></li>
+							<li><a href="https://marketinglandevents.com/smx/advanced/" onClick="ga('send','event','promo','click','footer smx advanced');">SMX Advanced</a></li>
+							<li><a href="http://marketinglandevents.com/smx/east/?utm_source=sel&utm_medium=textlink&utm_campaign=smx+home&utm_content=footer" onClick="ga('send','event','promo','click','footer smx east');">SMX East</a></li>
+							<li><a href="https://martechconf.com/west/" onClick="ga('send','event','promo','click','footer martech west');">MarTech West</a></li>
+							<li><a href="https://martechconf.com/east/" onClick="ga('send','event','promo','click','footer martech east');">MarTech East</a></li>
+						</ul>
+					</div>
+
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+						<h3>Resources</h3>
+						<ul>
+							<li><a href="https://digitalmarketingdepot.com/library/white-papers" onclick="ga('send','event','promo','click','footer whitepapers');">White Papers</a></li>
+							<li><a href="https://digitalmarketingdepot.com/library/research" onclick="ga('send','event','promo','click','footer research');">Research</a></li>
+							<li><a href="https://digitalmarketingdepot.com/library/webcasts" onclick="ga('send','event','promo','click','footer webinars');">Webinars</a></li>
+							<li><a href="https://searchmarketingexpo.com/" onclick="ga('send','event','promo','click','footer smx');">Search Marketing Expo</a></li>
+							<li><a href="https://martechconf.com/" onclick="ga('send','event','promo','click','footer martechconf');">MarTech Conference</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+						<h3>About</h3>
+						<ul>
+							<li><a href="https://searchengineland.com/about" onclick="ga('send','event','internal','click','footer about');">About Us</a></li>
+							<li><a href="https://searchengineland.com/contact" onclick="ga('send','event','internal','click','footer contact');">Contact</a></li>
+							<li><a href="https://searchengineland.com/privacypolicy" onclick="ga('send','event','internal','click','footer privacy');">Privacy</a></li>
+							<li><a href="https://thirddoormedia.com/marketing-solutions/" onclick="ga('send','event','promo','click','footer marketing services');">Marketing Opportunities</a></li>
+							<li><a href="https://searchengineland.com/staff" onclick="ga('send','event','internal','click','footer staff');">Staff</a></li>
+							<li><a href="https://searchengineland.com/connect" onclick="ga('send','event','internal','click','footer connect');">Connect With Us</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-1 col-md-1 col-sm-2 col-xs-12">
+						<h3>Follow Us</h3>
+						<ul>
+							<li><span class="icon icon-facebook-01"></span><a href="https://www.facebook.com/searchengineland" rel="me" onClick="ga('send','event','social','connect','footer facebook');">Facebook</a></li>
+							<li><span class="icon icon-twitter-01"></span><a href="https://twitter.com/sengineland" onClick="ga('send','event','social','connect','footer twitter');">Twitter</a></li>
+							<li><span class="icon icon-linkedin-01"></span><a href="https://www.linkedin.com/company/search-engine-land" rel="me" onClick="ga('send','event','social','connect','footer linkedin');">LinkedIn</a></li>
+							<li><span class="icon icon-email-01"></span><a href="https://searchengineland.com/newsletters" onClick="ga('send','event','internal','click','footer newsletters');">Newsletters</a></li>
+							<li><span class="icon icon-instagram-01"></span><a href="https://instagram.com/searchengineland" onClick="ga('send','event','social','connect','footer instagram');">Instagram</a></li>
+							<li><span class="icon icon-rss-01"></span><a href="http://feeds.searchengineland.com/searchengineland" onClick="ga('send','event','social','connect','footer rss');">RSS</a></li>
+							<li><span class="icon icon-youtube-01"></span><a href="https://www.youtube.com/user/SearchEngineland" onClick="ga('send','event','social','connect','footer youtube');">Youtube</a></li>
+							<li><span class="icon icon-apple-01"></span><a href="https://itunes.apple.com/us/app/search-engine-land/id1015557452?ls=1&mt=8" onClick="ga('send','event','social','connect','footer sel app');">iOS App</a></li>
+							<li><span class="icon icon-android-01"></span><a href="https://play.google.com/store/apps/details?id=com.thirddoormedia.searchengineland" onClick="ga('send','event','social','connect','footer sel app');">Google Play</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="copyright">
+					<p> &copy; 2020 Third Door Media, Inc. All rights reserved.</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+</div>
+
+
+<!-- GA TrackSocial -->
+<script type="text/javascript" defer="defer" src="/js/ga_social_tracking.js"></script>
+
+<!-- AddThis -->
+<script defer="defer" type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53e918f660794f37"></script>
+<script type="text/javascript">var addthis_config = { data_ga_property: 'UA-944695-1', data_track_clickback: true, data_ga_social: true };</script>
+<script type="text/javascript">
+var addthis_share = {
+	passthrough : {
+			twitter: {
+				via: "sengineland"
+			}
+		},
+     url_transforms : {
+          shorten: {
+               twitter: 'bitly',
+			   facebook: 'bitly',
+			   linkedin: 'bitly',
+			   google_plusone_share: 'bitly'
+          }
+     },
+     shorteners : {
+          bitly : {}
+     }
+}
+</script>
+
+<!-- Twitter library for native follow buttons -->
+<script type="text/javascript" charset="utf-8">
+   window.twttr = (function (d,s,id) {
+     var t, js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+     js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+     return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+   }(document, "script", "twitter-wjs"));
+
+   twttr.ready(function(twttr) {
+       _ga.trackTwitter();
+   });
+ </script>
+
+<!-- Facebook library for native controls -->
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+      	FB.init({appId: '108479729193136', status: true, cookie: true, version: 'v2.8',
+				 xfbml: true});
+      _ga.trackFacebook();
+    };
+
+    // Load the SDK
+
+(function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!-- Google+ library for native controls -->
+<script type="text/javascript">(function() { var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = 'https://apis.google.com/js/platform.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();</script>
+
+<!-- load Chartbeat async -->
+
+<!-- CrazyEgg -->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0026/4062.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+
+<!-- Justuno -->
+<script type="text/javascript" charset="utf-8">var ju_num="828FA275-FF73-401E-AA39-40F5A6FAB6B1";var asset_host=(("https:"==document.location.protocol)?"https":"http")+'://d2j3qa5nc37287.cloudfront.net/';(function() {var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src=asset_host+'coupon_code1.js';var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);})();</script>
+<!-- End justuno -->
+
+<!-- Google Remarketing -->
+
+
+<!-- Google Code for Remarketing Tag -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1041060991;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1041060991/?guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+<!-- Bing Remarketing Tag -->
+<script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"5681447"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script><noscript><img src="//bat.bing.com/action/0?ti=5681447&Ver=2" height="0" width="0" style="display:none; visibility: hidden;" /></noscript>
+<!-- End Bing Remarketing Tag -->
+
+
+<!-- Marketo -->
+<script type="text/javascript">
+$.ajax({
+  url: '//munchkin.marketo.net/munchkin.js',
+  dataType: 'script',
+  cache: true,
+  success: function() {
+    Munchkin.init('727-ZQE-044');
+  }
+});
+</script>
+<script type='text/javascript' defer="defer" src='https://searchengineland.com/figz/wp-content/themes/searchengineland/js/script.js?ver=1.0'></script>
+<script type='text/javascript' defer="defer" src='https://searchengineland.com/figz/wp-content/themes/searchengineland/js/custom.js?ver=1.0'></script>
+
+<!-- //GA -->
+
+<script type="text/javascript" defer="defer" src="/figz/wp-content/themes/searchengineland/js/modules/sharing_controls.js"></script>
+
+<link href="https://searchengineland.com/figz/wp-content/themes/searchengineland/css/searchengineland-bootstrap.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet" type="text/css">
+<link href="https://searchengineland.com/figz/wp-content/themes/searchengineland/style.css" rel="stylesheet" type="text/css">
+
+<!-- AdBlock Detector -->
+<div class="center">
+	<h5 class="bg-success" id="adb-not-enabled" style="display: none;"><!-- AdBlock is disabled --></h5>
+	<h5 class="bg-danger" id="adb-enabled" style="display: none;"><!-- AdBlock is enabled --></h5>
+</div>
+
+<script src="/figz/wp-content/themes/searchengineland/js/modules/checkdetection.js"></script>
+<script>
+	// Configure the adblock detector
+	(function(){
+		var enabledEl = document.getElementById('adb-enabled');
+		var disabledEl = document.getElementById('adb-not-enabled');
+		function adBlockDetected() {
+			enabledEl.style.display = 'block';
+			disabledEl.style.display = 'none';
+		}
+		function adBlockNotDetected() {
+			disabledEl.style.display = 'block';
+			enabledEl.style.display = 'none';
+		}
+
+		if(typeof window.adblockDetector === 'undefined') {
+			adBlockDetected();
+		} else {
+			window.adblockDetector.init(
+				{
+					debug: true,
+					found: function(){
+						adBlockDetected();
+						//console.log('Adblock detected');
+					},
+					notFound: function(){
+						adBlockNotDetected();
+						//console.log('Adblock not detected');
+					}
+				}
+			);
+		}
+	}());
+</script>
+
+<script src="/figz/wp-content/themes/searchengineland/js/modules/collapse.js" defer></script>
+<script src="/figz/wp-content/themes/searchengineland/js/modules/transition.js" defer></script>
+
+</body>
+</html>

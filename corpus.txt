@@ -1,0 +1,200 @@
+corpus/6 Early Theories About the Origin of Language _ Mental Floss
+corpus/7 Facts About Socrates, the Enigmatic Greek Street Philosopher _ HowStuffWorks
+corpus/7 Theories on the Origin of Life _ Live Science
+corpus/20 Greatest Inventions in Computer Programming - Hongkiat
+corpus/A Basic Model of Information Retrieval Systems
+corpus/A chemical clue to how life started on Earth_ Every living thing stems from the same limited set of 20 amino acids, and now scientists may know why -- Science
+corpus/A Debate Over the Physics of Time _ Quanta Magazine
+corpus/About time_ What is it_ _ New Scientist
+corpus/Abundant Animals_ The Most Numerous Organisms in the World _ Britannica
+corpus/Action-Centered Information Retrieval
+corpus/Alan Turing Scrapbook - Who invented the computer_
+corpus/Amazon.com_ The Rule of Metaphor_ The Creation of Meaning in Language (Routledge Classics) (9781138128514)_ Paul Ricoeur_ Books
+corpus/America's First Pizzeria _ Little Italy & Chelsea, NYC _ Lombardi's
+corpus/An introduction to information retrieval_ applications in genomics
+corpus/Anatomy Of A Google Snippet - Search Engine Land
+corpus/Are we the most successful species_ - Quora
+corpus/Association football - Wikipedia
+corpus/BBC - Earth - The secret of how life on Earth began
+corpus/Blaze Pizza - Fast-Fire'd Custom Built Artisanal Pizzas
+corpus/Brief History Of Computer
+corpus/Charles Darwin may be wrong about where life started on Earth, stunning study says _ Fox News
+corpus/Code Snippets _ CSS-Tricks
+corpus/Code Snippets RStudio Support
+corpus/Computer - History of computing _ Britannica
+corpus/Computer - Wikipedia
+corpus/Computer Visionary Who Invented the Mouse - The New York Times
+corpus/Computers _ Timeline of Computer History _ Computer History Museum
+corpus/Dani's House of Pizza
+corpus/Definition of Time  Exactly What Is Time_
+corpus/Earthworms come out above humans and dinosaurs in table of top 100 species - Telegraph
+corpus/English language _ Origin, History, & Characteristics _ Britannica
+corpus/Evaluating the performance of information retrieval systems using test collections
+corpus/Evolutionary history of life - Wikipedia			
+corpus/Featured snippets in search - Search Console Help
+corpus/Five Theories on the Origins of Language
+corpus/Francesco's Pizza - New York - Menu & Hours - Order Delivery
+corpus/History of Computers - A Brief Timeline of Their Evolution _ Live Science
+corpus/History of Computers
+corpus/HISTORY OF LANGUAGE
+corpus/HNF - The Invention of the Computer
+corpus/How an ancient cataclysm may have jump-started life on Earth _ Science _ AAAS
+corpus/How did humans come to dominate the Earth_
+corpus/How Did Language Begin_ _ Linguistic Society of America
+corpus/How Did Life Arise on Earth_ _ Live Science
+corpus/How did life begin and evolve on Earth, and has it evolved elsewhere in the Solar System_ _ Science Mission Directorate
+corpus/How Did Life Begin on Earth_ - Scientific American
+corpus/How Did Life Start On Earth Las Cumbres Observatory
+corpus/How life started on Earth_ Sulfur dioxide builds up, volcanoes blow, job done  boffins  The Register
+corpus/How long will the human species survive on Earth_
+corpus/HubSpots Guide to Winning Googles Featured Snippet
+corpus/Human - Wikipedia
+corpus/Human evolution - Wikipedia
+corpus/Humans Change the World _ The Smithsonian Institution's Human Origins Program
+corpus/Humans May Be the Most Adaptive Species - Scientific American
+corpus/Humans_ The Species That Changed Earth  The Evolution Institute
+corpus/Hungry Howies _ Home of the Original Flavored Crust Pizza
+corpus/If Humans Were Wiped Out, Which Species Would Dominate Our Planet_
+corpus/Improving Information Retrieval System Performance with Concepts Jeffrey Morgan
+corpus/Information Retrieval - ML Wiki
+corpus/Information retrieval - Wikipedia
+corpus/Information retrieval _ computer and information science _ Britannica
+corpus/Information retrieval _ Definition of Information retrieval at Dictionary.com
+corpus/Information Retrieval Journal - Springer
+corpus/Information Retrieval System Explained Using Text Mining!
+corpus/Information Retrieval Systems - an overview _ ScienceDirect Topics
+corpus/Introduction to Information Retrieval
+corpus/Invention Of The First Computer _ DK Find Out
+corpus/Invention of the PC - HISTORY
+corpus/Is time an illusion_
+corpus/Jack Szostak pursues the biggest questions on Earth _ Harvard Magazine
+corpus/Joe's Pizza _ The Greenwich Village Institution
+corpus/Just How Many Extinct Types of Human Did Our Ancestors Meet_ _ Discover Magazine
+corpus/littlecaesars.com
+corpus/Menu _ BJ's Restaurants and Brewhouse
+corpus/MIT School of Engineering How did life on Earth begin_
+corpus/MLS Soccer News, Standings, and Team Info
+corpus/MLSsoccer.com
+corpus/Mobile Information Retrieval
+corpus/Modern Information Retrieval - Glossary
+corpus/NEO Basics
+corpus/NLP - Information Retrieval - Tutorialspoint
+corpus/On the Origin of Language _ The Institute for Creation Research
+corpus/Origin of language - creation.com
+corpus/Origin of language - definition of Origin of language by The Free Dictionary
+corpus/Origin of language - Wikipedia
+corpus/Origins of Life on Earth
+corpus/Papers With Code _ Information Retrieval
+corpus/Physics of Time Exactly What Is Time_
+corpus/pizza  Gothamist
+corpus/Pizza - Wikipedia
+corpus/Pizza _ Definition of Pizza by Merriam-Webster
+corpus/Pizza Delivery & Carryout, Pasta, Chicken & More _ Domino's
+corpus/Pizza Delivery & Carryout, Pasta, Chicken & More _ Domino's01
+corpus/Pizza Hut_ Pizza Delivery _ Pizza Carryout _ Coupons _ Wings & More
+corpus/Pizza near me - Find Authentic Pizza Delivery Places Near You
+corpus/Pizza Sam Best Classic pizzas, pastas & salads in Jackson Heights
+corpus/Pizza Studio
+corpus/Retrieval of Information _ Encyclopedia.com
+corpus/Rizzo's Fine Pizza - The Original Thin Crust Square - Since 1959
+corpus/Snippet - Chrome Web Store
+corpus/snippet - Dictionary Definition _ Vocabulary.com
+corpus/snippet - Wiktionary
+corpus/SNIPPET (noun) American English definition and synonyms _ Macmillan Dictionary
+corpus/Snippet (programming) - Wikipedia
+corpus/SNIPPET _ definition in the Cambridge English Dictionary
+corpus/Snippet _ Definition of Snippet at Dictionary.com
+corpus/Snippet _ Definition of Snippet by Merriam-Webster
+corpus/Snippet _ Turn your reading into knowledge
+corpus/Snippet Definition
+corpus/Snippet dictionary definition _ snippet defined
+corpus/Snippet Guide _ Visual Studio Code Extension API
+corpus/Snippets in Visual Studio Code
+corpus/Soccer - City Parks Foundation
+corpus/Soccer - Sports Illustrated
+corpus/Soccer - Texas Woman's University Athletics
+corpus/Soccer the Athletic
+corpus/Soccer - The New York Times
+corpus/Soccer - The Washington Post
+corpus/soccer - Wiktionary
+corpus/Soccer _ Fox News
+corpus/Soccer _ FOX Sports
+corpus/Soccer America - Covering US, International, MLS, College, Youth and World Cup Soccer
+corpus/Soccer Cleats, Apparel & Gear _ adidas US
+corpus/Soccer News, Scores, Fantasy Games and Highlights 2019 _ Yahoo Sports
+corpus/Soccer Scores
+corpus/SOCCER.COM _ Soccer Cleats and Shoes, Soccer Jerseys, Soccer Balls, Goalkeeping, Shin guards, Socks
+corpus/Socrates a man for our times _ Books _ The Guardian
+corpus/Socrates - Ancient History Encyclopedia
+corpus/Socrates - HISTORY
+corpus/Socrates - Home
+corpus/Socrates - Quotes, Death & Facts - Biography
+corpus/Socrates - RationalWiki
+corpus/Socrates - Wikipedia
+corpus/Socrates - Wikiquote
+corpus/Socrates (Stanford Encyclopedia of Philosophy)
+corpus/Socrates _ By Individual Philosopher _ Philosophy
+corpus/Socrates _ Definition of Socrates at Dictionary.com
+corpus/Socrates _ Internet Encyclopedia of Philosophy
+corpus/Socrates
+corpus/Socrates_ Philosophical Life
+corpus/Socrates facts and information
+corpus/Stone Bridge Pizza & Salad
+corpus/THE 10 BEST Pizza Places in Queens - Tripadvisor
+corpus/The Creation of Language and Language without Time_ Metaphysics and Metapragmatics in Genesis 1 by Jonathan Yovel __ SSRN
+corpus/The epic hunt for the place on Earth where life started _ New Scientist
+corpus/The evolution of computers since the 1930s - Insider
+corpus/The illusion of time
+corpus/The Illusion of Time_ What's Real_ _ Space
+corpus/The Invention of the Computer (World-Changing Inventions)_ Lucy Beevor, Gayle Worland_ 9781515798507_ Amazon.com_ Books
+corpus/The Mystery of Human Language _ The Institute for Creation Research
+corpus/The Origin of Language and Communication
+corpus/The Origin of Language
+corpus/The origin of language_ Evolution's greatest mystery
+corpus/The Origin of the Universe, Earth, and Life - Science and Creationism - NCBI Bookshelf
+corpus/The Origins of Human Language_ One of the Hardest Problems in Science _ Ancient Origins
+corpus/The Structure of Information Retrieval Systems _ Proceedings of the International Conference on Scientific Information_ Two Volumes _ The National Academies Press
+corpus/The Trial of Socrates_ An Account
+corpus/This physicist's ideas of time will blow your mind  Quartz
+corpus/Time - Wikipedia
+corpus/Time (Stanford Encyclopedia of Philosophy)
+corpus/Time _ Internet Encyclopedia of Philosophy
+corpus/Top 10 Things That Make Humans Special _ Live Science
+corpus/U.S. Soccer Official Website _ USWNT & USMNT
+corpus/U.S. women's soccer players seek more than $66 million in damages
+corpus/Urban Dictionary_ Snippets
+corpus/Utopian for Beginners _ The New Yorker
+corpus/Watching Liverpool Awesome, Fretful Return to the Top of English Soccer _ The New Yorker
+corpus/Were dinosaurs the most successful animals on Earth_ _ HowStuffWorks
+corpus/Were Humans the Earliest Users of Fire_ _ Nature Research Ecology & Evolution Community
+corpus/What If Life Did Not Originate on Earth_ _ The New Yorker
+corpus/What is a snippet_ Yoast
+corpus/What is Information Retrieval _ IGI Global
+corpus/What Is Space-Time_ _ Live Science
+corpus/What Is Time, And Why Does It Move Forward_
+corpus/What is time_ -- ScienceDaily
+corpus/What Is Time_ - Serious Science
+corpus/What Is Time_ A Simple Explanation
+corpus/What Is Time_ One Physicist Hunts for the Ultimate Theory _ WIRED
+corpus/What is time_ Physicist Carlo Rovelli ponders the enigmatic fourth dimension
+corpus/What is Time_
+corpus/What is time-pitt edu
+corpus/What made mankind different from other advanced species_ Is it because of walking, working, making tools, using languages or col
+corpus/What Was It Like When Life Began On Earth_
+corpus/What Was It Like When The First Humans Arose On Earth_
+corpus/When was the first computer invented_
+corpus/Where and when did language begin_ A remarkable new study may have the answer - Everything After Z by Dictionary.com
+corpus/Who Invented the Computer_ _ HowStuffWorks
+corpus/Who invented the computer_ The key players who contributed to this great machine _ BT
+corpus/Who Really Invented the Computer TIME.com
+corpus/Who Was Socrates
+corpus/Why Did Humans Become The Most Successful Species On Earth Yuval Noah Harari
+corpus/Why humans run the world
+corpus/Yuval Harari Why Did Humans Become The Most Successful Species On Earth NPR
+corpus/The most dangerous and misunderstood threat to humanity is the human mind Quartz
+corpus/Socrates Toxipedia
+corpus/Evidence suggests life on Earth started after meteorites splashed into warm little ponds-Astrobiology Magazine
+corpus/History of Life on Earth _ Smithsonian National Museum of Natural History
+corpus/What is time-to-live (TTL)_ _ TTL definition _ Cloudflare
+corpus/Mark Dean Inventions, Education & Computers Biography
+corpus/Invention Computer Technology  Free Lesson Plans Teachers

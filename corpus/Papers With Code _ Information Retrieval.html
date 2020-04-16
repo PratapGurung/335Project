@@ -1,0 +1,2294 @@
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Papers With Code : Information Retrieval</title>
+  <meta name="description" content="See leaderboards and papers with code for Information Retrieval" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#21cbce"/>
+  
+  <link rel="manifest" href="/static/manifest.web.d401922cf4bd.json">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/static/css/pwc.lib.2228dd427851.css" />
+  <link rel="stylesheet" href="/static/js/jquery-ui-1.12.1/jquery-ui.min.b423dd67c9da.css" />
+  <link rel="stylesheet" href="/static/css/style.40bf9a99af1e.css" />
+  <link rel="stylesheet" href="/static/css/emoji.dfe38df2b1a0.css" />
+  <link rel="stylesheet" href="/static/fonts/font-awesome/css/all.min.72b4c326cbef.css" />
+  
+
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+  <script type="text/javascript" async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121182717-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-121182717-1');
+    </script>
+    <script>
+    /**
+    * Function that captures a click on an outbound link in Analytics.
+    * This function takes a valid URL string as an argument, and uses that URL string
+    * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+    * using 'navigator.sendBeacon' in browser that support it.
+    */
+    var captureOutboundLink = function(url) {
+        gtag('event', 'click', {
+            'event_category': 'outbound',
+            'event_label': url,
+
+        });
+    }
+    </script>
+    
+
+
+  <!-- Open Graph protocol metadata -->
+  <meta property="og:title" content="Papers With Code : Information Retrieval">
+  <meta property="og:description" content="See leaderboards and papers with code for Information Retrieval">
+  <meta property="og:image" content="https://paperswithcode.com/media/tasks/Screenshot_2019-11-29_at_17.26.37_zD662SX.png">
+  <meta property="og:url" content="https://paperswithcode.com/task/information-retrieval">
+  
+
+
+  <!-- Twitter metadata -->
+  
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta name="twitter:site" content="@paperswithcode">
+  <meta name="twitter:creator" content="@paperswithcode">
+  <meta name="twitter:url" content="https://paperswithcode.com/task/information-retrieval">
+  <meta name="twitter:domain" content="paperswithcode.com">
+  <meta name="twitter:title" content="Papers With Code : Information Retrieval">
+  <meta name="twitter:description" content="See leaderboards and papers with code for Information Retrieval">
+  
+  <meta name="twitter:image:width" content="640">
+  <meta name="twitter:image:height" content="320">
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white header">
+  <div class="header-logo">
+    <a class="navbar-brand" href="/">
+      <ion-icon name="barcode"></ion-icon>
+    </a>
+  </div>
+
+
+  <div class="mobile-twitter">
+    <a href="https://twitter.com/paperswithcode">
+      <img src="/static/icons8-twitter-48.07f2def52776.png" style="height:30px;width:auto;position:relative;top:-1px;"></a>
+    </a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse order-1" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item header-search">
+        <form action="/search" method="get" id="id_global_search_form">
+          <input type="text" name="q_meta" style="display:none" id="q_meta" />
+          <input id="id_global_search_input" name='q' class="global-search" type="search" placeholder='Search for papers, code and tasks'/>
+          <button type="submit" class="icon"><img width=20 src="/static/query_icon.445f2174d9b9.png"></button>
+        </form>
+      </li>
+
+      <li class="nav-item">
+        <div class="sign-up">
+          <a href="/sota"><button class="btn-primary" style="position:relative;top:10px"><i class="fas fa-chart-line"></i> Browse State-of-the-Art</button></a>
+        </div>
+      </li>
+
+      
+
+    </ul>
+    <div class="order-3">
+      <div class="navbar-nav">
+
+        <ul class="navbar-nav ml-auto navbar-subscribe">
+
+          
+
+          <li class="nav-item nav-link-right"><a class="nav-link-right nav-textual-link" href="https://twitter.com/paperswithcode">
+            <img src="/static/icons8-twitter-48.07f2def52776.png" class="navbar-twitter-icon"> Follow</a>
+          </li>
+
+          <li class="nav-item nav-link-right"><a class="nav-link-right nav-textual-link" href="https://join.slack.com/t/paperswithcode/shared_invite/enQtOTMzNDUxMTIzMzM0LTg1ODk4NDY4ZTQyMzE3OTQ3N2Y5YjkxMDFmMjJlMjA4NDFhNDlmNGE2YmQ0NjQ4ODBjNmE4ZDMyOTAwZGJhODQ">
+            <img src="/static/slack-icon-min.fac6b299d18c.png" class="navbar-slack-icon"> Discuss</a>
+          </li>
+
+          <li class="nav-item nav-link-right"><a class="nav-link-right nav-textual-link" style="position:relative;top:1px" href="/trends">Trends</a></li>
+          <li class="nav-item nav-link-right"><a class="nav-link-right nav-textual-link" style="position:relative;top:1px" href="/about">About</a></li>
+
+          
+
+            
+
+            <li class="nav-item nav-link-right"><a class="nav-link-right nav-textual-link"  style="position:relative;top:1px" href="/accounts/login/?next=/task/information-retrieval">Log In/Register</a></li>
+
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+</nav>
+
+<!-- Page modals -->
+<div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="emailModalLabel">Get the weekly digest</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="" method="post">
+        <div class="modal-body">
+          <div class="modal-body-info-text">
+            Get the latest machine learning methods with code. Browse our catalogue of tasks and access state-of-the-art solutions.<br/><br/>
+            <span class="text-muted">
+            Tip: you can also  <a href="https://twitter.com/paperswithcode">follow us on <i class="fab fa-twitter" style="color:#00aced"></i> Twitter</a>
+            </span>
+          </div>
+
+          <input type="hidden" name="csrfmiddlewaretoken" value="8ikXJYf6Xi85tHtpad4S2l6d7FftyidEYzxoZHW5AaFKTuvudY2PpF6MxnCimWA9">
+          <input placeholder="Enter your email" type="email" class="form-control pwc-email" name="address" id="id_address" max_length="100" required>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Login -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Join the community</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="login-modal-message">
+        You need to <a href="/accounts/login/?next=/task/information-retrieval">log in</a> to edit.<br/>
+        You can <a href="/accounts/register?next=/task/information-retrieval">create a new account</a> if you don't have one.<br/><br/>
+        Or, discuss a change on <a href="https://join.slack.com/t/paperswithcode/shared_invite/enQtNTI3NDE2NjQ0ODM0LTdmNzNjODkwOGY0MjU4YzgzNDZhNGM1YWIzYmZhNzk5MTFkYWU4YWNjN2JjZDhlNjJiYjFkYjYwNjkzYzdiZDk"><i class="fab fa-slack"></i> Slack</a>.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Modals go here -->
+
+    <!-- Edit Task -->
+    <div class="modal fade" id="editTask" role="dialog"
+         aria-labelledby="editTaskLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editTaskLabel">Edit task</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post"
+                          enctype="multipart/form-data">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="8ikXJYf6Xi85tHtpad4S2l6d7FftyidEYzxoZHW5AaFKTuvudY2PpF6MxnCimWA9">
+                        
+
+
+    
+    <div id="div_id_task_name" class="form-group">
+        
+            <label for="id_task_name" class="col-form-label  requiredField">
+                New task name:<span class="asteriskField">*</span>
+            </label>
+        
+
+        
+
+        
+
+        
+            
+                <div class="">
+                    <input type="text" name="task_name" value="Information Retrieval" maxlength="200" class="textinput textInput form-control" required id="id_task_name">
+                    
+
+
+    
+
+
+
+
+    
+
+
+
+                </div>
+            
+        
+    </div>
+    
+
+
+                        
+
+
+    
+    <div id="div_id_task_area" class="form-group">
+        
+            <label for="id_task_area" class="col-form-label  requiredField">
+                Top-level area:<span class="asteriskField">*</span>
+            </label>
+        
+
+        
+
+        
+
+        
+            
+                <div class="">
+                    <select name="task_area" class="select form-control" required id="id_task_area">
+  <option value="">---------</option>
+
+  <option value="17">Adversarial</option>
+
+  <option value="18">Audio</option>
+
+  <option value="11">Computer Code</option>
+
+  <option value="3">Computer Vision</option>
+
+  <option value="9">Graphs</option>
+
+  <option value="15">Knowledge Base</option>
+
+  <option value="7">Medical</option>
+
+  <option value="6">Methodology</option>
+
+  <option value="5">Miscellaneous</option>
+
+  <option value="12">Music</option>
+
+  <option value="4" selected>Natural Language Processing</option>
+
+  <option value="13">Playing Games</option>
+
+  <option value="14">Reasoning</option>
+
+  <option value="16">Robots</option>
+
+  <option value="10">Speech</option>
+
+  <option value="8">Time Series</option>
+
+</select>
+                    
+
+
+    
+
+
+
+
+    
+
+
+
+                </div>
+            
+        
+    </div>
+    
+
+
+                        
+
+
+    
+    <div id="div_id_task_parent" class="form-group">
+        
+            <label for="id_task_parent" class="col-form-label ">
+                Parent task (if any):
+            </label>
+        
+
+        
+
+        
+
+        
+            
+                <div class="">
+                    <select name="task_parent" class="modelselect2 form-control" id="id_task_parent" data-autocomplete-light-language="en" data-autocomplete-light-url="/tag-autocomplete/" data-autocomplete-light-function="select2">
+  <option value="" selected>---------</option>
+
+</select>
+                    
+
+
+    
+
+
+
+
+    
+
+
+
+                </div>
+            
+        
+    </div>
+    
+
+
+                        
+
+
+    
+    <div id="div_id_description" class="form-group">
+        
+            <label for="id_description" class="col-form-label ">
+                Description with markdown (optional):
+            </label>
+        
+
+        
+
+        
+
+        
+            
+                <div class="">
+                    <textarea name="description" cols="40" rows="3" class="textarea form-control" id="id_description">
+Information retrieval is the task of ranking a list of documents or search results in response to a query
+
+&lt;span style=&quot;color:grey; opacity: 0.6&quot;&gt;( Image credit: [sudhanshumittal](https://github.com/sudhanshumittal/Information-retrieval-system) )&lt;/span&gt;</textarea>
+                    
+
+
+    
+
+
+
+
+    
+
+
+
+                </div>
+            
+        
+    </div>
+    
+
+
+                        
+
+
+    
+    <div id="div_id_image" class="form-group">
+        
+            <label for="id_image" class="col-form-label ">
+                Image
+            </label>
+        
+
+        
+
+        
+
+        
+            
+                <div class="">
+                    Currently: <a href="media/tasks/Screenshot_2019-11-29_at_17.26.37_zD662SX.png">tasks/Screenshot_2019-11-29_at_17.26.37_zD662SX.png</a>
+<input type="checkbox" name="image-clear" id="image-clear_id">
+<label for="image-clear_id">Clear</label><br>
+Change:
+<input type="file" name="image" accept="image/*" class="clearablefileinput" id="id_image">
+                    
+
+
+    
+
+
+
+
+    
+
+
+
+                </div>
+            
+        
+    </div>
+    
+
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Row -->
+    <div class="modal fade" id="addRow" role="dialog"
+         aria-labelledby="addRowLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addRowLabel">Add a new
+                        evaluation result row</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="" method="post">
+                    <div class="modal-body">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="8ikXJYf6Xi85tHtpad4S2l6d7FftyidEYzxoZHW5AaFKTuvudY2PpF6MxnCimWA9">
+                        
+
+
+    
+    <div id="div_id_paper" class="form-group">
+        
+            <label for="id_paper" class="col-form-label  requiredField">
+                Paper title:<span class="asteriskField">*</span>
+            </label>
+        
+
+        
+
+        
+
+        
+            
+                <div class="">
+                    <select name="paper" class="modelselect2 form-control" required id="id_paper" data-autocomplete-light-language="en" data-autocomplete-light-url="/paper-autocomplete/" data-autocomplete-light-function="select2">
+  <option value="" selected>---------</option>
+
+</select>
+                    
+
+
+    
+
+
+
+
+    
+
+
+
+                </div>
+            
+        
+    </div>
+    
+
+
+                        
+
+
+    
+    <div id="div_id_dataset" class="form-group">
+        
+            <label for="id_dataset" class="col-form-label  requiredField">
+                Dataset:<span class="asteriskField">*</span>
+            </label>
+        
+
+        
+
+        
+
+        
+            
+                <div class="">
+                    <select name="dataset" class="modelselect2 form-control" required id="id_dataset" data-autocomplete-light-language="en" data-autocomplete-light-url="/dataset-autocomplete/" data-autocomplete-light-function="select2">
+  <option value="" selected>---------</option>
+
+</select>
+                    
+
+
+    
+
+
+
+
+    
+
+
+
+                </div>
+            
+        
+    </div>
+    
+
+
+                        
+
+
+    
+    <div id="div_id_model_name" class="form-group">
+        
+            <label for="id_model_name" class="col-form-label  requiredField">
+                Model name:<span class="asteriskField">*</span>
+            </label>
+        
+
+        
+
+        
+
+        
+            
+                <div class="">
+                    <input type="text" name="model_name" class="textinput textInput form-control" required id="id_model_name">
+                    
+
+
+    
+
+
+
+
+    
+
+
+
+                </div>
+            
+        
+    </div>
+    
+
+
+                        
+
+
+    
+    <div id="div_id_metric" class="form-group">
+        
+            <label for="id_metric" class="col-form-label  requiredField">
+                Metric name:<span class="asteriskField">*</span>
+            </label>
+        
+
+        
+
+        
+
+        
+            
+                <div class="">
+                    <select name="metric" class="modelselect2 form-control" required id="id_metric" data-autocomplete-light-language="en" data-autocomplete-light-url="/metric-autocomplete/" data-autocomplete-light-function="select2">
+  <option value="" selected>---------</option>
+
+</select>
+                    
+
+
+    
+
+
+
+
+    
+
+
+
+                </div>
+            
+        
+    </div>
+    
+
+
+                        <div id="sota-metric-names">
+                        </div>
+                        
+
+
+    
+        <div class="form-group">
+        
+    
+    <div id="div_id_metric_higher_is_better" class="form-check">
+        
+
+        
+
+        
+
+        
+            
+                <label for="id_metric_higher_is_better" class="form-check-label">
+                    <input type="checkbox" name="metric_higher_is_better" class="checkboxinput form-check-input" id="id_metric_higher_is_better">
+                    Higher is better (for the metric)
+                </label>
+                
+
+
+    
+
+
+
+
+    
+
+
+
+            
+        
+    </div>
+    
+        
+        </div>
+    
+
+
+                        
+
+
+    
+    <div id="div_id_metric_value" class="form-group">
+        
+            <label for="id_metric_value" class="col-form-label  requiredField">
+                Metric value:<span class="asteriskField">*</span>
+            </label>
+        
+
+        
+
+        
+
+        
+            
+                <div class="">
+                    <input type="text" name="metric_value" class="textinput textInput form-control" required id="id_metric_value">
+                    
+
+
+    
+
+
+
+
+    
+
+
+
+                </div>
+            
+        
+    </div>
+    
+
+
+                        <div id="sota-metric-values">
+                        </div>
+                        
+
+
+    
+        <div class="form-group">
+        
+    
+    <div id="div_id_uses_additional_data" class="form-check">
+        
+
+        
+
+        
+
+        
+            
+                <label for="id_uses_additional_data" class="form-check-label">
+                    <input type="checkbox" name="uses_additional_data" class="checkboxinput form-check-input" id="id_uses_additional_data">
+                    Uses extra training data
+                </label>
+                
+
+
+    
+
+
+
+
+    
+
+
+
+            
+        
+    </div>
+    
+        
+        </div>
+    
+
+
+                        
+
+
+    
+    <div id="div_id_evaluated_on" class="form-group">
+        
+            <label for="id_evaluated_on" class="col-form-label ">
+                Data evaluated on
+            </label>
+        
+
+        
+
+        
+
+        
+            
+                <div class="">
+                    <input type="text" name="evaluated_on" class="dateinput form-control" id="id_evaluated_on">
+                    
+
+
+    
+
+
+
+
+    
+
+
+
+                </div>
+            
+        
+    </div>
+    
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="container">
+
+
+  <div class="container content content-buffer">
+
+    
+    
+
+    <div class="title" style="padding-top:10px;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="general-breadcrumb">
+                    <a href="/sota">Browse</a> &gt;
+                    <a href="/area/natural-language-processing">Natural Language Processing</a>
+                    &gt;
+                    
+                    Information Retrieval
+                </div>
+            </div>
+        </div>
+        <div class="row task-header-title">
+            <div class="col-md-2 task-image">
+                
+
+
+
+    
+        <img class="" src="/media/thumbnails/task/task-0000001451-80b2d378.jpg">
+    
+
+
+            </div>
+
+            <div class="col-md-10">
+                <h1 class="task-main-title">Information Retrieval
+                    <div class="float-right">
+                        <div class="dropdown edit-button">
+                            <a data-toggle="modal"
+                               data-target="#loginModal">
+                                <span class="badge badge-primary"
+                                      style="padding-top:10px;"><ion-icon
+                                        name="create"></ion-icon> Edit</span>
+                            </a>
+                        </div>
+                    </div>
+                </h1>
+                <div class="task-followers">
+                    
+                        169 papers with code ·
+                    
+
+                    
+                        <span class="task-area"><a
+                                href="/area/natural-language-processing">Natural Language Processing</a></span>
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="task-description">
+        <p>Information retrieval is the task of ranking a list of documents or search results in response to a query</p>
+<p><span style="">( Image credit: <a href="https://github.com/sudhanshumittal/Information-retrieval-system">sudhanshumittal</a> )</span></p>
+    </div>
+
+    <div class="title">
+        <div class="row">
+            <div class="col-lg-12 task-header">
+                <h1>Leaderboards
+                    <div class="float-right">
+                        <div class="dropdown edit-button task-add-a-result">
+                            <a data-toggle="modal"
+                               data-target="#loginModal">
+                                <span class="badge badge-primary"
+                                      style="padding-top:10px;font-size:12px;"><ion-icon
+                                        name="add-circle"></ion-icon> Add a Result</span>
+                            </a>
+                        </div>
+                    </div>
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    
+        <div class="sota-table-preview">
+            <table class="table-striped">
+
+                <tr>
+                    <th>TREND</th>
+                    <th>DATASET</th>
+                    <th>BEST METHOD</th>
+                    <th style="width:38%">PAPER TITLE</th>
+                    <th class="text-center">PAPER</th>
+                    <th class="text-center">CODE</th>
+                    <th class="text-center">COMPARE</th>
+                </tr>
+
+                
+
+                    
+
+                        
+                            <tr>
+                        
+                    <td>
+                        
+                            <a href="/sota/information-retrieval-on-trec-pm">
+                                <img class="sota-thumb"
+                                     src="https://paperswithcode.com/media/sota-thumbs/information-retrieval-on-trec-pm-small_eb76feff.png"/>
+                            </a>
+                        
+                    </td>
+                    <td>
+                        <div class="dataset black-links">
+                            <a href="/sota/information-retrieval-on-trec-pm">
+                                TREC-PM
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="black-links">
+                            <a href="/sota/information-retrieval-on-trec-pm">
+                                <i class="em em-trophy"
+                                   style="height:1em;position:relative;top:-2px"></i>
+                                hpipubcommon
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        
+                            <div class="paper">
+                                
+                                <a href="/sota/information-retrieval-on-trec-pm">HPI-DHC at TREC 2018 Precision Medicine Track</a>
+                            </div>
+                        
+                    </td>
+
+                    <td>
+                        
+                            <div class="text-center paper">
+                                <a href="/paper/hpi-dhc-at-trec-2018-precision-medicine-track">
+                                    <ion-icon name="document"></ion-icon>
+                                </a>
+                            </div>
+                        
+
+                    </td>
+                    <td>
+                        
+                            <div class="text-center github"><a
+                                    href="/paper/hpi-dhc-at-trec-2018-precision-medicine-track#code">
+                                <ion-icon name="logo-github"></ion-icon>
+                            </a></div>
+                        
+                    </td>
+
+
+                    <td class="text-center">
+                        <div class="sota-table-link">
+                            <a href="/sota/information-retrieval-on-trec-pm"
+                               class="btn btn-primary">See all</a>
+                        </div>
+                    </td>
+
+                    </tr>
+
+                    
+
+                
+
+            </table>
+        </div>
+    
+
+
+    
+
+
+    <div class="title" style="padding-top:30px;">
+        <div class="row">
+
+            <div class="col-lg-6 task-papers-header" id="code">
+                
+                    <h1 class="home-page-title">Greatest papers with code</h1>
+                
+            </div>
+
+            <div class="col-lg-6">
+
+                <div style="float: right;"
+                     class="btn-group btn-group-sm pull-right home-page-navigation task-page-navigation"
+                     role="group" aria-label="Basic example">
+
+                    
+                        <a href="/task/information-retrieval#code"
+                           class="list-button-active">Greatest</a>
+                    
+
+                    
+                        <a href="/task/information-retrieval/latest#code"
+                           class="list-button">Latest</a>
+                    
+
+                    
+                        <a href="/task/information-retrieval/codeless#code"
+                           class="list-button">Without code</a>
+                    
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="infinite-container text-center">
+
+        
+            
+
+
+
+
+<div class="row infinite-item item">
+    <!-- 119901 -->
+    
+
+<div class="col-lg-3 item-image-col">
+    
+        
+            <a href="/paper/product-based-neural-networks-for-user-1">
+                <div class="item-image" style="background-image: url('/static/thumbs/1807.00311.jpg');"> </div>
+            </a>
+        
+    
+</div>
+
+
+    <div class="col-lg-9 item-col">
+        <div class="row">
+            <div class="col-lg-9 item-content">
+                
+                    <h1><a href="/paper/product-based-neural-networks-for-user-1">Product-based Neural Networks for User Response Prediction over Multi-field Categorical Data</a></h1>
+                
+
+                <p class="author-section" style="padding-top:2px">
+                    
+                    <span class="author-name-text">1 Jul 2018</span>
+                    
+
+                    
+                        
+                        • <a href="https://github.com/shenweichen/DeepCTR" onclick="captureOutboundLink('https://github.com/shenweichen/DeepCTR'); return true;" style="font-size:13px">shenweichen/DeepCTR</a>
+                        
+                        
+                        
+                            
+                              
+                            •  <img src="/static/frameworks/tf.3f40b19378d1.png">
+                              
+                            
+                        
+                    
+
+                    <p class="item-strip-abstract">User response prediction is a crucial component for personalized information retrieval and filtering scenarios, such as recommender system and web search.</p>
+
+                    <div class="sota">
+    
+</div>
+
+
+                <p>
+                    
+                    <a href="/task/click-through-rate-prediction"><span class="badge badge-primary">CLICK-THROUGH RATE PREDICTION</span></a>
+                    
+                    <a href="/task/feature-engineering"><span class="badge badge-primary">FEATURE ENGINEERING</span></a>
+                    
+                    <a href="/task/information-retrieval"><span class="badge badge-primary">INFORMATION RETRIEVAL</span></a>
+                    
+                    <a href="/task/recommendation-systems"><span class="badge badge-primary">RECOMMENDATION SYSTEMS</span></a>
+                    
+                </p>
+            </div>
+
+            <div class="col-lg-3 item-interact text-center">
+                <div class="entity-stars">
+                    
+                    <span class="badge badge-secondary"><ion-icon name="star"></ion-icon> 2,855</span>
+                    
+                </div>
+
+                
+
+                
+
+                <div class="entity" style="margin-bottom: 20px;">
+                    
+                    <a href="/paper/product-based-neural-networks-for-user-1" class="badge badge-light">
+                        <ion-icon name="document"></ion-icon> Paper
+                    </a>
+                    
+                    <br/>
+
+                    
+                        
+                        <a href="/paper/product-based-neural-networks-for-user-1#code" class="badge badge-dark">
+                            <ion-icon name="logo-github"></ion-icon> Code
+                        </a>
+                        
+                        <br/>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+            
+
+
+
+
+<div class="row infinite-item item">
+    <!-- 748923 -->
+    
+
+<div class="col-lg-3 item-image-col">
+    
+        
+            <a href="/paper/opennre-an-open-and-extensible-toolkit-for">
+                <div class="item-image" style="background-image: url('/static/thumbs/1909.13078.jpg');"> </div>
+            </a>
+        
+    
+</div>
+
+
+    <div class="col-lg-9 item-col">
+        <div class="row">
+            <div class="col-lg-9 item-content">
+                
+                    <h1><a href="/paper/opennre-an-open-and-extensible-toolkit-for">OpenNRE: An Open and Extensible Toolkit for Neural Relation Extraction</a></h1>
+                
+
+                <p class="author-section" style="padding-top:2px">
+                    
+                    <span class="item-conference-link">
+                        <a href="/conference/ijcnlp-2019-11">
+                            IJCNLP 2019
+                        </a>
+                    </span>
+                    
+
+                    
+                        
+                        • <a href="https://github.com/thunlp/OpenNRE" onclick="captureOutboundLink('https://github.com/thunlp/OpenNRE'); return true;" style="font-size:13px">thunlp/OpenNRE</a>
+                        
+                        
+                        
+                            
+                              
+                            •  <img src="/static/frameworks/tf.3f40b19378d1.png">
+                              
+                            
+                        
+                    
+
+                    <p class="item-strip-abstract">OpenNRE is an open-source and extensible toolkit that provides a unified framework to implement neural models for relation extraction (RE).</p>
+
+                    <div class="sota">
+    
+</div>
+
+
+                <p>
+                    
+                    <a href="/task/information-retrieval"><span class="badge badge-primary">INFORMATION RETRIEVAL</span></a>
+                    
+                    <a href="/task/question-answering"><span class="badge badge-primary">QUESTION ANSWERING</span></a>
+                    
+                    <a href="/task/relation-extraction"><span class="badge badge-primary">RELATION EXTRACTION</span></a>
+                    
+                </p>
+            </div>
+
+            <div class="col-lg-3 item-interact text-center">
+                <div class="entity-stars">
+                    
+                    <span class="badge badge-secondary"><ion-icon name="star"></ion-icon> 2,226</span>
+                    
+                </div>
+
+                
+
+                
+
+                <div class="entity" style="margin-bottom: 20px;">
+                    
+                    <a href="/paper/opennre-an-open-and-extensible-toolkit-for" class="badge badge-light">
+                        <ion-icon name="document"></ion-icon> Paper
+                    </a>
+                    
+                    <br/>
+
+                    
+                        
+                        <a href="/paper/opennre-an-open-and-extensible-toolkit-for#code" class="badge badge-dark">
+                            <ion-icon name="logo-github"></ion-icon> Code
+                        </a>
+                        
+                        <br/>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+            
+
+
+
+
+<div class="row infinite-item item">
+    <!-- 196426 -->
+    
+
+<div class="col-lg-3 item-image-col">
+    
+        
+            <a href="/paper/glove-global-vectors-for-word-representation">
+                <div class="item-image" style="background-image: url('/static/thumbs/97105.jpg');"> </div>
+            </a>
+        
+    
+</div>
+
+
+    <div class="col-lg-9 item-col">
+        <div class="row">
+            <div class="col-lg-9 item-content">
+                
+                    <h1><a href="/paper/glove-global-vectors-for-word-representation">Glove: Global Vectors for Word Representation</a></h1>
+                
+
+                <p class="author-section" style="padding-top:2px">
+                    
+                    <span class="item-conference-link">
+                        <a href="/conference/emnlp-2014-10">
+                            EMNLP 2014
+                        </a>
+                    </span>
+                    
+
+                    
+                        
+                        • <a href="https://github.com/dmlc/gluon-nlp" onclick="captureOutboundLink('https://github.com/dmlc/gluon-nlp'); return true;" style="font-size:13px">dmlc/gluon-nlp</a>
+                        
+                        
+                        
+                            
+                              
+                            •  <img src="/static/frameworks/mxnet.53c607808766.png">
+                              
+                            
+                        
+                    
+
+                    <p class="item-strip-abstract"></p>
+
+                    <div class="sota">
+    
+</div>
+
+
+                <p>
+                    
+                    <a href="/task/document-classification"><span class="badge badge-primary">DOCUMENT CLASSIFICATION</span></a>
+                    
+                    <a href="/task/information-retrieval"><span class="badge badge-primary">INFORMATION RETRIEVAL</span></a>
+                    
+                    <a href="/task/named-entity-recognition-ner"><span class="badge badge-primary">NAMED ENTITY RECOGNITION</span></a>
+                    
+                    <a href="/task/question-answering"><span class="badge badge-primary">QUESTION ANSWERING</span></a>
+                    
+                </p>
+            </div>
+
+            <div class="col-lg-3 item-interact text-center">
+                <div class="entity-stars">
+                    
+                    <span class="badge badge-secondary"><ion-icon name="star"></ion-icon> 1,951</span>
+                    
+                </div>
+
+                
+
+                
+
+                <div class="entity" style="margin-bottom: 20px;">
+                    
+                    <a href="/paper/glove-global-vectors-for-word-representation" class="badge badge-light">
+                        <ion-icon name="document"></ion-icon> Paper
+                    </a>
+                    
+                    <br/>
+
+                    
+                        
+                        <a href="/paper/glove-global-vectors-for-word-representation#code" class="badge badge-dark">
+                            <ion-icon name="logo-github"></ion-icon> Code
+                        </a>
+                        
+                        <br/>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+            
+
+
+
+
+<div class="row infinite-item item">
+    <!-- 71754 -->
+    
+
+<div class="col-lg-3 item-image-col">
+    
+        
+            <a href="/paper/openke-an-open-toolkit-for-knowledge">
+                <div class="item-image" style="background-image: url('/static/thumbs/66442.jpg');"> </div>
+            </a>
+        
+    
+</div>
+
+
+    <div class="col-lg-9 item-col">
+        <div class="row">
+            <div class="col-lg-9 item-content">
+                
+                    <h1><a href="/paper/openke-an-open-toolkit-for-knowledge">OpenKE: An Open Toolkit for Knowledge Embedding</a></h1>
+                
+
+                <p class="author-section" style="padding-top:2px">
+                    
+                    <span class="item-conference-link">
+                        <a href="/conference/emnlp-2018-11">
+                            EMNLP 2018
+                        </a>
+                    </span>
+                    
+
+                    
+                        
+                        • <a href="https://github.com/thunlp/OpenKE" onclick="captureOutboundLink('https://github.com/thunlp/OpenKE'); return true;" style="font-size:13px">thunlp/OpenKE</a>
+                        
+                        
+                        
+                            
+                              
+                            •  <img src="/static/frameworks/tf.3f40b19378d1.png">
+                              
+                            
+                        
+                    
+
+                    <p class="item-strip-abstract">We release an open toolkit for knowledge embedding (OpenKE), which provides a unified framework and various fundamental models to embed knowledge graphs into a continuous low-dimensional space.</p>
+
+                    <div class="sota">
+    
+</div>
+
+
+                <p>
+                    
+                    <a href="/task/information-retrieval"><span class="badge badge-primary">INFORMATION RETRIEVAL</span></a>
+                    
+                    <a href="/task/knowledge-graphs"><span class="badge badge-primary">KNOWLEDGE GRAPHS</span></a>
+                    
+                    <a href="/task/question-answering"><span class="badge badge-primary">QUESTION ANSWERING</span></a>
+                    
+                    <a href="/task/representation-learning"><span class="badge badge-primary">REPRESENTATION LEARNING</span></a>
+                    
+                </p>
+            </div>
+
+            <div class="col-lg-3 item-interact text-center">
+                <div class="entity-stars">
+                    
+                    <span class="badge badge-secondary"><ion-icon name="star"></ion-icon> 1,638</span>
+                    
+                </div>
+
+                
+
+                
+
+                <div class="entity" style="margin-bottom: 20px;">
+                    
+                    <a href="/paper/openke-an-open-toolkit-for-knowledge" class="badge badge-light">
+                        <ion-icon name="document"></ion-icon> Paper
+                    </a>
+                    
+                    <br/>
+
+                    
+                        
+                        <a href="/paper/openke-an-open-toolkit-for-knowledge#code" class="badge badge-dark">
+                            <ion-icon name="logo-github"></ion-icon> Code
+                        </a>
+                        
+                        <br/>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+            
+
+
+
+
+<div class="row infinite-item item">
+    <!-- 199594 -->
+    
+
+<div class="col-lg-3 item-image-col">
+    
+        
+            <a href="/paper/a-unified-neural-architecture-for">
+                <div class="item-image" style="background-image: url('/static/thumbs/1903.00142.jpg');"> </div>
+            </a>
+        
+    
+</div>
+
+
+    <div class="col-lg-9 item-col">
+        <div class="row">
+            <div class="col-lg-9 item-content">
+                
+                    <h1><a href="/paper/a-unified-neural-architecture-for">A Unified Neural Architecture for Instrumental Audio Tasks</a></h1>
+                
+
+                <p class="author-section" style="padding-top:2px">
+                    
+                    <span class="author-name-text">1 Mar 2019</span>
+                    
+
+                    
+                        
+                        • <a href="https://github.com/r9y9/wavenet_vocoder" onclick="captureOutboundLink('https://github.com/r9y9/wavenet_vocoder'); return true;" style="font-size:13px">r9y9/wavenet_vocoder</a>
+                        
+                        
+                        
+                            
+                              
+                            •  <img src="/static/frameworks/pytorch.eb01730bff28.png">
+                              
+                            
+                        
+                    
+
+                    <p class="item-strip-abstract">Within Music Information Retrieval (MIR), prominent tasks -- including pitch-tracking, source-separation, super-resolution, and synthesis -- typically call for specialised methods, despite their similarities.</p>
+
+                    <div class="sota">
+    
+</div>
+
+
+                <p>
+                    
+                    <a href="/task/information-retrieval"><span class="badge badge-primary">INFORMATION RETRIEVAL</span></a>
+                    
+                    <a href="/task/music-information-retrieval"><span class="badge badge-primary">MUSIC INFORMATION RETRIEVAL</span></a>
+                    
+                    <a href="/task/super-resolution"><span class="badge badge-primary">SUPER-RESOLUTION</span></a>
+                    
+                    <a href="/task/transfer-learning"><span class="badge badge-primary">TRANSFER LEARNING</span></a>
+                    
+                </p>
+            </div>
+
+            <div class="col-lg-3 item-interact text-center">
+                <div class="entity-stars">
+                    
+                    <span class="badge badge-secondary"><ion-icon name="star"></ion-icon> 1,341</span>
+                    
+                </div>
+
+                
+
+                
+
+                <div class="entity" style="margin-bottom: 20px;">
+                    
+                    <a href="/paper/a-unified-neural-architecture-for" class="badge badge-light">
+                        <ion-icon name="document"></ion-icon> Paper
+                    </a>
+                    
+                    <br/>
+
+                    
+                        
+                        <a href="/paper/a-unified-neural-architecture-for#code" class="badge badge-dark">
+                            <ion-icon name="logo-github"></ion-icon> Code
+                        </a>
+                        
+                        <br/>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+            
+
+
+
+
+<div class="row infinite-item item">
+    <!-- 726750 -->
+    
+
+<div class="col-lg-3 item-image-col">
+    
+        
+            <a href="/paper/codesearchnet-challenge-evaluating-the-state">
+                <div class="item-image" style="background-image: url('/media/thumbnails/papergithubrepo/pgr-0000726750-d910354d.jpg');"> </div>
+            </a>
+        
+    
+</div>
+
+
+    <div class="col-lg-9 item-col">
+        <div class="row">
+            <div class="col-lg-9 item-content">
+                
+                    <h1><a href="/paper/codesearchnet-challenge-evaluating-the-state">CodeSearchNet Challenge: Evaluating the State of Semantic Code Search</a></h1>
+                
+
+                <p class="author-section" style="padding-top:2px">
+                    
+                    <span class="author-name-text">20 Sep 2019</span>
+                    
+
+                    
+                        
+                        • <a href="https://github.com/github/CodeSearchNet" onclick="captureOutboundLink('https://github.com/github/CodeSearchNet'); return true;" style="font-size:13px">github/CodeSearchNet</a>
+                        
+                        
+                        
+                            
+                              
+                            •  <img src="/static/frameworks/tf.3f40b19378d1.png">
+                              
+                            
+                        
+                    
+
+                    <p class="item-strip-abstract">To enable evaluation of progress on code search, we are releasing the CodeSearchNet Corpus and are presenting the CodeSearchNet Challenge, which consists of 99 natural language queries with about 4k expert relevance annotations of likely results from CodeSearchNet Corpus.</p>
+
+                    <div class="sota">
+    
+</div>
+
+
+                <p>
+                    
+                    <a href="/task/code-search"><span class="badge badge-primary">CODE SEARCH</span></a>
+                    
+                    <a href="/task/information-retrieval"><span class="badge badge-primary">INFORMATION RETRIEVAL</span></a>
+                    
+                </p>
+            </div>
+
+            <div class="col-lg-3 item-interact text-center">
+                <div class="entity-stars">
+                    
+                    <span class="badge badge-secondary"><ion-icon name="star"></ion-icon> 1,069</span>
+                    
+                </div>
+
+                
+
+                
+
+                <div class="entity" style="margin-bottom: 20px;">
+                    
+                    <a href="/paper/codesearchnet-challenge-evaluating-the-state" class="badge badge-light">
+                        <ion-icon name="document"></ion-icon> Paper
+                    </a>
+                    
+                    <br/>
+
+                    
+                        
+                        <a href="/paper/codesearchnet-challenge-evaluating-the-state#code" class="badge badge-dark">
+                            <ion-icon name="logo-github"></ion-icon> Code
+                        </a>
+                        
+                        <br/>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+            
+
+
+
+
+<div class="row infinite-item item">
+    <!-- 41102 -->
+    
+
+<div class="col-lg-3 item-image-col">
+    
+        
+            <a href="/paper/modeling-relational-data-with-graph">
+                <div class="item-image" style="background-image: url('/media/thumbnails/papergithubrepo/pgr-0000041102-003cad26.jpg');"> </div>
+            </a>
+        
+    
+</div>
+
+
+    <div class="col-lg-9 item-col">
+        <div class="row">
+            <div class="col-lg-9 item-content">
+                
+                    <h1><a href="/paper/modeling-relational-data-with-graph">Modeling Relational Data with Graph Convolutional Networks</a></h1>
+                
+
+                <p class="author-section" style="padding-top:2px">
+                    
+                    <span class="author-name-text">17 Mar 2017</span>
+                    
+
+                    
+                        
+                        • <a href="https://github.com/tkipf/gae" onclick="captureOutboundLink('https://github.com/tkipf/gae'); return true;" style="font-size:13px">tkipf/gae</a>
+                        
+                        
+                        
+                            
+                              
+                            •  <img src="/static/frameworks/tf.3f40b19378d1.png">
+                              
+                            
+                        
+                    
+
+                    <p class="item-strip-abstract">We demonstrate the effectiveness of R-GCNs as a stand-alone model for entity classification.</p>
+
+                    <div class="sota">
+    
+        
+            <p>
+                <a href="/sota/node-classification-on-aifb">
+                    <i class="em em-trophy"></i>
+                </a>
+                &nbsp;SOTA for
+                <a class="sota-task"
+                   href="/sota/node-classification-on-aifb">
+                    Node Classification
+                    on AIFB
+                </a>
+                
+                    
+                
+
+            </p>
+        
+    
+</div>
+
+
+                <p>
+                    
+                    <a href="/task/graph-classification"><span class="badge badge-primary">GRAPH CLASSIFICATION</span></a>
+                    
+                    <a href="/task/information-retrieval"><span class="badge badge-primary">INFORMATION RETRIEVAL</span></a>
+                    
+                    <a href="/task/knowledge-base-completion"><span class="badge badge-primary">KNOWLEDGE BASE COMPLETION</span></a>
+                    
+                    <a href="/task/knowledge-graphs"><span class="badge badge-primary">KNOWLEDGE GRAPHS</span></a>
+                    
+                    <a href="/task/link-prediction"><span class="badge badge-primary">LINK PREDICTION</span></a>
+                    
+                    <a href="/task/node-classification"><span class="badge badge-primary">NODE CLASSIFICATION</span></a>
+                    
+                </p>
+            </div>
+
+            <div class="col-lg-3 item-interact text-center">
+                <div class="entity-stars">
+                    
+                    <span class="badge badge-secondary"><ion-icon name="star"></ion-icon> 910</span>
+                    
+                </div>
+
+                
+
+                
+
+                <div class="entity" style="margin-bottom: 20px;">
+                    
+                    <a href="/paper/modeling-relational-data-with-graph" class="badge badge-light">
+                        <ion-icon name="document"></ion-icon> Paper
+                    </a>
+                    
+                    <br/>
+
+                    
+                        
+                        <a href="/paper/modeling-relational-data-with-graph#code" class="badge badge-dark">
+                            <ion-icon name="logo-github"></ion-icon> Code
+                        </a>
+                        
+                        <br/>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+            
+
+
+
+
+<div class="row infinite-item item">
+    <!-- 401869 -->
+    
+
+<div class="col-lg-3 item-image-col">
+    
+        
+            <a href="/paper/transfertransfo-a-transfer-learning-approach">
+                <div class="item-image" style="background-image: url('/static/thumbs/1901.08149.jpg');"> </div>
+            </a>
+        
+    
+</div>
+
+
+    <div class="col-lg-9 item-col">
+        <div class="row">
+            <div class="col-lg-9 item-content">
+                
+                    <h1><a href="/paper/transfertransfo-a-transfer-learning-approach">TransferTransfo: A Transfer Learning Approach for Neural Network Based Conversational Agents</a></h1>
+                
+
+                <p class="author-section" style="padding-top:2px">
+                    
+                    <span class="author-name-text">23 Jan 2019</span>
+                    
+
+                    
+                        
+                        • <a href="https://github.com/huggingface/transfer-learning-conv-ai" onclick="captureOutboundLink('https://github.com/huggingface/transfer-learning-conv-ai'); return true;" style="font-size:13px">huggingface/transfer-learning-conv-ai</a>
+                        
+                        
+                        
+                            
+                              
+                            •  <img src="/static/frameworks/pytorch.eb01730bff28.png">
+                              
+                            
+                        
+                    
+
+                    <p class="item-strip-abstract">We introduce a new approach to generative data-driven dialogue systems (e. g. chatbots) called TransferTransfo which is a combination of a Transfer learning based training scheme and a high-capacity Transformer model.</p>
+
+                    <div class="sota">
+    
+</div>
+
+
+                <p>
+                    
+                    <a href="/task/information-retrieval"><span class="badge badge-primary">INFORMATION RETRIEVAL</span></a>
+                    
+                    <a href="/task/transfer-learning"><span class="badge badge-primary">TRANSFER LEARNING</span></a>
+                    
+                </p>
+            </div>
+
+            <div class="col-lg-3 item-interact text-center">
+                <div class="entity-stars">
+                    
+                    <span class="badge badge-secondary"><ion-icon name="star"></ion-icon> 744</span>
+                    
+                </div>
+
+                
+
+                
+
+                <div class="entity" style="margin-bottom: 20px;">
+                    
+                    <a href="/paper/transfertransfo-a-transfer-learning-approach" class="badge badge-light">
+                        <ion-icon name="document"></ion-icon> Paper
+                    </a>
+                    
+                    <br/>
+
+                    
+                        
+                        <a href="/paper/transfertransfo-a-transfer-learning-approach#code" class="badge badge-dark">
+                            <ion-icon name="logo-github"></ion-icon> Code
+                        </a>
+                        
+                        <br/>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+            
+
+
+
+
+<div class="row infinite-item item">
+    <!-- 3391 -->
+    
+
+<div class="col-lg-3 item-image-col">
+    
+        
+            <a href="/paper/irgan-a-minimax-game-for-unifying-generative">
+                <div class="item-image" style="background-image: url('/static/thumbs/1705.10513.jpg');"> </div>
+            </a>
+        
+    
+</div>
+
+
+    <div class="col-lg-9 item-col">
+        <div class="row">
+            <div class="col-lg-9 item-content">
+                
+                    <h1><a href="/paper/irgan-a-minimax-game-for-unifying-generative">IRGAN: A Minimax Game for Unifying Generative and Discriminative Information Retrieval Models</a></h1>
+                
+
+                <p class="author-section" style="padding-top:2px">
+                    
+                    <span class="author-name-text">30 May 2017</span>
+                    
+
+                    
+                        
+                        • <a href="https://github.com/geek-ai/irgan" onclick="captureOutboundLink('https://github.com/geek-ai/irgan'); return true;" style="font-size:13px">geek-ai/irgan</a>
+                        
+                        
+                        
+                            
+                              
+                            •  <img src="/static/frameworks/tf.3f40b19378d1.png">
+                              
+                            
+                        
+                    
+
+                    <p class="item-strip-abstract">This paper provides a unified account of two schools of thinking in information retrieval modelling: the generative retrieval focusing on predicting relevant documents given a query, and the discriminative retrieval focusing on predicting relevancy given a query-document pair.</p>
+
+                    <div class="sota">
+    
+</div>
+
+
+                <p>
+                    
+                    <a href="/task/ad-hoc-information-retrieval"><span class="badge badge-primary">AD-HOC INFORMATION RETRIEVAL</span></a>
+                    
+                    <a href="/task/document-ranking"><span class="badge badge-primary">DOCUMENT RANKING</span></a>
+                    
+                    <a href="/task/information-retrieval"><span class="badge badge-primary">INFORMATION RETRIEVAL</span></a>
+                    
+                    <a href="/task/question-answering"><span class="badge badge-primary">QUESTION ANSWERING</span></a>
+                    
+                </p>
+            </div>
+
+            <div class="col-lg-3 item-interact text-center">
+                <div class="entity-stars">
+                    
+                    <span class="badge badge-secondary"><ion-icon name="star"></ion-icon> 577</span>
+                    
+                </div>
+
+                
+
+                
+
+                <div class="entity" style="margin-bottom: 20px;">
+                    
+                    <a href="/paper/irgan-a-minimax-game-for-unifying-generative" class="badge badge-light">
+                        <ion-icon name="document"></ion-icon> Paper
+                    </a>
+                    
+                    <br/>
+
+                    
+                        
+                        <a href="/paper/irgan-a-minimax-game-for-unifying-generative#code" class="badge badge-dark">
+                            <ion-icon name="logo-github"></ion-icon> Code
+                        </a>
+                        
+                        <br/>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+            
+
+
+
+
+<div class="row infinite-item item">
+    <!-- 70927 -->
+    
+
+<div class="col-lg-3 item-image-col">
+    
+        
+            <a href="/paper/meta-a-unified-toolkit-for-text-retrieval-and">
+                <div class="item-image" style="background-image: url('/static/thumbs/67904.jpg');"> </div>
+            </a>
+        
+    
+</div>
+
+
+    <div class="col-lg-9 item-col">
+        <div class="row">
+            <div class="col-lg-9 item-content">
+                
+                    <h1><a href="/paper/meta-a-unified-toolkit-for-text-retrieval-and">MeTA: A Unified Toolkit for Text Retrieval and Analysis</a></h1>
+                
+
+                <p class="author-section" style="padding-top:2px">
+                    
+                    <span class="item-conference-link">
+                        <a href="/conference/acl-2016-8">
+                            ACL 2016
+                        </a>
+                    </span>
+                    
+
+                    
+                        
+                        • <a href="https://github.com/meta-toolkit/meta" onclick="captureOutboundLink('https://github.com/meta-toolkit/meta'); return true;" style="font-size:13px">meta-toolkit/meta</a>
+                        
+                        
+                        
+                    
+
+                    <p class="item-strip-abstract"></p>
+
+                    <div class="sota">
+    
+</div>
+
+
+                <p>
+                    
+                    <a href="/task/document-classification"><span class="badge badge-primary">DOCUMENT CLASSIFICATION</span></a>
+                    
+                    <a href="/task/information-retrieval"><span class="badge badge-primary">INFORMATION RETRIEVAL</span></a>
+                    
+                    <a href="/task/tokenization"><span class="badge badge-primary">TOKENIZATION</span></a>
+                    
+                </p>
+            </div>
+
+            <div class="col-lg-3 item-interact text-center">
+                <div class="entity-stars">
+                    
+                    <span class="badge badge-secondary"><ion-icon name="star"></ion-icon> 563</span>
+                    
+                </div>
+
+                
+
+                
+
+                <div class="entity" style="margin-bottom: 20px;">
+                    
+                    <a href="/paper/meta-a-unified-toolkit-for-text-retrieval-and" class="badge badge-light">
+                        <ion-icon name="document"></ion-icon> Paper
+                    </a>
+                    
+                    <br/>
+
+                    
+                        
+                        <a href="/paper/meta-a-unified-toolkit-for-text-retrieval-and#code" class="badge badge-dark">
+                            <ion-icon name="logo-github"></ion-icon> Code
+                        </a>
+                        
+                        <br/>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+
+    </div>
+
+    <div class="loading" style="display: none;">
+        <div class="loader-ellips infinite-scroll-request">
+            <span class="loader-ellips__dot"></span>
+            <span class="loader-ellips__dot"></span>
+            <span class="loader-ellips__dot"></span>
+            <span class="loader-ellips__dot"></span>
+        </div>
+    </div>
+
+    
+        <a class="infinite-more-link"
+           href="?page=2"></a>
+    
+
+
+
+  </div>
+
+</div>
+
+<div class="footer">
+    Contact us on: <ion-icon name="mail" style="position:relative;top:2px"></ion-icon> <a href="/cdn-cgi/l/email-protection#543c3138383b14243524312627233d203c373b30317a373b39"><span class="__cf_email__" data-cfemail="f098959c9c9fb080918095828387998498939f9495de939f9d">[email&#160;protected]</span></a>. Papers With Code is a free resource supported by <a href="https://atlasml.io">Atlas ML</a>.
+    <div class="legal-links">
+        <a href="/site/terms">Terms</a>
+        <a href="/site/privacy">Privacy</a>
+        <a href="/site/cookies-policy">Cookies policy</a>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/static/js/pwc.lib.9e6ea2346a06.js"></script>
+<script src="https://browser.sentry-cdn.com/4.6.4/bundle.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+
+
+    <link href="/static/vendor/select2/dist/css/select2.min.af22a7e2bfec.css" type="text/css" media="screen" rel="stylesheet">
+<link href="/static/admin/css/autocomplete.781713f30664.css" type="text/css" media="screen" rel="stylesheet">
+<link href="/static/autocomplete_light/select2.d64f3c111aa6.css" type="text/css" media="screen" rel="stylesheet">
+<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.min.9c86871c4213.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/jquery.init.7354a8d7c058.js"></script>
+<script type="text/javascript" src="/static/vendor/select2/dist/js/select2.full.min.79a0449b346f.js"></script>
+<script type="text/javascript" src="/static/vendor/select2/dist/js/i18n/en.baec538fa4df.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/autocomplete.init.e4b0ca3761aa.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/forward.c1f6333da5ef.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/select2.e8047702b5d7.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/jquery.post-setup.3153a01f7e1e.js"></script>
+
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css"/>
+
+
+    <script>
+        var infinite = new Waypoint.Infinite({
+            element: $('.infinite-container')[0],
+            onBeforePageLoad: function () {
+                $('.loading').show();
+            },
+            onAfterPageLoad: function ($items) {
+                $('.loading').hide();
+            }
+        });
+    </script>
+
+    <script>
+
+        var globalTaskMetrics = {"metrics": [], "values": {}};
+        var globalTaskPk = "1451";
+
+        $(function () {
+            document.querySelector('select[name="dataset"]').onchange = function () {
+                var dataset_pk = $('#addRow #id_dataset').find(":selected").val();
+                $.get("/api/task-dataset-metric/", {
+                        "task_pk": globalTaskPk,
+                        "dataset_name_or_pk": dataset_pk
+                    },
+                    function (data) {
+                        var d = JSON.parse(data);
+                        globalTaskMetrics = d["data"];
+                        $("#sota-metric-names").html("Existing metric(s): " + d["data"]["metrics"].join(", "));
+                    });
+            };
+
+            document.querySelector('select[name="metric"]').onchange = function () {
+                var m = $('#addRow #id_metric').find(":selected").text();
+                if (m in globalTaskMetrics["values"]) {
+                    $("#sota-metric-values").html("Format like: " + globalTaskMetrics["values"][m]);
+                }
+            };
+
+            $("#id_highlight_close_button").on("click", function () {
+                $(".row-highlight").removeClass("row-highlight");
+            });
+
+            $("#id_evaluated_on").datepicker({
+                format: 'yyyy-mm-dd',
+                zIndex: 10000
+            });
+
+        });
+    </script>
+
+
+
+<script>
+    $(function() {
+
+      $.fn.modal.Constructor.prototype._enforceFocus = function() {};
+
+      $.widget( "custom.catcomplete", $.ui.autocomplete, {
+        _create: function() {
+          this._super();
+          this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
+        },
+        _renderMenu: function( ul, items ) {
+          var that = this,
+            currentCategory = "";
+          $.each( items, function( index, item ) {
+            var li;
+            if ( item.category != currentCategory ) {
+              ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
+              currentCategory = item.category;
+            }
+            li = that._renderItemData( ul, item );
+            if (item.meta !== null) {
+              li.attr('data-qmeta', item.meta);
+            }
+            if ( item.category ) {
+              li.attr( "aria-label", item.category + " : " + item.label );
+            }
+          });
+        }
+      });
+
+      $( "#id_global_search_input" ).catcomplete({
+          minLength: 2,
+          source: function( request, response ) {
+              var term = request.term;
+
+              $.get( "/api/search-autocomplete/", {"q": term}, function(data){
+                  let searchData = [];
+                  data.tasks.forEach((t) => {
+                    searchData.push({label: t, category: "Tasks", meta:null});
+                  });
+
+                  data.leaderboards.forEach((lb) => {
+                    searchData.push({label: lb.name, category: "Leaderboards", meta:lb.slug});
+                  });
+                  data.papers.forEach((p) => {
+                    searchData.push({label: p.title, category: "Papers", meta:null});
+                  });
+                  response(searchData);
+              });
+          },
+          select: function(event, ui) {
+              $("#id_global_search_input").val(ui.item.label);
+              if (typeof gtag !== 'undefined') {
+                gtag('event', 'SiteActions', {
+                  'event_category': 'Search',
+                  'event_label': ui.item.category,
+                });
+              }
+
+              if (ui.item.meta === null) {
+                $('#q_meta').val('');
+                $('#q_meta').removeAttr('name');
+              } else {
+                if(!$('#q_meta').attr("name")) {
+                  $('#q_meta').attr('name', 'q_meta');
+                }
+                $('#q_meta').val(ui.item.meta);
+              }
+              $("#id_global_search_form").submit();
+          }
+      });
+
+        if ($(window).width() < 1200 && $(window).width() > 992 ) {
+            $("#id_global_search_input").attr("placeholder", "Search");
+        }
+
+        // Configure Sentry
+        let sentryDsn = "https://be66a46136d24f1a998234ca50a0456a@sentry.io/1413936".trim();
+        if (sentryDsn !== "") {
+            Sentry.init({dsn: sentryDsn});
+        }
+
+        // Setup csrf token for ajax requests
+        let getCookie = (name) => {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                       break;
+                    }
+                }
+            }
+            return cookieValue;
+        };
+        let csrftoken = getCookie('csrftoken');
+
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

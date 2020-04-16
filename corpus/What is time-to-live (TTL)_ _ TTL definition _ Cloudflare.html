@@ -1,0 +1,2467 @@
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="UTF-8">
+
+
+    <title>What is time-to-live (TTL)? | TTL definition | Cloudflare </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Time to live (TTL) refers to the amount of time or “hops” that a packet is set to exist inside a network before being discarded by a router. TTL is also used in other contexts including CDN caching and DNS caching.">
+
+
+    
+  
+
+    
+    <link rel="canonical" href="https://www.cloudflare.com/learning/cdn/glossary/time-to-live-ttl/">
+
+  
+
+
+    
+    <meta itemprop="name" content="What is time-to-live (TTL)? | TTL definition | Cloudflare ">
+    <meta itemprop="description" content="Time to live (TTL) refers to the amount of time or “hops” that a packet is set to exist inside a network before being discarded by a router. TTL is also used in other contexts including CDN caching and DNS caching.">
+    <meta itemprop="image" content="https://www.cloudflare.com/img/learning/og-images/cdn-lc.png">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="What is time-to-live (TTL)? | TTL definition | Cloudflare ">
+    <meta name="twitter:description" content="Time to live (TTL) refers to the amount of time or “hops” that a packet is set to exist inside a network before being discarded by a router. TTL is also used in other contexts including CDN caching and DNS caching.">
+    <meta name="twitter:site" content="@cloudflare">
+    <meta name="twitter:creator" content="@cloudflare">
+    
+    <meta name="twitter:image" content="https://www.cloudflare.com/img/cf-twitter-card.png">
+    <meta property="og:title" content="What is time-to-live (TTL)? | TTL definition | Cloudflare " />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.cloudflare.com/learning/cdn/glossary/time-to-live-ttl/" />
+    
+    <meta property="og:image" content="https://www.cloudflare.com/img/learning/og-images/cdn-lc.png" />
+    <meta property="og:description" content="Time to live (TTL) refers to the amount of time or “hops” that a packet is set to exist inside a network before being discarded by a router. TTL is also used in other contexts including CDN caching and DNS caching." />
+    <meta property="og:site_name" content="Cloudflare" />
+    <meta class="swiftype" name="language" data-type="string" content="en" />
+    <meta class="swiftype" name="title" data-type="string" content="What is time-to-live (TTL)? | TTL definition" />
+    <meta class="swiftype" name="description" data-type="string" content="Time to live (TTL) refers to the amount of time or “hops” that a packet is set to exist inside a network before being discarded by a router. TTL is also used in other contexts including CDN caching and DNS caching." />
+    <meta class="swiftype" name="url" data-type="enum" content="https://www.cloudflare.com/learning/cdn/glossary/time-to-live-ttl/" />
+
+    
+    <meta name="baidu-site-verification" content="N0CNJSCAk5" />
+
+    
+    <meta name="baidu-site-verification" content="Kj9FQ1BEWh" />
+
+    
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Cloudflare"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="/mstile-310x310.png" />
+
+    
+    <noscript><style>.nojs-hide{display: none;}</style></noscript>
+    
+    <style>.async-hide {opacity: 0 !important}</style>
+
+      <link rel="stylesheet" href="https://assets.www.cloudflare.com/css/application-154d9346a8.min.css">
+
+    
+
+    
+
+<script nonce="628bf994-653b-4a63-8feb-bd8b54353e3b">
+/**
+ * Adds a class to the <html> element that hides the page until the Optimize
+ * container is loaded and the experiment is ready. Once Optimize is ready
+ * (or 4 seconds has passed), the class is removed from the <html> element
+ * and the page becomes visible again.
+ *
+ * @param {Window} a The global object.
+ * @param {HTMLHtmlElement} s The <html> element.
+ * @param {string} y The name of the class used to hide the <html> element.
+ * @param {string} n The name of property that references the dataLayer object.
+ * @param {number} c The max time (in milliseconds) the page will be hidden.
+ * @param {Object} h An object whose keys are Optimize container IDs.
+ * @param {undefined} i (unused parameter).
+ * @param {undefined} d (unused parameter).
+ * @param {undefined} e (unused parameter).
+ */
+(function(a, s, y, n, c, h, i, d, e) {
+  // Adds a class (defaulting to 'async-hide') to the <html> element.
+  s.className += ' ' + y;
+
+  // Keeps track of the exact time that the snippet executes.
+  h.start = 1 * new Date();
+
+  // Creates a timeout that will call the page-showing function after the
+  // timeout amount (defaulting to 4 seconds), in the event that Optimize has
+  // not already loaded. This ensures your page will not stay hidden in the
+  // event that Optimize takes too long to load.
+  d = setTimeout(function() {
+    i();
+    h.end = null;
+  }, c);
+  h.timeout = c;
+
+  // Creates a function and assigns it to a local variable `i` as well as
+  // the `end` property of the Optimize container object. Once Optimize is
+  // loaded it will call this function, which will remove the 'async-hide'
+  // class from the <html> element, causing the page to become visible again.
+  h.end = i = function() {
+    s.className = s.className.replace(RegExp(' ?' + y), '');
+    clearTimeout(d);
+  };
+
+  // Initalizes the dataLayer as an empty array if it's not already initialized
+  // and assigns the passed Optimize container object to the dataLayer's `hide`
+  // property. This makes the function defined above accessible globally at the
+  // path `window.dataLayer.hide.end`, so it can be called by Optimize.
+  (a[n] = a[n] || []).hide = h;
+})(
+  window, // The initial value for local variable `a`.
+  document.documentElement, // The initial value for local variable `s`.
+  'async-hide', // The initial value for local variable `y`.
+  'dataLayer', // The initial value for local variable `n`.
+  2000, // The initial value for local variable `c`.
+  { 'GTM-PKQFGQB': true } // The initial value for local variable `h`.
+);
+</script>
+
+    
+    
+<script nonce="628bf994-653b-4a63-8feb-bd8b54353e3b">
+  window.CFJS = {
+    config: {
+      rumEnabled: true,
+      env: '/marketing-api',
+      availableLanguages: ''.split(','),
+      excludeMarketo: 1,
+      marketoEnabled: true,
+      bizibleEnabled: true,
+      excludeHeapAnalytics: false,
+      asyncHide: 1,
+      remarketingEnabled: false,
+      sentryDSN: 'https://bd9df81d859641f39ce626ce2a2cc90d@sentry.io/229513',
+      serverLang: "en",
+      isEnglish: true,
+      isLocalized: true,
+      intlTelInputUtils: '/js/chunk-2b8ff88e86ec1723d234.js',
+      cookieDomain: "cloudflare.com",
+      techtargetEnabled: true,
+      gtm: {
+        disabled: false,
+        uaCookieDomain: ".cloudflare.com",
+        uaCodeMarketing_29: "UA-10218544-29",
+        optimize: "GTM-N4JSZJ8",
+        uaCodeAdWords: "AW-819572718",
+        uaCodeAdWordsBI: "DC-8921596",
+        adWordsConversionCode: "AW-972248548",
+        adWordsConversionCodeForm: "AW-836330296",
+        adWordsConversionLabel: "caqvCO3e32EQ5KvNzwM",
+        adWordsConversionLabelForm: "-l5JCJnczYgBELjG5Y4D",
+      }
+    }
+  }
+</script>
+
+    
+    <script nonce="628bf994-653b-4a63-8feb-bd8b54353e3b">(function(w,d,s,l,i){w[l]=w[l]||[];var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PKQFGQB');</script>
+
+    <script src="https://assets.www.cloudflare.com/js/runtime-72897be4ed4f2c7e97ef.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+<script src="https://assets.www.cloudflare.com/js/chunk-47ab4c3ffed866e854cf.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+<script src="https://assets.www.cloudflare.com/js/chunk-878051073acde61ecc3d.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+<script src="https://assets.www.cloudflare.com/js/chunk-45ecafbe4053f856d2c1.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+<script src="https://assets.www.cloudflare.com/js/chunk-d9103ba57c9f462a3f63.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+    <script src="https://assets.www.cloudflare.com/js/chunk-3e139a7e154a7c28643a.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+
+    <script src="https://www.cloudflare.com/vendor/onetrust/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="e34df59b-4a48-4bf9-b2b5-7a4bb09cd231"></script>
+  </head>
+  <body class="marketing-nojs cdn" >
+    
+    <script src="/optimizely/snippet.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PKQFGQB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+
+
+    <header style="display:none" class="flash-banner flash-banner--gray flash-banner--not-localized" data-name="not-localized">
+  <section class="tile tile--mini-banner hide-mobile">
+    <div class="tile__content--1200px">
+      <div class="grid--center grid--vertical-center">
+        <h4 class="text--white">This content is currently available in english only. We are constantly working to provide more content in english. Thank you for your patience.</h4>
+      </div>
+      <div class="flash-banner__close_x js-accept-top-nav-mini-flash-banner"></div>
+    </div>
+  </section>
+</header>
+
+
+    
+    <script src="https://assets.www.cloudflare.com/js/chunk-3e98cfeb62f728edcffd.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+<script src="https://assets.www.cloudflare.com/js/chunk-2abd31a441900a64c0b3.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+<script src="https://assets.www.cloudflare.com/js/chunk-a54c1e26c8045e17fae5.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+
+
+
+
+
+<header class="cms-topnav topnav top-nav js-top-nav top-nav--transparent">
+<nav  class="top-nav__upper-bar top-nav__items">
+  <div class="top-nav__item-list top-nav__item-list--right">
+
+    <span><a class="bold" href="https://support.cloudflare.com/" data-tracking-category="mainnav" data-tracking-action="click" data-tracking-label="Support">Support</a></span>
+    <span class="header-section-divider">|</span>
+    <span><a href="/plans/enterprise/contact/">Sales:</a></span>
+    <a data-i18n-phonenumber href="tel:+16503198930" style="display:none">+1 650 319 8930</a>
+    <noscript><a href="tel:+16503198930">+1 650 319 8930</a></noscript>
+    <span class="header-section-divider">|</span>
+
+    <a class="header-language-picker js-header-language-picker"><span class="header-language-picker__globe-icon"></span>English <span class="header-language-picker__caret-icon">▶</span><span class="header-language-picker__caret-icon hidden-element">▼</span></a>
+    <div id="js-header-language-picker-dropdown" class="js-header-language-picker-dropdown" style="display: none;">
+      <ul class="marketing-ul marketing-ul--no-bullets marketing-ul--no-margins-li header-language-picker-dropdown">
+
+            <li >
+              <a href="https://www.cloudflare.com/learning/cdn/glossary/time-to-live-ttl/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="en">English</a>
+            </li>
+            <li >
+              <a
+                href="https://www.cloudflare.com/en-gb/learning/cdn/glossary/time-to-live-ttl/"
+                >English (United Kingdom)</a>
+            </li>
+            <li >
+              <a
+                href="https://www.cloudflare.com/en-ca/learning/cdn/glossary/time-to-live-ttl/"
+                >English (Canada)</a>
+            </li>
+            <li >
+              <a
+                href="https://www.cloudflare.com/en-au/learning/cdn/glossary/time-to-live-ttl/"
+                >English (Australia)</a>
+            </li>
+            <li >
+              <a
+                href="https://www.cloudflare.com/en-in/learning/cdn/glossary/time-to-live-ttl/"
+                >English (India)</a>
+            </li>
+            <li >
+              <a
+                href="https://www.cloudflare.com/de-de/learning/cdn/glossary/time-to-live-ttl/"
+                >Deutsch</a>
+            </li>
+            <li >
+              <a
+                href="https://www.cloudflare.com/es-es/learning/cdn/glossary/time-to-live-ttl/"
+                >Español (España)</a>
+            </li>
+            <li >
+              <a
+                href="https://www.cloudflare.com/es-la/learning/cdn/glossary/time-to-live-ttl/"
+                >Español (Latinoamérica)</a>
+            </li>
+            <li >
+              <a
+                href="https://www.cloudflare.com/fr-fr/learning/cdn/glossary/time-to-live-ttl/"
+                >Français</a>
+            </li>
+            <li >
+              <a
+                href="https://www.cloudflare.com/it-it/learning/cdn/glossary/time-to-live-ttl/"
+                >Italiano</a>
+            </li>
+            <li >
+              <a
+                href="https://www.cloudflare.com/ja-jp/learning/cdn/glossary/time-to-live-ttl/"
+                >日本語</a>
+            </li>
+            <li >
+              <a
+                href="https://www.cloudflare.com/ko-kr/learning/cdn/glossary/time-to-live-ttl/"
+                >한국어</a>
+            </li>
+            <li >
+              <a
+                href="https://www.cloudflare.com/pt-br/learning/cdn/glossary/time-to-live-ttl/"
+                >Português</a>
+            </li>
+            <li >
+              <a
+                href="https://www.cloudflare.com/zh-tw/learning/cdn/glossary/time-to-live-ttl/"
+                >繁體中文</a>
+            </li>
+            <li >
+              <a
+                href="https://www.cloudflare.com/zh-cn/learning/cdn/glossary/time-to-live-ttl/"
+                >简体中文</a>
+            </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <nav class="top-nav__items top-nav__items--align-content ">
+    
+<a href="/">      <img
+        style="display: none;"
+        class="top-nav__logo top-nav__logo--dark top-nav__logo--transparent"
+        src="/img/logo-cloudflare-dark.svg"
+        alt="Cloudflare"
+      >
+      <img
+        class="top-nav__logo top-nav__logo--light top-nav__logo--transparent"
+        src="/img/logo-cloudflare-white.svg"
+        alt="Cloudflare"
+      >
+</a>
+
+        <ul class="top-nav__item-list top-nav__item-list--left">
+
+          <li class="top-nav__item-list__link top-nav__items__desktop nojs-hide" data-submenu="Products" data-tracking-category="mainnav" data-tracking-action="click" data-tracking-label="Products" tabindex="0">
+            Products
+          </li>
+
+          <li class="top-nav__item-list__link top-nav__items__desktop nojs-hide" data-submenu="Solutions" data-tracking-category="mainnav" data-tracking-action="click" data-tracking-label="Solutions" tabindex="0">
+            Solutions
+          </li>
+
+          <li class="top-nav__item-list__link top-nav__items__desktop nojs-hide" data-submenu="Resources" data-tracking-category="mainnav" data-tracking-action="click" data-tracking-label="Resources" tabindex="0">
+            Resources
+          </li>
+
+          <li class="top-nav__item-list__link top-nav__items__desktop nojs-hide" data-submenu="Developers" data-tracking-category="mainnav" data-tracking-action="click" data-tracking-label="Developers" tabindex="0">
+            Developers
+          </li>
+
+          <li class="top-nav__item-list__link top-nav__items__desktop">
+            <a  href="/enterprise/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="for-enterprise" tabindex="0">
+              For Enterprise
+            </a>
+          </li>
+
+          <li class="top-nav__item-list__link top-nav__items__desktop top-nav__item-list__link--no-pad-right">
+            <a  href="/plans/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="plans" tabindex="0">
+              Pricing
+            </a>
+          </li>
+  </ul>
+
+        <ul class="top-nav__item-list top-nav__item-list--right">
+
+          <li class="top-nav__item-list__link top-nav__items__desktop">
+            <a  href="https://dash.cloudflare.com/login" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="login" tabindex="0">
+              Log In
+            </a>
+          </li>
+
+          <li class="top-nav__item-list__link top-nav__items__desktop">
+            <a  href="https://dash.cloudflare.com/sign-up" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="signup" tabindex="0">
+              Sign Up
+            </a>
+          </li>
+
+          <li class="top-nav__item-list__link top-nav__items__desktop top-nav__item-list__link--no-ul">
+            
+            <a class="button button--new-orange js-under-attack-button under-attack-button" href="#" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="under_attack"  tabindex="0">Under Attack?</a>
+          </li>
+  </ul>
+
+
+      <button class="js-mobilenav-toggle toggle">
+        <span class="icon"></span>
+      </button>
+  </nav>
+
+
+
+<div class="desktop-nav MRK-9222-top-nav nav-dropdown">
+
+        <div class="desktop-nav__Products desktop-nav__container">
+          <div class="nav-dropdown-container">
+              <div class="dropdown-column">
+                      
+      <div class="nav-dropdown-header header-black">Performance & Reliability</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/cdn/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cdn" >CDN</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/dns/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="dns" >DNS</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/argo-smart-routing/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="argo_smart_routing" >Argo Smart Routing</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/load-balancing/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="load_balancing" >Load Balancing</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/website-optimization/amp-real-url/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="amp_real_url" >AMP Real URL</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/website-optimization/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="web-optimization" >Web Optimizations</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/network/china/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_cloudflare_china" >China Network</a>
+      </span>
+
+                      
+      <div class="nav-dropdown-header header-black">Video Streaming & Delivery</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/cloudflare-stream/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cloudflare-stream" >Cloudflare Stream</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/stream-delivery/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="stream-delivery-homepage" >Stream Delivery</a>
+      </span>
+
+              </div>
+              <div class="dropdown-column">
+                      
+      <div class="nav-dropdown-header header-black">Advanced Security</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/magic-transit/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="magic-transit" >Magic Transit</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/ddos/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="ddos" >DDoS Protection</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/waf/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="waf" >WAF</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/bot-management/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="bot_management" >Bot Management</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/rate-limiting/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="rate_limiting" >Rate Limiting</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/ssl/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="ssl" >SSL / TLS</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/dns/dnssec/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="dnssec" >DNSSEC</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/cloudflare-spectrum/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="spectrum" >Cloudflare Spectrum</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/argo-tunnel/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="argo_tunnel" >Argo Tunnel</a>
+      </span>
+
+                      
+      <div class="nav-dropdown-header header-black">Insights</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/analytics/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="analytics" >Analytics</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/cloudflare-logs/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cloudflare_logs" >Cloudflare Logs</a>
+      </span>
+
+              </div>
+              <div class="dropdown-column">
+                      
+      <div class="nav-dropdown-header header-black">Cloudflare for Developers</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/cloudflare-workers/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cloudflare-workers" >Cloudflare Workers</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/workers-kv/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="workers-kv" >Cloudflare Workers KV</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://workers.cloudflare.com/sites" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="workers-sites" >Workers Sites</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/mobile-sdk/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="mobilesdk" >Mobile SDK</a>
+      </span>
+
+                      
+      <div class="nav-dropdown-header header-black">Cloudflare for Teams</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://teams.cloudflare.com/access" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="teams-access" >Cloudflare Access</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://teams.cloudflare.com/gateway" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="teams-gateway" >Cloudflare Gateway</a>
+      </span>
+
+                      
+      <div class="nav-dropdown-header header-black">Cloudflare for Everyone</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://1.1.1.1" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="1111-homepage" >1.1.1.1</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/campaigns/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="campaigns" >Cloudflare for Campaigns</a>
+      </span>
+
+                      
+      <div class="nav-dropdown-header header-black">Domain Registration</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/registrar/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="registrar" >Cloudflare Registrar</a>
+      </span>
+
+                      
+      <div class="nav-dropdown-header header-black">Cloudflare Marketplace</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://cloudflare.com/apps" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="apps" >Cloudflare Apps</a>
+      </span>
+
+              </div>
+          </div>
+        </div>
+
+        <div class="desktop-nav__Solutions desktop-nav__container">
+          <div class="nav-dropdown-container">
+              <div class="dropdown-column maxwidth-fifth">
+                      
+      <div class="nav-dropdown-header header-black">Performance</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/performance/accelerate-internet-applications/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="accelerate-internet-applications" >Accelerate Internet Applications</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/performance/accelerate-mobile-experiences/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="accelerate-mobile-experiences" >Accelerate Mobile Experiences</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/performance/ensure-application-availability/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="ensure-application-availability" >Ensure Application Availability</a>
+      </span>
+
+              </div>
+              <div class="dropdown-column maxwidth-fifth">
+                      
+      <div class="nav-dropdown-header header-black">Security</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/ddos/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="ddos" >Mitigate DDoS Attacks</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/security/customer-data-breach/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="customer-data-breach" >Prevent Customer Data Breaches</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/bot-management/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="malicious-bot-abuse" >Stop Malicious Bot Abuse</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://teams.cloudflare.com/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="protect-users-and-devices" >Protect Users and Devices</a>
+      </span>
+
+              </div>
+              <div class="dropdown-column maxwidth-fifth">
+                      
+      <div class="nav-dropdown-header header-black">Industries</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/gaming/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_gaming" >Gaming</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/saas/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_saas" >SaaS</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/ecommerce/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_ecommerce" >eCommerce</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/media-and-entertainment/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_media-and-entertainment" >Media and Entertainment</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/public-sector/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_publicsector" >Public Sector</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/galileo/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_publicinterestgroups" >Public Interest Groups</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/athenian/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_stateandlocalgovernment" >State & Local Government</a>
+      </span>
+
+              </div>
+              <div class="dropdown-column maxwidth-fifth">
+                      
+      <div class="nav-dropdown-header header-black">Partnerships</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/partners/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partnerships" >Partner Program</a>
+      </span>
+
+                      
+      <div class="nav-dropdown-header header-black">Solutions Partners</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/partners/services/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partnerships_workers_services" >Services Program</a>
+      </span>
+
+                      
+      <div class="nav-dropdown-header header-black">Technology Partners</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/partners/peering-portal/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partnerships_peering_portal" >Peering Portal</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/bandwidth-alliance/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partnerships_bandwidth_alliance" >Bandwidth Alliance</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/partners/analytics/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partners-analytics" >Analytics Partners</a>
+      </span>
+
+              </div>
+              <div class="dropdown-column maxwidth-fifth">
+                      
+      <div class="nav-dropdown-header header-black">Integrations</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/ibm-cloud-internet-services/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_ibm_cloud" >IBM Cloud</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/wordpress/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_wordpress" >WordPress</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/google-cloud/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_google_cloud" >Google Cloud</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/magento/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_magento" >Magento</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/acquia/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_acquia" >Acquia</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/rackspace-ddos-protection/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_rackspace" >Rackspace</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/microsoft-azure/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_azure" >Microsoft Azure</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/kubernetes/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_kubernetes" >Kubernetes</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/wpengine/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_wpengine" >WP Engine</a>
+      </span>
+
+              </div>
+          </div>
+        </div>
+
+        <div class="desktop-nav__Resources desktop-nav__container">
+          <div class="nav-dropdown-container">
+              <div class="dropdown-column maxwidth-fifth">
+                      
+      <div class="nav-dropdown-header header-black">Develop</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://api.cloudflare.com" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_api_guide" >API Guide</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://developers.cloudflare.com" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_hub" >Developer Hub</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/fund/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_fund" >Developer Fund</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/technical-resources/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_documentation" >Documentation</a>
+      </span>
+
+              </div>
+              <div class="dropdown-column maxwidth-fifth">
+                      
+      <div class="nav-dropdown-header header-black">Explore</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/case-studies/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_case_studies" >Case Studies</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/analysts/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_analysts" >Analysts</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/network/china/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_cloudflare_china" >Cloudflare in China</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/network/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_network_map" >Network Map</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/webinars/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_webinars" >Webinars</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/whats-new/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="whats_new" >What's New?</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/resources/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_white_papers" >White Papers</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/gdpr/introduction/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_gdpr" >GDPR</a>
+      </span>
+
+              </div>
+              <div class="dropdown-column maxwidth-fifth">
+                      
+      <div class="nav-dropdown-header header-black">Learn</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/welcome-free/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_welcome_center" >Welcome Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/ddos/what-is-a-ddos-attack/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_ddos_learning_center" >DDoS Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/cdn/what-is-a-cdn/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_cdn_learning_center" >CDN Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/dns/what-is-dns/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_dns_learning_center" >DNS Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/security/what-is-web-application-security/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_security_learning_center" >Security Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/performance/why-site-speed-matters/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_performancelearning_center" >Performance Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/serverless/what-is-serverless/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_serverless_learning_center" >Serverless Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/ssl/what-is-ssl/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_ssl_learning_center" >SSL Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/bots/what-is-a-bot/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_bots_learning_center" >Bots Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/cloud/what-is-the-cloud/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_cloud_learning_center" >Cloud Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/access-management/what-is-identity-and-access-management/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="access-management-learning-center" >Access Management Learning Center</a>
+      </span>
+
+              </div>
+              <div class="dropdown-column maxwidth-fifth">
+                      
+      <div class="nav-dropdown-header">Connect</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://blog.cloudflare.com" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="blog" >Blog</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/plans/enterprise/contact/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="contact_sales" >Contact Sales</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://community.cloudflare.com" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="community" >Community</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://support.cloudflare.com" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="support" >Support</a>
+      </span>
+
+              </div>
+              <div class="dropdown-column maxwidth-fifth">
+                      
+      <div class="nav-dropdown-header header-black">Contact</div>
+
+                      
+      <a data-i18n-phonenumber href="tel:+16503198930" style="display:none">+1 650 319 8930</a>
+
+              </div>
+          </div>
+        </div>
+
+        <div class="desktop-nav__Developers desktop-nav__container">
+          <div class="nav-dropdown-container">
+              <div class="dropdown-column">
+                      
+      <div class="nav-dropdown-header">Advanced Cloudflare Configuration</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://api.cloudflare.com/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_api_guide" >Explore Cloudflare API v4</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://developers.cloudflare.com/argo-tunnel/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_argo_tunnel" >Expose a Secure Local Tunnel</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://developers.cloudflare.com/terraform/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_terraform" >Configure with Terraform</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://developers.cloudflare.com/docs/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_docs" >Documentation</a>
+      </span>
+
+              </div>
+              <div class="dropdown-column">
+                      
+      <div class="nav-dropdown-header">Customize Your Site</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/cloudflare-workers/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_cloudflare_workers" >Customize Using Workers</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://developers.cloudflare.com/workers/recipes/altering-headers/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_workers_altering_headers" >Altering Headers</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://developers.cloudflare.com/workers/recipes/conditional-routing/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_workers_conditional_routing" >Conditional Request Routing</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://developers.cloudflare.com/workers/recipes/a-b-testing/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_workers_ab_testing" >A/B Testing</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://developers.cloudflare.com/workers/recipes/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_workers_recipes" >Browse All Code Snippets</a>
+      </span>
+
+              </div>
+              <div class="dropdown-column">
+                      
+      <div class="nav-dropdown-header">Build Serverless Applications</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://workers.cloudflare.com/sites" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="workers-sites" >Deploy a Static Site</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://workers.dev/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_workers_dev" >Deploy Using Workers.dev</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://workers.cloudflare.com/docs" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_workers_blog_posts" >Get Started with Tutorials</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://github.com/cloudflare/worker-examples/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_github_worker_examples" >Clone Examples on GitHub</a>
+      </span>
+
+              </div>
+          </div>
+        </div>
+
+
+</div>
+
+<div class="mobile-nav nav-dropdown">
+  <ul class="mobile-nav__list">
+    <li class="mobile-nav__list__item mobile-language-picker">
+  <div class="mobile-sub-nav__title" data-submenu="languageMobile">
+    <span class="mobile-sub-nav__title__text">
+      English
+    </span>
+    <span class="icon icon-plus icon-plus-languageMobile"></span>
+  </div>
+</li>
+<div class="mobile-submenu-languageMobile mobile-sub">
+  <ul class="mobile-sub-nav">
+    <li class="desktop-nav__sub-menu__list__item">
+      <a href="https://www.cloudflare.com/en-gb/"
+>
+        English (United Kingdom)
+      </a>
+    </li>
+    <li class="desktop-nav__sub-menu__list__item">
+      <a href="https://www.cloudflare.com/en-ca/"
+>
+        English (Canada)
+      </a>
+    </li>
+    <li class="desktop-nav__sub-menu__list__item">
+      <a href="https://www.cloudflare.com/en-au/"
+>
+        English (Australia)
+      </a>
+    </li>
+    <li class="desktop-nav__sub-menu__list__item">
+      <a href="https://www.cloudflare.com/en-in/"
+>
+        English (India)
+      </a>
+    </li>
+    <li class="desktop-nav__sub-menu__list__item">
+      <a href="https://www.cloudflare.com/de-de/"
+>
+        Deutsch
+      </a>
+    </li>
+    <li class="desktop-nav__sub-menu__list__item">
+      <a href="https://www.cloudflare.com/es-es/"
+>
+        Español (España)
+      </a>
+    </li>
+    <li class="desktop-nav__sub-menu__list__item">
+      <a href="https://www.cloudflare.com/es-la/"
+>
+        Español (Latinoamérica)
+      </a>
+    </li>
+    <li class="desktop-nav__sub-menu__list__item">
+      <a href="https://www.cloudflare.com/fr-fr/"
+>
+        Français
+      </a>
+    </li>
+    <li class="desktop-nav__sub-menu__list__item">
+      <a href="https://www.cloudflare.com/it-it/"
+>
+        Italiano
+      </a>
+    </li>
+    <li class="desktop-nav__sub-menu__list__item">
+      <a href="https://www.cloudflare.com/ja-jp/"
+>
+        日本語
+      </a>
+    </li>
+    <li class="desktop-nav__sub-menu__list__item">
+      <a href="https://www.cloudflare.com/ko-kr/"
+>
+        한국어
+      </a>
+    </li>
+    <li class="desktop-nav__sub-menu__list__item">
+      <a href="https://www.cloudflare.com/pt-br/"
+>
+        Português
+      </a>
+    </li>
+    <li class="desktop-nav__sub-menu__list__item">
+      <a href="https://www.cloudflare.com/zh-tw/"
+>
+        繁體中文
+      </a>
+    </li>
+    <li class="desktop-nav__sub-menu__list__item">
+      <a href="https://www.cloudflare.com/zh-cn/"
+>
+        简体中文
+      </a>
+    </li>
+  </ul>
+</div>
+
+          <li class="mobile-nav__list__item">
+            <div class="mobile-sub-nav__title" data-submenu="Products">
+              <span class="mobile-sub-nav__title__text">Products</span>
+              <span class="icon icon-plus icon-plus-Products"></span>
+            </div>
+          </li>
+          <div class="mobile-submenu-Products mobile-sub">
+              <div class="mobile-sub-nav">
+                      
+      <div class="nav-dropdown-header header-black">Performance & Reliability</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/cdn/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cdn" >CDN</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/dns/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="dns" >DNS</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/argo-smart-routing/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="argo_smart_routing" >Argo Smart Routing</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/load-balancing/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="load_balancing" >Load Balancing</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/website-optimization/amp-real-url/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="amp_real_url" >AMP Real URL</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/website-optimization/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="web-optimization" >Web Optimizations</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/network/china/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_cloudflare_china" >China Network</a>
+      </span>
+
+                      
+      <div class="nav-dropdown-header header-black">Video Streaming & Delivery</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/cloudflare-stream/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cloudflare-stream" >Cloudflare Stream</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/stream-delivery/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="stream-delivery-homepage" >Stream Delivery</a>
+      </span>
+
+              </div>
+              <div class="mobile-sub-nav">
+                      
+      <div class="nav-dropdown-header header-black">Advanced Security</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/magic-transit/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="magic-transit" >Magic Transit</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/ddos/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="ddos" >DDoS Protection</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/waf/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="waf" >WAF</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/bot-management/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="bot_management" >Bot Management</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/rate-limiting/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="rate_limiting" >Rate Limiting</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/ssl/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="ssl" >SSL / TLS</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/dns/dnssec/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="dnssec" >DNSSEC</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/cloudflare-spectrum/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="spectrum" >Cloudflare Spectrum</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/argo-tunnel/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="argo_tunnel" >Argo Tunnel</a>
+      </span>
+
+                      
+      <div class="nav-dropdown-header header-black">Insights</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/analytics/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="analytics" >Analytics</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/cloudflare-logs/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cloudflare_logs" >Cloudflare Logs</a>
+      </span>
+
+              </div>
+              <div class="mobile-sub-nav">
+                      
+      <div class="nav-dropdown-header header-black">Cloudflare for Developers</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/cloudflare-workers/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="cloudflare-workers" >Cloudflare Workers</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/workers-kv/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="workers-kv" >Cloudflare Workers KV</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://workers.cloudflare.com/sites" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="workers-sites" >Workers Sites</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/mobile-sdk/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="mobilesdk" >Mobile SDK</a>
+      </span>
+
+                      
+      <div class="nav-dropdown-header header-black">Cloudflare for Teams</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://teams.cloudflare.com/access" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="teams-access" >Cloudflare Access</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://teams.cloudflare.com/gateway" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="teams-gateway" >Cloudflare Gateway</a>
+      </span>
+
+                      
+      <div class="nav-dropdown-header header-black">Cloudflare for Everyone</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://1.1.1.1" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="1111-homepage" >1.1.1.1</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/campaigns/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="campaigns" >Cloudflare for Campaigns</a>
+      </span>
+
+                      
+      <div class="nav-dropdown-header header-black">Domain Registration</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/registrar/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="registrar" >Cloudflare Registrar</a>
+      </span>
+
+                      
+      <div class="nav-dropdown-header header-black">Cloudflare Marketplace</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://cloudflare.com/apps" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="apps" >Cloudflare Apps</a>
+      </span>
+
+              </div>
+          </div>
+          <li class="mobile-nav__list__item">
+            <div class="mobile-sub-nav__title" data-submenu="Solutions">
+              <span class="mobile-sub-nav__title__text">Solutions</span>
+              <span class="icon icon-plus icon-plus-Solutions"></span>
+            </div>
+          </li>
+          <div class="mobile-submenu-Solutions mobile-sub">
+              <div class="mobile-sub-nav">
+                      
+      <div class="nav-dropdown-header header-black">Performance</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/performance/accelerate-internet-applications/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="accelerate-internet-applications" >Accelerate Internet Applications</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/performance/accelerate-mobile-experiences/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="accelerate-mobile-experiences" >Accelerate Mobile Experiences</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/performance/ensure-application-availability/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="ensure-application-availability" >Ensure Application Availability</a>
+      </span>
+
+              </div>
+              <div class="mobile-sub-nav">
+                      
+      <div class="nav-dropdown-header header-black">Security</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/ddos/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="ddos" >Mitigate DDoS Attacks</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/security/customer-data-breach/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="customer-data-breach" >Prevent Customer Data Breaches</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/bot-management/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="malicious-bot-abuse" >Stop Malicious Bot Abuse</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://teams.cloudflare.com/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="protect-users-and-devices" >Protect Users and Devices</a>
+      </span>
+
+              </div>
+              <div class="mobile-sub-nav">
+                      
+      <div class="nav-dropdown-header header-black">Industries</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/gaming/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_gaming" >Gaming</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/saas/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_saas" >SaaS</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/ecommerce/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_ecommerce" >eCommerce</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/media-and-entertainment/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_media-and-entertainment" >Media and Entertainment</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/public-sector/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_publicsector" >Public Sector</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/galileo/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_publicinterestgroups" >Public Interest Groups</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/athenian/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="industries_stateandlocalgovernment" >State & Local Government</a>
+      </span>
+
+              </div>
+              <div class="mobile-sub-nav">
+                      
+      <div class="nav-dropdown-header header-black">Partnerships</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/partners/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partnerships" >Partner Program</a>
+      </span>
+
+                      
+      <div class="nav-dropdown-header header-black">Solutions Partners</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/partners/services/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partnerships_workers_services" >Services Program</a>
+      </span>
+
+                      
+      <div class="nav-dropdown-header header-black">Technology Partners</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/partners/peering-portal/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partnerships_peering_portal" >Peering Portal</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/bandwidth-alliance/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partnerships_bandwidth_alliance" >Bandwidth Alliance</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/partners/analytics/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="partners-analytics" >Analytics Partners</a>
+      </span>
+
+              </div>
+              <div class="mobile-sub-nav">
+                      
+      <div class="nav-dropdown-header header-black">Integrations</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/ibm-cloud-internet-services/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_ibm_cloud" >IBM Cloud</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/wordpress/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_wordpress" >WordPress</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/google-cloud/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_google_cloud" >Google Cloud</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/magento/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_magento" >Magento</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/acquia/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_acquia" >Acquia</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/rackspace-ddos-protection/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_rackspace" >Rackspace</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/microsoft-azure/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_azure" >Microsoft Azure</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/kubernetes/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_kubernetes" >Kubernetes</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/integrations/wpengine/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="integrations_wpengine" >WP Engine</a>
+      </span>
+
+              </div>
+          </div>
+          <li class="mobile-nav__list__item">
+            <div class="mobile-sub-nav__title" data-submenu="Resources">
+              <span class="mobile-sub-nav__title__text">Resources</span>
+              <span class="icon icon-plus icon-plus-Resources"></span>
+            </div>
+          </li>
+          <div class="mobile-submenu-Resources mobile-sub">
+              <div class="mobile-sub-nav">
+                      
+      <div class="nav-dropdown-header header-black">Develop</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://api.cloudflare.com" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_api_guide" >API Guide</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://developers.cloudflare.com" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_hub" >Developer Hub</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/fund/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_fund" >Developer Fund</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/technical-resources/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_documentation" >Documentation</a>
+      </span>
+
+              </div>
+              <div class="mobile-sub-nav">
+                      
+      <div class="nav-dropdown-header header-black">Explore</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/case-studies/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_case_studies" >Case Studies</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/analysts/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_analysts" >Analysts</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/network/china/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_cloudflare_china" >Cloudflare in China</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/network/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_network_map" >Network Map</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/webinars/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_webinars" >Webinars</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/whats-new/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="whats_new" >What's New?</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/resources/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_white_papers" >White Papers</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/gdpr/introduction/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_gdpr" >GDPR</a>
+      </span>
+
+              </div>
+              <div class="mobile-sub-nav">
+                      
+      <div class="nav-dropdown-header header-black">Learn</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/welcome-free/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_welcome_center" >Welcome Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/ddos/what-is-a-ddos-attack/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_ddos_learning_center" >DDoS Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/cdn/what-is-a-cdn/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_cdn_learning_center" >CDN Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/dns/what-is-dns/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_dns_learning_center" >DNS Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/security/what-is-web-application-security/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_security_learning_center" >Security Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/performance/why-site-speed-matters/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_performancelearning_center" >Performance Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/serverless/what-is-serverless/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_serverless_learning_center" >Serverless Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/ssl/what-is-ssl/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_ssl_learning_center" >SSL Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/bots/what-is-a-bot/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_bots_learning_center" >Bots Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/cloud/what-is-the-cloud/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="learn_cloud_learning_center" >Cloud Learning Center</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/learning/access-management/what-is-identity-and-access-management/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="access-management-learning-center" >Access Management Learning Center</a>
+      </span>
+
+              </div>
+              <div class="mobile-sub-nav">
+                      
+      <div class="nav-dropdown-header">Connect</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://blog.cloudflare.com" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="blog" >Blog</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/plans/enterprise/contact/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="contact_sales" >Contact Sales</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://community.cloudflare.com" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="community" >Community</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://support.cloudflare.com" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="support" >Support</a>
+      </span>
+
+              </div>
+              <div class="mobile-sub-nav">
+                      
+      <div class="nav-dropdown-header header-black">Contact</div>
+
+                      
+      <a data-i18n-phonenumber href="tel:+16503198930" style="display:none">+1 650 319 8930</a>
+
+              </div>
+          </div>
+          <li class="mobile-nav__list__item">
+            <div class="mobile-sub-nav__title" data-submenu="Developers">
+              <span class="mobile-sub-nav__title__text">Developers</span>
+              <span class="icon icon-plus icon-plus-Developers"></span>
+            </div>
+          </li>
+          <div class="mobile-submenu-Developers mobile-sub">
+              <div class="mobile-sub-nav">
+                      
+      <div class="nav-dropdown-header">Advanced Cloudflare Configuration</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://api.cloudflare.com/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_api_guide" >Explore Cloudflare API v4</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://developers.cloudflare.com/argo-tunnel/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_argo_tunnel" >Expose a Secure Local Tunnel</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://developers.cloudflare.com/terraform/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_terraform" >Configure with Terraform</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://developers.cloudflare.com/docs/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_docs" >Documentation</a>
+      </span>
+
+              </div>
+              <div class="mobile-sub-nav">
+                      
+      <div class="nav-dropdown-header">Customize Your Site</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="/products/cloudflare-workers/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_cloudflare_workers" >Customize Using Workers</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://developers.cloudflare.com/workers/recipes/altering-headers/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_workers_altering_headers" >Altering Headers</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://developers.cloudflare.com/workers/recipes/conditional-routing/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_workers_conditional_routing" >Conditional Request Routing</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://developers.cloudflare.com/workers/recipes/a-b-testing/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_workers_ab_testing" >A/B Testing</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://developers.cloudflare.com/workers/recipes/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_workers_recipes" >Browse All Code Snippets</a>
+      </span>
+
+              </div>
+              <div class="mobile-sub-nav">
+                      
+      <div class="nav-dropdown-header">Build Serverless Applications</div>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://workers.cloudflare.com/sites" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="workers-sites" >Deploy a Static Site</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://workers.dev/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_workers_dev" >Deploy Using Workers.dev</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://workers.cloudflare.com/docs" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_workers_blog_posts" >Get Started with Tutorials</a>
+      </span>
+
+                      
+      <span class="nav-dropdown-link">
+        <a  href="https://github.com/cloudflare/worker-examples/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="developer_github_worker_examples" >Clone Examples on GitHub</a>
+      </span>
+
+              </div>
+          </div>
+          <li class="mobile-nav__list__item">
+                
+
+
+    <span class="nav-dropdown-link">
+      <a  href="/enterprise/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="for-enterprise" >For Enterprise</a>
+    </span>
+
+          </li>
+          <li class="mobile-nav__list__item">
+                
+
+
+    <span class="nav-dropdown-link">
+      <a  href="/plans/" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="plans" >Pricing</a>
+    </span>
+
+          </li>
+
+          <div class="mobile-nav__button mobile-nav__button__login mobile-nav__button--order-3">
+                
+
+
+    <span class="nav-dropdown-link">
+      <a  href="https://dash.cloudflare.com/login" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="login" >Log In</a>
+    </span>
+
+          </div>
+          <div class="mobile-nav__button mobile-nav__button__signup mobile-nav__button--order-2">
+                
+
+
+    <span class="nav-dropdown-link">
+      <a  href="https://dash.cloudflare.com/sign-up" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="signup" >Sign Up</a>
+    </span>
+
+          </div>
+          <li class="mobile-nav__list__item mobile-nav__button__under-attack">
+                
+
+
+    <span class="nav-dropdown-link js-under-attack-button under-attack-button">
+      <a  href="#" data-tracking-category="topnav" data-tracking-action="click" data-tracking-label="under_attack" >Under Attack?</a>
+    </span>
+
+          </li>
+  </ul>
+</div>
+</header>
+
+<div id="react-modal" data-form-id="js-under-attack-form-modal"></div>
+  <link rel="stylesheet" href="https://assets.www.cloudflare.com/css/modules/pages/marketo-form-09b9fa5342.min.css">
+  <script nonce="628bf994-653b-4a63-8feb-bd8b54353e3b" src="//app-ab13.marketo.com/js/forms2/js/forms2.min.js"></script>
+<script nonce="">
+  (function() {
+    if (!window.CFJS.loadedMarketoForms) {
+      window.CFJS.loadedMarketoForms = {};
+    }
+    function load() {
+      if (window.CFJS.loadedMarketoForms["1649"]) {
+        if (window.location.host.match(/^stg\.mrk\.cfdata\.org$/) || window.location.host.match(/^localhost/)) {
+          window.alert('This page has the same form embedded twice which is not supported');
+        }
+        return;
+      }
+
+      window.CFJS.loadedMarketoForms["1649"] = true;
+      var counter = 0;
+
+      var loadMarketoFormJS = setInterval(function() {
+        counter++;
+        if (counter >= 50) { // 10000ms / 200ms = 50
+          clearInterval(loadMarketoFormJS);
+        }
+
+        if ('MktoForms2' in window && window.CFJS.marketoFormEmbed) {
+          MktoForms2.loadForm("//app-ab13.marketo.com", "713-XSC-918", "1649", window.CFJS.marketoFormEmbed)
+          clearInterval(loadMarketoFormJS);
+        }
+      }, 200);
+    }
+      load();
+  })();
+</script>
+
+<div id="js-under-attack-form-modal" class="modal-react under-attack-form-modal" style="display: none;">
+  <div class="tile__content">
+    <div class="under-attack-modal__form-modal__content">
+        <div class="under-attack-modal__form-modal__tabbed-content">
+          <div class="single-form-modal-marketo-embed">
+                          
+
+
+
+
+
+
+
+  <div class="mkto-form-embed">
+      <div class="mkto-form-embed__header">
+        <h2 class="mkto-form-embed__header__text">DDoS Protection Hotline</h2>
+      </div>
+    <form id="mktoForm_1649" class="mkto-form-embed__form" data-embedmarketoid="1649" data-leadsource="Inbound - Under Attack Web Form" data-leadsourcedetail="Under Attack Hotline Landing Page" data-submitbuttontext="" data-submitbuttoncolor="" data-successmessage="Someone from Cloudflare will be in touch with you shortly." data-thankyou="Thank You" data-assetdownload="" data-assetdownloadtext="Download" data-defaultcomment="" data-formsuccessurl=""></form>
+    <p class="text--center text--extra-small">
+      <a href="/privacypolicy/" class="privacy-link" target="_blank">Your privacy is important to us.</a>
+    </p>
+
+    
+    <div class="mktoForm__success mktoForm__success--hidden">
+      <img class="responsive-image responsive-image--65px-height" title="success logo" alt="success logo" src="/img/icon_check-white.svg" />
+      <h3 class="mktoForm__success__h3">Thank You</h3>
+      <span class="mktoForm__success__message">Someone from Cloudflare will be in touch with you shortly.</span>
+    </div>
+  </div>
+
+
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="compact-nav-dropdown js-compact-nav-dropdown">
+ <ul class="marketing-list">
+   <li class="desktop-nav__sub-menu__list__item">Contact Us</li>
+   <li class="desktop-nav__sub-menu__list__item"><a href="/under-attack-hotline/">Help! I'm Under Attack!</a></li>
+   <li class="desktop-nav__sub-menu__list__item"><a href="/plans/enterprise/contact/">Email Sales</a></li>
+   <li class="desktop-nav__sub-menu__list__item"><a href="https://support.cloudflare.com/">Support</a></li>
+   <li class="desktop-nav__sub-menu__list__item"><a
+     href="tel:18889935273">1-888-993-5273</a></li>
+ </ul>
+</div>
+
+<div class="site-content site-content--homepage overflow-hidden ">
+  <div class="learning-page">
+    <div id="js-change-header"></div>
+    <section class="tile learning-background-purple tile--no-bottom-padding">
+      <div class="tile__content tile__content--padding-5px-desktop tile__content--1200px">
+        <div class="grid learning-header-margin">
+          <div class="grid__item grid__item--four-fifths grid__item--no-padding-desktop text--white">
+            <h1 class="learning-h1">What is time-to-live (TTL)? | TTL definition</h1>
+            <p class="learning-subtitle">Time to live (TTL) refers to the amount of time or “hops” that a packet is set to exist inside a network before being discarded by a router. TTL is also used in other contexts including CDN caching and DNS caching.</p>
+          </div>
+        </div>
+<div class="learning-share-icons">
+  <span class="learning-share-label">Share</span>
+  <a href="" class="learning-share-btn learning-share-link" id="fb-share" target="_blank"><img class="learning-share-img" title="facebook icon" alt="facebook icon" src="/img/learning/share-icons/facebook-icon.svg" /></a>
+  <a href="" class="learning-share-btn learning-share-link" id="linkedin-share" target="_blank"><img class="learning-share-img" title="linkedin icon" alt="linkedin icon" src="/img/learning/share-icons/linkedin-icon.svg" /></a>
+  <a href="" class="learning-share-btn learning-share-link" id="twitter-share" target="_blank"><img class="learning-share-img" title="twitter icon" alt="twitter icon" src="/img/learning/share-icons/twitter-icon.svg" /></a>
+  <a href="" class="learning-share-link" id="email-share"><img class="learning-share-img" title="email icon" alt="email icon" src="/img/learning/share-icons/email-icon.svg" /></a>
+</div>
+      </div>
+    </section>
+
+    
+    <section class="tile tile--no-top-bottom-padding hide-tablet hide-mobile learning-subnav-desktop">
+      <div class="tile__content tile__content--padding-5px-desktop tile__content--1200px">
+        <div class="grid grid--vertical-center-flex-start">
+          <div class="learning-subnav__item learning-subnav__item--no-padding-left">
+              <a href="/learning/cdn/what-is-a-cdn/" class="learning-top-link ">What is a CDN?</a>
+          </div>
+          <div class="learning-subnav__item ">
+              <a href="/learning/cdn/performance/" class="learning-top-link ">CDN Performance</a>
+          </div>
+          <div class="learning-subnav__item ">
+              <a href="/learning/cdn/cdn-ssl-tls-security/" class="learning-top-link ">CDN SSL TLS Security</a>
+          </div>
+          <div class="learning-subnav__item ">
+              <a href="/learning/cdn/cdn-load-balance-reliability/" class="learning-top-link ">CDN Reliability</a>
+          </div>
+          <div class="learning-subnav__item learning-subnav__item--no-padding-left">
+              <span class="learning-subnav-desktop__expander selected" data-menu="cdn-glossary">CDN Glossary</span>
+              <div class="learning-subnav-desktop__expanded-menu learning-subnav-desktop__expanded-menu--cdn-glossary">
+                <div>
+                  <a href="/learning/cdn/what-is-caching/" class="">What is Caching?</a>
+                </div>
+                <div>
+                  <a href="/learning/cdn/glossary/anycast-network/" class="">Anycast</a>
+                </div>
+                <div>
+                  <a href="/learning/cdn/glossary/data-center/" class="">Data Center</a>
+                </div>
+                <div>
+                  <a href="/learning/cdn/glossary/origin-server/" class="">Origin Server</a>
+                </div>
+                <div>
+                  <a href="/learning/cdn/glossary/edge-server/" class="">Edge Server</a>
+                </div>
+                <div>
+                  <a href="/learning/cdn/glossary/internet-exchange-point-ixp/" class="">Internet Exchange Point</a>
+                </div>
+                <div>
+                  <a href="/learning/cdn/glossary/reverse-proxy/" class="">Reverse Proxy</a>
+                </div>
+                <div>
+                  <a href="/learning/cdn/glossary/round-trip-time-rtt/" class="">Round-trip Time (RTT)</a>
+                </div>
+                <div>
+                  <a href="/learning/cdn/glossary/time-to-live-ttl/" class="current">Time-to-live (TTL)</a>
+                </div>
+                <div>
+                  <a href="/learning/cdn/glossary/what-is-cache-control/" class="">Cache Control</a>
+                </div>
+                <div>
+                  <a href="/learning/cdn/glossary/global-server-load-balancing-gslb/" class="">GSLB</a>
+                </div>
+                <div>
+                  <a href="/learning/cdn/how-cdns-reduce-bandwidth-cost/" class="">How CDNs Reduce Costs</a>
+                </div>
+                <div>
+                  <a href="/learning/cdn/what-is-a-cache-hit-ratio/" class="">Cache Hit Ratio</a>
+                </div>
+                <div>
+                  <a href="/learning/cdn/caching-static-and-dynamic-content/" class="">Static vs Dynamic Caching</a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    
+
+
+    <section class="tile tile--no-top-bottom-padding tile--gray hide-desktop">
+      <div class="tile__content tile__content--no-padding">
+        <div class="grid">
+          <div class="grid__item learning-subnav-mobile">
+            <ul>
+                <li class="learning-subnav-mobile__list-item">
+                        <a href="/learning/cdn/what-is-a-cdn/" class="learning-arrow-link">
+        <span class="learning-subnav-mobile__text">What is a CDN?</span>
+      </a>
+
+                </li>
+                <li class="learning-subnav-mobile__list-item">
+                        <a href="/learning/cdn/performance/" class="learning-arrow-link">
+        <span class="learning-subnav-mobile__text">CDN Performance</span>
+      </a>
+
+                </li>
+                <li class="learning-subnav-mobile__list-item">
+                        <a href="/learning/cdn/cdn-ssl-tls-security/" class="learning-arrow-link">
+        <span class="learning-subnav-mobile__text">CDN SSL TLS Security</span>
+      </a>
+
+                </li>
+                <li class="learning-subnav-mobile__list-item">
+                        <a href="/learning/cdn/cdn-load-balance-reliability/" class="learning-arrow-link">
+        <span class="learning-subnav-mobile__text">CDN Reliability</span>
+      </a>
+
+                </li>
+                      <li class="learning-subnav-mobile__list-item">
+        <span class="learning-sublink-trigger learning-arrow-link-down" data-section="cdn-glossary">
+          <span class="learning-subnav-mobile__text">CDN Glossary</span>
+        </span>
+      </li>
+        <li
+          class="learning-mobile-nav-sublink learning-subnav-mobile__list-item learning-mobile-nav-sublink--visible"
+          data-section="cdn-glossary"
+        >
+                <a href="/learning/cdn/what-is-caching/" class="learning-arrow-link">
+        <span class="learning-subnav-mobile__text">What is Caching?</span>
+      </a>
+
+        </li>
+        <li
+          class="learning-mobile-nav-sublink learning-subnav-mobile__list-item learning-mobile-nav-sublink--visible"
+          data-section="cdn-glossary"
+        >
+                <a href="/learning/cdn/glossary/anycast-network/" class="learning-arrow-link">
+        <span class="learning-subnav-mobile__text">Anycast</span>
+      </a>
+
+        </li>
+        <li
+          class="learning-mobile-nav-sublink learning-subnav-mobile__list-item learning-mobile-nav-sublink--visible"
+          data-section="cdn-glossary"
+        >
+                <a href="/learning/cdn/glossary/data-center/" class="learning-arrow-link">
+        <span class="learning-subnav-mobile__text">Data Center</span>
+      </a>
+
+        </li>
+        <li
+          class="learning-mobile-nav-sublink learning-subnav-mobile__list-item learning-mobile-nav-sublink--visible"
+          data-section="cdn-glossary"
+        >
+                <a href="/learning/cdn/glossary/origin-server/" class="learning-arrow-link">
+        <span class="learning-subnav-mobile__text">Origin Server</span>
+      </a>
+
+        </li>
+        <li
+          class="learning-mobile-nav-sublink learning-subnav-mobile__list-item learning-mobile-nav-sublink--visible"
+          data-section="cdn-glossary"
+        >
+                <a href="/learning/cdn/glossary/edge-server/" class="learning-arrow-link">
+        <span class="learning-subnav-mobile__text">Edge Server</span>
+      </a>
+
+        </li>
+        <li
+          class="learning-mobile-nav-sublink learning-subnav-mobile__list-item learning-mobile-nav-sublink--visible"
+          data-section="cdn-glossary"
+        >
+                <a href="/learning/cdn/glossary/internet-exchange-point-ixp/" class="learning-arrow-link">
+        <span class="learning-subnav-mobile__text">Internet Exchange Point</span>
+      </a>
+
+        </li>
+        <li
+          class="learning-mobile-nav-sublink learning-subnav-mobile__list-item learning-mobile-nav-sublink--visible"
+          data-section="cdn-glossary"
+        >
+                <a href="/learning/cdn/glossary/reverse-proxy/" class="learning-arrow-link">
+        <span class="learning-subnav-mobile__text">Reverse Proxy</span>
+      </a>
+
+        </li>
+        <li
+          class="learning-mobile-nav-sublink learning-subnav-mobile__list-item learning-mobile-nav-sublink--visible"
+          data-section="cdn-glossary"
+        >
+                <a href="/learning/cdn/glossary/round-trip-time-rtt/" class="learning-arrow-link">
+        <span class="learning-subnav-mobile__text">Round-trip Time (RTT)</span>
+      </a>
+
+        </li>
+        <li
+          class="learning-mobile-nav-sublink learning-subnav-mobile__list-item learning-mobile-nav-sublink--visible"
+          data-section="cdn-glossary"
+        >
+                <a href="/learning/cdn/glossary/time-to-live-ttl/" class="learning-arrow-link-down">
+        <span class="learning-subnav-mobile__text">Time-to-live (TTL)</span>
+      </a>
+        <div class="learning-article-body-mobile">
+<h2 class="learning-content-h2 learning-content-h2--margin-top-16px" itemprop="headline">What is time-to-live (TTL) in networking?</h2>
+
+<p>Time to live (TTL) refers to the amount of time or “hops” that a packet is set to exist inside a network before being discarded by a router. TTL is also used in other contexts including <a href="/learning/cdn/what-is-a-cdn/">CDN</a> caching and DNS caching.</p>
+
+<h2 class="learning-content-h2" itemprop="headline">How does TTL work?</h2>
+
+<p>When a packet of information is created and sent out across the Internet, there is a risk that it will continue to pass from router to router indefinitely. To mitigate this possibility, packets are designed with an expiration called a time-to-live or hop limit. Packet TTL can also be useful in determining how long a packet has been in circulation, and allow the sender to receive information about a packet’s path through the Internet.</p>
+
+<p>Each packet has a place where it stores a numerical value determining how much longer it should continue to move through the network. Every time a router receives a packet, it subtracts one from the TTL count and then passes it onto the next location in the network. If at any point the TTL count is equal to zero after the subtraction, the router will discard the packet and send an <a href="/learning/ddos/glossary/internet-control-message-protocol-icmp/">ICMP message</a> back to the originating host.</p>
+
+<p>The commonly used network commands ping and traceroute both utilize TTL. When using the traceroute command, a stream of packets with increasingly higher sequential TTLs are sent across the Internet towards a destination. Because each step along the connection is the last stop for one of the packets, each location will return an ICMP message to the sender after discarding the packet. The time it takes for the ICMP message to return to the sender is then used to determine how long it takes to get to each successive hop along the network.</p>
+
+<img class="responsive-image" title="ICMP traceroute diagram" alt="ICMP traceroute diagram" src="/img/learning/cdn/glossary/ttl/icmp-traceroute-diagram.png" />
+
+<h2 class="learning-content-h2" itemprop="headline">In what other circumstances is TTL used?</h2>
+
+<p>Apart from tracing the route packets take across the Internet, time-to-live is used in the context of caching information for a set period of time. Instead of measuring time in hops between routers, each of which can take a variable amount of time, some networking use cases operate in a more traditional fashion.</p>
+
+<p>CDN's like <a href="/cdn/">Cloudflare's CDN</a> commonly use a TTL to determine how long cached content should be served from a CDN edge server before a new copy will be fetched from an origin server.  By properly setting the amount of time between origin server pulls, a CDN is able to serve updated content without requests continuously propagating back to the origin. This optimization allows a CDN to efficiently serve content closer to a user while reducing the bandwidth required from the origin.</p>
+
+<p>In the context of a DNS record, TTL is a numerical value that determines how long a DNS cache server can serve a DNS record before reaching out to the authoritative DNS server and getting a new copy of the record.</p>
+        </div>
+
+        </li>
+        <li
+          class="learning-mobile-nav-sublink learning-subnav-mobile__list-item learning-mobile-nav-sublink--visible"
+          data-section="cdn-glossary"
+        >
+                <a href="/learning/cdn/glossary/what-is-cache-control/" class="learning-arrow-link">
+        <span class="learning-subnav-mobile__text">Cache Control</span>
+      </a>
+
+        </li>
+        <li
+          class="learning-mobile-nav-sublink learning-subnav-mobile__list-item learning-mobile-nav-sublink--visible"
+          data-section="cdn-glossary"
+        >
+                <a href="/learning/cdn/glossary/global-server-load-balancing-gslb/" class="learning-arrow-link">
+        <span class="learning-subnav-mobile__text">GSLB</span>
+      </a>
+
+        </li>
+        <li
+          class="learning-mobile-nav-sublink learning-subnav-mobile__list-item learning-mobile-nav-sublink--visible"
+          data-section="cdn-glossary"
+        >
+                <a href="/learning/cdn/how-cdns-reduce-bandwidth-cost/" class="learning-arrow-link">
+        <span class="learning-subnav-mobile__text">How CDNs Reduce Costs</span>
+      </a>
+
+        </li>
+        <li
+          class="learning-mobile-nav-sublink learning-subnav-mobile__list-item learning-mobile-nav-sublink--visible"
+          data-section="cdn-glossary"
+        >
+                <a href="/learning/cdn/what-is-a-cache-hit-ratio/" class="learning-arrow-link">
+        <span class="learning-subnav-mobile__text">Cache Hit Ratio</span>
+      </a>
+
+        </li>
+        <li
+          class="learning-mobile-nav-sublink learning-subnav-mobile__list-item learning-mobile-nav-sublink--visible"
+          data-section="cdn-glossary"
+        >
+                <a href="/learning/cdn/caching-static-and-dynamic-content/" class="learning-arrow-link">
+        <span class="learning-subnav-mobile__text">Static vs Dynamic Caching</span>
+      </a>
+
+        </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <section class="tile tile--gray learning-content">
+      <div class="tile__content tile__content--1200px tile__content--5px-padding">
+        <div class="grid learning-main-container">
+          <div class="learning-subnav-spacer"></div>
+          <div class="grid__item grid__item--third grid__item--no-padding-desktop hide-tablet hide-mobile learning-sidenav">
+            <div class="learning-section-title">
+              <h2 class="learning-h2 learning-h2--purple learning-h2--no-bottom-margin">Time-to-Live</h2>
+              <h2 class="learning-h2 learning-h2--purple learning-h2--no-top-margin">Learning Objectives</h2>
+            </div>
+            <p class="text--semibold">After reading this article you will be able to:</p>
+            <ul>
+                <li>Define time-to-live (TTL)</li>
+                <li>Explain how TTL is used in networking</li>
+                <li>Know a few other contexts that use TTL</li>
+            </ul>
+              <div class="related-content">
+                <h4 class="learning-content-h4">Related Content</h4>
+                <hr>
+                  <a href="/learning/cdn/glossary/round-trip-time-rtt/"><p>Round-trip Time (RTT)</p></a>
+                  <a href="/learning/cdn/glossary/internet-exchange-point-ixp/"><p>Internet Exchange Point (IXP)</p></a>
+                  <a href="/learning/cdn/glossary/edge-server/"><p>Edge Server</p></a>
+                  <a href="/learning/cdn/glossary/origin-server/"><p>Origin Server</p></a>
+                  <a href="/learning/cdn/cdn-load-balance-reliability/"><p>CDN Reliability</p></a>
+              </div>
+          </div>
+
+          <div class="grid__item grid__item--two-thirds learning-article-body-container hide-tablet hide-mobile">
+            <div id="learning-article-body" itemprop="articleBody">
+<h2 class="learning-content-h2 learning-content-h2--margin-top-16px" itemprop="headline">What is time-to-live (TTL) in networking?</h2>
+
+<p>Time to live (TTL) refers to the amount of time or “hops” that a packet is set to exist inside a network before being discarded by a router. TTL is also used in other contexts including <a href="/learning/cdn/what-is-a-cdn/">CDN</a> caching and DNS caching.</p>
+
+<h2 class="learning-content-h2" itemprop="headline">How does TTL work?</h2>
+
+<p>When a packet of information is created and sent out across the Internet, there is a risk that it will continue to pass from router to router indefinitely. To mitigate this possibility, packets are designed with an expiration called a time-to-live or hop limit. Packet TTL can also be useful in determining how long a packet has been in circulation, and allow the sender to receive information about a packet’s path through the Internet.</p>
+
+<p>Each packet has a place where it stores a numerical value determining how much longer it should continue to move through the network. Every time a router receives a packet, it subtracts one from the TTL count and then passes it onto the next location in the network. If at any point the TTL count is equal to zero after the subtraction, the router will discard the packet and send an <a href="/learning/ddos/glossary/internet-control-message-protocol-icmp/">ICMP message</a> back to the originating host.</p>
+
+<p>The commonly used network commands ping and traceroute both utilize TTL. When using the traceroute command, a stream of packets with increasingly higher sequential TTLs are sent across the Internet towards a destination. Because each step along the connection is the last stop for one of the packets, each location will return an ICMP message to the sender after discarding the packet. The time it takes for the ICMP message to return to the sender is then used to determine how long it takes to get to each successive hop along the network.</p>
+
+<img class="responsive-image" title="ICMP traceroute diagram" alt="ICMP traceroute diagram" src="/img/learning/cdn/glossary/ttl/icmp-traceroute-diagram.png" />
+
+<h2 class="learning-content-h2" itemprop="headline">In what other circumstances is TTL used?</h2>
+
+<p>Apart from tracing the route packets take across the Internet, time-to-live is used in the context of caching information for a set period of time. Instead of measuring time in hops between routers, each of which can take a variable amount of time, some networking use cases operate in a more traditional fashion.</p>
+
+<p>CDN's like <a href="/cdn/">Cloudflare's CDN</a> commonly use a TTL to determine how long cached content should be served from a CDN edge server before a new copy will be fetched from an origin server.  By properly setting the amount of time between origin server pulls, a CDN is able to serve updated content without requests continuously propagating back to the origin. This optimization allows a CDN to efficiently serve content closer to a user while reducing the bandwidth required from the origin.</p>
+
+<p>In the context of a DNS record, TTL is a numerical value that determines how long a DNS cache server can serve a DNS record before reaching out to the authoritative DNS server and getting a new copy of the record.</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer class="main-footer">
+  <!-- Top Section of the footer-->
+  <div class="main-footer__container">
+    <div class="main-footer__row">
+        <div class="main-footer__menu-group">
+          <ul id="cdn-footer-about-cdnsMenu">
+            <li data-submenu="cdn-footer-about-cdnsMenu" class="main-footer__menu-group__header js-toggle-footer-group">
+              About CDNs
+              <span class="icon icon-caret-down"></span>
+            </li>
+
+              <li>
+                <a href="/learning/cdn/what-is-a-cdn/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="what-is-a-cdn-">
+                  What is a CDN?
+                </a>
+              </li>
+              <li>
+                <a href="/learning/cdn/glossary/reverse-proxy/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="what-is-a-reverse-proxy-">
+                  What is a Reverse Proxy?
+                </a>
+              </li>
+              <li>
+                <a href="/learning/cdn/caching-static-and-dynamic-content/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="static-vs-dynamic-caching">
+                  Static vs Dynamic Caching
+                </a>
+              </li>
+          </ul>
+          <p class="phone">
+            Contact Sales:<br><a data-i18n-phonenumber class="tel" href="tel:+16503198930" style="display:none">+1 650 319 8930</a>
+            <noscript><a class="phone" href="tel:+16503198930">+1 650 319 8930</a></noscript>
+          </p>
+        </div>
+        <div class="main-footer__menu-group">
+          <ul id="cdn-footer-cdn-featuresMenu">
+            <li data-submenu="cdn-footer-cdn-featuresMenu" class="main-footer__menu-group__header js-toggle-footer-group">
+              CDN Features
+              <span class="icon icon-caret-down"></span>
+            </li>
+
+              <li>
+                <a href="/learning/cdn/performance/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="cdn-performance">
+                  CDN Performance
+                </a>
+              </li>
+              <li>
+                <a href="/learning/cdn/cdn-ssl-tls-security/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="cdn-ssl-tls-security">
+                  CDN SSL TLS Security
+                </a>
+              </li>
+              <li>
+                <a href="/learning/cdn/cdn-load-balance-reliability/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="cdn-reliability">
+                  CDN Reliability
+                </a>
+              </li>
+          </ul>
+        </div>
+        <div class="main-footer__menu-group">
+          <ul id="cdn-footer-cdn-serversMenu">
+            <li data-submenu="cdn-footer-cdn-serversMenu" class="main-footer__menu-group__header js-toggle-footer-group">
+              CDN Servers
+              <span class="icon icon-caret-down"></span>
+            </li>
+
+              <li>
+                <a href="/learning/cdn/glossary/data-center/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="what-is-a-data-center-">
+                  What is a Data Center?
+                </a>
+              </li>
+              <li>
+                <a href="/learning/cdn/glossary/edge-server/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="what-is-an-edge-server-">
+                  What is an Edge Server?
+                </a>
+              </li>
+              <li>
+                <a href="/learning/cdn/glossary/origin-server/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="what-is-an-origin-server-">
+                  What is an Origin Server?
+                </a>
+              </li>
+          </ul>
+        </div>
+        <div class="main-footer__menu-group">
+          <ul id="cdn-footer-cdn-glossaryMenu">
+            <li data-submenu="cdn-footer-cdn-glossaryMenu" class="main-footer__menu-group__header js-toggle-footer-group">
+              CDN Glossary
+              <span class="icon icon-caret-down"></span>
+            </li>
+
+              <li>
+                <a href="/learning/cdn/glossary/anycast-network/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="anycast">
+                  Anycast
+                </a>
+              </li>
+              <li>
+                <a href="/learning/cdn/glossary/internet-exchange-point-ixp/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="internet-exchange-point-ixp-">
+                  Internet Exchange Point (IXP)
+                </a>
+              </li>
+              <li>
+                <a href="/learning/cdn/glossary/round-trip-time-rtt/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="round-trip-time-rtt-">
+                  Round-trip Time (RTT)
+                </a>
+              </li>
+              <li>
+                <a href="/learning/cdn/glossary/time-to-live-ttl/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="time-to-live-ttl-">
+                  Time-to-live (TTL)
+                </a>
+              </li>
+              <li>
+                <a href="/learning/cdn/glossary/what-is-cache-control/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="cache-control">
+                  Cache Control
+                </a>
+              </li>
+              <li>
+                <a href="/learning/cdn/glossary/global-server-load-balancing-gslb/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="gslb">
+                  GSLB
+                </a>
+              </li>
+          </ul>
+        </div>
+        <div class="main-footer__menu-group">
+          <ul id="cdn-footer-learning-navigationMenu">
+            <li data-submenu="cdn-footer-learning-navigationMenu" class="main-footer__menu-group__header js-toggle-footer-group">
+              Learning Center Navigation
+              <span class="icon icon-caret-down"></span>
+            </li>
+
+              <li>
+                <a href="/learning/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="learning-center-home">
+                  Learning Center Home
+                </a>
+              </li>
+              <li>
+                <a href="/learning/ddos/what-is-a-ddos-attack/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="ddos-learning-center">
+                  DDoS Learning Center
+                </a>
+              </li>
+              <li>
+                <a href="/learning/dns/what-is-dns/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="dns-learning-center">
+                  DNS Learning Center
+                </a>
+              </li>
+              <li>
+                <a href="/learning/security/what-is-web-application-security/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="security-learning-center">
+                  Security Learning Center
+                </a>
+              </li>
+              <li>
+                <a href="/learning/performance/why-site-speed-matters/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="performance-learning-center">
+                  Performance Learning Center
+                </a>
+              </li>
+              <li>
+                <a href="/learning/serverless/what-is-serverless/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="serverless-learning-center">
+                  Serverless Learning Center
+                </a>
+              </li>
+              <li>
+                <a href="/learning/ssl/what-is-ssl/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="ssl-learning-center">
+                  SSL Learning Center
+                </a>
+              </li>
+              <li>
+                <a href="/learning/bots/what-is-a-bot/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="bots-learning-center">
+                  Bots Learning Center
+                </a>
+              </li>
+              <li>
+                <a href="/learning/cloud/what-is-the-cloud/" data-tracking-category="footer" data-tracking-action="click" data-tracking-label="cloud-learning-center">
+                  Cloud Learning Center
+                </a>
+              </li>
+          </ul>
+        </div>
+    </div>
+    <div class="main-footer__menu_bottom">
+      <div class="main-footer__menu_bottom__container">
+        <div class="main-footer__menu_bottom__social">
+          <a target="_blank" rel="noopener" href="https://www.facebook.com/Cloudflare/"><img class="" title="Facebook" alt="Facebook" src="/img/footer/facebook.svg" /></a>
+          <a target="_blank" rel="noopener" href="https://twitter.com/Cloudflare"><img class="" title="Twitter" alt="Twitter" src="/img/footer/twitter.svg" /></a>
+          <a target="_blank" rel="noopener" href="https://www.linkedin.com/company/cloudflare-inc-"><img class="" title="LinkedIn" alt="LinkedIn" src="/img/footer/linkedin.svg" /></a>
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/cloudflare"><img class="" title="Youtube" alt="Youtube" src="/img/footer/youtube.svg" /></a>
+          <a target="_blank" rel="noopener" href="https://www.instagram.com/cloudflare"><img class="" title="Instagram" alt="Instagram" src="/img/footer/instagram.svg" /></a>
+        </div>
+        <div class="main-footer__menu_bottom__copyright">
+          <span>&copy; 2020 Cloudflare, Inc.</span>
+          <div>
+            <a href="/privacypolicy/">Privacy Policy</a><a href="/website-terms/">Terms of Use</a><a href="/abuse/">Trust & Safety</a><a href="/trademark/">Trademark</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="eu-cookie-banner js-eu-cookie-banner">
+  <div class="eu-cookie-banner__content text--white text--center">
+    <p>To provide you with the best possible experience on our website, we may use cookies, as described <a href='/cookie-policy/'>here</a>.<br>By clicking accept, closing this banner, or continuing to browse our websites, you consent to the use of such cookies.</p>
+    <div class="grid grid--center">
+      <div class="grid__item grid__item--fourth-half">
+        <button style="max-width: 150px;" class="button button--white button--inline js-accept-eu-cookie">I accept</button>
+      </div>
+    </div>
+    <div class="close_x js-accept-eu-cookie"></div>
+  </div>
+</div>
+
+
+    <script src="https://assets.www.cloudflare.com/js/chunk-c686abeedae019d79fe3.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+<script src="https://assets.www.cloudflare.com/js/chunk-42c4eab7435bc821562a.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+<script src="https://assets.www.cloudflare.com/js/chunk-962b5197fdb68c91bed7.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+<script src="https://assets.www.cloudflare.com/js/chunk-b8ee608639cbf9c497b0.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+<script src="https://assets.www.cloudflare.com/js/chunk-aacdbd2ec40c35fc4e76.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+<script src="https://assets.www.cloudflare.com/js/chunk-da07ad7c813de02a5901.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+<script src="https://assets.www.cloudflare.com/js/chunk-cf22437abcc87600d94a.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+<script src="https://assets.www.cloudflare.com/js/chunk-7460e4b1bcf499940e57.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+
+      <script async src="https://assets.www.cloudflare.com/js/chunk-737c07ec461452130d69.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+
+<script async src="https://assets.www.cloudflare.com/js/chunk-631d4a893126a2240658.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+<script async src="https://assets.www.cloudflare.com/js/chunk-720fda60db2afb5db2f5.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+    <script async src="https://assets.www.cloudflare.com/js/chunk-06c2286b12a561edc14d.js" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b"></script>
+    
+    <script type="application/ld+json" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "cloudflare.com",
+        "url": "http://www.cloudflare.com",
+        "sameAs": [
+          "http://www.facebook.com/Cloudflare",
+          "http://www.twitter.com/Cloudflare",
+          "http://plus.google.com/+cloudflare",
+          "https://www.linkedin.com/company/cloudflare-inc-",
+          "http://www.youtube.com/user/CloudflareTeam"
+        ]
+      }
+    </script>
+    <script type="application/ld+json" nonce="628bf994-653b-4a63-8feb-bd8b54353e3b">
+      {
+        "@context": "http://schema.org",
+        "@type": "Corporation",
+        "name": "Cloudflare",
+        "url": "http://www.cloudflare.com",
+        "description": "Cloudflare is a free global CDN and DNS provider that can speed up and protect any site online."
+      }
+    </script>
+    
+    
+  </body>
+</html>
